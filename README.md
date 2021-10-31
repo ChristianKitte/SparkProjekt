@@ -15,3 +15,5 @@ ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen D
 * Amon Wondra
 * Christian Kitte
 * Daria Kenigs
+
+## [Zum Inhaltsverzeichnis](https://github.com/ChristianKitte/SparkProjekt/blob/main/01_Inhaltsverzeichnis.md)

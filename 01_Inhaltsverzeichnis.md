@@ -22,7 +22,4 @@
 
 ## Anhänge
 
-[Anhang Linksliste](Anhang_Linksliste.md)
-
-
-https://www.apache.org/logos/
+[Anhang Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md)
