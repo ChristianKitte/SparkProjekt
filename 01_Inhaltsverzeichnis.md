@@ -3,24 +3,31 @@
 * Spark
     * Was ist Spark - Versuch einer Definition
     * Kurzer Überblick über die bisherige Entwicklungsgeschichte
-    * Überblick über die Bereiche von Spark
-        * SQL
-        * Maschine Learning
-        * Graphdatenbanken
-    * Datenstrukturen in Spark
+    * Überblick über das Spark Ecosystem
+        * SQL (SparkSQL)
+        * Maschine Learning (Mllib)
+        * Graphdatenbanken (GraphX)
+        * Streaming (Spark Streaming)
+    * Datenstrukturen
         * Hadoop
-        * Distributed Speicher HDFS  
-        * Resilent Distributed Dataset (RDD)
-        * Spark Dataframes
-        * Spark Datasets
+            * Distributed Speicher HDFS  
+            * Map Reduce 
+        * Spark (Ersatz für MapReduce)
+            * Datenherkunft
+            * Resilent Distributed Dataset (RDD)
+            * Arten von RDD Operationen
+               * Actions
+               * Transformations
+            * Spark Dataframes
+            * Spark Datasets
 * Mögliche Umgebungen ür Spark
     * Spark in der Cloud
     * Spark lokal
     * Spark und Jupyter Notebooks (Colab)
 * Sprachunterstützung
-    * Sprachunterstützung in Spark 1
-    * Sprachunterstützung in Spark 2 - Python
-    * Wordcount mit Spark und Colab
+    * Sprachunterstützung in Spark
+    * Sprachunterstützung in Spark - Python
+* Wordcount mit Spark, Python und Colab
 
 ## Anhänge
 
