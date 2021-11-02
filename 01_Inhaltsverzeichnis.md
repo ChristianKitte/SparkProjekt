@@ -3,11 +3,13 @@
 * Spark
     * Was ist Spark - Versuch einer Definition
     * Kurzer Überblick über die bisherige Entwicklungsgeschichte
-    * Überblick über den Aufbau von Spark
+    * Überblick über die Bereiche von Spark
         * SQL
         * Maschine Learning
         * Graphdatenbanken
     * Datenstrukturen in Spark
+        * Hadoop
+        * Distributed Speicher HDFS  
         * Resilent Distributed Dataset (RDD)
         * Spark Dataframes
         * Spark Datasets
