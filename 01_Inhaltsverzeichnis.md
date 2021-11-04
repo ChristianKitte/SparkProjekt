@@ -20,13 +20,15 @@
                * Transformations
             * Spark Dataframes
             * Spark Datasets
-* Mögliche Umgebungen ür Spark
+* Mögliche Umgebungen für Spark
     * Spark in der Cloud
     * Spark lokal
     * Spark und Jupyter Notebooks (Colab)
+    * Spark mit Docker 
 * Sprachunterstützung
     * Sprachunterstützung in Spark
     * Sprachunterstützung in Spark - Python
+* Anwendungsmöglichkeiten 
 * Wordcount mit Spark, Python und Colab
 
 ## Anhänge
