@@ -1,35 +1,35 @@
 # Inhaltsverzeichnis V0.1
 
 * Spark
-    * Was ist Spark - Versuch einer Definition
-    * Kurzer Überblick über die bisherige Entwicklungsgeschichte
-    * Überblick über das Spark Ecosystem
-        * SQL (SparkSQL)
-        * Maschine Learning (Mllib)
-        * Graphdatenbanken (GraphX)
-        * Streaming (Spark Streaming)
-    * Datenstrukturen
-        * Hadoop
-            * Distributed Speicher HDFS  
-            * Map Reduce 
-        * Spark (Ersatz für MapReduce)
-            * Datenherkunft
-            * Resilent Distributed Dataset (RDD)
-            * Arten von RDD Operationen
-               * Actions
-               * Transformations
-            * Spark Dataframes
-            * Spark Datasets
+    * Was ist Spark - Versuch einer Definition D
+    * Kurzer Überblick über die bisherige Entwicklungsgeschichte D
+    * Überblick über das Spark Ecosystem A
+        * SQL (SparkSQL) A
+        * Maschine Learning (Mllib) A
+        * Graphdatenbanken (GraphX) A
+        * Streaming (Spark Streaming) A
+    * Datenstrukturen C
+        * Hadoop C
+            * Distributed Speicher HDFS C 
+            * Map Reduce C
+        * Spark (Ersatz für MapReduce) C
+            * Datenherkunft C
+            * Resilent Distributed Dataset (RDD) C
+            * Arten von RDD Operationen C
+               * Actions C
+               * Transformations C
+            * Spark Dataframes C
+            * Spark Datasets C
 * Mögliche Umgebungen für Spark
-    * Spark in der Cloud
-    * Spark lokal
-    * Spark und Jupyter Notebooks (Colab)
-    * Spark mit Docker 
-* Sprachunterstützung
-    * Sprachunterstützung in Spark
-    * Sprachunterstützung in Spark - Python
-* Anwendungsmöglichkeiten 
-* Wordcount mit Spark, Python und Colab
+    * Spark in der Cloud (Amazon, Google, Azure, ..., Databrick) D
+    * Spark lokal A ?
+    * Spark und Jupyter Notebooks (Colab) A ? 
+    * Spark mit Docker C
+* Sprachunterstützung D
+    * Sprachunterstützung in Spark D
+    * Sprachunterstützung in Spark - Python D
+* Anwendungsmöglichkeiten D
+* Wordcount mit Spark, Python und Colab C
 
 ## Anhänge
 
