@@ -1,3 +1,10 @@
+
+#### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
+
+# Anhang Linkliste
+
+### Spark
+
 Apache Sparke Homepage
 [Link](https://spark.apache.org/)
 
@@ -24,3 +31,16 @@ Unterschied zwischen RDD, DataFrame und Dataset
 
 Apache Spark RDD vs DataFrame vs DataSet
 [Link](https://data-flair.training/blogs/apache-spark-rdd-vs-dataframe-vs-dataset/)
+
+***
+
+### Markdown
+
+Markdown Basis Syntax
+[Link](https://www.markdownguide.org/basic-syntax/)
+
+Markdown Erweiterte Syntax
+[Link](https://www.markdownguide.org/extended-syntax/)
+
+GitHub Style Markdown
+[Link](https://github.github.com/gfm/)

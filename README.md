@@ -1,7 +1,8 @@
 # Einführung in Spark
 
-![Apache Spark Logo](https://www.apache.org/logos/res/spark/spark.png)
-(Das Apache Spark Loge ist ein eingetragenes Logo Der [Apache Software Foundation](https://www.apache.org/))
+![Apache Spark Logo](https://www.apache.org/logos/res/spark/spark.png "Logo von Apache Spark")
+(Das Apache Spark Loge ist ein eingetragenes Logo
+der [Apache Software Foundation](https://www.apache.org/ "Hier geht es zur Webseite der Apache Spark Foundation")
 
 *(Übersichtliche und verständliche Einführung in Apache Spark: Was ist es und welche Fähigkeiten hat es, was sind die
 ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen Datenbanken zusammen und weitere Themen)*
@@ -16,4 +17,4 @@ ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen D
 * Christian Kitte
 * Daria Kenigs
 
-## [Zum Inhaltsverzeichnis](https://github.com/ChristianKitte/SparkProjekt/blob/main/01_Inhaltsverzeichnis.md)
+## [Zum Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier geht es zum Inhaltsverzeichnis")
