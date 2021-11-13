@@ -1,8 +1,8 @@
-# Inhaltsverzeichnis V0.1
+# Inhaltsverzeichnis
 
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite")
 
-* [1 Spark](01_0_Spark.md "Spark")
+* [1 Spark](01_Spark.md "Einführung in Spark und seinem Ökosystem") D A
     * Was ist Spark - Versuch einer Definition D
     * Kurzer Überblick über die bisherige Entwicklungsgeschichte D
     * Überblick über das Spark Ecosystem A
@@ -10,28 +10,34 @@
         * Maschine Learning (Mllib) A
         * Graphdatenbanken (GraphX) A
         * Streaming (Spark Streaming) A
-    * [1.4 Datenstrukturen C](01_4_Datenstrukturen.md "Datenstrukturen in Spark")
-        * Hadoop C
-            * Distributed Speicher HDFS C
-            * Map Reduce C
-        * Spark (Ersatz für MapReduce) C
-            * Datenherkunft C
-            * Resilent Distributed Dataset (RDD) C
-            * Arten von RDD Operationen C
-                * Actions C
-                * Transformations C
-            * Spark Dataframes C
-            * Spark Datasets C
-* 2 Mögliche Umgebungen für Spark
+* [2 Datenstrukturen C](02_Datenstrukturen.md "Überblick über grundlegende Datenstrukturen in Spark") C
+    * Hadoop C
+        * Distributed Speicher HDFS C
+        * Map Reduce C
+    * Spark (Ersatz für MapReduce) C
+        * Datenherkunft C
+        * Resilent Distributed Dataset (RDD) C
+        * Arten von RDD Operationen C
+            * Actions C
+            * Transformations C
+        * Spark Dataframes C
+        * Spark Datasets C
+* [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark "Überblick über mögliche Umgebungen für Spark") D A
+  C
     * Spark in der Cloud (Amazon, Google, Azure, ..., Databrick) D
-    * Spark lokal A ?
-    * Spark und Jupyter Notebooks (Colab) A ?
+    * Spark lokal A
+    * Spark und Jupyter Notebooks (Colab) A
     * Spark mit Docker C
-* 3 Sprachunterstützung D
+        * Dockerimage
+        * Download und erster Start
+        * Zugriff auf das Jupyter Notebook
+        * Vor- und Nachteile
+* [4 Sprachunterstützung](04_Sprachunterstützung.md "Derzeitig vorhandene Sprachunterstützung in Spark") D
     * Sprachunterstützung in Spark D
     * Sprachunterstützung in Spark - Python D
-* 4 Anwendungsmöglichkeiten D
-* [5 Wordcount mit Spark und Python](05_Wordcount_mit_Spark_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
+* [5 Anwendungsmöglichkeiten](05_Anwendungsmöglichkeiten.md "Überblick über praktische Anwendungsmöglichkeiten mit Spark")
+  D
+* [6 Wordcount mit Spark und Python](06_Wordcount_mit_Spark_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
   C
 
 ### Nachweise
@@ -42,4 +48,4 @@
 ### Anhänge
 
 * [Anhang Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md
-"Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
+  "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")

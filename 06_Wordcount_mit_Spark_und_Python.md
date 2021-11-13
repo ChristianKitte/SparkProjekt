@@ -1,6 +1,6 @@
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
 
-# 5 Wordcount mit Spark und Python
+# 6 Wordcount mit Spark und Python
 
 An dieser Stelle soll beispielhaft der praktische Einsatz von Spark demonstriert werden. Am Ende des Kapitels wird der Leser einen Eindruck darüber gewonnen haben, welche Schritte notwendig sind, um eine Umgebung für Spark einzurichten und eine konkrete Aufgabe lösen zu können.
 

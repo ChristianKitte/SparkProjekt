@@ -34,6 +34,21 @@ Apache Spark RDD vs DataFrame vs DataSet
 
 ***
 
+### Tools
+Docker Homepage
+[Link](https://www.docker.com/get-started)
+
+Docker Hub
+[Link](https://hub.docker.com/)
+
+Jupyter Notebook
+[Link](https://jupyter.org/index.html)
+
+JupyterLab Dokumentation
+[Link](https://jupyterlab.readthedocs.io/en/stable/)
+
+***
+
 ### Markdown
 
 Markdown Basis Syntax
