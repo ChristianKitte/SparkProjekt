@@ -22,11 +22,11 @@
             * Transformations C
         * Spark Dataframes C
         * Spark Datasets C
-* [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark "Überblick über mögliche Umgebungen für Spark") D A
-  C
+* [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für Spark")
+  D A C
     * Spark in der Cloud (Amazon, Google, Azure, ..., Databrick) D
     * Spark lokal A
-    * Spark und Jupyter Notebooks (Colab) A
+    * Spark mit Google Colaboratory (Colab) A
     * Spark mit Docker C
         * Dockerimage
         * Download und erster Start

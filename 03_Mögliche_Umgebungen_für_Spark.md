@@ -6,7 +6,7 @@
 
 ## Spark lokal A
 
-## Spark und Jupyter Notebooks (Colab) A
+## Spark mit Google Colaboratory (Colab) A
 
 ## Spark mit Docker C
 
