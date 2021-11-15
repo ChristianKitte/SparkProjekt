@@ -68,7 +68,7 @@ sein:
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird dann eine URL mit einem Token
 ausgegeben. Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark
 benötigten Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
-Colaboratory_](spark-mit-google-colaboratory-(colab)) beschrieben gearbeitet werden.
+Colaboratory_](spark-mit-google-colaboratory-colab) beschrieben gearbeitet werden.
 
 ### Vor- und Nachteile
 
