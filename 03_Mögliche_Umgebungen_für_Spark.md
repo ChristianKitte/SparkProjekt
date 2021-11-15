@@ -57,7 +57,8 @@ Start für den Container zugänglich gemacht werden. Hierfür gibt es eine Reihe
 
 Um innerhalb eines Containers mit eigenen Daten zu arbeiten, müssen diese aus dem Container zugreifbar sein. Hierfür
 gibt
-es [verschiedene Möglichkeiten](https://docs.docker.com/storage/ "Hier gelangen Sie zu einer Seite in docker docs, welche verschiedene Möglichkeiten zum Einbinden von Laufwerken zeigt")
+es [verschiedene Möglichkeiten](https://docs.docker.com/storage/ "Hier gelangen Sie zu einer Seite in docker docs, welche verschiedene 
+Möglichkeiten zum Einbinden von Laufwerken zeigt")
 . Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
 sein:
 
@@ -68,7 +69,8 @@ sein:
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird dann eine URL mit einem Token
 ausgegeben. Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark
 benötigten Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
-Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab) beschrieben gearbeitet werden.
+Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Spark mit 
+Google Colaboratory (Colab)") beschrieben gearbeitet werden.
 
 ### Vor- und Nachteile
 
