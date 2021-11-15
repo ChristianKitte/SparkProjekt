@@ -6,7 +6,7 @@
 
 ## Spark lokal A
 
-## Spark mit Google Colaboratory (Colab) A
+## Spark mit Google Colaboratory (Colab)
 
 ## Spark mit Docker C
 
@@ -43,12 +43,49 @@ folgende Befehl eingegeben:
 
     docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
 
-Bei der ersten Ausführung wurde das Image _jupyter/pyspark-notebook_ noch nicht vom Docker Hub herunter geladen. Daher
-erfolgt bei der erstmaligen Ausführung der Download des Images. Anschließend wird auf Basis des heruntergeladenen Image
-ein Container erstellt. Dieser Container horcht auf dem Port 8888
-und [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/
-"Hier gelangen Sie zur Dokumentation von JupyterLab") ist aktiv. Der Name des erstellten Containers lautet pyspark.
+Bei der ersten Ausführung wird das Image _jupyter/pyspark-notebook_ direkt vom _Docker Hub_ herunter geladen, sofern es
+noch nicht lokal vorhanden ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt. Dieser
+Container horcht auf dem _Port 8888_ und [_JupyterLab_](https://jupyterlab.readthedocs.io/en/stable/
+"Hier gelangen Sie zur Dokumentation von JupyterLab") ist aktiv. Der Name des erstellten Containers lautet _pyspark_.
+
+Nach dem ersten Zugriff auf den Container, kann dieser wie im folgenden gezeigt, einfach gestartet werden:
+
+    start -a pyspark
+
+Möchte man bei der Arbeit mit Jupyter Notebook auf eigene Daten oder Verzeichnisse zugreifen, so müssen sie vor dem
+Start für den Container zugänglich gemacht werden. Hierfür gibt es eine Reihe von Möglichkeiten.
+
+Um innerhalb eines Containers mit eigenen Daten zu arbeiten, müssen diese aus dem Container zugreifbar sein. Hierfür
+gibt
+es [verschiedene Möglichkeiten](https://docs.docker.com/storage/ "Hier gelangen Sie zu einer Seite in docker docs, welche verschiedene Möglichkeiten zum Einbinden von Laufwerken zeigt")
+. Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
+sein:
+
+    cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
 
 ### Zugriff auf das Jupyter Notebook
 
+Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird dann eine URL mit einem Token
+ausgegeben. Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark
+benötigten Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
+Colaboratory_](spark-mit-google-colaboratory-(colab)) beschrieben gearbeitet werden.
+
 ### Vor- und Nachteile
+
+Als Vorteile dieser Vorgehensweise sind zu nennen:
+
+* einfache Verfügbarkeit über _Docker Hub_
+* einfache Nutzung, da alle Installationen und Einstellungen vorhanden sind
+* eignet sich für Lehrnzwecke und lokales Arbeiten mit übersichtlichen Datenmengen
+* Daten und Ergebnisse können mit dem Container serialisiert werden kann auch produktiv zum Aufbau der eigenen
+  Infrastruktur eingesetzt werden
+* kann auch im Serverumfeld - dann mit größeren Datenbeständen und/oder verteilt - eingesetzt werden
+
+Als Nachteile sind zu nennen:
+
+* sofern Anpassungen notwendig sind, werden auch hier tiefere Kenntnisse benötigt
+* als Out-of-the-Box Lösung, ist man auf das Wissen und die Fähigkeiten der Anbieter angewiesen
+* Notwendigkeit zur Installation einer _Docker Laufzeit_ mit privilegierten Rechten
+* Sicherheitsrisiken im Umfeld von _Docker_ können das eigene System gefährden
+
+ 
