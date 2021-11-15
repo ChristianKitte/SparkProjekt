@@ -27,7 +27,7 @@
     * Spark in der Cloud (Amazon, Google, Azure, ..., Databrick) D
     * Spark lokal A
     * Spark mit Google Colaboratory (Colab) A
-    * Spark mit Docker C
+    * Spark mit Docker C V0.1
         * Dockerimage
         * Download und erster Start
         * Zugriff auf das Jupyter Notebook
