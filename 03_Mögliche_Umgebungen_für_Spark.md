@@ -56,7 +56,8 @@ Notebooks_](https://jupyter.org/index.html "Hier gelangen Sie zur Homepage von J
 Dieser Schritt setzt die Installation des _Docker Desktop_ wie oben beschrieben voraus. In einer Eingabekonsole wird der
 folgende Befehl eingegeben:
 
-docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
+  docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
+
 Bei der ersten Ausführung wird das Image _jupyter/pyspark-notebook_ direkt vom _Docker Hub_ herunter geladen, sofern es
 noch nicht lokal vorhanden ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt. Dieser
 Container horcht auf dem _Port 8888_ und [_
@@ -75,7 +76,8 @@ es [verschiedene Möglichkeiten](https://docs.docker.com/storage/ "Hier gelangen
 . Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
 sein:
 
-cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
+  cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
+
 ### Zugriff auf das Jupyter Notebook
 
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
