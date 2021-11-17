@@ -1,4 +1,3 @@
-
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
 
 # Anhang Linkliste
@@ -6,7 +5,7 @@
 ### Spark
 
 Apache Sparke Homepage
-[Link](https://spark.apache.org/)
+[Link](https://spark.apache.org/) [Download](https://archive.apache.org/dist/spark/)
 
 Spark Python API Docs
 [Links](https://spark.apache.org/docs/2.2.0/api/python/index.html)
@@ -34,7 +33,25 @@ Apache Spark RDD vs DataFrame vs DataSet
 
 ***
 
+### Java
+
+Java 8.0 Open JDK
+[Link](https://openjdk.java.net/projects/jdk8)
+
+***
+
+### Python
+
+FindSpark Homepage
+[Link](https://pypi.org/project/findspark) [GitHub](https://github.com/minrk/findspark)
+
+PySpark Homepage
+[Link](https://pypi.org/project/pyspark) [GitHub](https://github.com/apache/spark/tree/master/python)
+
+***
+
 ### Tools
+
 Docker Homepage
 [Link](https://www.docker.com/get-started)
 
@@ -59,3 +76,10 @@ Markdown Erweiterte Syntax
 
 GitHub Style Markdown
 [Link](https://github.github.com/gfm/)
+
+***
+
+### Google Colaboratory
+
+Colaboratory
+[Link](https://colab.research.google.com/)
