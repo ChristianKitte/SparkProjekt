@@ -12,7 +12,7 @@ demonstriert:
 
 Für diese Aufgabe wird auf Grund der einfachen Verfügbarkeit
 [_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Google Colaboratory")
-verwendet, die Programmierung erfolgt mit Python. Das hierbei entstehende [_Jupyter Notebook_](06__Wordcount_mit_Spark.ipynb "Zum Notebook") ist Teil dieser Arbeit und
+verwendet, die Programmierung erfolgt mit Python. Das hierbei entstehende [_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook") ist Teil dieser Arbeit und
 kann frei verwendet werden. Insbesondere der erste Teil, in dem die Arbeitsumgebung selbst aufgesetzt wird, bietet
 hierbei eine einfache Basis zur Wiederverwendung, um erste Erfahrungen mit Spark zu sammeln.
 
