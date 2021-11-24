@@ -58,7 +58,7 @@ von Spark. Daher soll an dieser Stelle nicht weiter auf sie eingegangen werden.
 In dem folgenden Block wird dann im Anschluss die Datei mit den gesammelten Werken von Shakespeare von der Seite des MIT
 herunter geladen:
 
-```
+```python
 # Datei von der Quelle nach Colab laden
 
 file_url = "https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt"
@@ -73,7 +73,7 @@ print("Datei wurde vorbereitet...")
 Anschließend wird sie am Anfang und Ende beschnitten. Dies ist notwendig, da am Anfang der Datei noch einführender Text
 vorhanden ist, welcher das Ergebnis verfälschen könnte. Die beschnittene Datei wird als _shakespeare_neu.txt_ gespeichert.
 
-```
+```python
 # Unnötige Zeilen am Ende und am Start entfernen
 
 file_source = "/content/shakespeare.txt"
@@ -97,7 +97,7 @@ aufgebaut werden. In dem hier verwendeten Code wird ein
 erzeugt, welcher die Bezeichnung _WordCounter_ erhält. Er soll lokal laufen und hierbei parallel alle verfügbaren Kerne 
 verwenden. Dieser Block kann in einer Anwendung nur ein Mal ausgeführt werden.
 
-```
+```python
 # Erzeugen eines Spark Kontext
 
 sc = SparkContext("local[*]","WordCounter")
@@ -127,7 +127,7 @@ In dem hier vorliegenden Fall findet zunächst eine Reihe von Ersetzungen (repla
 zurückgegeben. Das ursprüngliche RDD wird nicht verändert. Es ist immutable. Die Verwendung einer FluentApi bewirkt eine
 übersichtliche Strukturierung des Codes.
 
-```
+```python
 lines=sc.textFile(file_target)
   .map( lambda x: x.replace(',',' ').replace('.',' ').replace('-',' ').lower())
   .filter(lambda linex: linex.strip() != "")
@@ -147,7 +147,7 @@ grundsätzlich auch auf weit verteilte Rechner liegen.
 sammelt nun alle Elemente des RDD ein und macht sie so verfügbar. Sofern das zugrundeliegende Objekt wie hier ein
 RDD ist, sollte man bedenken, dass alle Daten in den Hauptspeicher geladen werden.
 
-```
+```python
 top_out = 30
 
 print("")
@@ -173,7 +173,7 @@ handelt, verfügt das zurück gegebene RDD nur noch über eine sehr lange Liste 
 merged im Anschluss die einzelnen Tupel. Als Ergebnis erhält man eine Liste von Tupel mit eindeutigen Wörtern und deren 
 Vorkommen.
 
-```
+```python
 words=lines.flatMap(lambda line: line.split(" ")) \
   .map(lambda word: (word, 1)) \
   .reduceByKey(lambda a,b:a+b)
@@ -186,7 +186,7 @@ Anschluss ausgegeben werden, nachdem mit
 [_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation") 
 alle Werte eingesammelt wurden.
 
-```
+```python
 sorted_counts = words.sortBy(lambda wordCounts: wordCounts[1], ascending=False)
 
 top_length = 30
