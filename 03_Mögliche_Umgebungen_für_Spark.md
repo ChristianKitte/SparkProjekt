@@ -56,7 +56,9 @@ Notebooks_](https://jupyter.org/index.html "Hier gelangen Sie zur Homepage von J
 Dieser Schritt setzt die Installation des _Docker Desktop_ wie oben beschrieben voraus. In einer Eingabekonsole wird der
 folgende Befehl eingegeben:
 
-    docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
+``` 
+docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
+```
 
 Bei der ersten Ausführung wird das Image _jupyter/pyspark-notebook_ direkt vom _Docker Hub_ herunter geladen, sofern es
 noch nicht lokal vorhanden ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt. Dieser
@@ -66,7 +68,9 @@ aktiv. Der Name des erstellten Containers lautet _pyspark_.
 
 Nach dem ersten Zugriff auf den Container, kann dieser wie im folgenden gezeigt, einfach gestartet werden:
 
-    docker start -a pyspark
+```
+docker start -a pyspark
+```
 
 Möchte man bei der Arbeit mit Jupyter Notebook auf eigene Daten oder Verzeichnisse zugreifen, so müssen sie vor dem
 Start für den Container zugänglich gemacht werden. Hierfür gibt es eine Reihe von Möglichkeiten.
@@ -77,21 +81,27 @@ es [verschiedene Möglichkeiten](https://docs.docker.com/storage/ "Hier gelangen
 . Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
 sein:
 
-    cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
+```
+cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
+```
 
 ### Zugriff auf das Jupyter Notebook
 
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
 ausgegeben.
 
-![image.png](assets/Docker_Konsolen_Ausgabe.png)
+
+![image.png](assets/Docker_Konsolen_Ausgabe.png "Ausgabe der Konsole")
+
 
 Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark
 benötigten Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
 Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Spark mit Google Colaboratory (Colab)")
 beschrieben gearbeitet werden.
 
-![image.png](assets/Web_IDE_Jupyter_mit_Docker.png)
+
+![image.png](assets/Web_IDE_Jupyter_mit_Docker.png "Ausschnitt der Web IDE von Jupyter")
+
 
 ### Vor- und Nachteile
 
