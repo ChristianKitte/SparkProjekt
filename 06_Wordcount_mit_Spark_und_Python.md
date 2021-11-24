@@ -53,6 +53,8 @@ Im ersten Abschnitt **Einlesen und Vorbereiten der Textdatei** werden zunächst 
 Beide Dateien dienen der Vorbereitung der zu bearbeitenden Datei und stehen in keinen direkten Zusammenhang mit der Nutzung
 von Spark. Daher soll an dieser Stelle nicht weiter auf sie eingegangen werden.
 
+---
+
 In dem folgenden Block wird dann im Anschluss die Datei mit den gesammelten Werken von Shakespeare von der Seite des MIT
 herunter geladen:
 
@@ -83,6 +85,8 @@ print("")
 print("Die Arbeitsdatei ist vorbereitet...")
 ```
 
+---
+
 Im Abschnitt **Auszählen der Wörter** findet sich nun der eigentliche Code, welcher mit Hilfe von Spark die Datei auszählt
 und die ersten 30 häufigsten Vorkommen ausgibt.
 
@@ -91,7 +95,7 @@ Um mit Spark arbeiten zu können, muss als erstes eine Verbindung zu Spark in Fo
 aufgebaut werden. In dem hier verwendeten Code wird ein
 [SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "Zur Dokumentation")
 erzeugt, welcher die Bezeichnung _WordCounter_ erhält. Er soll lokal laufen und hierbei parallel alle verfügbaren Kerne 
-verwenden.
+verwenden. Dieser Block kann in einer Anwendung nur ein Mal ausgeführt werden.
 
 ```
 # Erzeugen eines Spark Kontext
@@ -105,6 +109,8 @@ print("Der Spark Kontext wurde angelegt...")
 Statt _local[*]_ kann auch die Anzahl der zu nutzenden Kerne direkt angegeben werden. Die alleinige Angabe von local
 bewirkt, dass nur ein Kern genutzt wird. Gerade bei sehr großen Dateien wird die Verarbeitung jedoch gerade nicht lokal
 stattfinden und an dieser Stelle entfernte Rechner definiert werden.
+
+---
 
 Der letzte Block des [_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook") nutzt nun tatsächlich Spark
 um die Wortvorkommen auszugeben.
@@ -127,14 +133,14 @@ lines=sc.textFile(file_target)
   .filter(lambda linex: linex.strip() != "")
 ```
 
+---
+
 Nach dem Einlesen werden die ersten 30 Listeneinträge des zurück gegebenen RDD's ausgegeben. Jeder Eintrag entspricht hierbei
 einer zeile der Datei. Da es sich tatsächlich um eine Liste handelt, kann hierzu eine einfach _for Schleifen_ verwendet werden.
 Besondere Aufmerksamkeit muss hierbei dem Aufruf von
 [_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation")
 entgegengebracht werden.
 
-![zeilen.png](./assets/zeilen.png "Ausgabe der ersten Zeilen der Textdatei")
-  
 Das von Spark erzeugte RDD ist ein verteiltes Dataset. In diesen Beispiel ist es auf den Kernen der CPU verteilt, kann aber
 grundsätzlich auch auf weit verteilte Rechner liegen.
 [_Collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation")
@@ -151,6 +157,12 @@ print("")
 for line in lines.collect()[0:top_out]:
   print(line)
 ```
+
+Nach der Ausführung erhalten wir die folgende Ausgabe:
+
+![zeilen.png](./assets/zeilen.png "Ausgabe der ersten Zeilen der Textdatei")
+
+---
 
 In der folgenden Codesequenze wird jedes Listenelement des RDD durch 
 [_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "Zur Dokumentation") 
