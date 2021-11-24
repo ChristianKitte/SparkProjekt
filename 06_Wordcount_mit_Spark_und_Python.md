@@ -110,10 +110,10 @@ Der letzte Block des [_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zu
 um die Wortvorkommen auszugeben.
 
 Die Methode
-[_pyspark.SparkContext.textFile_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.textFile.html "Zur Dokumentation")
+[_textFile_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.textFile.html "Zur Dokumentation")
 ermöglicht das Lesen von in UTF-8 codierten Textdateien und gibt ein RDD in Form
 einer Liste von String zurück. In diesen Fall entsprechen die Strings den Zeilen der Textdatei. Die Methode
-[_pyspark.RDD.Map_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "Zur Dokumentation")
+[_map_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "Zur Dokumentation")
 führt auf jedes Element des zugrunde liegenden RDD - also den Zeilen der Textdatei - die angegebene Funktion aus.
 
 In dem hier vorliegenden Fall findet zunächst eine Reihe von Ersetzungen (replace), dann eine Konvertierung in Kleinbuchstaben
@@ -171,7 +171,7 @@ Mit der Methode
 [_sortBy_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.sortBy.html "Zur Dokumentation") 
 wird auf die Anzahl der Wortvorkommen sortiert. Das zurück gegebene RDD sorted_counts kann im
 Anschluss ausgegeben werden, nachdem mit
-[_Collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation") 
+[_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation") 
 alle Werte eingesammelt wurden.
 
 ```
