@@ -18,8 +18,8 @@
         * Datenherkunft C
         * Resilent Distributed Dataset (RDD) C
         * Arten von RDD Operationen C
-            * Actions C
-            * Transformations C
+            * Actions (sort, filter, sortbykey) C
+            * Transformations (map vs flatmap) C
         * Spark Dataframes C
         * Spark Datasets C
 * [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für Spark")

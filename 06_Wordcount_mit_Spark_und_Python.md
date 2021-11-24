@@ -82,9 +82,12 @@ vorhanden ist, welcher das Ergebnis verfälschen könnte. Die beschnittene Datei
 Im Abschnitt **Auszählen der Wörter** findet sich nun der eigentliche Code, welcher mit Hilfe von Spark die Datei auszählt
 und die ersten 30 häufigsten Vorkommen ausgibt.
 
-Um mit Spark arbeiten zu können, muss als erstes eine Verbindung zu Spark in Form eines SparkContext aufgebaut werden. In dem hier
-verwendeten Code wird ein SparkContext erzeugt, welcher die Bezeichnung _WordCounter_ erhält. Er soll lokal laufen und hierbei
-parallel alle verfügbaren Kerne verwenden.
+Um mit Spark arbeiten zu können, muss als erstes eine Verbindung zu Spark in Form eines 
+[SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "Zur Dokumentation") 
+aufgebaut werden. In dem hier verwendeten Code wird ein
+[SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "Zur Dokumentation")
+erzeugt, welcher die Bezeichnung _WordCounter_ erhält. Er soll lokal laufen und hierbei parallel alle verfügbaren Kerne 
+verwenden.
 
     # Erzeugen eines Spark Kontext
 
@@ -123,7 +126,7 @@ entgegengebracht werden.
 ![image.png](./assets/zeilen.png)
 
 Das von Spark erzeugte RDD ist ein verteiltes Dataset. In diesen Beispiel ist es auf den Kernen der CPU verteilt, kann aber
-in anderen Fällen auch auf weit verteilte Rechner aufgeteilt worden sein.
+grundsätzlich auch auf weit verteilte Rechner liegen.
 [_Collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation")
 sammelt nun alle Elemente des RDD ein und macht sie so verfügbar. Sofern das zugrundeliegende Objekt wie hier ein
 RDD ist, sollte man bedenken, dass alle Daten in den Hauptspeicher geladen werden.
@@ -137,16 +140,25 @@ RDD ist, sollte man bedenken, dass alle Daten in den Hauptspeicher geladen werde
     for line in lines.collect()[0:top_out]:
       print(line)
 
-In der folgenden Codesequenze wird jedes Element des RDD durch flatMap in seine einzelnen Wörter aufgeteilt und für jedes
-Wort ein Tupel zurückgegeben. Die Funktion reduceByKey merged die einzelnen Tupel. Als Ergebnis erhält man eine Liste von
-Tupel mit eindeutigen Wörtern und deren Vorkommen.
+In der folgenden Codesequenze wird jedes Listenelement des RDD durch 
+[_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "Zur Dokumentation") 
+in seine einzelnen Wörter aufgeteilt. Für jedes Wort wird ein Tupel erzeugt und zurückgegeben. Da es sich um eine
+[_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "Zur Dokumentation")
+handelt, verfügt das zurück gegebene RDD nur noch über eine sehr lange Liste von Tupel. Die Funktion 
+[_reduceByKey_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.reduceByKey.html "Zur Dokumentation") 
+merged im Anschluss die einzelnen Tupel. Als Ergebnis erhält man eine Liste von Tupel mit eindeutigen Wörtern und deren 
+Vorkommen.
 
     words=lines.flatMap(lambda line: line.split(" ")) \
     .map(lambda word: (word, 1)) \
     .reduceByKey(lambda a,b:a+b)
 
-Mit der Methode sortBy wird auf die Anzahl der Wortvorkommen sortiert. Die so entstehende Liste sorted_counts kann im
-Anschluss ausgegeben werden, nachdem mit collect alle Items eingesammelt wurden.
+Mit der Methode 
+[_sortBy_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.sortBy.html "Zur Dokumentation") 
+wird auf die Anzahl der Wortvorkommen sortiert. Das zurück gegebene RDD sorted_counts kann im
+Anschluss ausgegeben werden, nachdem mit
+[_Collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation") 
+alle Werte eingesammelt wurden.
 
     sorted_counts = words.sortBy(lambda wordCounts: wordCounts[1], ascending=False)
 
