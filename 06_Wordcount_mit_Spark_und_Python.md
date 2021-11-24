@@ -56,28 +56,28 @@ von Spark. Daher soll an dieser Stelle nicht weiter auf sie eingegangen werden.
 In dem folgenden Block wird dann im Anschluss die Datei mit den gesammelten Werken von Shakespeare von der Seite des MIT
 herunter geladen:
 
-  # Datei von der Quelle nach Colab laden
+    # Datei von der Quelle nach Colab laden
 
-  file_url = "https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt"
-  place_to_save = "/content/shakespeare.txt"
+    file_url = "https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt"
+    place_to_save = "/content/shakespeare.txt"
 
-  get_file_from_url(file_url, place_to_save)
+    get_file_from_url(file_url, place_to_save)
 
-  print("")
-  print("Datei wurde vorbereitet...")
+    print("")
+    print("Datei wurde vorbereitet...")
   
 Anschließend wird sie am Anfang und Ende beschnitten. Dies ist notwendig, da am Anfang der Datei noch einführender Text
 vorhanden ist, welcher das Ergebnis verfälschen könnte. Die beschnittene Datei wird als _shakespeare_neu.txt_ gespeichert.
 
-  # Unnötige Zeilen am Ende und am Start entfernen
+    # Unnötige Zeilen am Ende und am Start entfernen
 
-  file_source = "/content/shakespeare.txt"
-file_target = "/content/shakespeare_neu.txt"
+    file_source = "/content/shakespeare.txt"
+    file_target = "/content/shakespeare_neu.txt"
 
-  cut_file(244,124438,file_source, file_target)
+    cut_file(244,124438,file_source, file_target)
 
-  print("")
-  print("Die Arbeitsdatei ist vorbereitet...")
+    print("")
+    print("Die Arbeitsdatei ist vorbereitet...")
 
 Im Abschnitt **Auszählen der Wörter** findet sich nun der eigentliche Code, welcher mit Hilfe von Spark die Datei auszählt
 und die ersten 30 häufigsten Vorkommen ausgibt.
@@ -86,12 +86,12 @@ Um mit Spark arbeiten zu können, muss als erstes eine Verbindung zu Spark in Fo
 verwendeten Code wird ein SparkContext erzeugt, welcher die Bezeichnung _WordCounter_ erhält. Er soll lokal laufen und hierbei
 parallel alle verfügbaren Kerne verwenden.
 
-  # Erzeugen eines Spark Kontext
+    # Erzeugen eines Spark Kontext
 
-  sc = SparkContext("local[*]","WordCounter")
-  sc.setLogLevel("ERROR")
+    sc = SparkContext("local[*]","WordCounter")
+    sc.setLogLevel("ERROR")
 
-  print("Der Spark Kontext wurde angelegt...")
+    print("Der Spark Kontext wurde angelegt...")
 
 Statt _local[*]_ kann auch die Anzahl der zu nutzenden Kerne direkt angegeben werden. Die alleinige Angabe von local
 bewirkt, dass nur ein Kern genutzt wird. Gerade bei sehr großen Dateien wird die Verarbeitung jedoch gerade nicht lokal
@@ -112,7 +112,7 @@ In dem hier vorliegenden Fall findet zunächst eine Reihe von Ersetzungen (repla
 zurückgegeben. Das ursprüngliche RDD wird nicht verändert. Es ist immutable. Die Verwendung einer FluentApi bewirkt eine
 übersichtliche Strukturierung des Codes.
 
-  lines=sc.textFile(file_target).map( lambda x: x.replace(',',' ').replace('.',' ').replace('-',' ').lower()).filter(lambda linex: linex.strip() != "")
+    lines=sc.textFile(file_target).map( lambda x: x.replace(',',' ').replace('.',' ').replace('-',' ').lower()).filter(lambda linex: linex.strip() != "")
 
 Nach dem Einlesen werden die ersten 30 Listeneinträge des zurück gegebenen RDD's ausgegeben. Jeder Eintrag entspricht hierbei
 einer zeile der Datei. Da es sich tatsächlich um eine Liste handelt, kann hierzu eine einfach _for Schleifen_ verwendet werden.
@@ -128,38 +128,38 @@ in anderen Fällen auch auf weit verteilte Rechner aufgeteilt worden sein.
 sammelt nun alle Elemente des RDD ein und macht sie so verfügbar. Sofern das zugrundeliegende Objekt wie hier ein
 RDD ist, sollte man bedenken, dass alle Daten in den Hauptspeicher geladen werden.
 
-  top_out = 30
+    top_out = 30
 
-  print("")
-  print("Ausgabe der ersten {} Zeilen des Textes".format(top_out))
-  print("")
+    print("")
+    print("Ausgabe der ersten {} Zeilen des Textes".format(top_out))
+    print("")
 
-  for line in lines.collect()[0:top_out]:
-    print(line)
+    for line in lines.collect()[0:top_out]:
+      print(line)
 
 In der folgenden Codesequenze wird jedes Element des RDD durch flatMap in seine einzelnen Wörter aufgeteilt und für jedes
 Wort ein Tupel zurückgegeben. Die Funktion reduceByKey merged die einzelnen Tupel. Als Ergebnis erhält man eine Liste von
 Tupel mit eindeutigen Wörtern und deren Vorkommen.
 
-  words=lines.flatMap(lambda line: line.split(" ")) \
-  .map(lambda word: (word, 1)) \
-  .reduceByKey(lambda a,b:a+b)
+    words=lines.flatMap(lambda line: line.split(" ")) \
+    .map(lambda word: (word, 1)) \
+    .reduceByKey(lambda a,b:a+b)
 
 Mit der Methode sortBy wird auf die Anzahl der Wortvorkommen sortiert. Die so entstehende Liste sorted_counts kann im
 Anschluss ausgegeben werden, nachdem mit collect alle Items eingesammelt wurden.
 
-  sorted_counts = words.sortBy(lambda wordCounts: wordCounts[1], ascending=False)
+    sorted_counts = words.sortBy(lambda wordCounts: wordCounts[1], ascending=False)
 
-  top_length = 30
+    top_length = 30
 
-  print("")
-  print("Ausgabe der {} größten Vorkommen".format(top_length))
-  print("")
+    print("")
+    print("Ausgabe der {} größten Vorkommen".format(top_length))
+    print("")
 
-  i = 0
-  for word, count in sorted_counts.collect()[0:top_length]:
-    print("{} : {} : {} ".format(i, word, count))
-    i += 1
+    i = 0
+    for word, count in sorted_counts.collect()[0:top_length]:
+      print("{} : {} : {} ".format(i, word, count))
+      i += 1
 
 Das Ergebnis ist eine Liste aller Wörter mit deren Vorkommen in absteigender Reihenfolge. Hierbei steht an erster Stelle
 das Leerzeichen als häufigster Vertreter.
