@@ -38,7 +38,7 @@
 * [5 Anwendungsmöglichkeiten](05_Anwendungsmöglichkeiten.md "Überblick über praktische Anwendungsmöglichkeiten mit Spark")
   D
 * [6 Wordcount mit Spark und Python](06_Wordcount_mit_Spark_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
-  C
+  C V0.1
 
 ### Nachweise
 
