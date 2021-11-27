@@ -71,7 +71,7 @@ lines_rdd = sc.textFile("text.txt")
 
 Diese Methode eignet sich auch für externe Datenspeicher wie Amazon S3, HDFS, Cassandra, Elasticsearch sowie JDBC.
 
-###Übergabe von Funktionen in Spark
+### Übergabe von Funktionen in Spark
 
 ### Schließen in Spark
 
@@ -90,7 +90,7 @@ lines_with_friday_rdd = linesRDD.filter(lambda line: "Friday" in line)
 Mit zu den wichtigsten Transformationen zählen die Funktionen Filter, Map und FlatMap. Gemein ist allen, dass ihnen 
 eine Funktion als Parameter übergeben wird, welche die eigentliche Transformation oder Selektierung ausführt.
 
-#####filter
+##### filter
 
 Bei der Filtermethode wird der Funktion eine Filtermethode übergeben, die auf alle Elemente des RDD angewendet wird. 
 Als Ergebnis wird ein neues RDD auf Basis der selektierten Elemente zurückgegeben.
