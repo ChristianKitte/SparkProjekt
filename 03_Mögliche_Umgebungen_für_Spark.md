@@ -22,9 +22,140 @@ werden kann.
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
 
+Ein einfache Möglichkeit, um mit Spark zu arbeiten, bietet
+[Google Colaboraty](https://colab.research.google.com/?utm_source=scs-index "Hier geht es zu Colaboraty")
+oder einfach Google Colab. Bei Google Colab handelt es sich um eine von Google kostenlos zur Verfügung gestellte
+Umgebung für ein Jupyter Notebook.
+
+Das Notebook eignet sich zum collaborativen Arbeiten und kann wie andere Dokumente innerhalb von Drive einfach
+freigegeben werden. Aus den Notebook ist grundsätzlich ein Zugriff auf das eigene Drive möglich, jedoch nicht zwingend
+notwendig.
+
+Der Vorteil bei dieses Vorgehens ist die vorhandene Infrastruktur für das Notebook und die Möglichkeit einer doch
+beachtenserten Rechenleistung der darunter liegenden virtuellen Maschine. Als Betriebssystem dient Linux. Sowhl Python
+als auch Jupyter ist mit den gängigsten Bibliotheken vorinstalliert.
+
+Als größter Nachteil ist die Flüchtigkeit der Daten zu nennen. jedes Ergebnis, aber auch jede gemachte Installation und
+Download von Daten wird nach einer Zeit der Inaktivität gelöscht. Daher empfielt es sich, in seinen Routinen immer auch
+die Vorbereitung des Notebooks zu hinterlegen.
+
+Alle im folgenden beschriebenen Arbeitsschritte finden sich auh als lauffähiges Beispiel im
+[_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook")
+im Abschnitt **Vorbereitung des Notebooks**.
+
+### Vorbereiten des Notebooks
+
+Für den Einsatz von Spark sind in jedem Fall drei Voraussetzungen notwendig:
+
++ [Java](https://openjdk.java.net/ "Zur Homepage von OpenJDK") muss instaliert sein, damit Spark ausgeführt werden kann.
++ [Spark](https://spark.apache.org/ "Zur Homepage von Spark") muss installiert sein
++ die Bibliothek [FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation") muss installiert sein
++ die Bibliothek [PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
+  muss installiert sein. Auf den Seiten von Apache.org findet man
+  [weiter gehende Informationen zu PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Apache Dokumentation")
+
+#### Installation von Java und Spark
+
+[Spark](https://spark.apache.org/ "Zur Homepage von Spark") wurde in der Programmiersprache
+[Java](https://openjdk.java.net/ "Zur Homepage von OpenJDK") geschrieben. Für seine Ausführung ist es daher 
+notwendig, eine Java Umgebung einzurichten. Hierfür muss Eine Java Installation heruntergeladen und 
+installiert werden. Spark selbst hingegen benötigt als Java Programm keine Installation, sondern lediglich 
+eine korrekt installierte Java Laufzeit.
+
+```Python 
+# Installation  von Java
+!apt-get install openjdk-8-jdk-headless -qq > /dev/null
+
+print("Java ist installiert...")
+
+# Download und Entpacken von Spark (Versionsnummer anpassen!)
+!wget -q https://archive.apache.org/dist/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz
+!tar xf spark-3.2.0-bin-hadoop3.2.tgz
+
+print("Spark ist verfügbar...")
+```
+
+Nach der Installation und für den Betrieb ist es sehr wichtig, alle Systemvariablen für Spark und Java korrekt zu
+setzen. Der folgende Code zeigt beide genannten Schritte.
+
+```Python 
+# Setzen der Systemvariablen für Java und Spark
+import os
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-8-openjdk-amd64"
+os.environ["SPARK_HOME"] = "/content/spark-3.2.0-bin-hadoop3.2"
+
+print("Umgebungsvariablen sind gesetzt...")
+```
+
+#### Installation der benötigten Python Bibliotheken
+
+Nach Ausführung beider Schritte existiert eine Umgebung mit einer funktionierende Spark Installation. Um einfach mit
+Spark und Python arbeiten zu können, fehlen noch zwei Bibliotheken.
+
+[PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Apache Dokumentation") ist ein Interface für die Nutzung
+von Spark mit Python. Es ermöglicht also die Programmierung von Sparkanwendungen mit Python. Hierbei werden die meißten
+der Features von Spark unterstützt. Damit
+[PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
+von Python genutzt und importiert werden kann, müssen beide voneinander wissen. Hier
+kommt [FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation") ins Spiel.
+
+#### Initialisierung der Programmierumgebung
+
+Laut Aussage des [Git Repository](https://github.com/minrk/findspark "Zum Repository")
+von FindSpark bieten sich Grundsätzlich zwei Wege an. Mit dem ersten wird die PySpark so verlinkt, dass Python es finden
+kann. Dies ist im allgemeinen bei den verwendeten Packages. Bei Verwendung des zweiten Weges wird der Pfad zu
+[PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
+mit im Systempfad hinterlegt.
+
+[FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation")
+verwendet die zweite Option und fügt den Pfad zu PySpark zur Laufzeit dem Systempfad hinzu. Hierzu wird der Befehl
+init() genutzt.
+
+```Python 
+# Installation von findspark und pyspark
+
+!pip install findspark
+print("FindSpark wurde installiert...")
+
+!pip install pyspark
+print("PySpark wurde installiert...")
+
+# Initialisieren von findspark
+
+try: 
+  import findspark
+  from pyspark import SparkContext, SparkConf
+  
+  findspark.init()
+  
+  print("FindSpark und PySpark wurden initialisiert")
+except ImportError: 
+  raise ImportError("Fehler bei der Initialiserung von FindSpark und PySpark")
+```
+
+### Vor- und Nachteile
+
+Als Vorteile dieser Vorgehensweise sind zu nennen:
+
+* kostenlos
+* überall verfügbar
+* Möglichkeit zur colaborativen Zusammenarbeit
+* einfache Nutzung, da sowohl das Notebook als auch die Python Umgebung vorhanden
+* eignet sich für Lehrzwecke, kleine Projekte, Prototyping und Verteilung von Beispielen
+* Leistungsfähiges virtuelles System
+
+Als Nachteile sind zu nennen:
+
+* keine dauernde Serialisierung der Ergebnisse, Installationen oder Daten
+* Vor der Arbeit ist das System erst wieder zu erstellen
+* Google Ökosystem steht im Ruf nicht sehr annonym zu sein
+
 ## Spark mit Docker
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
+
+Die Verwendung von Google Colaboratory zeigte bereits eine einfache Möglichkeit, ein Spark Umgebung für die Verwendung
+mit Python zu erstellen. Verfügbar war diese Lösung jedoch nur innerhalb des Google Ökosystems.
 
 Spark mit Docker bietet eine weitere einfache Möglichkeit, um Docker auf einen lokalen Rechner verfügbar zu machen. In
 diesen Abschnitt wird gezeigt, wie mit Hilfe von Docker eine in _Jupyter Notebook_ verfügbare Sparkumgebung angelegt
@@ -90,23 +221,20 @@ cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
 ausgegeben.
 
-
 ![image.png](assets/Docker_Konsolen_Ausgabe.png "Ausgabe der Konsole")
 
-
-Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark
-benötigten Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
+Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark benötigten
+Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
 Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Spark mit Google Colaboratory (Colab)")
 beschrieben gearbeitet werden.
 
-
 ![image.png](assets/Web_IDE_Jupyter_mit_Docker.png "Ausschnitt der Web IDE von Jupyter")
-
 
 ### Vor- und Nachteile
 
 Als Vorteile dieser Vorgehensweise sind zu nennen:
 
+* kostenlos
 * einfache Verfügbarkeit über _Docker Hub_
 * einfache Nutzung, da alle Installationen und Einstellungen vorhanden sind
 * eignet sich für Lehrnzwecke und lokales Arbeiten mit übersichtlichen Datenmengen
