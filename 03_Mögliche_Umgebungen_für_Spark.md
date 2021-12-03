@@ -57,10 +57,10 @@ Für den Einsatz von Spark sind in jedem Fall drei Voraussetzungen notwendig:
 #### Installation von Java und Spark
 
 [Spark](https://spark.apache.org/ "Zur Homepage von Spark") wurde in der Programmiersprache
-[Java](https://openjdk.java.net/ "Zur Homepage von OpenJDK") geschrieben. Für seine Ausführung ist es daher 
-notwendig, eine Java Umgebung einzurichten. Hierfür muss Eine Java Installation heruntergeladen und 
-installiert werden. Spark selbst hingegen benötigt als Java Programm keine Installation, sondern lediglich 
-eine korrekt installierte Java Laufzeit.
+[Java](https://openjdk.java.net/ "Zur Homepage von OpenJDK") geschrieben. Für seine Ausführung ist es daher notwendig,
+eine Java Umgebung einzurichten. Hierfür muss eine Installationsdatei für Java heruntergeladen und installiert werden.
+Spark selbst hingegen benötigt als Java Programm keine Installation, sondern lediglich eine korrekt installierte Java
+Laufzeit.
 
 ```Python 
 # Installation  von Java
@@ -94,7 +94,19 @@ Spark und Python arbeiten zu können, fehlen noch zwei Bibliotheken.
 
 [PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Apache Dokumentation") ist ein Interface für die Nutzung
 von Spark mit Python. Es ermöglicht also die Programmierung von Sparkanwendungen mit Python. Hierbei werden die meißten
-der Features von Spark unterstützt. Damit
+der Features von Spark unterstützt.
+
+```Python 
+# Installation von findspark und pyspark
+
+!pip install findspark
+print("FindSpark wurde installiert...")
+
+!pip install pyspark
+print("PySpark wurde installiert...")
+```
+
+Damit
 [PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
 von Python genutzt und importiert werden kann, müssen beide voneinander wissen. Hier
 kommt [FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation") ins Spiel.
@@ -112,14 +124,6 @@ verwendet die zweite Option und fügt den Pfad zu PySpark zur Laufzeit dem Syste
 init() genutzt.
 
 ```Python 
-# Installation von findspark und pyspark
-
-!pip install findspark
-print("FindSpark wurde installiert...")
-
-!pip install pyspark
-print("PySpark wurde installiert...")
-
 # Initialisieren von findspark
 
 try: 
