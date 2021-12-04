@@ -23,7 +23,7 @@ Massachusetts [Institute of Technology (MIT)](https://ocw.mit.edu/ "Zur Webseite
 
 Insgesamt enthält die Datei:
 
-* 5.333.743 Zeichen ohne Zeilenende in,
+* 5.333.743 Zeichen ohne Zeilenende in
 * 929.396 Wörter in
 * 124.457 Zeilen.
 
