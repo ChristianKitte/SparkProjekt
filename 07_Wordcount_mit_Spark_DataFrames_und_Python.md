@@ -49,7 +49,8 @@ print("Die Spark Session wurde angelegt...")
 ## DataFrame Methoden statt Map
 
 to do: erklären
-
+#https://spark.apache.org/docs/2.1.0/api/python/pyspark.sql.html#pyspark.sql.functions.explode
+#https://dwgeek.com/replace-pyspark-dataframe-column-value-methods.html/
 ```python
 # Auszählen der Wörter
 
