@@ -15,6 +15,5 @@ ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen D
 
 * Amon Wondra
 * Christian Kitte
-* Daria Kenigs
 
 ## [Zum Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier geht es zum Inhaltsverzeichnis")

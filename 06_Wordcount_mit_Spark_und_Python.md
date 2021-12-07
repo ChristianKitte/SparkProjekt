@@ -166,7 +166,7 @@ for line in lines.collect()[0:top_out]:
 
 Nach der Ausführung erhalten wir die folgende Ausgabe:
 
-![zeilen.png](./assets/zeilen.png "Ausgabe der ersten Zeilen der Textdatei")
+![rdd_zeilen.png](assets/rdd_zeilen.png "Ausgabe der ersten Zeilen der Textdatei")
 
 ---
 
@@ -211,4 +211,4 @@ for word, count in sorted_counts.collect()[0:top_length]:
 Das Ergebnis ist eine Liste aller Wörter mit deren Vorkommen in absteigender Reihenfolge. Hierbei steht an erster Stelle
 das Leerzeichen als häufigster Vertreter.
 
-![wörter.png](./assets/wörter.png "Ausgabe der Worliste in absteigender Reihenfolge")
+![rdd_wörter.png](assets/rdd_wörter.png "Ausgabe der Wortliste in absteigender Reihenfolge")

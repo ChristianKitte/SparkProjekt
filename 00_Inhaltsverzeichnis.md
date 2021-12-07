@@ -34,7 +34,7 @@
 * [4 Sprachunterstützung](04_Sprachunterstützung.md "Derzeitig vorhandene Sprachunterstützung in Spark")
     * <span style="color:red">Sprachunterstützung in Spark D</span>
     * <span style="color:red">Sprachunterstützung in Spark - Python D</span>
-    
+
 * [5 Anwendungsmöglichkeiten](05_Anwendungsmöglichkeiten.md "Überblick über praktische Anwendungsmöglichkeiten mit Spark")
   <span style="color:red">D</span>
 
@@ -43,7 +43,7 @@
 
 * [7 Wordcount mit Spark DataFrames und Python](07_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
   C V0.1
-  
+
 ### Nachweise
 
 * [90 Literaturnachweise](90_Literaturnachweise.md "Nachweis der verwendeten Literatur")

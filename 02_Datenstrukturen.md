@@ -97,6 +97,14 @@ Ergebnis wird ein neues RDD auf Basis der selektierten Elemente zurückgegeben.
 
 ![spark_filter.png](./assets/spark_filter.png "Prinzip der Filterung eines RDD")
 
+Der folgende Code würde ein neues RDD zurückgeben, in dem alle (String)Items, welche leer sind, herausgefiltert sind:
+
+```python
+sc = SparkContext("local", "SampleApp")
+lines = sc.textFile("text.txt")
+lines2 = lines.filter(lambda linex: linex.strip() != "")
+```
+
 ##### map
 
 Bei der Map Methode wird die übergebene Funktion auf alle Elemente des RDD angewendet. Hierbei erfolgt genau eine
@@ -104,6 +112,9 @@ Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier e
 gegeben.
 
 ![spark_map.png](./assets/spark_map.png "Prinzip des Map Transformation")
+
+Der folgende Code würde ein neues RDD mit Integer Werten zurückgeben. Für jedes (String)Item in lines würde in dem
+neuen RDD lengths ein (Int)Item für die Länge des entsprechenden Wertes aus lines stehen. 
 
 ```python
 sc = SparkContext("local", "SampleApp")
@@ -120,6 +131,19 @@ Zahlenwerte.
 Flat Map unterscheidet sich zu Map dadurch, dass die übergebene Funktion mehr als ein Element zurück geben kann.
 
 ![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation")
+
+Der folgende Code würde für jedes (String)Item des RDD lines den enthaltenen Text auf Basis der Leerstellen splitten 
+und ein neues RDD mit einer Spalte und n Zeilen zurückgeben. 
+
+N würde hierbei der Summe der Längen der jeweils durch splitt erstellten Arrays von Wörtern entsprechen. Als Ergebnis 
+würde man ein neues (String)RDD wörter erhalten. Jedes seiner Items entspräche dabei ein Wort, seine Länge der Anzahl 
+der Wörter.
+
+```python
+sc = SparkContext("local", "SampleApp")
+lines = sc.textFile("text.txt")
+wörter = lines.flatMap(lambda line: line.split(" "))
+```
 
 ##### group, reduce, aggregate und sortByKey
 

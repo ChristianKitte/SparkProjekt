@@ -225,14 +225,14 @@ cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
 ausgegeben.
 
-![image.png](assets/Docker_Konsolen_Ausgabe.png "Ausgabe der Konsole")
+![docker_ausgabe_konsole.png](assets/docker_ausgabe_konsole.png "Ausgabe der Konsole")
 
 Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark benötigten
 Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
 Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Spark mit Google Colaboratory (Colab)")
 beschrieben gearbeitet werden.
 
-![image.png](assets/Web_IDE_Jupyter_mit_Docker.png "Ausschnitt der Web IDE von Jupyter")
+![docker_ide_jupyter.png](assets/docker_ide_jupyter.png "Ausschnitt der Web IDE von Jupyter mit Docker")
 
 ### Vor- und Nachteile
 
