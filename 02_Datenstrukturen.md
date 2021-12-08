@@ -31,7 +31,13 @@ guten Einstieg
 ### Resilent Distributed Dataset (RDD)
 
 RDD steht für Resilient Distributed Dataset (auf deutsch etwa “robuster verteilter Datensatz”) und stellt das zentrale
-Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da.
+Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da. RDD nutzen lazy evaluation. Code wird 
+somit erst dann ausgeführt, wenn eine Action angestoßen wird. So können Transformationen effektiv umgesetzt werden.
+Von Nachteil ist hierbei, das Daten nicht typisiert sind und ein RDD über keine Schemainformationen verfügt.
+
+RDDs verfügen über die Fähigkeit, beschädigte Spark Knoten oder Partitionen zu ersetzen. Als Legacy Code ermöglicht 
+RDD eine Low-Level Kontrolle über die Ausführung und Verarbeitung unstrukturierter Daten und ist für alle Arten von 
+Anwendungen geeignet und über seiner API zugänglich.
 
 Die Arbeit von Spark kann letztlich auf das Anlegen neuer sowie der Transformation und das Ausführen Operationen auf
 vorhandenen RDDs betrachtet werden. Hierbei ist das RDD immutable. Jede Aktion auf ein RDD verändert das zugrunde
@@ -113,8 +119,8 @@ gegeben.
 
 ![spark_map.png](./assets/spark_map.png "Prinzip des Map Transformation")
 
-Der folgende Code würde ein neues RDD mit Integer Werten zurückgeben. Für jedes (String)Item in lines würde in dem
-neuen RDD lengths ein (Int)Item für die Länge des entsprechenden Wertes aus lines stehen. 
+Der folgende Code würde ein neues RDD mit Integer Werten zurückgeben. Für jedes (String)Item in lines würde in dem neuen
+RDD lengths ein (Int)Item für die Länge des entsprechenden Wertes aus lines stehen.
 
 ```python
 sc = SparkContext("local", "SampleApp")
@@ -132,11 +138,11 @@ Flat Map unterscheidet sich zu Map dadurch, dass die übergebene Funktion mehr a
 
 ![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation")
 
-Der folgende Code würde für jedes (String)Item des RDD lines den enthaltenen Text auf Basis der Leerstellen splitten 
-und ein neues RDD mit einer Spalte und n Zeilen zurückgeben. 
+Der folgende Code würde für jedes (String)Item des RDD lines den enthaltenen Text auf Basis der Leerstellen splitten und
+ein neues RDD mit einer Spalte und n Zeilen zurückgeben.
 
-N würde hierbei der Summe der Längen der jeweils durch splitt erstellten Arrays von Wörtern entsprechen. Als Ergebnis 
-würde man ein neues (String)RDD wörter erhalten. Jedes seiner Items entspräche dabei ein Wort, seine Länge der Anzahl 
+N würde hierbei der Summe der Längen der jeweils durch splitt erstellten Arrays von Wörtern entsprechen. Als Ergebnis
+würde man ein neues (String)RDD wörter erhalten. Jedes seiner Items entspräche dabei ein Wort, seine Länge der Anzahl
 der Wörter.
 
 ```python
@@ -171,16 +177,20 @@ lengths = lines.first()
 ## Spark Dataframes
 
 Die Arbeit auf Basis der zuvor behandelten RDDs ist gut geeignet, wenn man nahe an Spark arbeiten und den größtmöglichen
-Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesen Objekt eine gewisse
+Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
 Einarbeitung.
 
-Mit der Version 2.0 führte Spark Dataframes ein. Sie sollen die Arbeit und den Umgang mit Spark vereinfachen und bieten
-eine Abstraktion der Datensicht in Spark, nutzen jedoch intern die API der RDDs. Daher können sie nicht nur auf Basis
-eines bereits vorhandenen RDDs, sondern auf Basis aller von Spark unterstützten Datenquelle wie beispielsweise einer
-Hive Tabelle erzeugt werden.
+Mit der Version 1.3 führte Spark DataFrames ein, welche die sogenannten SchemaRDDs ersetzten. Ab der Version 2.0 dient
+die SparkSession als allgemeiner Einstiegspunkt in eine Spark Anwendung. Sie löst den bis dahin genutzen HiveContext
+(unstrukturierte Daten) und SQLContext (strukturierte Daten) ab. DataFrames sollen die Arbeit und den Umgang mit Spark 
+vereinfachen und bieten eine Abstraktion der Datensicht in Spark, nutzen jedoch intern die API der RDDs. Daher können 
+sie nicht nur auf Basis eines bereits vorhandenen RDDs, sondern auf Basis aller von Spark unterstützten Datenquelle 
+wie beispielsweise einer Hive Tabelle erzeugt werden. APIs für DataFrames sind für Scala, Java, Python sowie R 
+verfügbar.
 
-In der Regel geht man beid er Arbeit mit DataFrames den Weg über eine Spark Session und deren **_build Methode_**.
-Anschließend stehen unter anderen eine Reihe von Funktionen wie **_read_** zur Verfügung, um Textdateien einzulesen.
+Wie zuvor dargestellt, geht man bei der Arbeit mit Spark Dataframes den Weg über eine Spark Session und deren
+**_build Methode_**. Anschließend stehen unter anderen eine Reihe von Funktionen wie **_read_** zur Verfügung, um
+Textdateien einzulesen.
 
 ```python
 from pyspark.sql import SparkSession
@@ -191,9 +201,14 @@ dataframe = session.read.text("Pfad zu einer Datei")
 ```
 
 Spark Dataframes können hierbei sowohl das Schema der vorhandenen Daten ableiten oder aber ein Schema für die Daten
-zugewiesen bekommen. Letzteres ist besonders bei sehr großen Datenbeständen sinnvoll. Hierdurch ist eine Optimierung von
-Aktionen auf den Daten möglich. Es ist daher nicht verwunderlich, dass Spark Dataframes ein Bestandteil von Spark SQL,
-welche die Arbeit mit strukturierten Daten zuständig ist.
+zugewiesen bekommen. Letzteres ist besonders bei sehr großen Datenbeständen sinnvoll. Zusätzlich kommen bei DataFrames 
+einQuery-Optimizer für relationale SQL Abfragen sowei ein Catalyst-Optimierer zum Einsatz, der den effizientesten Plan 
+zur Ausführung der Datenoperationen ermittelt. DataFrames sind daher den RDDs bei der Ausführung überlegen.
+
+Als Nachteil ist jedoch ihre Nähe zu RDDs zu sehen, da sie letztlich eine Kollektion von Row Objekten eines RDD sind. 
+Erst zur Ausführung greift die Typisierug. Siehe hierzu auch den Artikel von
+[Heise](https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all "zum Artikel")
+.
 
 Dataframes sind somit kein Ersatz der RDDs, sondern können als eine Abstraktionsschicht auf die Daten und deren Handling
 mit RDDs angesehen werden. Dies verdeutlicht auch die folgende Abbildung.
@@ -202,7 +217,37 @@ mit RDDs angesehen werden. Dies verdeutlicht auch die folgende Abbildung.
 
 Besonders im Umfeld von Python sind Dataframes als Pandas DataFrames bekannt und in der Tat zeigen sich im Umgang eine
 Reihe von Gemeinsamkeiten aber auch Unterschiede. Der wichtigste ist, dass ein Spark Dataframe eine verteilte Kollektion
-von Daten ist, welche konzeptuell ein zweidimensionalen Array mit den Reihen und Spalten eines Datenbestandes bilden. Es
-wurde für die Verarbeitung sehr großer Datenestände optimiert.
+von Daten ist, welche konzeptuell ein zweidimensionalen Array mit Reihen und benannten Spalten eines Datenbestandes
+entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 
 ## Spark Datasets
+
+2015 wurden Spark DataSets eingeführt. DataSets stellen eine Erweiterung der DataFrames dar. Sie bietet zur
+Kompilierzeit Typsicherheit sowie eine Schnittstelle für objektorientierte Programme an.
+
+Strukturierte Daten Bessere Leistung durch mehr Optimierung
+
+Ein DataSet ist ein Kollection streng typisierter, strukturierter Daten und kommen damit im Style den objekt
+orientierten Sprachen entgegen. Ein
+[Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "Zur Dokumentation")
+ist eine Erweiterung des DataFrames und wurde in zuerst in Spark 1.6 eingeführt.
+
+Auf Grund der Typsicherheit bietet sie Typsiccherheit bereits bei der Kompilierung und Schnittstellen für OOP Sprachen
+wie Java.
+
+Für die Serialiserung nutzt Spark einen speziellen Decoder. Eine Serialisierung ist notwendig zur Übertragung der
+Objekte über das Netz zur verarbeitenden.
+
+## Anmerkungen
+
+https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all
+https://www.baeldung.com/java-spark-dataframe-dataset-rdd
+https://phoenixnap.com/kb/rdd-vs-dataframe-vs-dataset
+https://databricks.com/de/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html
+https://blog.oio.de/2020/05/18/was-ist-der-unterschied-zwischen-rdd-dataframe-und-dataset-in-apache-spark/
+https://spark.apache.org/sql/
+https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html
+https://spark.apache.org/docs/latest/
+https://spark.apache.org/docs/3.2.0
+https://spark.apache.org/docs/1.3.0
+https://spark.apache.org/docs/1.6.0
