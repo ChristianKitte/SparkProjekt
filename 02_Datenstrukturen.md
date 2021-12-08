@@ -249,5 +249,7 @@ https://spark.apache.org/sql/
 https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html
 https://spark.apache.org/docs/latest/
 https://spark.apache.org/docs/3.2.0
-https://spark.apache.org/docs/1.3.0
-https://spark.apache.org/docs/1.6.0
+https://spark.apache.org/docs/1.3.0 DataFrames
+https://spark.apache.org/docs/1.6.0 DataSet
+https://spark.apache.org/docs/2.0.0 DataSet und DataFrame (untype DataSet Operations aka DataFrame Operations)
+As mentioned above, in Spark 2.0, DataFrames are just Dataset of Rows in Scala and Java API. These operations are also referred as “untyped transformations” in contrast to “typed transformations” come with strongly typed Scala/Java Datasets.
