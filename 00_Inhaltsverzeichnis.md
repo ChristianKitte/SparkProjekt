@@ -18,7 +18,7 @@
     * Spark C
       * Spark RDDs C in Arbeit
       * Spark Dataframes C V0.1
-      * Spark Datasets C V0.1
+      * Spark Datasets C V0.1 (Skizze fehlt noch)
       * Spark DataFrame vs Spark DataSets C V0.1
       * Optimierungen C in Arbeit
       * RDD bis DataSet in a nutshell C V0.1
