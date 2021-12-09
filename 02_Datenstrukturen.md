@@ -2,25 +2,27 @@
 
 # 2 Datenstrukturen
 
-In den folgenden Unterkapiteln wird auf die für das Verständnis von Spark wichtigen Konzepte und Datentrukturen
-eingegangen. Auch soll eine Übersicht über die wichtigsten Funktionalitäten gegeben werden.
+In den folgenden Unterkapiteln wird ein Überblick über die wichitgsten Konzepte und Datentrukturen gegeben. eingegangen.
+Auch soll eine Übersicht über die wichtigsten Funktionalitäten gegeben werden.
 
-Die vollständige Behandlung aller Themen soll und kann hierbei nicht geleistet werden. Hierzu sei auf die offizielle
-Dokumentation hingewiesen. Eine erste Orientierung kann hierbei die
-[Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md
-"Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
+Eine vertiefende und vollständige Behandlung aller Themen soll und kann hierbei nicht geleistet werden. Hierzu sei auf
+die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine erste Orientierung kann hierbei die
+[Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
 am Ende dieses Repositories geben.
 
-Auch bietet das
-[Praxisbeispiel](06_Wordcount_mit_Spark_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python"). einen
-guten Einstieg
+Einen kleinen Einstieg in die Nutzung mit Python bieten zwei praktischen Beispielen in Form von Python Notebooks. Beide
+können direkt in Google Colab geöffnet und ausgeführt werden:
+
+* [Praxisbeispiel mit RDDS](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
+* [Praxisbeispiel mit DataFrames](06_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
+
 
 * [_Hadoop_](02_Datenstrukture#Hadoop )
 * [_Spark_](02_Datenstrukture#Spark )
-* [_Spark Dataframes_](02_Datenstrukture#Spark_Dataframes )
-* [_Spark Datasets_](02_Datenstrukture#Spark_Datasets )
 
 ## Hadoop
+
+[_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
 
 ### Distributed Speicher HDFS C
 
@@ -28,15 +30,26 @@ guten Einstieg
 
 ## Spark
 
-### Resilent Distributed Dataset (RDD)
+[_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
+
+* [Spark RDDs](Spark_RDDs)
+* [Spark Dataframes](Spark_Dataframes)
+* [Spark Datasets](Spark_Datasets)
+* [Spark DataFrame vs Spark DataSet](Spark_DataFrame_vs_Spark DataSet)
+* [Optimierungen](Optimierungen)
+* [RDD bis DataSet in a nutshell](RDD_bis_DataSet_in_a_nutshell)
+
+### Spark RDDs
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 RDD steht für Resilient Distributed Dataset (auf deutsch etwa “robuster verteilter Datensatz”) und stellt das zentrale
-Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da. RDD nutzen lazy evaluation. Code wird 
-somit erst dann ausgeführt, wenn eine Action angestoßen wird. So können Transformationen effektiv umgesetzt werden.
-Von Nachteil ist hierbei, das Daten nicht typisiert sind und ein RDD über keine Schemainformationen verfügt.
+Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da. RDD nutzen lazy evaluation. Code wird somit
+erst dann ausgeführt, wenn eine Action angestoßen wird. So können Transformationen effektiv umgesetzt werden. Von
+Nachteil ist hierbei, das Daten nicht typisiert sind und ein RDD über keine Schemainformationen verfügt.
 
-RDDs verfügen über die Fähigkeit, beschädigte Spark Knoten oder Partitionen zu ersetzen. Als Legacy Code ermöglicht 
-RDD eine Low-Level Kontrolle über die Ausführung und Verarbeitung unstrukturierter Daten und ist für alle Arten von 
+RDDs verfügen über die Fähigkeit, beschädigte Spark Knoten oder Partitionen zu ersetzen. Als Legacy Code ermöglicht RDD
+eine Low-Level Kontrolle über die Ausführung und Verarbeitung unstrukturierter Daten und ist für alle Arten von
 Anwendungen geeignet und über seiner API zugänglich.
 
 Die Arbeit von Spark kann letztlich auf das Anlegen neuer sowie der Transformation und das Ausführen Operationen auf
@@ -55,7 +68,7 @@ hierbei:
 #### Erzeugen von RDDs
 
 Grundsätzlich existieren zwei Möglichkeiten, um ein RDD zu erzeugen. Zum einen ist dies die Verwendung einer
-existierenden Collection, zum anderen das Referenzieren einer eines extern vorliegenden Datasets.
+existierenden Collection, zum anderen das Referenzieren eines extern vorliegenden Datasets.
 
 Bei der Verwendung von Collections werden die Daten bereits im Vorfeld aus den jeweiligen Quellen gelesen und in Form
 einer geeigneten Collection gehalten. Mithilfe der Methode parallelize wird dann aus der Collection ein RDD erstellt.
@@ -77,11 +90,9 @@ lines_rdd = sc.textFile("text.txt")
 
 Diese Methode eignet sich auch für externe Datenspeicher wie Amazon S3, HDFS, Cassandra, Elasticsearch sowie JDBC.
 
-### Übergabe von Funktionen in Spark
+#### Transformationen und Aktionen
 
-### Schließen in Spark
-
-#### Transformations
+##### Transformationen
 
 Eine Transformation wendet eine Funktion auf jedes Element des RDD an. Eine häufige Transformation ist das Filtern:
 
@@ -91,10 +102,20 @@ lines_rdd = sc.textFile("text.txt")
 lines_with_friday_rdd = linesRDD.filter(lambda line: "Friday" in line)
 ```
 
-##### Filter, Map und FlatMap
+##### Aktionen
 
-Mit zu den wichtigsten Transformationen zählen die Funktionen Filter, Map und FlatMap. Gemein ist allen, dass ihnen eine
-Funktion als Parameter übergeben wird, welche die eigentliche Transformation oder Selektierung ausführt.
+Hier wird etwas zu Aktionen stehen
+
+#### Filter, Map und FlatMap
+
+Zu zu den wichtigsten, aber häufig zu Anfang irritierensten Transformationen zählen die Funktionen Filter, Map und
+FlatMap. Daher soll im Folegnden kurz auf die einzelnen Funktionen eingegangen werden. Ihnen allen ist gemain, dass
+ihnen eine Funktion in Form einer Lambda Expression als Parameter übergeben wird, welche die eigentliche Transformation
+oder Selektierung ausführt.
+
+##### Übergabe von Funktionen in Spark
+
+Hier wird auf die Übergabe von Funktionen eingegangen
 
 ##### filter
 
@@ -151,9 +172,9 @@ lines = sc.textFile("text.txt")
 wörter = lines.flatMap(lambda line: line.split(" "))
 ```
 
-##### group, reduce, aggregate und sortByKey
+###### group, reduce, aggregate und sortByKey
 
-#### Actions
+##### Actions
 
 Eine Aktion lieferte ein Ergebnis auf Basis des RDD zurück. Eine häufige Action ist die Wiedergabe des ersten Elements
 eines RDD.
@@ -164,17 +185,19 @@ lines = sc.textFile("text.txt")
 lengths = lines.first()
 ```
 
-##### collect
+###### collect
 
-##### first
+###### first
 
-##### count vs countByKey
+###### count vs countByKey
 
-##### foreach
+###### foreach
 
-##### saveAsTextFile
+###### saveAsTextFile
 
-## Spark Dataframes
+### Spark Dataframes
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 Die Arbeit auf Basis der zuvor behandelten RDDs ist gut geeignet, wenn man nahe an Spark arbeiten und den größtmöglichen
 Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
@@ -182,11 +205,10 @@ Einarbeitung.
 
 Mit der Version 1.3 führte Spark DataFrames ein, welche die sogenannten SchemaRDDs ersetzten. Ab der Version 2.0 dient
 die SparkSession als allgemeiner Einstiegspunkt in eine Spark Anwendung. Sie löst den bis dahin genutzen HiveContext
-(unstrukturierte Daten) und SQLContext (strukturierte Daten) ab. DataFrames sollen die Arbeit und den Umgang mit Spark 
-vereinfachen und bieten eine Abstraktion der Datensicht in Spark, nutzen jedoch intern die API der RDDs. Daher können 
-sie nicht nur auf Basis eines bereits vorhandenen RDDs, sondern auf Basis aller von Spark unterstützten Datenquelle 
-wie beispielsweise einer Hive Tabelle erzeugt werden. APIs für DataFrames sind für Scala, Java, Python sowie R 
-verfügbar.
+(unstrukturierte Daten) und SQLContext (strukturierte Daten) ab. DataFrames sollen die Arbeit und den Umgang mit Spark
+vereinfachen und bieten eine Abstraktion der Datensicht in Spark, nutzen jedoch intern die API der RDDs. Daher können
+sie nicht nur auf Basis eines bereits vorhandenen RDDs, sondern auf Basis aller von Spark unterstützten Datenquelle wie
+beispielsweise einer Hive Tabelle erzeugt werden. APIs für DataFrames sind für Scala, Java, Python sowie R verfügbar.
 
 Wie zuvor dargestellt, geht man bei der Arbeit mit Spark Dataframes den Weg über eine Spark Session und deren
 **_build Methode_**. Anschließend stehen unter anderen eine Reihe von Funktionen wie **_read_** zur Verfügung, um
@@ -201,11 +223,11 @@ dataframe = session.read.text("Pfad zu einer Datei")
 ```
 
 Spark Dataframes können hierbei sowohl das Schema der vorhandenen Daten ableiten oder aber ein Schema für die Daten
-zugewiesen bekommen. Letzteres ist besonders bei sehr großen Datenbeständen sinnvoll. Zusätzlich kommen bei DataFrames 
-einQuery-Optimizer für relationale SQL Abfragen sowei ein Catalyst-Optimierer zum Einsatz, der den effizientesten Plan 
+zugewiesen bekommen. Letzteres ist besonders bei sehr großen Datenbeständen sinnvoll. Zusätzlich kommen bei DataFrames
+einQuery-Optimizer für relationale SQL Abfragen sowei ein Catalyst-Optimierer zum Einsatz, der den effizientesten Plan
 zur Ausführung der Datenoperationen ermittelt. DataFrames sind daher den RDDs bei der Ausführung überlegen.
 
-Als Nachteil ist jedoch ihre Nähe zu RDDs zu sehen, da sie letztlich eine Kollektion von Row Objekten eines RDD sind. 
+Als Nachteil ist jedoch ihre Nähe zu RDDs zu sehen, da sie letztlich eine Kollektion von Row Objekten eines RDD sind.
 Erst zur Ausführung greift die Typisierug. Siehe hierzu auch den Artikel von
 [Heise](https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all "zum Artikel")
 .
@@ -220,36 +242,55 @@ Reihe von Gemeinsamkeiten aber auch Unterschiede. Der wichtigste ist, dass ein S
 von Daten ist, welche konzeptuell ein zweidimensionalen Array mit Reihen und benannten Spalten eines Datenbestandes
 entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 
-## Spark Datasets
+### Spark Datasets
 
-2015 wurden Spark DataSets eingeführt. DataSets stellen eine Erweiterung der DataFrames dar. Sie bietet zur
-Kompilierzeit Typsicherheit sowie eine Schnittstelle für objektorientierte Programme an.
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
-Strukturierte Daten Bessere Leistung durch mehr Optimierung
-
-Ein DataSet ist ein Kollection streng typisierter, strukturierter Daten und kommen damit im Style den objekt
-orientierten Sprachen entgegen. Ein
+Mit der Version 1.6 wurden Anfang 2016
 [Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "Zur Dokumentation")
-ist eine Erweiterung des DataFrames und wurde in zuerst in Spark 1.6 eingeführt.
+eingeführt. DataSets stellen eine Erweiterung der DataFrames dar und bieten zur Kompiler Zeit Typsicherheit. Ebenso wie
+DataFrames sind DataSets Bestandteil von SparkSQL und bieten so die Möglichkeit zur Nutzung von SQL zur Abfrage
+strukturierter Daten. Hierbei handelt es sich bei DataSets ebenso wie bei DataFrames um immutable und verteilte
+Datensammlungen und profitieren durch stattfindende Optimierungen. Für die Übertragung der DataSet Objekte ist eine
+Serialisierung notwendig. Hierfür nutzt Spark einen eigenen leistungsstarken Decoder.
 
-Auf Grund der Typsicherheit bietet sie Typsiccherheit bereits bei der Kompilierung und Schnittstellen für OOP Sprachen
-wie Java.
+DataSets orten sich eher in Richtung einer stark typisierten objektorientierten Kapselung von Daten ein. Als Konsequent
+existiert so nur eine API für Java und Scala. Dies Manko gleicht Python jedoch von Haus aus bereits durch ein
+umfangreiches Ökosystem wie Pandas aus.
 
-Für die Serialiserung nutzt Spark einen speziellen Decoder. Eine Serialisierung ist notwendig zur Übertragung der
-Objekte über das Netz zur verarbeitenden.
+### Spark DataFrame vs Spark DataSet
 
-## Anmerkungen
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
-https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all
-https://www.baeldung.com/java-spark-dataframe-dataset-rdd
-https://phoenixnap.com/kb/rdd-vs-dataframe-vs-dataset
-https://databricks.com/de/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html
-https://blog.oio.de/2020/05/18/was-ist-der-unterschied-zwischen-rdd-dataframe-und-dataset-in-apache-spark/
-https://spark.apache.org/sql/
-https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html
-https://spark.apache.org/docs/latest/
-https://spark.apache.org/docs/3.2.0
-https://spark.apache.org/docs/1.3.0 DataFrames
-https://spark.apache.org/docs/1.6.0 DataSet
-https://spark.apache.org/docs/2.0.0 DataSet und DataFrame (untype DataSet Operations aka DataFrame Operations)
-As mentioned above, in Spark 2.0, DataFrames are just Dataset of Rows in Scala and Java API. These operations are also referred as “untyped transformations” in contrast to “typed transformations” come with strongly typed Scala/Java Datasets.
+Chronologisch existierten Spark DataFrames bereits vor der Einführung der DataSets. Als Erweiterung vereinfachten sie
+den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (Summe) und avg (Mittelwert). Für Ihre
+Erzeugung nutzte man zunächst einen Spark- oder SQLContext. Später eine SparkSession.
+
+Mit der Einführung der Spark DataSets entstand eine weitere Abstraktion, welche das DataFrame erweiterte, jedoch auch in
+Richtung eines objektorientierten Aufbaus änderte. Es wurde die Entscheidung getroffen, beide als Spark DataSet zu
+vereinen. In der aktuellen Version existiert somit ein DataSet Objekt, welches sowohl einen stark typisierten Zugriff (
+DataSet) und einen nicht typisierten (DataFrame) Zugriff anbietet. Ein DataFrame Objekt wird hierbei als ein
+DataSet[row] aufgefasst.
+
+### Optimierungen
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+
+#### Catalyst Optimizer
+
+#### Tungsten component
+
+### RDD bis DataSet in a nutshell
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+
+|                                 | RDD                          | Spark DataFrames        | Spark DataSets                  |
+| --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
+| Funktionalität                 | Verteilte Sammlung von Daten | Organisation in Spalten | Erweiterung des DataFrame (OOP) |
+| Seit Version                    | 1.0                          | 1.3                     | 1.6                             |
+| Typesicherheit zur Kompilerzeit | Nein                         | Nein                    | Ja                              |
+| APIs verfügbar                 | Nein                         | Ja                      | Ja                              |
+| Spark SQL                       | Nein                         | Ja                      | Ja                              |
+| Catalyst Optimizer              | Nein                         | Ja                      | Ja                              |
+| Tungsten component              | Nein                         | Ja                      | Ja                              |
+| Sprachen                        | Java, Scala, Python, R       | Java, Scala, Python, R  | Java, Scala                     |

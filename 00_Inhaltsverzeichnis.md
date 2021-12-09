@@ -13,12 +13,15 @@
 
 * [2 Datenstrukturen C](02_Datenstrukturen.md "Überblick über grundlegende Datenstrukturen in Spark")
     * Hadoop C
-        * Distributed Speicher HDFS C
-        * Map Reduce C
+        * Distributed Speicher HDFS C toDo
+        * Map Reduce C toDo
     * Spark C
-        * ...in Bearbeitung C
-    * Spark Dataframes C
-    * Spark Datasets C
+      * Spark RDDs C in Arbeit
+      * Spark Dataframes C V0.1
+      * Spark Datasets C V0.1
+      * Spark DataFrame vs Spark DataSets C V0.1
+      * Optimierungen C in Arbeit
+      * RDD bis DataSet in a nutshell C V0.1
 
 * [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für Spark")
   A C
@@ -38,10 +41,10 @@
 * [5 Anwendungsmöglichkeiten](05_Anwendungsmöglichkeiten.md "Überblick über praktische Anwendungsmöglichkeiten mit Spark")
   <span style="color:red">D</span>
 
-* [6 Wordcount mit Spark RDDs und Python](06_Wordcount_mit_Spark_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
+* [6 Wordcount mit Spark RDDs und Python](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDS und Python")
   C V0.1
 
-* [7 Wordcount mit Spark DataFrames und Python](07_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
+* [7 Wordcount mit Spark DataFrames und Python](07_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
   C V0.1
 
 ### Nachweise
