@@ -26,10 +26,13 @@ Kurse auf Coursera
 [Links](https://de.coursera.org/courses?query=apache%20spark)
 
 Unterschied zwischen RDD, DataFrame und Dataset
-[Link](https://blog.oio.de/2020/05/18/was-ist-der-unterschied-zwischen-rdd-dataframe-und-dataset-in-apache-spark/)
+[Link](https://blog.oio.de/2020/05/18/was-ist-der-unterschied-zwischen-rdd-dataframe-und-dataset-in-apache-spark)
 
 Apache Spark RDD vs DataFrame vs DataSet
-[Link](https://data-flair.training/blogs/apache-spark-rdd-vs-dataframe-vs-dataset/)
+[Link](https://data-flair.training/blogs/apache-spark-rdd-vs-dataframe-vs-dataset)
+
+Eine sehr gute visuelle Präsentation zu Aktionen und Transformationen in Spark
+[Link](https://training.databricks.com/visualapi.pdf)
 
 ***
 

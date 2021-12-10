@@ -38,10 +38,13 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 * [Spark DataFrame vs Spark DataSet](Spark_DataFrame_vs_Spark DataSet)
 * [Optimierungen](Optimierungen)
 * [RDD bis DataSet in a nutshell](RDD_bis_DataSet_in_a_nutshell)
+* [Transformationen und Aktionen](Transformationen_und_Aktionen)
 
 ### Spark RDDs
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 RDD steht für Resilient Distributed Dataset (auf deutsch etwa “robuster verteilter Datensatz”) und stellt das zentrale
 Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da. RDD nutzen lazy evaluation. Code wird somit
@@ -90,21 +93,7 @@ lines_rdd = sc.textFile("text.txt")
 
 Diese Methode eignet sich auch für externe Datenspeicher wie Amazon S3, HDFS, Cassandra, Elasticsearch sowie JDBC.
 
-#### Transformationen und Aktionen
-
-##### Transformationen
-
-Eine Transformation wendet eine Funktion auf jedes Element des RDD an. Eine häufige Transformation ist das Filtern:
-
-```python
-sc = SparkContext("local", "SampleApp")
-lines_rdd = sc.textFile("text.txt")
-lines_with_friday_rdd = linesRDD.filter(lambda line: "Friday" in line)
-```
-
-##### Aktionen
-
-Hier wird etwas zu Aktionen stehen
+### Stuff
 
 #### Filter, Map und FlatMap
 
@@ -174,17 +163,6 @@ wörter = lines.flatMap(lambda line: line.split(" "))
 
 ###### group, reduce, aggregate und sortByKey
 
-##### Actions
-
-Eine Aktion lieferte ein Ergebnis auf Basis des RDD zurück. Eine häufige Action ist die Wiedergabe des ersten Elements
-eines RDD.
-
-```python
-sc = SparkContext("local", "SampleApp")
-lines = sc.textFile("text.txt")
-lengths = lines.first()
-```
-
 ###### collect
 
 ###### first
@@ -197,7 +175,9 @@ lengths = lines.first()
 
 ### Spark Dataframes
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 Die Arbeit auf Basis der zuvor behandelten RDDs ist gut geeignet, wenn man nahe an Spark arbeiten und den größtmöglichen
 Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
@@ -244,7 +224,9 @@ entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 
 ### Spark Datasets
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 Mit der Version 1.6 wurden Anfang 2016
 [Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "Zur Dokumentation")
@@ -260,11 +242,14 @@ umfangreiches Ökosystem wie Pandas aus.
 
 ### Spark DataFrame vs Spark DataSet
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 Chronologisch existierten Spark DataFrames bereits vor der Einführung der DataSets. Als Erweiterung vereinfachten sie
-den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (Summe) und avg (Mittelwert). Für Ihre
-Erzeugung nutzte man zunächst einen Spark- oder SQLContext. Später eine SparkSession.
+den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (
+Summe) und avg (Mittelwert). Für Ihre Erzeugung nutzte man zunächst einen Spark- oder SQLContext. Später eine
+SparkSession.
 
 Mit der Einführung der Spark DataSets entstand eine weitere Abstraktion, welche das DataFrame erweiterte, jedoch auch in
 Richtung eines objektorientierten Aufbaus änderte. Es wurde die Entscheidung getroffen, beide als Spark DataSet zu
@@ -274,7 +259,9 @@ DataSet[row] aufgefasst.
 
 ### Optimierungen
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 #### Catalyst Optimizer
 
@@ -282,7 +269,9 @@ DataSet[row] aufgefasst.
 
 ### RDD bis DataSet in a nutshell
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum
+
+Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
 
 |                                 | RDD                          | Spark DataFrames        | Spark DataSets                  |
 | --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
@@ -294,3 +283,75 @@ DataSet[row] aufgefasst.
 | Catalyst Optimizer              | Nein                         | Ja                      | Ja                              |
 | Tungsten component              | Nein                         | Ja                      | Ja                              |
 | Sprachen                        | Java, Scala, Python, R       | Java, Scala, Python, R  | Java, Scala                     |
+
+### Transformationen und Aktionen
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+
+Spark kennt zwei grundsätzliche Operationen. Die Transformation führt eine Aktion auf Daten aus und liefert ein neues
+Objekt zurück. Eine Aktion hingegen führt eine Berechnung aus und liefert das Ergebnis der Berechnung zurück.
+
+Hierbei werden die Transformationen nicht unverzüglich, sondern erst zu einen späteren Zeitpunkt ausgeführt. Diese
+Zeitpunkt ist in der Regel die Ausführung einer Aktion, welche ein Ergebnis zurück liefert. Spark führt somit ein lazy
+computing aus.
+
+Dieses Vorgehen ermöglicht Spark, zu einem möglichst späten Zeitpunkt mit der Bearbeitung zu beginnen und eröffnet so
+die Möglichkeit, Transformationsschritte zu optimieren. Grundsätzlich werden hierbei in der Grundeinstellung die
+Berechnungen bei jedem Aufruf der Action wiederholt, jedoch existiert auch die Option einer Persistierung der
+Ergebnisse.
+
+#### Übergabe von Funktionen
+
+Spark macht in sehr starken Umfang Gebrauch von der
+[Übergabe von Funktionen](https://spark.apache.org/docs/latest/rdd-programming-guide.html#passing-functions-to-spark "zur Dokumentation")
+. Dieses Konzept eröffnet zum einen einen sehr umfangreiche Möglichkeiten zur Bearbeitung der Daten, ist jedoch
+andererseits nicht jeden sehr vertraut und Sprachabhängig.
+
+Im Context von Python gibt es drei Möglichkeiten, eine Funktion zu definieren und zu übergeben:
+
+1. Nutzen einer
+   [Lambda Expression](https://docs.python.org/2/tutorial/controlflow.html#lambda-expressions "zur Dokumentation")
+
+```python
+# Die Methode flatMap iteriert durch jedes Element line und gibt das durch
+# split(" ") erzeugte array zurück.
+
+words=lines.flatMap(lambda line: line.split(" "))
+```
+
+2. Definition und Übergabe einer lokalen Funktion
+
+```python
+# Die Methode main_function ist die Hauptmethode. 
+#
+# Der darin enthaltene lokalen Methode do_split wird ein String übergeben. Die 
+# Methode ruft die Split Methode des String auf und gibt das Ergebnis zurück.
+#
+# Der Methode flatMap wird die Funktion do_split übergeben. Sie iteriert durch 
+# jedes Element, übergibt es an do_split und gibt das Ergebnis zurück.
+
+def main_function():
+    def do_split(line):
+        return line.splitt(" ")
+
+    words=lines.flatMap(do_split)
+```
+
+3. Definition und Übergabe einer Top-Level Funktion in einem Modul.
+
+```python
+# Der globalen Methode do_split innerhalb eines Moduls wird ein String übergeben. Die 
+# Methode ruft die Split Methode des String auf und gibt das Ergebnis zurück.
+#
+# Der Methode flatMap wird die globale Funktion do_split übergeben. Sie iteriert durch 
+# jedes Element, übergibt es an do_split und gibt das Ergebnis zurück.
+    
+if __name__ == "__main__":
+    def main_function():
+        def do_split(line):
+            return line.splitt(" ")
+
+    words=lines.flatMap(do_split)
+```
