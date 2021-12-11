@@ -15,8 +15,10 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 
 * [Praxisbeispiel mit RDDS](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
 * [Praxisbeispiel mit DataFrames](06_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
-* [_Hadoop_](02_Datenstrukture#Hadoop )
-* [_Spark_](02_Datenstrukture#Spark )
+
+
+* [_Hadoop_](02_Datenstrukturen.md#Hadoop )
+* [_Spark_](02_Datenstrukturen.md#Spark )
 
 ## Hadoop
 
@@ -30,13 +32,13 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 
 [_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
 
-* [Spark RDDs](Spark_RDDs)
-* [Spark Dataframes](Spark_Dataframes)
-* [Spark Datasets](Spark_Datasets)
-* [Spark DataFrame vs Spark DataSet](Spark_DataFrame_vs_Spark DataSet)
-* [Optimierungen](Optimierungen)
+* [Spark RDDs](02_Datenstrukturen.md#spark-rdds)
+* [Spark Dataframes](02_Datenstrukturen.md#spark-dataframes)
+* [Spark Datasets](02_Datenstrukturen.md#spark-datasets)
+* [Spark DataFrame vs Spark DataSet](02_Datenstrukturen.md#spark-dataframe-vs-spark-DataSet)
+* [Optimierungen](02_Datenstrukturen.md#optimierungen)
 * [RDD bis DataSet in a nutshell](02_Datenstrukturen.md#rdd-bis-dataset-in-a-nutshell)
-* [Transformationen und Aktionen](Transformationen_und_Aktionen)
+* [Transformationen und Aktionen](02_Datenstrukturen.md#transformationen-und-aktionen)
 
 ### Spark RDDs
 
