@@ -46,6 +46,11 @@ https://www.linkedin.com/pulse/catalyst-tungsten-apache-sparks-speeding-engine-d
 https://itnext.io/apache-spark-internals-tips-and-optimizations-8c3cad527ea2
 https://www.youtube.com/watch?v=26zl50iNBp8
 
+Eine gute Einführung zur Funktionsweise des Catalys Optimizers
+[Link](https://data-flair.training/blogs/spark-sql-optimization/)
+
+Eine vertiefende Darstellung zur Funktionsweise des Catalyst Optimizers von databricks
+[Link](https://databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html)
 ***
 
 ### Java

@@ -2,6 +2,8 @@
 
 # 1 Spark
 
+...Rolle von databricks
+
 ## Was ist Spark - Versuch einer Definition D
 
 ## Kurzer Überblick über die bisherige Entwicklungsgeschichte D

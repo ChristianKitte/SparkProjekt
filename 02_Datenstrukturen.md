@@ -15,8 +15,6 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 
 * [Praxisbeispiel mit RDDS](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
 * [Praxisbeispiel mit DataFrames](06_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
-
-
 * [_Hadoop_](02_Datenstrukture#Hadoop )
 * [_Spark_](02_Datenstrukture#Spark )
 
@@ -101,10 +99,6 @@ Zu zu den wichtigsten, aber häufig zu Anfang irritierensten Transformationen z�
 FlatMap. Daher soll im Folegnden kurz auf die einzelnen Funktionen eingegangen werden. Ihnen allen ist gemain, dass
 ihnen eine Funktion in Form einer Lambda Expression als Parameter übergeben wird, welche die eigentliche Transformation
 oder Selektierung ausführt.
-
-##### Übergabe von Funktionen in Spark
-
-Hier wird auf die Übergabe von Funktionen eingegangen
 
 ##### filter
 
@@ -265,13 +259,45 @@ DataSet[row] aufgefasst.
 
 #### Catalyst Optimizer
 
+Die Aufgabe des Catalyst Optimizers ist die Optimierung der Ausführung von Berechnungen innerhalb von Spark. Bei
+der Konzeption des Optimierers wurde darauf geachtet, dass dieser durch eigene Methoden erweitert und angepasst
+werde kann.
+
+Der Optimierer ist ein Bestandteil von Spark SQL. In einem aufwendigen Prozess werden anstehende Transaktionen
+zunächst analysiert und anschließend optimiert. Als Ergebnis steht am Ende generierter Java Bytecode, welcher
+auf jeder Maschine ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Features von Scala,
+[Quasiquotes](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Dokumentation")
+genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des Scala Compilers zu
+Java Bytecode kompiliert wird.
+
+Auf der folgenden Abbildung von
+[data-flair](https://data-flair.training/blogs/spark-sql-optimization/ "zur Webseite")
+findet sich eine etwas vereinfachte Darstellung des Prozessen:
+
+![image.png](./assets/spark_catalyst_optimizer.png "Spark SQL Ausführungsplan")
+
+Der Ausführungsplan unterteilt sich in vier Phasen:
+
+In der ersten Phase werden die anstehenden Transformationen analysiert. Als Ergebnis steht ein logischer
+Ausführungsplan am Ende der Verarbeitung. Auf diesen werde in der zweiten Phase die vorhandene Regeln zur Optimierung
+ausgeführt. Es entsteht der optimierte logische Ausführungsplan.
+
+Aus dem optimierten logischen Plan werden in der dritten Phase ein oder mehr physikalische Pläne erstellt, welche
+anhand des Kostenmodells einer Bewertung unterzogen werden. Am Ende wird der günstigste Plan verwendet und in
+der vierten Phase Bytecode generiert, welcher auf jeder Maschine lauffähig ist.
+
 #### Tungsten component
+
+Hinter dem Begriff Tungsteen verbirgt sich ein Sammelprojekt für verschieden Aktivitäten mit dem Ziel, die
+Performance von Spark zu verbessern. Grundgedanke ist hierbei, dass weniger Ein- und Ausgabe sowie Netwerke
+ein Problem darstellen, sondern in starken Maße Speicher und die Rechenleistung.
 
 ### RDD bis DataSet in a nutshell
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang") | [_zurück zum
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
 
-Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+
 
 |                                 | RDD                          | Spark DataFrames        | Spark DataSets                  |
 | --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
@@ -347,7 +373,7 @@ def main_function():
 #
 # Der Methode flatMap wird die globale Funktion do_split übergeben. Sie iteriert durch 
 # jedes Element, übergibt es an do_split und gibt das Ergebnis zurück.
-    
+  
 if __name__ == "__main__":
     def main_function():
         def do_split(line):
