@@ -35,7 +35,7 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 * [Spark Datasets](Spark_Datasets)
 * [Spark DataFrame vs Spark DataSet](Spark_DataFrame_vs_Spark DataSet)
 * [Optimierungen](Optimierungen)
-* [RDD bis DataSet in a nutshell](RDD_bis_DataSet_in_a_nutshell)
+* [RDD bis DataSet in a nutshell](02_Datenstrukturen#RDD-bis-DataSet-in-a-nutshell)
 * [Transformationen und Aktionen](Transformationen_und_Aktionen)
 
 ### Spark RDDs
