@@ -7,6 +7,9 @@
 Apache Sparke Homepage
 [Link](https://spark.apache.org/) [Download](https://archive.apache.org/dist/spark/)
 
+Dokumentation von Spark in der aktuellen Version
+[Link](https://spark.apache.org/docs/latest)
+
 Spark Python API Docs
 [Link](https://spark.apache.org/docs/2.2.0/api/python/index.html)
 
@@ -25,6 +28,9 @@ Spark und Microsoft
 Kurse auf Coursera
 [Links](https://de.coursera.org/courses?query=apache%20spark)
 
+Umfangreiche Seite mit Informationen und Beispielen zu Spark
+[Link](https://data-flair.training/blogs/spark-tutorial/)
+
 Unterschied zwischen RDD, DataFrame und Dataset
 [Link](https://blog.oio.de/2020/05/18/was-ist-der-unterschied-zwischen-rdd-dataframe-und-dataset-in-apache-spark)
 
@@ -34,23 +40,24 @@ Apache Spark RDD vs DataFrame vs DataSet
 Eine sehr gute visuelle Präsentation zu Aktionen und Transformationen in Spark
 [Link](https://training.databricks.com/visualapi.pdf)
 
+Guter Einstieg in Transformationen und Aktionen in Spark
+[Link](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action)
 ***
 
 ### Optimierung in Spark
-
-https://databricks.com/de/glossary/tungsten
-https://www.unraveldata.com/resources/catalyst-analyst-a-deep-dive-into-sparks-optimizer/
-https://www.oreilly.com/library/view/apache-spark-20/9781491963982/video246481.html
-https://blog.cloudera.com/how-does-apache-spark-3-0-increase-the-performance-of-your-sql-workloads/
-https://www.linkedin.com/pulse/catalyst-tungsten-apache-sparks-speeding-engine-deepak-rajak
-https://itnext.io/apache-spark-internals-tips-and-optimizations-8c3cad527ea2
-https://www.youtube.com/watch?v=26zl50iNBp8
 
 Eine gute Einführung zur Funktionsweise des Catalys Optimizers
 [Link](https://data-flair.training/blogs/spark-sql-optimization/)
 
 Eine vertiefende Darstellung zur Funktionsweise des Catalyst Optimizers von databricks
 [Link](https://databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html)
+
+Ein Überblickk über das Tungsten Projekt
+[Link](https://databricks.com/de/glossary/tungsten)
+
+Eine Seite zur Tungsten Execution Engine
+[Link](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html)
+
 ***
 
 ### Java
@@ -105,16 +112,9 @@ Colaboratory
 [Link](https://colab.research.google.com/)
 
 ### Stuff
+Unklar, obe es verwendet wird:
 
-https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all
-https://www.baeldung.com/java-spark-dataframe-dataset-rdd
-https://phoenixnap.com/kb/rdd-vs-dataframe-vs-dataset
-https://databricks.com/de/blog/2016/07/14/a-tale-of-three-apache-spark-apis-rdds-dataframes-and-datasets.html
-https://blog.oio.de/2020/05/18/was-ist-der-unterschied-zwischen-rdd-dataframe-und-dataset-in-apache-spark/
 https://spark.apache.org/sql/
-https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html
-https://spark.apache.org/docs/latest/
-https://spark.apache.org/docs/3.2.0
 https://spark.apache.org/docs/1.3.0 DataFrames
 https://spark.apache.org/docs/1.6.0 DataSet
 https://spark.apache.org/docs/2.0.0 DataSet und DataFrame (untype DataSet Operations aka DataFrame Operations)

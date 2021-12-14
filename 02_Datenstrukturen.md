@@ -30,21 +30,20 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 
 ## Spark
 
-[_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
+[_zurück_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück")
 
 * [Spark RDDs](02_Datenstrukturen.md#spark-rdds)
 * [Spark Dataframes](02_Datenstrukturen.md#spark-dataframes)
 * [Spark Datasets](02_Datenstrukturen.md#spark-datasets)
 * [Spark DataFrame vs Spark DataSet](02_Datenstrukturen.md#spark-dataframe-vs-spark-DataSet)
 * [Optimierungen](02_Datenstrukturen.md#optimierungen)
-* [RDD bis DataSet in a nutshell](02_Datenstrukturen.md#rdd-bis-dataset-in-a-nutshell)
 * [Transformationen und Aktionen](02_Datenstrukturen.md#transformationen-und-aktionen)
 
 ### Spark RDDs
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
 RDD steht für Resilient Distributed Dataset (auf deutsch etwa “robuster verteilter Datensatz”) und stellt das zentrale
 Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da. RDD nutzen lazy evaluation. Code wird somit
@@ -93,87 +92,11 @@ lines_rdd = sc.textFile("text.txt")
 
 Diese Methode eignet sich auch für externe Datenspeicher wie Amazon S3, HDFS, Cassandra, Elasticsearch sowie JDBC.
 
-### Stuff
-
-#### Filter, Map und FlatMap
-
-Zu zu den wichtigsten, aber häufig zu Anfang irritierensten Transformationen zählen die Funktionen Filter, Map und
-FlatMap. Daher soll im Folegnden kurz auf die einzelnen Funktionen eingegangen werden. Ihnen allen ist gemain, dass
-ihnen eine Funktion in Form einer Lambda Expression als Parameter übergeben wird, welche die eigentliche Transformation
-oder Selektierung ausführt.
-
-##### filter
-
-Bei der Filtermethode wird der Funktion eine Filtermethode übergeben, die auf alle Elemente des RDD angewendet wird. Als
-Ergebnis wird ein neues RDD auf Basis der selektierten Elemente zurückgegeben.
-
-![spark_filter.png](./assets/spark_filter.png "Prinzip der Filterung eines RDD")
-
-Der folgende Code würde ein neues RDD zurückgeben, in dem alle (String)Items, welche leer sind, herausgefiltert sind:
-
-```python
-sc = SparkContext("local", "SampleApp")
-lines = sc.textFile("text.txt")
-lines2 = lines.filter(lambda linex: linex.strip() != "")
-```
-
-##### map
-
-Bei der Map Methode wird die übergebene Funktion auf alle Elemente des RDD angewendet. Hierbei erfolgt genau eine
-Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier ein RDD mit den neuen Werten zurück
-gegeben.
-
-![spark_map.png](./assets/spark_map.png "Prinzip des Map Transformation")
-
-Der folgende Code würde ein neues RDD mit Integer Werten zurückgeben. Für jedes (String)Item in lines würde in dem neuen
-RDD lengths ein (Int)Item für die Länge des entsprechenden Wertes aus lines stehen.
-
-```python
-sc = SparkContext("local", "SampleApp")
-lines = sc.textFile("text.txt")
-lengths = lines.map(lambda line: len(line))
-```
-
-Der Typ der zurückgegebenen Elemente muss hierbei nicht dem Typ der ursprünglichen Elemente entsprechen. Wird
-beispielsweise für Textelemente die Länge ermittelt, so handelt es sich bei dem zurückgegebenen Elementen um
-Zahlenwerte.
-
-##### flatMap
-
-Flat Map unterscheidet sich zu Map dadurch, dass die übergebene Funktion mehr als ein Element zurück geben kann.
-
-![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation")
-
-Der folgende Code würde für jedes (String)Item des RDD lines den enthaltenen Text auf Basis der Leerstellen splitten und
-ein neues RDD mit einer Spalte und n Zeilen zurückgeben.
-
-N würde hierbei der Summe der Längen der jeweils durch splitt erstellten Arrays von Wörtern entsprechen. Als Ergebnis
-würde man ein neues (String)RDD wörter erhalten. Jedes seiner Items entspräche dabei ein Wort, seine Länge der Anzahl
-der Wörter.
-
-```python
-sc = SparkContext("local", "SampleApp")
-lines = sc.textFile("text.txt")
-wörter = lines.flatMap(lambda line: line.split(" "))
-```
-
-###### group, reduce, aggregate und sortByKey
-
-###### collect
-
-###### first
-
-###### count vs countByKey
-
-###### foreach
-
-###### saveAsTextFile
-
 ### Spark Dataframes
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")v
 
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
 Die Arbeit auf Basis der zuvor behandelten RDDs ist gut geeignet, wenn man nahe an Spark arbeiten und den größtmöglichen
 Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
@@ -220,9 +143,9 @@ entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 
 ### Spark Datasets
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
 Mit der Version 1.6 wurden Anfang 2016
 [Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "Zur Dokumentation")
@@ -238,9 +161,9 @@ umfangreiches Ökosystem wie Pandas aus.
 
 ### Spark DataFrame vs Spark DataSet
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
 Chronologisch existierten Spark DataFrames bereits vor der Einführung der DataSets. Als Erweiterung vereinfachten sie
 den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (
@@ -253,11 +176,29 @@ vereinen. In der aktuellen Version existiert somit ein DataSet Objekt, welches s
 DataSet) und einen nicht typisierten (DataFrame) Zugriff anbietet. Ein DataFrame Objekt wird hierbei als ein
 DataSet[row] aufgefasst.
 
+Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden Tabelle entnehmen:
+
+|                                 | RDD                          | Spark DataFrames        | Spark DataSets                  |
+| --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
+| Funktionalität                 | Verteilte Sammlung von Daten | Organisation in Spalten | Erweiterung des DataFrame (OOP) |
+| Seit Version                    | 1.0                          | 1.3                     | 1.6                             |
+| Typesicherheit zur Kompilerzeit | Nein                         | Nein                    | Ja                              |
+| APIs verfügbar                 | Nein                         | Ja                      | Ja                              |
+| Spark SQL                       | Nein                         | Ja                      | Ja                              |
+| Catalyst Optimizer              | Nein                         | Ja                      | Ja                              |
+| Tungsten component              | Nein                         | Ja                      | Ja                              |
+| Sprachen                        | Java, Scala, Python, R       | Java, Scala, Python, R  | Java, Scala                     |
+
 ### Optimierungen
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
+
+Spark ist für die schnelle, verteilte und optimierte Verarbeitung sehr großer Datenbestände entwickelt worden. Um 
+die Ziel zu erreichen, muss der verwendete Code hochgradig optimiert sein. Zwei in diesen Zusammenhang immer wieder 
+genannte Optimierungen sind der Catalyst Optimizer sowie die Tungsten Komponenten. Beide sollen hier kurz besprochen 
+werden.  
 
 #### Catalyst Optimizer
 
@@ -294,32 +235,28 @@ Hinter dem Begriff Tungsteen verbirgt sich ein Sammelprojekt für verschieden Ak
 Performance von Spark zu verbessern. Grundgedanke ist hierbei, dass weniger Ein- und Ausgabe sowie Netwerke
 ein Problem darstellen, sondern in starken Maße Speicher und die Rechenleistung.
 
-### RDD bis DataSet in a nutshell
+In Anlehnung an
+[Databricks](https://databricks.com/de/glossary/tungsten "zur Website")
+umfasst das Projekt um Moment Aktivitäten in Bereichen:
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
+- Speichermanagement und binäre Verarbeitung um Overheads beim Objekt Modell und der Garbage Collection zu beseitigen
+- Bessere Ausnutzung des Speichers durch Verbesserung der eingesetzten Algorithmen
+- Nutzung von Codegenerierung um von modernen Compilern und CPUs zu profitieren
+- Veringerung der CPU Aufrufen durch die Vermeidung virtueller Funktionsdispatcher
+- Speichern von Zwischenwerten in CPU Registern statt im Speicher. Hierdurch verringert sich die Zahl der notwendigen 
+Zyklen
+- Ausnutzen moderner CPUs und Compilers um Schleifenausführungen zu optimieren
 
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
-
-
-|                                 | RDD                          | Spark DataFrames        | Spark DataSets                  |
-| --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
-| Funktionalität                 | Verteilte Sammlung von Daten | Organisation in Spalten | Erweiterung des DataFrame (OOP) |
-| Seit Version                    | 1.0                          | 1.3                     | 1.6                             |
-| Typesicherheit zur Kompilerzeit | Nein                         | Nein                    | Ja                              |
-| APIs verfügbar                 | Nein                         | Ja                      | Ja                              |
-| Spark SQL                       | Nein                         | Ja                      | Ja                              |
-| Catalyst Optimizer              | Nein                         | Ja                      | Ja                              |
-| Tungsten component              | Nein                         | Ja                      | Ja                              |
-| Sprachen                        | Java, Scala, Python, R       | Java, Scala, Python, R  | Java, Scala                     |
+Diese Abschnitt kann nur eine kurze Übersicht über das Projekt wiedergeben. Eine interessante und tiefergehende 
+Einfühung in Tungsten ist auf der Website von Databrick
+[hier](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html)
+zu finden.
 
 ### Transformationen und Aktionen
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen#Spark "Zurück zum Kapitelanfang")
-
 Spark kennt zwei grundsätzliche Operationen. Die Transformation führt eine Aktion auf Daten aus und liefert ein neues
-Objekt zurück. Eine Aktion hingegen führt eine Berechnung aus und liefert das Ergebnis der Berechnung zurück.
+Objekt zurück. Eine Aktion hingegen führt eine Berechnung aus und liefert das Ergebnis der Berechnung zurück. Als 
+Parameter werden in starken Maße Funktionen übergeben. 
 
 Hierbei werden die Transformationen nicht unverzüglich, sondern erst zu einen späteren Zeitpunkt ausgeführt. Diese
 Zeitpunkt ist in der Regel die Ausführung einer Aktion, welche ein Ergebnis zurück liefert. Spark führt somit ein lazy
@@ -327,15 +264,19 @@ computing aus.
 
 Dieses Vorgehen ermöglicht Spark, zu einem möglichst späten Zeitpunkt mit der Bearbeitung zu beginnen und eröffnet so
 die Möglichkeit, Transformationsschritte zu optimieren. Grundsätzlich werden hierbei in der Grundeinstellung die
-Berechnungen bei jedem Aufruf der Action wiederholt, jedoch existiert auch die Option einer Persistierung der
-Ergebnisse.
+Berechnungen bei jedem Aufruf der Action wiederholt, jedoch existiert auch die Option einer Persistierung und 
+Wiederverwendung der Ergebnisse.
+
+Eine gute Übersicht über die verfügbaren Transformationen und Aktionen findet sich neben der eigentlichen 
+Dokumentation von Spark
+[hier](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action/ "zur Seite")
 
 #### Übergabe von Funktionen
 
 Spark macht in sehr starken Umfang Gebrauch von der
 [Übergabe von Funktionen](https://spark.apache.org/docs/latest/rdd-programming-guide.html#passing-functions-to-spark "zur Dokumentation")
 . Dieses Konzept eröffnet zum einen einen sehr umfangreiche Möglichkeiten zur Bearbeitung der Daten, ist jedoch
-andererseits nicht jeden sehr vertraut und Sprachabhängig.
+andererseits nicht jeden sehr vertraut und zudem Sprachabhängig.
 
 Im Context von Python gibt es drei Möglichkeiten, eine Funktion zu definieren und zu übergeben:
 
@@ -383,3 +324,81 @@ if __name__ == "__main__":
 
     words=lines.flatMap(do_split)
 ```
+
+#### Übersicht über Transformationen
+
+Transformationen ändern die Daten, auf denen sie angewendet werden. Hierbei bleiben die Originaldaten unverändert 
+und es wird eine neue Datenstruktur mit den veränderten Daten zurückgegeben. Dies geschieht nciht unverzüglich, 
+sonder erst zu dem Zeitpunkt, an denen die Daten tatsächlich im Rahmen einer Aktion abgerufen werden. Tatsächlich 
+kann man daher eher von einer anweisung sprechen, wie Daten zu transformieren sind. Hierdurch entsteht ein 
+Berechnungsgraph.
+
+Diesen Vorgehen bietet zwei wichtige Vorteile. Zum einen ermöglicht es Spark zum Zeitpunkt, an dem die Daten durch
+eine Aktion abgerufen werden, den Berechnungsgraph zu optimieren, zum anderen sind alle Transformationen eindeutig
+beschrieben, wiederholbar oder aber zu revidieren.
+
+##### Filter, Map und FlatMap
+
+Zu zu den wichtigsten, aber häufig zu Anfang irritierensten Transformationen zählen die Funktionen Filter, Map und
+FlatMap. Daher soll im Folegnden kurz auf die einzelnen Funktionen eingegangen werden. Ihnen allen ist gemain, dass
+ihnen eine Funktion in Form einer Lambda Expression als Parameter übergeben wird, welche die eigentliche Transformation
+oder Selektierung ausführt.
+
+###### filter
+
+Bei der Filtermethode wird der Funktion eine Filtermethode übergeben, die auf alle Elemente des RDD angewendet wird. Als
+Ergebnis wird ein neues RDD auf Basis der selektierten Elemente zurückgegeben.
+
+![spark_filter.png](./assets/spark_filter.png "Prinzip der Filterung eines RDD")
+
+Der folgende Code würde ein neues RDD zurückgeben, in dem alle (String)Items, welche leer sind, herausgefiltert sind:
+
+```python
+sc = SparkContext("local", "SampleApp")
+lines = sc.textFile("text.txt")
+lines2 = lines.filter(lambda linex: linex.strip() != "")
+```
+
+###### map
+
+Bei der Map Methode wird die übergebene Funktion auf alle Elemente des RDD angewendet. Hierbei erfolgt genau eine
+Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier ein RDD mit den neuen Werten zurück
+gegeben.
+
+![spark_map.png](./assets/spark_map.png "Prinzip des Map Transformation")
+
+Der folgende Code würde ein neues RDD mit Integer Werten zurückgeben. Für jedes (String)Item in lines würde in dem neuen
+RDD lengths ein (Int)Item für die Länge des entsprechenden Wertes aus lines stehen.
+
+```python
+sc = SparkContext("local", "SampleApp")
+lines = sc.textFile("text.txt")
+lengths = lines.map(lambda line: len(line))
+```
+
+Der Typ der zurückgegebenen Elemente muss hierbei nicht dem Typ der ursprünglichen Elemente entsprechen. Wird
+beispielsweise für Textelemente die Länge ermittelt, so handelt es sich bei dem zurückgegebenen Elementen um
+Zahlenwerte.
+
+###### flatMap
+
+Flat Map unterscheidet sich zu Map dadurch, dass die übergebene Funktion mehr als ein Element zurück geben kann.
+
+![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation")
+
+Der folgende Code würde für jedes (String)Item des RDD lines den enthaltenen Text auf Basis der Leerstellen splitten und
+ein neues RDD mit einer Spalte und n Zeilen zurückgeben.
+
+N würde hierbei der Summe der Längen der jeweils durch splitt erstellten Arrays von Wörtern entsprechen. Als Ergebnis
+würde man ein neues (String)RDD wörter erhalten. Jedes seiner Items entspräche dabei ein Wort, seine Länge der Anzahl
+der Wörter.
+
+```python
+sc = SparkContext("local", "SampleApp")
+lines = sc.textFile("text.txt")
+wörter = lines.flatMap(lambda line: line.split(" "))
+```
+
+#### Übersicht über Aktionen
+
+to do: Übersicht Aktionen
