@@ -2,6 +2,22 @@
 
 # Anhang Linkliste
 
+### Hadoop
+
+Apache Hadoop Homepage
+[Link](https://hadoop.apache.org)
+
+Eine sehr detaillierte Einführung in Apache Hadoop
+[Link](https://datasolut.com/apache-hadoop-einfuehrung)
+
+Eine ausführliche Seite zum Vergleich Spark vs. Hadoop
+[Link](https://www.integrate.io/blog/apache-spark-vs-hadoop-mapreduce)
+
+Eine weitere Seite zum Vergleich beider Systeme auf Basis vo Kategorien
+[Link](https://logz.io/blog/hadoop-vs-spark/)
+
+https://www.bigdata-insider.de/was-ist-hadoop-a-587448/ ?
+
 ### Spark
 
 Apache Sparke Homepage
@@ -112,9 +128,11 @@ Colaboratory
 [Link](https://colab.research.google.com/)
 
 ### Stuff
+
 Unklar, obe es verwendet wird:
 
 https://spark.apache.org/sql/
 https://spark.apache.org/docs/1.3.0 DataFrames
 https://spark.apache.org/docs/1.6.0 DataSet
 https://spark.apache.org/docs/2.0.0 DataSet und DataFrame (untype DataSet Operations aka DataFrame Operations)
+https://data-flair.training

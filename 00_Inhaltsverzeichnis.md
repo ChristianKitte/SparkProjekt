@@ -3,8 +3,9 @@
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite")
 
 * [1 Spark](01_Spark.md "Einführung in Spark und seinem Ökosystem") D A
-    * <span style="color:red">Was ist Spark - Versuch einer Definition</span>
-    * <span style="color:red">Kurzer Überblick über die bisherige Entwicklungsgeschichte</span>
+    * Was ist Spark - Versuch einer Definition D
+    * Kurzer Überblick über die bisherige Entwicklungsgeschichte (mit Hadoop ?) D
+    * Sprachunterstützung (Neu)
     * Überblick über das Spark Ecosystem A
         * SQL (SparkSQL) A
         * Maschine Learning (Mllib) A
@@ -13,20 +14,22 @@
 
 * [2 Datenstrukturen C](02_Datenstrukturen.md "Überblick über grundlegende Datenstrukturen in Spark")
     * Hadoop C
-        * Distributed Speicher HDFS C toDo
-        * Map Reduce C toDo
-    * Spark C
-      * Spark RDDs C in Arbeit
+      * Hadoop Common in Arbeit
+      * Hadoop Distributed File System (HDFS) in Arbeit
+      * Map Reduce in Arbeit
+      * Yet Another Resource Negotiator (YARN) in Arbeit
+    * Spark C (einleitender Text fehlt noch)
+      * Spark RDDs C V0.1
       * Spark Dataframes C V0.1
       * Spark Datasets C V0.1 (Skizze fehlt noch)
       * Spark DataFrame vs Spark DataSets C V0.1
-      * Optimierungen C in Arbeit
+      * Optimierungen C V0.1
       * RDD bis DataSet in a nutshell C V0.1
 
 * [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für Spark")
   A C
-    * <span style="color:red">Spark in der Cloud (Amazon, Google, Azure, ..., Databrick)</span>
-    * Spark lokal A
+    * Spark in der Cloud (Amazon, Google, Azure, ..., Databrick) D
+    * WEG ? (Wer macht es hardcore auf C?) Spark lokal A
     * Spark mit Google Colaboratory (Colab) C V0.1
     * Spark mit Docker C V0.1
         * Dockerimage
@@ -34,13 +37,13 @@
         * Zugriff auf das Jupyter Notebook
         * Vor- und Nachteile
 
-* [4 Sprachunterstützung](04_Sprachunterstützung.md "Derzeitig vorhandene Sprachunterstützung in Spark")
-    * <span style="color:red">Sprachunterstützung in Spark D</span>
-    * <span style="color:red">Sprachunterstützung in Spark - Python D</span>
+* [WEG ? 4 Sprachunterstützung](04_Sprachunterstützung.md "Derzeitig vorhandene Sprachunterstützung in Spark")
+    * Sprachunterstützung in Spark D
+    * Sprachunterstützung in Spark - Python D
 
-* [5 Anwendungsmöglichkeiten](05_Anwendungsmöglichkeiten.md "Überblick über praktische Anwendungsmöglichkeiten mit Spark")
-  <span style="color:red">D</span>
-
+* [WEG ? 5 Anwendungsmöglichkeiten](05_Anwendungsmöglichkeiten.md "Überblick über praktische Anwendungsmöglichkeiten 
+  mit Spark")
+  
 * [6 Wordcount mit Spark RDDs und Python](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDS und Python")
   C V0.1
 

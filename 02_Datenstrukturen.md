@@ -2,20 +2,23 @@
 
 # 2 Datenstrukturen
 
-In den folgenden Unterkapiteln wird ein Überblick über die wichitgsten Konzepte und Datentrukturen gegeben. eingegangen.
-Auch soll eine Übersicht über die wichtigsten Funktionalitäten gegeben werden.
+In den folgenden Unterkapiteln wird ein Überblick über die wichtigsten Konzepte und Datentrukturen von Spark gegeben.
+Wegen der starken Verbindung von Hadoop und Spark wird zu Anfang zunächst kurz auf Hadoop als ganzes und detailierter
+auf dessen auch für Spark wichtigen Filesystem HDFS eingegangen. Den Schwerpunkt bildet jedoch ein Überblick über
+die wichtigsten Komponenten von Spark.
 
-Eine vertiefende und vollständige Behandlung aller Themen soll und kann hierbei nicht geleistet werden. Hierzu sei auf
+Eine vertiefende und vollständige Behandlung beider System kann und soll hierbei nicht geleistet werden. Hierzu sei auf
 die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine erste Orientierung kann hierbei die
 [Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
 am Ende dieses Repositories geben.
 
-Einen kleinen Einstieg in die Nutzung mit Python bieten zwei praktischen Beispielen in Form von Python Notebooks. Beide
-können direkt in Google Colab geöffnet und ausgeführt werden:
+Ergänzend zu dieser Einleitung, wurde in den Kapiteln
 
 * [Praxisbeispiel mit RDDS](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
 * [Praxisbeispiel mit DataFrames](06_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
 
+Zwei konkrete Beispiele zur Nutzung von Spark mit Python umgesetzt. Beide Beispiele liegen auch in Form von Python
+Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werden.
 
 * [_Hadoop_](02_Datenstrukturen.md#Hadoop )
 * [_Spark_](02_Datenstrukturen.md#Spark )
@@ -24,9 +27,95 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 
 [_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
 
-### Distributed Speicher HDFS C
+* [Hadoop Common](02_Datenstrukturen.md#hadoop-common)
+* [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs)
+* [Map Reduce](02_Datenstrukturen.md#map-reduce)
+* [Yet Another Resource Negotiator (YARN)](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn)
 
-### Map Reduce C
+![Apache Hadoop Logo](./assets/hadoop-logo-no-back-1000.png)
+
+(Das Apache Hadoop Loge ist ein eingetragenes Logo
+der [Apache Software Foundation](https://www.apache.org/ "Hier geht es zur Webseite der Apache Spark Foundation")
+
+[Hadoop](https://hadoop.apache.org "zur Projektseite")
+ist ein in Java geschriebenes Open Source Framework zur verteilten Verarbeitung sehr großer Datenmengen. Es
+wurde ein 2006 gegründet und ist seit 2008 eines der Top Level Projekte von Apache. Aktuell 2021 liegt es in der
+Version 3.3.1 vor.
+
+Für die Datenverarbeitung nutzt Hadoop das ursprünglich in seinen Grundzügen von Google stammende
+[Map Reduce](https://research.google/pubs/pub62 "zum Paper")
+. Daneben müssen als wichtigste Hadoop-Komponenten Hadoop Common, das Dateisystem HDFS sowie das Speichermanagement
+YARN genannt werden.
+
+Hadoop ist ein filebasiertes System. Die zu verarbeitenden Daten werden in Dateien im HDFS Filesystem abgelegt und
+anschließend mit Map Reduce verarbeitet und serialisiert. Die Verarbeitung ist somit eine Batchverarbeitung, welche
+durch YARN mit genügend Ressourcen versorgt wird.
+
+### Hadoop Common
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
+
+Bei Hadoop Common handelt es sich um eine Sammlung von für den Betrieb notwendigen Tools und Routinen. Hierzu gehören
+Javafiles und -skripte für den Start des Systems
+
+### Hadoop Distributed File System (HDFS)
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
+
+Hadoop nutzt zur Speicherung seiner Daten das Hadoop Distributed Filesystem (HDFS). Hierbei handelt es sich um ein
+Dateisystem, welches zum einen hochverfügbar und zum anderen auf viele entfernte Rechner verteilt sein kann. Hierbei
+kann die Anzahl der insgesamt verwalteten Dateien mehrere Millionen betragen, welche sich auf mehrere tausend
+Server verteilen können.
+
+Der einzelne Server wird als Cluster, einzelne Rechner des Servers als Node bezeichnet. Grundsätzlich erfolgt die
+Speicherung redundant. Hierzu werden die Dateien in feste Blöcke aufgeteilt und an die Nodes verteilt. Die Größe der
+Blöcke ist konfigurierbar und kann Einfluss auf die Performance haben.
+
+Trotz der vielen Vorteile wird HDFS zunehmend von Cloudbasierten intelligenten Dateisystemen wie
+[AWS S3](https://aws.amazon.com/de/s3/ "zur Website")
+oder
+[Microsoft Blob Storage](https://azure.microsoft.com/de-de/services/storage/blobs/ "zur Website")
+verdrängt.
+
+### Map Reduce
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
+
+Hinter Map Reduce verbirgt sich die Datenverarbeitung von Hadoop. Im Prinzip handelt es sich lediglich um zwei
+nacheinander stattfindende Prozesse.
+
+Zunächst findet ein Map Prozess statt, in deren Verlauf werden die benötigten Daten aus den Datenbestand gefiltert und
+extrahiert werden. Mit der so selektierten Datenbasis werden die zu machenden Operationen, in der Regel
+Aggregationen ausgeführt und zusammengefasst. Diesen Schritt kann man als eine Reduktion der ursprünglichen
+Datenbasis auffassen, wovon die Bezeichnung Reduce abgeleitet werden kann.
+
+Map Reduce ist hierbei in der Lage, die anfallenden Aufgaben aufzuteilen und parallel auf mehrere, verteilte Rechner
+auszuführen. Die Ergebnisse werden anschließend in einem Gesamtergebnis zusammen geführt.
+
+Es ist wichtig, zwei Dinge zu verstehen:
+
+* Das Ergebnis eines Map Reduce ist immer ein reduzierter, dafür aber berechneter Datenbestand. Würde in einer
+  Anwendung zwei Map Reduce Vorgänge hintereinander ausgeführt, ohne das Zwischenergebnis zu speichern, so kann kein
+  Rückschluß auf das Zwischenergebnis oder den ausgeführten Aktionen gemacht werden.
+* Die Funktion von Map im Kontext von Hadoop unterscheidet sich stark von dem in Spark. Im Kontext von Hadoop dient
+  es der Filterung und Selektion von Daten aus dem gesamten Datenbestand. Im Kontext von Spark definiert es eine
+  Aktion, welche auf jedes Element eines RDD, Dataframe oder Datasets ausgeführt werden soll.
+
+### Yet Another Resource Negotiator (YARN)
+
+#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
+
+#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
+
+Der Yet Another Resource Negotiator (YARN) unterstützt Map Reduce und ist dafür zuständig, die zur Bearbeitung
+benötigten Ressourcen eines Clusters, also CPU Zeit und Speicher in ausreichenden Maße, bereitzustellen und einen
+Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance des System relevante Aufgabe.
 
 ## Spark
 
@@ -40,6 +129,8 @@ können direkt in Google Colab geöffnet und ausgeführt werden:
 * [Transformationen und Aktionen](02_Datenstrukturen.md#transformationen-und-aktionen)
 
 ### Spark RDDs
+
+Spark wurde in Scala Programmiert ! Einleitender Text und Differenzeirung zu Hadoop ?
 
 #### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
@@ -178,6 +269,7 @@ DataSet[row] aufgefasst.
 
 Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden Tabelle entnehmen:
 
+
 |                                 | RDD                          | Spark DataFrames        | Spark DataSets                  |
 | --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
 | Funktionalität                 | Verteilte Sammlung von Daten | Organisation in Spalten | Erweiterung des DataFrame (OOP) |
@@ -195,23 +287,21 @@ Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden T
 
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
-Spark ist für die schnelle, verteilte und optimierte Verarbeitung sehr großer Datenbestände entwickelt worden. Um 
-die Ziel zu erreichen, muss der verwendete Code hochgradig optimiert sein. Zwei in diesen Zusammenhang immer wieder 
-genannte Optimierungen sind der Catalyst Optimizer sowie die Tungsten Komponenten. Beide sollen hier kurz besprochen 
-werden.  
+Spark ist für die schnelle, verteilte und optimierte Verarbeitung sehr großer Datenbestände entwickelt worden. Um die
+Ziel zu erreichen, muss der verwendete Code hochgradig optimiert sein. Zwei in diesen Zusammenhang immer wieder genannte
+Optimierungen sind der Catalyst Optimizer sowie die Tungsten Komponenten. Beide sollen hier kurz besprochen werden.
 
 #### Catalyst Optimizer
 
-Die Aufgabe des Catalyst Optimizers ist die Optimierung der Ausführung von Berechnungen innerhalb von Spark. Bei
-der Konzeption des Optimierers wurde darauf geachtet, dass dieser durch eigene Methoden erweitert und angepasst
-werde kann.
+Die Aufgabe des Catalyst Optimizers ist die Optimierung der Ausführung von Berechnungen innerhalb von Spark. Bei der
+Konzeption des Optimierers wurde darauf geachtet, dass dieser durch eigene Methoden erweitert und angepasst werde kann.
 
-Der Optimierer ist ein Bestandteil von Spark SQL. In einem aufwendigen Prozess werden anstehende Transaktionen
-zunächst analysiert und anschließend optimiert. Als Ergebnis steht am Ende generierter Java Bytecode, welcher
-auf jeder Maschine ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Features von Scala,
+Der Optimierer ist ein Bestandteil von Spark SQL. In einem aufwendigen Prozess werden anstehende Transaktionen zunächst
+analysiert und anschließend optimiert. Als Ergebnis steht am Ende generierter Java Bytecode, welcher auf jeder Maschine
+ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Features von Scala,
 [Quasiquotes](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Dokumentation")
-genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des Scala Compilers zu
-Java Bytecode kompiliert wird.
+genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des Scala Compilers zu Java
+Bytecode kompiliert wird.
 
 Auf der folgenden Abbildung von
 [data-flair](https://data-flair.training/blogs/spark-sql-optimization/ "zur Webseite")
@@ -221,19 +311,19 @@ findet sich eine etwas vereinfachte Darstellung des Prozessen:
 
 Der Ausführungsplan unterteilt sich in vier Phasen:
 
-In der ersten Phase werden die anstehenden Transformationen analysiert. Als Ergebnis steht ein logischer
-Ausführungsplan am Ende der Verarbeitung. Auf diesen werde in der zweiten Phase die vorhandene Regeln zur Optimierung
-ausgeführt. Es entsteht der optimierte logische Ausführungsplan.
+In der ersten Phase werden die anstehenden Transformationen analysiert. Als Ergebnis steht ein logischer Ausführungsplan
+am Ende der Verarbeitung. Auf diesen werde in der zweiten Phase die vorhandene Regeln zur Optimierung ausgeführt. Es
+entsteht der optimierte logische Ausführungsplan.
 
-Aus dem optimierten logischen Plan werden in der dritten Phase ein oder mehr physikalische Pläne erstellt, welche
-anhand des Kostenmodells einer Bewertung unterzogen werden. Am Ende wird der günstigste Plan verwendet und in
-der vierten Phase Bytecode generiert, welcher auf jeder Maschine lauffähig ist.
+Aus dem optimierten logischen Plan werden in der dritten Phase ein oder mehr physikalische Pläne erstellt, welche anhand
+des Kostenmodells einer Bewertung unterzogen werden. Am Ende wird der günstigste Plan verwendet und in der vierten Phase
+Bytecode generiert, welcher auf jeder Maschine lauffähig ist.
 
 #### Tungsten component
 
-Hinter dem Begriff Tungsteen verbirgt sich ein Sammelprojekt für verschieden Aktivitäten mit dem Ziel, die
-Performance von Spark zu verbessern. Grundgedanke ist hierbei, dass weniger Ein- und Ausgabe sowie Netwerke
-ein Problem darstellen, sondern in starken Maße Speicher und die Rechenleistung.
+Hinter dem Begriff Tungsteen verbirgt sich ein Sammelprojekt für verschieden Aktivitäten mit dem Ziel, die Performance
+von Spark zu verbessern. Grundgedanke ist hierbei, dass weniger Ein- und Ausgabe sowie Netwerke ein Problem darstellen,
+sondern in starken Maße Speicher und die Rechenleistung.
 
 In Anlehnung an
 [Databricks](https://databricks.com/de/glossary/tungsten "zur Website")
@@ -243,11 +333,11 @@ umfasst das Projekt um Moment Aktivitäten in Bereichen:
 - Bessere Ausnutzung des Speichers durch Verbesserung der eingesetzten Algorithmen
 - Nutzung von Codegenerierung um von modernen Compilern und CPUs zu profitieren
 - Veringerung der CPU Aufrufen durch die Vermeidung virtueller Funktionsdispatcher
-- Speichern von Zwischenwerten in CPU Registern statt im Speicher. Hierdurch verringert sich die Zahl der notwendigen 
-Zyklen
+- Speichern von Zwischenwerten in CPU Registern statt im Speicher. Hierdurch verringert sich die Zahl der notwendigen
+  Zyklen
 - Ausnutzen moderner CPUs und Compilers um Schleifenausführungen zu optimieren
 
-Diese Abschnitt kann nur eine kurze Übersicht über das Projekt wiedergeben. Eine interessante und tiefergehende 
+Diese Abschnitt kann nur eine kurze Übersicht über das Projekt wiedergeben. Eine interessante und tiefergehende
 Einfühung in Tungsten ist auf der Website von Databrick
 [hier](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html)
 zu finden.
@@ -255,8 +345,8 @@ zu finden.
 ### Transformationen und Aktionen
 
 Spark kennt zwei grundsätzliche Operationen. Die Transformation führt eine Aktion auf Daten aus und liefert ein neues
-Objekt zurück. Eine Aktion hingegen führt eine Berechnung aus und liefert das Ergebnis der Berechnung zurück. Als 
-Parameter werden in starken Maße Funktionen übergeben. 
+Objekt zurück. Eine Aktion hingegen führt eine Berechnung aus und liefert das Ergebnis der Berechnung zurück. Als
+Parameter werden in starken Maße Funktionen übergeben.
 
 Hierbei werden die Transformationen nicht unverzüglich, sondern erst zu einen späteren Zeitpunkt ausgeführt. Diese
 Zeitpunkt ist in der Regel die Ausführung einer Aktion, welche ein Ergebnis zurück liefert. Spark führt somit ein lazy
@@ -264,11 +354,11 @@ computing aus.
 
 Dieses Vorgehen ermöglicht Spark, zu einem möglichst späten Zeitpunkt mit der Bearbeitung zu beginnen und eröffnet so
 die Möglichkeit, Transformationsschritte zu optimieren. Grundsätzlich werden hierbei in der Grundeinstellung die
-Berechnungen bei jedem Aufruf der Action wiederholt, jedoch existiert auch die Option einer Persistierung und 
+Berechnungen bei jedem Aufruf der Action wiederholt, jedoch existiert auch die Option einer Persistierung und
 Wiederverwendung der Ergebnisse.
 
-Eine gute Übersicht über die verfügbaren Transformationen und Aktionen findet sich neben der eigentlichen 
-Dokumentation von Spark
+Eine gute Übersicht über die verfügbaren Transformationen und Aktionen findet sich neben der eigentlichen Dokumentation
+von Spark
 [hier](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action/ "zur Seite")
 
 #### Übergabe von Funktionen
@@ -327,14 +417,13 @@ if __name__ == "__main__":
 
 #### Übersicht über Transformationen
 
-Transformationen ändern die Daten, auf denen sie angewendet werden. Hierbei bleiben die Originaldaten unverändert 
-und es wird eine neue Datenstruktur mit den veränderten Daten zurückgegeben. Dies geschieht nciht unverzüglich, 
-sonder erst zu dem Zeitpunkt, an denen die Daten tatsächlich im Rahmen einer Aktion abgerufen werden. Tatsächlich 
-kann man daher eher von einer anweisung sprechen, wie Daten zu transformieren sind. Hierdurch entsteht ein 
-Berechnungsgraph.
+Transformationen ändern die Daten, auf denen sie angewendet werden. Hierbei bleiben die Originaldaten unverändert und es
+wird eine neue Datenstruktur mit den veränderten Daten zurückgegeben. Dies geschieht nciht unverzüglich, sonder erst zu
+dem Zeitpunkt, an denen die Daten tatsächlich im Rahmen einer Aktion abgerufen werden. Tatsächlich kann man daher eher
+von einer anweisung sprechen, wie Daten zu transformieren sind. Hierdurch entsteht ein Berechnungsgraph.
 
-Diesen Vorgehen bietet zwei wichtige Vorteile. Zum einen ermöglicht es Spark zum Zeitpunkt, an dem die Daten durch
-eine Aktion abgerufen werden, den Berechnungsgraph zu optimieren, zum anderen sind alle Transformationen eindeutig
+Diesen Vorgehen bietet zwei wichtige Vorteile. Zum einen ermöglicht es Spark zum Zeitpunkt, an dem die Daten durch eine
+Aktion abgerufen werden, den Berechnungsgraph zu optimieren, zum anderen sind alle Transformationen eindeutig
 beschrieben, wiederholbar oder aber zu revidieren.
 
 ##### Filter, Map und FlatMap
