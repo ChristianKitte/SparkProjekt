@@ -18,7 +18,7 @@ Spark Core bildet das Fundament des gesamten Spark Frameworks. Es bietet grundle
 
 Die zu Grunde liegende Datenstruktur basiert auf sogenannten Resilient Distributed Datasets (RDD). RDDs dienen dazu, Datenmengen in Partitionen aufzuteilen und auf mehrere Systeme zu verteilen. Dies ermöglicht eine hohe Verarbeitungsgeschwindigkeit da Prozesse parallel auf mehreren Systemen ausgeführt und verteilte Daten zeitgleich abgerufen werden können. Außerdem erhöht es die Fehlertoleranz, da verlorene oder zerstörte Datenfragmente wiederhergestellt werden können.
 
-![](RackMultipart20211217-4-h1rzxl_html_242c238cb0b6e990.png)
+![image](https://user-images.githubusercontent.com/45334665/146559813-ed25c571-6ce4-4e0d-94f9-26ed0bf2460b.png)
 
 **Abbildung 1: Darstellung eines RDDs mit mehreren Spark Workern und Partitionen**
 
@@ -34,13 +34,30 @@ Bei Spark SQL handelt es sich um eine weitere Ebene von Apache Spark, welche auf
 
 Spark SQL unterstützt Scala, Java Python und R. Um mit Spark SQL zu arbeiten, gibt es seit Spark 2.0 einen einheitlichen Einstiegspunkt für alle Spark Anwendungen, welcher als SparkSession bezeichnet wird.
 
-![](RackMultipart20211217-4-h1rzxl_html_8f4b23aca78f0e30.gif)
+```
+from pyspark.sql import SparkSession
+
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+```
 
 **Abbildung 2: Erzeugung einer Spark Session in Python**
 
 Ein enormer Vorteil bei der Nutzung von Spark SQL ist, dass auf verschiedene Datenquellen gleichzeitig zugegriffen werden kann, selbst wenn es sich dabei um unterschiedliche Systeme handelt. Dabei können aus verschiedenen Datenbanksystemen Daten innerhalb einer Tabelle zusammengefasst werden. Es werden diverse gängige Datenbanksysteme und Schnittstellen unterstützt. Dazu gehören Hive, Avro, Parquet, ORC, JSON, ODBC und JDBC.
 
-![](RackMultipart20211217-4-h1rzxl_html_ec78a451e8e2ea87.gif)
+```
+spark.read.json(“jdbc://...“)
+	.registerTempTable(“json“)
+
+results = spark.sql(
+	“““SELECT *
+	FROM people
+	JOIN json ...“““
+)
+```
 
 **Abbildung 3: Einheitliche Datenabfrage mit Spark SQL**
 
@@ -52,7 +69,7 @@ Die sogenannte MLlib von Apache Spark bietet Zugang zu einer großen Machine Lea
 
 Neben der Aggregation von Daten, welche durch Spark Core realisiert werden kann, bietet die ML-Bibliothek von Spark alles, was zur Umsetzung von ML-Projekten notwendig ist. Dies beginnt bei den verschiedenen Algorithmen zur Klassifikation, Regression oder dem Clustering. Diese Algorithmen funktionieren jedoch nur mit sauber aufbereiteten Daten doch auch dafür bietet die MLlib entsprechende Funktionen. Im Folgenden ist eine Abbildung dargestellt, auf welcher ein klassischer ML-Prozess abgebildet ist. Häufig wird dieser Prozess iterativ durchlaufen, solange, bis die gewünschte Modellqualität erreicht ist.
 
-![](RackMultipart20211217-4-h1rzxl_html_266f775b401a6d5f.jpg)
+![image](https://user-images.githubusercontent.com/45334665/146560173-a3762714-af28-4bfe-86d5-1e04b9ad4996.png)
 
 **Abbildung 4: Die Etappen eines Machine-Learning-Prozesses**
 
