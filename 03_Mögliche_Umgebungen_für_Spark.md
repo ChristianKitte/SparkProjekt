@@ -2,19 +2,23 @@
 
 # 3 Mögliche Umgebungen für Spark
 
-In den folgenden vier Unterkapiteln werden Wege aufgezeigt, wie eine produktiv einsetzbare Sparkumgebung eingerichtet
-werden kann.
+In den folgenden vier Unterkapiteln werden Wege aufgezeigt, wie eine produktiv einsetzbare Umgebung für Spark auf 
+einfachen Wege eingerichtet werden kann. 
+
+Hierbei werden zunächst die Möglichkeiten aufgezeigt, Spark im Umfeld eines Clouddienstleisters zu betreiben. Dies 
+ist in vielen Fällen auch für den ersten Kontakt kostengünstig und einfach umzusetzen. Anschließend wird eine Lösung 
+auf Basis von Google und Docker vorgestellt. Beide verbindet, dass sie kostenlose und einfach verfügbar sind.
+
+Spark kann zudem auch auf einen lokalen Rechner eingerichtet werden. Dieser Weg hat jedoch den Nachteil, dass er etwas
+komplizierter und für ein erstes Kennenlernen daher nicht optimal ist. Zudem erfordert er eine Reihe von nicht 
+temporären Eingriffen und Installationen in das lokale System des Rechners. Aus diesen Gründen soll er hier nciht 
+vorgestellt werden. 
 
 * [_Spark in der Cloud_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud )
-* [_Spark lokal_](03_Mögliche_Umgebungen_für_Spark.md#spark-local )
 * [_Spark mit Google Colaboratory (Colab)_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab )
 * [_Spark mit Docker_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker )
 
 ## Spark in der Cloud
-
-[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
-
-## Spark lokal
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
 

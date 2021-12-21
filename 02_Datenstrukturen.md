@@ -5,7 +5,7 @@
 In den folgenden Unterkapiteln wird ein Überblick über die wichtigsten Konzepte und Datentrukturen von Spark gegeben.
 Wegen der starken Verbindung von Hadoop und Spark wird zu Anfang zunächst kurz auf Hadoop als ganzes und detailierter
 auf dessen auch für Spark wichtigen Filesystem HDFS eingegangen. Den Schwerpunkt bildet jedoch ein Überblick über
-die wichtigsten Komponenten von Spark.
+die wichtigsten Datenstrukturen von Spark.
 
 Eine vertiefende und vollständige Behandlung beider System kann und soll hierbei nicht geleistet werden. Hierzu sei auf
 die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine erste Orientierung kann hierbei die
@@ -14,14 +14,14 @@ am Ende dieses Repositories geben.
 
 Ergänzend zu dieser Einleitung, wurde in den Kapiteln
 
-* [Praxisbeispiel mit RDDS](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
+* [Praxisbeispiel mit RDDS](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
 * [Praxisbeispiel mit DataFrames](06_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
 
 Zwei konkrete Beispiele zur Nutzung von Spark mit Python umgesetzt. Beide Beispiele liegen auch in Form von Python
 Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werden.
 
-* [_Hadoop_](02_Datenstrukturen.md#Hadoop )
-* [_Spark_](02_Datenstrukturen.md#Spark )
+* [Hadoop](02_Datenstrukturen.md#Hadoop )
+* [Spark](02_Datenstrukturen.md#Spark )
 
 ## Hadoop
 
@@ -130,7 +130,13 @@ Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance de
 
 ### Spark RDDs
 
-Spark wurde in Scala Programmiert ! Einleitender Text und Differenzeirung zu Hadoop ?
+In den folgenden Kapiteln wird eine Übersicht über die wichtigsten Datenstrukturen in Spark gegeben, deren 
+Verständnis für die Funktionsweise und Bewertung von Spark als ganzes wichtig sind. Starkes Gewicht wird hierbei auf 
+den RDDs als Kernkomponente von Spark gelegt.
+
+Auch bei Verfügbarkeit anwenderfreundlicher Strukturen wie den Spark DataFrames und Spark DataSets mit ihrer eigenen 
+API ist für ein gutes Verständnis von Spark dies Wissen wichtig. Insbesondere, wenn stark auf Ebene der RDDs in die 
+Verarbeitung eingegriffen werden soll oder muss.
 
 #### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
@@ -225,7 +231,7 @@ Erst zur Ausführung greift die Typisierug. Siehe hierzu auch den Artikel von
 Dataframes sind somit kein Ersatz der RDDs, sondern können als eine Abstraktionsschicht auf die Daten und deren Handling
 mit RDDs angesehen werden. Dies verdeutlicht auch die folgende Abbildung.
 
-![spark_dataset.png](./assets/spark_dataset.png "Einordnung des Spark DataSet")
+![spark_dataset.png](./assets/spark_dataframe.png "Einordnung des Spark DataSet")
 
 Besonders im Umfeld von Python sind Dataframes als Pandas DataFrames bekannt und in der Tat zeigen sich im Umgang eine
 Reihe von Gemeinsamkeiten aber auch Unterschiede. Der wichtigste ist, dass ein Spark Dataframe eine verteilte Kollektion
@@ -256,16 +262,21 @@ umfangreiches Ökosystem wie Pandas aus.
 
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
-Chronologisch existierten Spark DataFrames bereits vor der Einführung der DataSets. Als Erweiterung vereinfachten sie
-den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (
-Summe) und avg (Mittelwert). Für Ihre Erzeugung nutzte man zunächst einen Spark- oder SQLContext. Später eine
-SparkSession.
+Chronologisch existierten Spark DataFrames bereits vor der Einführung der DataSets. Als Erweiterung vereinfachen sie
+den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (Summe) und avg (Mittelwert). Für Ihre 
+Erzeugung nutzte man zunächst einen Spark- oder SQLContext. Später jedoch SparkSession.
 
 Mit der Einführung der Spark DataSets entstand eine weitere Abstraktion, welche das DataFrame erweiterte, jedoch auch in
 Richtung eines objektorientierten Aufbaus änderte. Es wurde die Entscheidung getroffen, beide als Spark DataSet zu
 vereinen. In der aktuellen Version existiert somit ein DataSet Objekt, welches sowohl einen stark typisierten Zugriff (
 DataSet) und einen nicht typisierten (DataFrame) Zugriff anbietet. Ein DataFrame Objekt wird hierbei als ein
-DataSet[row] aufgefasst.
+DataSet[row] aufgefasst. Auf der Seite
+[Knoldus Inc.](https://medium.com/@knoldus/spark-type-safety-in-dataset-vs-dataframe-174137517821 "Zur 
+Dokumentation")
+wird hierauf vertiefend eingegangen und der Sachverhalt schön visuelle verdeutlicht:
+
+![spark_dataset_dataframe.png](./assets/spark_dataset_dataframe.png "Synthese von DataSet und DataFrame")
+
 
 Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden Tabelle entnehmen:
 
@@ -344,12 +355,12 @@ zu finden.
 
 ### Transformationen und Aktionen
 
-Spark kennt zwei grundsätzliche Operationen. Die Transformation führt eine Aktion auf Daten aus und liefert ein neues
-Objekt zurück. Eine Aktion hingegen führt eine Berechnung aus und liefert das Ergebnis der Berechnung zurück. Als
-Parameter werden in starken Maße Funktionen übergeben.
+Auf der Ebene der RDDs kennt Spark zwei grundsätzliche Operationen. Die Transformation führt eine Aktion auf 
+Daten aus und liefert ein neues RDD zurück. Eine Aktion hingegen ermöglicht den Zugriff auf den vorhandene Daten und 
+kann Berechnungen ausführen und das Ergebnis zurückliefern. Als Parameter werden in starken Maße Funktionen übergeben.
 
-Hierbei werden die Transformationen nicht unverzüglich, sondern erst zu einen späteren Zeitpunkt ausgeführt. Diese
-Zeitpunkt ist in der Regel die Ausführung einer Aktion, welche ein Ergebnis zurück liefert. Spark führt somit ein lazy
+Hierbei werden die Transformationen nicht unverzüglich, sondern erst zu einen späteren Zeitpunkt ausgeführt. Dieser
+Zeitpunkt ist in der Regel die Ausführung einer Aktion, welche ein Ergebnis zurückliefert. Spark führt somit ein lazy
 computing aus.
 
 Dieses Vorgehen ermöglicht Spark, zu einem möglichst späten Zeitpunkt mit der Bearbeitung zu beginnen und eröffnet so
@@ -360,6 +371,12 @@ Wiederverwendung der Ergebnisse.
 Eine gute Übersicht über die verfügbaren Transformationen und Aktionen findet sich neben der eigentlichen Dokumentation
 von Spark
 [hier](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action/ "zur Seite")
+
+Ein Punkt für Verwirrung kann die Anwendbarkeit der Transformationen und Aktionen auf Spark DataFrames und DataSets 
+sein. Beide Datenstrukturen basieren auf RDDs und nutzen diese nach wie vor im Hintergrund. Der Vorteil dieser 
+Strukturen liegt jedoch in der von Ihnen veröffentlichten API, welche den Umgang mit Spark stark vereinfacht. 
+Etwas Vereinfacht kann daher gesagt, das bei der Arbeit mit RDDs Transformationen und Aktionen genutzt werden, 
+bei der Arbeit mit DataFrames und DataSet deren API. 
 
 #### Übergabe von Funktionen
 
@@ -417,14 +434,7 @@ if __name__ == "__main__":
 
 #### Übersicht über Transformationen
 
-Transformationen ändern die Daten, auf denen sie angewendet werden. Hierbei bleiben die Originaldaten unverändert und es
-wird eine neue Datenstruktur mit den veränderten Daten zurückgegeben. Dies geschieht nciht unverzüglich, sonder erst zu
-dem Zeitpunkt, an denen die Daten tatsächlich im Rahmen einer Aktion abgerufen werden. Tatsächlich kann man daher eher
-von einer anweisung sprechen, wie Daten zu transformieren sind. Hierdurch entsteht ein Berechnungsgraph.
-
-Diesen Vorgehen bietet zwei wichtige Vorteile. Zum einen ermöglicht es Spark zum Zeitpunkt, an dem die Daten durch eine
-Aktion abgerufen werden, den Berechnungsgraph zu optimieren, zum anderen sind alle Transformationen eindeutig
-beschrieben, wiederholbar oder aber zu revidieren.
+Im Folgenden werden einige gebräuchliche Transformationen vorgestellt.
 
 ##### Filter, Map und FlatMap
 
@@ -490,4 +500,52 @@ wörter = lines.flatMap(lambda line: line.split(" "))
 
 #### Übersicht über Aktionen
 
-to do: Übersicht Aktionen
+Im Folgenden werden einige gebräuchliche Aktionen vorgestellt.
+
+##### collect
+
+Die Verarbeitung der Daten kann je nach Größe der Daten verteilt erfolgen. In solch einen Fall liegen die Ergebnisse
+der Transformationen ebenfalls verteilt vor und müssen zunächst zusammen gebracht werden. Dies "Einsammeln" geschieht
+mit dem Collect Befehl.
+
+##### count, first und take
+
+Die Aktionen ermöglichen einen Überblick über die vorliegenden Daten. Während Count lediglich die Anzahl der vorhandenen
+Elemente zurück gibt, gibt first das erste Element und take n-Elemente des zugrundeliegenden RDD wieder.
+
+```python
+count_words=lines.count()
+```
+
+##### reduce 
+
+Die Reduce Aktion dient der Aggregierung der vorhandenen Daten, indem auf Basis zweier Elemente ein Ergebnis 
+berechnet wird.  
+
+```python
+words=lines.flatMap(lambda line: line.split(" ")) \
+  .map(lambda word: (word, 1)) \
+  .reduceByKey(lambda a,b:a+b)
+```
+
+In diesem Beispiel wird mit reduceByKey eine Variation von reduce verwendet, welche jedoch prinzipiell auf die gleiche
+Art und Weise funktioniert: Der Funktion werden zwei Elemente (a, b) übergeben. Darauf basierend wird der 
+Rückgabewert (a+b) berechnet. 
+
+##### foreach
+
+Der Befehl foreach iteriert durch jedes Item des RDD und ermöglicht so eine Elementweise Verarbeitung der Daten. 
+
+```python
+top_out = 30
+
+print("")
+print("Ausgabe der ersten {} Zeilen des Textes".format(top_out))
+print("")
+
+for line in lines.collect()[0:top_out]:
+  print(line)
+```
+
+In diesem Beispiel werden die Aktionen collect und foreach verwendet, um durch alle Elemente zu iterieren. Hierbei
+erkennt man, das es sich um eine Flow API handelt, welche hierdurch sehr übersichtlich wird.

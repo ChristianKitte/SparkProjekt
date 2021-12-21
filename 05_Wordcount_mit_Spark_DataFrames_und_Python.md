@@ -3,7 +3,7 @@
 # 7 Wordcount mit Spark DataFrames und Python
 
 An dieser Stelle wird eine Variante der zuvor im Kapitel
-[Wordcount mit Spark und Python](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
+[Wordcount mit Spark und Python](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
 vorgestellten Beispiels vorgestellt.
 
 Auch wenn viele der Methoden auf Grund der gleichen Aufgabenstellung gleichbleiben, finden sich im Gegensatz zur
@@ -13,7 +13,7 @@ Data Frames Objekte zum Einsatz.
 Im folgenden soll nun auf die Unterschiede in der Programmierung kurz eingegangen werden. Um unnötige Wiederholungen zu
 vermeiden wird auf die Erklärung der bereits zuvor verwendeten Codebestandteile verzichtet. Diese werden bereits
 ausführlich im
-[vorhergehenden Kapitel](06_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
+[vorhergehenden Kapitel](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark und Python")
 erklärt.
 
 Wie bereits zuvor ist auch der Code dieses Abschnitts als lauffähiges  
