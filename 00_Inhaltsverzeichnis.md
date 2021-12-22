@@ -28,7 +28,7 @@
 
 * [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für Spark")
   A C
-    * Spark in der Cloud (Amazon, Google, Azure, ..., Databrick) D
+    * Spark in der Cloud (Azure, Amazon, Google) in Bearbeitung C V 0.1
     * Spark mit Google Colaboratory (Colab) C V 1.0
     * Spark mit Docker C V 1.0
         * Dockerimage

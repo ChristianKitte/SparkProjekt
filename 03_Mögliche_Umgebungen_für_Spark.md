@@ -2,17 +2,17 @@
 
 # 3 Mögliche Umgebungen für Spark
 
-In den folgenden vier Unterkapiteln werden Wege aufgezeigt, wie eine produktiv einsetzbare Umgebung für Spark auf 
+In den folgenden drei Unterkapiteln werden Wege aufgezeigt, wie eine produktiv einsetzbare Umgebung für Spark auf 
 einfachen Wege eingerichtet werden kann. 
 
-Hierbei werden zunächst die Möglichkeiten aufgezeigt, Spark im Umfeld eines Clouddienstleisters zu betreiben. Dies 
-ist in vielen Fällen auch für den ersten Kontakt kostengünstig und einfach umzusetzen. Anschließend wird eine Lösung 
-auf Basis von Google und Docker vorgestellt. Beide verbindet, dass sie kostenlose und einfach verfügbar sind.
+Hierbei wird zunächst die Möglichkeiten aufgezeigt, Spark im Umfeld eines Clouddienstleisters zu betreiben. Dies 
+ist vor allem für Unternehmen oftmals eine sinnvolle Lösung, kann aber auch für den ersten Kontakt ansich 
+eine kostengünstige und einfach umzusetzende Lösung sein. Anschließend werden Lösungen auf Basis von Google und 
+Docker vorgestellt. Beide verbindet, dass sie kostenlos und einfach verfügbar sind.
 
-Spark kann zudem auch auf einen lokalen Rechner eingerichtet werden. Dieser Weg hat jedoch den Nachteil, dass er etwas
-komplizierter und für ein erstes Kennenlernen daher nicht optimal ist. Zudem erfordert er eine Reihe von nicht 
-temporären Eingriffen und Installationen in das lokale System des Rechners. Aus diesen Gründen soll er hier nciht 
-vorgestellt werden. 
+Spark kann zudem auch auf einen lokalen Rechner eingerichtet werden. Dieser Weg hat jedoch den Nachteil, dass er 
+eine Reihe von Downloads, Installationen und Einstellungen bedarf. Für einen ersten Kontakt ist dies nicht optimal
+und wird daher hier nicht berücksichtigt. 
 
 * [_Spark in der Cloud_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud )
 * [_Spark mit Google Colaboratory (Colab)_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab )
@@ -21,6 +21,51 @@ vorgestellt werden.
 ## Spark in der Cloud
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
+
+Insbesondere für Unternehmen kann sich der Einsatz von Spark im Umfeld einer Cloud sinnvoll sein. In der Regel 
+können Lösungen zunächst kostengünstig implementiert und mit zunehmenden Nutzen hoch skaliert werden. Die einfache 
+Verfügbarkeit macht diese Optionen aber auch für einen ersten Kontakt interessant, da oftmals kostenlose Testzeiträume 
+angeboten werden. Grundsätzlich handelt es sich jedoch in der Regel nicht um eine kostenlose Lösung. 
+
+In diesen Abschnitt sollen nicht repräsentativ kurz auf die Angebote von Microsoft Azure, Amazon AWS sowie Google Cloud 
+als größte Anbieter von Cloudlösungen eingegangen werden.
+
+### Microsoft Azure
+
+Hinter 
+[Microsoft Azure](https://azure.microsoft.com/de-de/ "zur Einstiegsseite") 
+verbirgt sich die Cloudsparte von Microsoft mit seine cloudbasierten Services und Anwendungen.
+Innerhalb von Azure wird Spark in den Bereich Machine Learning unter den Begriff 
+[Azure Databricks ein.](https://azure.microsoft.com/de-de/services/databricks/ "zur Einstiegsseite")
+einsortiert.
+
+Azur ermöglicht eine einfache, angeleitete und sehr schnelle Einrichtung von autoskalierten Spark Clustern und 
+somit ein schnelles Ergebnis. Zusätzlich findet sich sehr umfangreiche 
+[Dokumentation](https://docs.microsoft.com/de-de/azure/databricks/ "zur Dokumentation") 
+zur Arbeit mit Azure Databricks alias Spark.
+
+Daneben bietet Azur die Integration eines Zeppelin Notebooks und ermöglicht somit ein ähnlich komfortables Arbeiten 
+wie im Umfeld von Google Colab weiter unten auf dieser Seite. 
+
+Neben der Integration von Git Hub, können im Umfeld von Azure Databricks weitere Dienste von Azure einfach  
+genutzt und integriert werden. Hierzu gehören:
+- Azure Synapse Analytics (Auslastung)
+- Azure Machine Learning (KI Algorithmen und Unterstützung für eine Vielzahl von KI Frameworks)
+- Azure Data Factory (Datenintegration)
+- Azure Data Lake Storage (Datenhaltung)
+
+Wie alle Cloudanbieter richten sich die 
+[Kosten](https://azure.microsoft.com/de-de/pricing/details/databricks/ "zur Preisübersicht") 
+in erster Linie nach den benötigten Platz, der Leistungsfähigkeit 
+sowie der Rechenzeit. Somit ist es notwendig, eine sehr genaue Erwartung zu haben, um einen angenäherten Preis zu 
+bestimmen. 
+
+Azure eignet sich auf Grund seines aufgeräumten Designs, der umfangreichen Verfügbarkeit soie des 30 tägigen 
+kostenlosen Testzeitraums aber auch für ein erstes Kennenlernen von Spark im Enterprisebereich. 
+
+### Amazon AWS
+
+### Google Cloud
 
 ## Spark mit Google Colaboratory (Colab)
 
