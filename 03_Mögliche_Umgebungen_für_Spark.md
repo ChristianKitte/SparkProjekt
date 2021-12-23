@@ -27,8 +27,9 @@ können Lösungen zunächst kostengünstig implementiert und mit zunehmenden Nut
 Verfügbarkeit macht diese Optionen aber auch für einen ersten Kontakt interessant, da oftmals kostenlose Testzeiträume 
 angeboten werden. Grundsätzlich handelt es sich jedoch in der Regel nicht um eine kostenlose Lösung. 
 
-In diesen Abschnitt sollen nicht repräsentativ kurz auf die Angebote von Microsoft Azure, Amazon AWS sowie Google Cloud 
-als größte Anbieter von Cloudlösungen eingegangen werden.
+In diesen Abschnitt sollen kurz auf die Angebote von Microsoft Azure, Amazon AWS sowie Google Cloud 
+als größte Anbieter von Cloudlösungen eingegangen werden. Eine tiefergehende Beschäftigung würde jedoch 
+den Rahmen dieser Arbeit sprengen. Vielmehr sollen erste Anhaltspunkte für den Einstieg gegeben werden.
 
 ### Microsoft Azure
 
@@ -48,11 +49,11 @@ Daneben bietet Azur die Integration eines Zeppelin Notebooks und ermöglicht som
 wie im Umfeld von Google Colab weiter unten auf dieser Seite. 
 
 Neben der Integration von Git Hub, können im Umfeld von Azure Databricks weitere Dienste von Azure einfach  
-genutzt und integriert werden. Hierzu gehören:
-- Azure Synapse Analytics (Auslastung)
-- Azure Machine Learning (KI Algorithmen und Unterstützung für eine Vielzahl von KI Frameworks)
-- Azure Data Factory (Datenintegration)
-- Azure Data Lake Storage (Datenhaltung)
+genutzt und integriert werden. Hierzu gehören unter anderen:
+- **Azure Synapse Analytics** (Auslastung)
+- **Azure Machine Learning** (KI Algorithmen und Unterstützung für eine Vielzahl von KI Frameworks)
+- **Azure Data Factory** (Datenintegration)
+- **Azure Data Lake Storage** (Datenhaltung)
 
 Wie alle Cloudanbieter richten sich die 
 [Kosten](https://azure.microsoft.com/de-de/pricing/details/databricks/ "zur Preisübersicht") 
@@ -60,10 +61,54 @@ in erster Linie nach den benötigten Platz, der Leistungsfähigkeit
 sowie der Rechenzeit. Somit ist es notwendig, eine sehr genaue Erwartung zu haben, um einen angenäherten Preis zu 
 bestimmen. 
 
-Azure eignet sich auf Grund seines aufgeräumten Designs, der umfangreichen Verfügbarkeit soie des 30 tägigen 
-kostenlosen Testzeitraums aber auch für ein erstes Kennenlernen von Spark im Enterprisebereich. 
+Azure eignet sich auf Grund seines aufgeräumten Designs, der deutschen Sprache, der umfangreichen Verfügbarkeit sowie 
+des 30 tägigen kostenlosen Testzeitraums aber auch für ein erstes Kennenlernen von Spark im Enterprisebereich. 
 
 ### Amazon AWS
+
+Hinter dem Begriff 
+[Amazon Web Services oder kurz AWS](https://aws.amazon.com/ "zur Startseite")
+steht die Cloudsparte von Amazon. Wie bei Microsofts Azure werden auch hier verschiedenen Dienstleistungen angeboten, 
+darunter auch ein Hosting von Spark. Anders als bei Azure wird hier jedoch nicht mit Databricks zusammen gearbeitet, 
+sondern Spark nativ unterstützt.
+
+Bei Amazon ist für den Einsatz von Spark 
+[Amazon EMR](https://docs.aws.amazon.com/de_de/emr/latest/ManagementGuide/emr-what-is-emr.html "zum Handbuch") 
+notwendig. Amazon EMR steht hierbei für Amazon Elastic MapReduce. Hierbei handelt es sich um eine Plattform, welche 
+speziell der Ausführung von Framework wie Spark mit sehr großen Datenkontingenten dienen. Technisch gesehen handelt 
+es sich um verwaltete Cluster, welche schnell erstellt werden und zusammenarbeiten können.   
+
+Über die Nutzung von Amazon besteht die Möglichkeit, mit Spark umfangreiche Verarbeitungspipelines aufzubauen und 
+hierfür auf allen ebenen Zugriff und Unterstützung durch die Amazon Cloud zu erreichen. Für das Interaktive Arbeiten 
+sind Jupyter oder Zeppelin Notebooks verfügbar.
+
+Amazon fokussiert auf der 
+[Übersichtsseite für Spark](https://aws.amazon.com/de/elasticmapreduce/details/spark/ "zur Übersichtsseite") 
+auf vier Funktionalitäten:
+- **S3_Sketch_Available**: Zielt auf ein Hohe Performance auf Basis gerichteter azyklischer Graphen und RDDs
+- **S3_Sketch_High_Performance**: Ermöglicht die Einbindung von Java, Scala und Python. Spark SQL ist verfügbar ebenso 
+  wie eine interaktive Umgebung via Notebooks. Die Schnelle Entwicklung von Anwendungen steht hier im Vordergrund.
+- **S3_Sketch_Simple**: Fokussiert auf die schnelle Erstellung von Workflows. Folgerichtig sind hier die Bibliotheken für 
+  maschinelles Lernen (MLib), Stream Verarbeitung (Spark Streaming) sowie der Graphverarbeitung (GraphX) einfach 
+  zugreifbar.
+- **Integration in Amazons EMR-Funktionssatz**: Bietet eine tiefe Integration Amazon EMR. Arbeitsschritte von Spark 
+  können hierbei an die sogenannte Step-API von Amazon EWS zur Ausführung übermittelt werden. Hierbei erfolgt die 
+  gesamte Verwaltung von Spark und der verwendeten Infrastruktur. 
+
+Bei Amazon AWS handelt es sich grundsätzlich um einen kostenpflichtigen Dienst. Je nach Leistungsfähigkeit und 
+Funktionalität müssen für die Nutzung 
+[Entgelte](https://aws.amazon.com/de/emr/pricing/ "zur Preisliste") 
+entrichtet werden. Wie zuvor ist es daher wichtig zu wissen, was genau in Anspruch genommen werden wird.
+
+Daneben bietet auch Amazon kostenlose Testzeitraume und begrenzte bzw. dauernd kostenlose Dienstleistungen an. Eine 
+[Übersicht](https://aws.amazon.com/de/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=tier%23always-free&awsf.Free%20Tier%20Categories=*all&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all&refid=7f46dc7a-cf36-47f2-8b7b-74dceeb857ff#Free_Tier_details) 
+geht hierauf detaillierter ein. Zudem stehen umfangreiche Ressourcen in deutscher Sprache für die Einarbeitung in 
+Amazon AWS, jedoch eher weniger 
+[speziell für Spark](https://aws.amazon.com/de/big-data/what-is-spark/ "zur Sparkseite von Amazon") 
+zur Verfügung. 
+
+Alles in allen ist auch Amazon für ein erstes Kennenlernen geeignet. Nach Meinung des Autors zeigt sich jedoch die 
+Oberfläche von Microsofts Azure aufgeräumter. Daher wird der Einstieg hier eher als komplizierter angesehen.
 
 ### Google Cloud
 

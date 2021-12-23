@@ -16,4 +16,7 @@ ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen D
 * Amon Wondra
 * Christian Kitte
 
+Alle in dieser Arbeit genutzten Begrifflichkeiten und Bilder werden ohne Rücksicht auf etwaige Lizenzen oder 
+Patente genutzt. Die Verwendung der Begriffe oder Bilder impliziert somit nicht deren freie Verfügbarkeit.
+
 ## [Zum Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier geht es zum Inhaltsverzeichnis")
