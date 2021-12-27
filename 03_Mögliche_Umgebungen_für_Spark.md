@@ -112,6 +112,39 @@ Oberfläche von Microsofts Azure aufgeräumter. Daher wird der Einstieg hier ehe
 
 ### Google Cloud
 
+Unter dem Begriff 
+[Google Cloud](https://cloud.google.com/ "zur Startseite")
+finden sich das Angebot von Google für den Cloudbereich. Ebenso wie die zuvor behandelten Anbieter, verfügt auch
+Google über eine beachtliche Zahl an Diensten auf Cloudbasis. Positiv ist auch hier, dass alle besuchten Seiten auf 
+Deutsch waren sowie das Vorhandensein einer bemerkenswert umfangreichen 
+[Dokumentation](https://cloud.google.com/docs/ "zur Dokumentation").
+
+Um auf Basis der Google Cloud mit Spark zu arbeiten bedient man sich des 
+[Dataproc Dienstes](https://cloud.google.com/dataproc "zur Startseite des Dienstes")
+Hierbei handelt es sich nach Google um einen verwalteten und hoch skalierten Dienst, welcher jedoch nicht nur für Spark 
+oder Hadoop reserviert ist, sondern auch weitere Open Source Projekte zugänglich macht. Google fokussiert somit nicht  
+auf die reine Nutzung von Spark, sondern bietet eher eine ganze 
+[Umgebung](https://cloud.google.com/dataproc#section-9 "zur Übersicht über alle Features") 
+für den "Data Scientisten" unter Einbindung von Spark und anderen Apache Projekten und Open Source Anwendungen an, 
+zeigt aber auch die Möglichkeiten zur Anbindung an die eigenen Angebote auf.
+
+Ebenso wie bei den zuvor behandelten Cloudanbietern handelt es sich auch bei Google Cloud um einen grundsätzlich 
+[kostenpflichtige Dienste](https://cloud.google.com/dataproc/pricing "zur Preisliste"). 
+Auch hier erfolgt die Preisfindung auf Basis der Leistungsfähigkeit und des verwendeten Dienstes, so dass 
+eine genaue Planung der tatsächlich benötigten Ressourcen sinnvoll ist.
+
+Ebenfalls bietet Google einen 
+[kostenlosen Testzeitraum und Testguthaben](https://console.cloud.google.com/freetrial "zur Anmeldeseite")
+, welches 90 Tage nutzbar ist, sowie eine Vielzahl an 
+[freien monatlichen Kontingenten](https://cloud.google.com/free "zu den freien Kontingenten")
+für verschiedene Dienste an. Interessant ist die klare Versicherung, dass die anzugebene Kreditkarte nur
+dann belastet werde, wenn ein manuelles Upgrade auf ein kostenpflichtiges Konto erfolgt sei. Diese Versicherung findet
+man bei den vorherigen Anbietern nicht in dieser Klareheit.
+
+Nach Meinung des Autor handelt es sich bei dem Angebot von Google um ein sehr aufgeräumtes Angebot ähnlich dem von
+Microsofts Azure, wobei dies direkter auf die Spark Nutzung abzielt und je nach Ziel sinnvoller sein 
+kann. 
+
 ## Spark mit Google Colaboratory (Colab)
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
