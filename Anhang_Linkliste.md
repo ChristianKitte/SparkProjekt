@@ -2,6 +2,17 @@
 
 # Anhang Linkliste
 
+### Geschichte von Spark
+
+Kleine geschichtlicher Überblick auf Apache.org
+[Link](https://spark.apache.org/history.html)
+
+Databricks Homepage
+[Link](https://databricks.com)
+
+Databricks auf Wikipedia
+[Link](https://en.wikipedia.org/wiki/Databricks)
+
 ### Hadoop
 
 Apache Hadoop Homepage
@@ -75,6 +86,78 @@ Eine Seite zur Tungsten Execution Engine
 [Link](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html)
 
 ***
+
+### Umgebungen für Spark
+
+Nachfolgend sind einige Webseiten aufgelistet, die erste Informationen für den Einstieg auf Basis der in dieser 
+Arbeit genannten Vorgehensweisen geben.
+
+#### Microsoft Azure
+
+Einstiegsseite von Microsoft Azure
+[Link](https://azure.microsoft.com/de-de)
+
+Einstiegsseite von Databricks (Spark) in Microsoft Azue
+[Link](https://azure.microsoft.com/de-de/services/databricks)
+
+Zur Dokumentationsseite von Databricks (Spark) in Microsoft Azure
+[Link](https://docs.microsoft.com/de-de/azure/databricks)
+
+Eine Preisübersicht der von Databricks (Spark) angebotenen Dienste
+[Link](https://azure.microsoft.com/de-de/pricing/details/databricks)
+
+#### Amanzon Web Services (AWS)
+
+Einstiegsseite von Amazon Web Services (AWS)
+[Link](https://aws.amazon.com)
+
+Zum Handbuch von Amazon Elastic MapReduce (EMR)
+[Link](https://docs.aws.amazon.com/de_de/emr/latest/ManagementGuide/emr-what-is-emr.html)
+
+Übersichtsseite zu Spark in EMR
+[Link](https://aws.amazon.com/de/elasticmapreduce/details/spark)
+
+Eine Preisübersicht von Amazon Web Services (AWS)
+[Link](https://aws.amazon.com/de/emr/pricing)
+
+#### Google Cloud
+
+Einstiegsseite von Google Cloud
+[Link](https://cloud.google.com)
+
+Zur allgemeinen Dokumentation von Google Cloud
+[Link](https://cloud.google.com/docs)
+
+Einstiegsseite von Dataproc (Spark) in Google Cloud
+[Link](https://cloud.google.com/dataproc)
+
+Übersicht aller angebotenen Feature von Dataproc (Spark) in Google Cloud
+[Link](https://cloud.google.com/dataproc#section-9)
+
+Eine Preisübersicht von Google Cloud
+[Link](https://cloud.google.com/dataproc/pricing).
+
+#### Google Colaboratory
+
+Einstiegsseite von Google Colaboratory
+[Link](https://colab.research.google.com/?utm_source=scs-index)
+
+#### Docker
+
+Zur Einstiegsseite von Docker
+[Link](https://docs.docker.com/get-started/overview).
+
+Zur Einstiegsseite von Docker Hub
+[Link](https://hub.docker.com)
+
+Zur Projektseite des verwendeten Spark Containers
+[Link](https://hub.docker.com/r/jupyter/pyspark-notebook)
+
+Zur website von Jupyter Notebook
+[Link](https://jupyter.org/index.html)
+
+Zur Webseite von JupyterLab
+[Link](https://jupyterlab.readthedocs.io/en/stable)
 
 ### Java
 

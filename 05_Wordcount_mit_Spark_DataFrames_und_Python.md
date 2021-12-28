@@ -58,6 +58,7 @@ Vorkommen. Abgeschlossen wir die Anweisung mit einem sort und der Ausgabe der so
 API macht den Code hierbei gut lesbar. Ebenso fällt die Ähnlichkeit zu Panda DataFrames auf.
 
 https://spark.apache.org/docs/2.1.0/api/python/pyspark.sql.html#pyspark.sql.functions.explode
+
 https://dwgeek.com/replace-pyspark-dataframe-column-value-methods.html/
 
 ```python

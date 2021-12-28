@@ -1,14 +1,61 @@
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
 
 # 1 Spark
+to Do: kurzes Intro...
 
-...Rolle von databricks
+* [Was ist Spark](01_Spark.md#sprachunterstützung)
+* [Bisherige Entwicklungsgeschichte](01_Spark.md#bisherige-entwicklungsgeschichte)
+* [Sprachunterstützung](01_Spark.md#sprachunterstützung)
+* [Spark Ecosystem](01_Spark.md#spark-ecosystem)
 
-## Was ist Spark - Versuch einer Definition D
+## Was ist Spark
 
-## Kurzer Überblick über die bisherige Entwicklungsgeschichte D
+[_zurück_](01_Spark.md#1-Spark "Zurück")
 
-## Überblick über das Spark Ecosystem 
+## Bisherige Entwicklungsgeschichte
+
+[_zurück_](01_Spark.md#1-Spark "Zurück")
+
+Nach 
+[eigenen Angaben](https://spark.apache.org/history.html "zur Webseite")
+startete Apache Spark 2009 als ein Forschungsprojekt an der 
+[UC Berkley](https://www.berkeley.edu/ "zur Webseite")
+in Californien und wurde 2010 als Open Source Projekt veröffentlicht. In den folgenden Jahren erschienen 
+eine Reihe wissenschaftlicher Puplikationen, die sich mit den zugrunde liegenden Ideen beschäftigten. Es bildete sich 
+eine rasch wachsende Community. Seit 2014 ist es als 
+[Top-Level-Projekt](https://blogs.apache.org/foundation/entry/the_apache_software_foundation_announces50 "Zum 
+Blogeintrag")
+Teil der  
+[Apache Software Foundation](https://www.apache.org/ "zur Webseite").
+Als Nutzer werden u.a. IBM, Intel und Yahoo aufgelistet.
+
+Laut angaben von
+[Databricks](https://databricks.com/de/spark/about "Zur Webseite") 
+arbeiten (Stand 2021) über 1000 aktive Entwickler aus mehr als 250 Unternehmen und Organisationen an dem Projekt mit, 
+welches sich zur größten Open Source Community im Bereich Big Data entwickelt habe. Am 13. Oktober 2021 wurde die 
+aktuelle 
+[Version 3.2.0](https://spark.apache.org/releases/spark-release-3-2-0.html "zur Webseite") 
+veröffentlicht. 
+
+Ebenfalls in 2013 wurde von den ehemaligen Entwicklern die Firma  
+[Databricks](https://databricks.com "Zur Einstiegsseite von Databricks")
+ins Leben gerufen. Databricks sieht sich selbst in der Verantwortung, das offene Entwicklungsmodell von Spark 
+aufrecht zu erhalten und Spark selbst weiter zu entwickeln. Gleichzeitig verdient es Geld im Umfeld von Spark unter 
+anderen durch Online Kurse und Eigenentwicklungen auf Basis von Spark wie **_lakehouse_**, einer eigenen Cloud Data 
+Plattform. 
+
+Laut 
+[Wikipedia](https://en.wikipedia.org/wiki/Databricks "Zum Wikipediaeintrag von Databricks") 
+arbeitet Databricks seit 2017 mit Microsoft zusammen, und ist hier unter den Namen **_Azure Databricks_** verfügbar. 
+2021 Wurde eine Kooperation mit Google eingegangen, um Spark in dessen Cloud verfügbar zu machen. 
+
+## Sprachunterstützung
+
+[_zurück_](01_Spark.md#1-Spark "Zurück")
+
+## Spark Ecosystem 
+
+[_zurück_](01_Spark.md#1-Spark "Zurück")
 
 ### Spark Core
 

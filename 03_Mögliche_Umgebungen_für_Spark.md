@@ -307,11 +307,11 @@ auf [Docker](https://docs.docker.com/get-started/overview/ "Hier gelangen Sie zu
 
 ### Dockerimage
 
-Als Basis dient das [_Jupyter Notebook Python, Spark
-Stack_](https://hub.docker.com/r/jupyter/pyspark-notebook "Hier gelangen Sie zum Image im Docker Hub")
+Als Basis dient das [_Jupyter Notebook Python, Spark Stack_](https://hub.docker.com/r/jupyter/pyspark-notebook "Hier 
+gelangen Sie zum Image im Docker Hub")
 Notebook. Es beinhaltet ein fertig konfiguriertes Linux System mit installierten Java, Python und Spark. Es ist also
-nicht nötig, manuelle Einstallungen oder Installationen auszuführen, um Spark innerhalb eines [_Jupyter
-Notebooks_](https://jupyter.org/index.html "Hier gelangen Sie zur Homepage von Jupyter") auszuführen.
+nicht nötig, manuelle Einstallungen oder Installationen auszuführen, um Spark innerhalb eines 
+[_Jupyter Notebooks_](https://jupyter.org/index.html "Hier gelangen Sie zur Homepage von Jupyter") auszuführen.
 
 ### Download und erster Start
 
