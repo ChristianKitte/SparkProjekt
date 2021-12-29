@@ -6,7 +6,7 @@ to Do: kurzes Intro...
 * [Was ist Spark](01_Spark.md#sprachunterstützung)
 * [Bisherige Entwicklungsgeschichte](01_Spark.md#bisherige-entwicklungsgeschichte)
 * [Sprachunterstützung](01_Spark.md#sprachunterstützung)
-* [Spark Ecosystem](01_Spark.md#spark-ecosystem)
+* [Spark Ökosystem](01_Spark.md#spark-ökosystem)
 
 ## Was ist Spark
 
@@ -103,7 +103,7 @@ tiefergehend und in sich intuitiver zu sein.
 
 
 
-## Spark Ecosystem 
+## Spark Ökosystem 
 
 [_zurück_](01_Spark.md#1-Spark "Zurück")
 

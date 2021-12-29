@@ -6,7 +6,7 @@
     * Was ist Spark D
     * Bisherige Entwicklungsgeschichte C V 1.0
     * Sprachunterstützung (Neu)
-    * Überblick über das Spark Ecosystem A
+    * Überblick über das Spark Ökosystem A
         * SQL (SparkSQL) A
         * Maschine Learning (Mllib) A
         * Graphdatenbanken (GraphX) A
