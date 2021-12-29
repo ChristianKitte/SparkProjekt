@@ -17,6 +17,10 @@ ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen D
 * Christian Kitte
 
 Alle in dieser Arbeit genutzten Begrifflichkeiten und Bilder werden ohne Rücksicht auf etwaige Lizenzen oder 
-Patente genutzt. Die Verwendung der Begriffe oder Bilder impliziert somit nicht deren freie Verfügbarkeit.
+Patente genutzt. Die Verwendung der Begriffe oder Bilder impliziert somit nicht deren freie Verfügbarkeit. 
+
+Für die hier verwendeten Codebeispiele wurde aus Gründen der Übersichtlichkeit und Verbreitung im Bereich 
+von Big Data und Maschinellen Lernens Python genutzt. 
+
 
 ## [Zum Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier geht es zum Inhaltsverzeichnis")

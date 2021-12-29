@@ -53,6 +53,54 @@ arbeitet Databricks seit 2017 mit Microsoft zusammen, und ist hier unter den Nam
 
 [_zurück_](01_Spark.md#1-Spark "Zurück")
 
+Auch wenn Apache Spark ursprünglich in Scala programmiert wurde, unterstützt es eine Reihe weiterer Sprachen, 
+darunter die für das Umfeld von Big Data und Machine Learning wichtigen Sprachen Python und R.
+
+Auf der Übersichtsseite zur aktuellen Version 3.2.0 (Stand Dezember 2021) werden die unterstützten Sprachen und 
+deren jeweilige Mindestversion näher angegeben. Hiernach wird 
+
+- [Java](https://openjdk.java.net/ "zur Webseite von OpenJDK")
+  8/11 (Versionen vor 8u201 sind deprecated ab Spark 3.2.0, Maven Support, kann DataSets nutzen)
+- [Scala](https://www.scala-lang.org/ "zur Webseite")
+  2.12 (Maven Support, kann DataSets nutzen)
+- [Python](https://www.python.org/ "zur Webseite")
+  3.6+ (Version 3.6 und davor sind deprecated ab Spark 3.2.0, PySpark)  
+- [R](https://www.r-project.org/ "zur Webseite")
+  3.5+ (SparkR)
+ 
+
+unterstützt. Insbesondere bei der Zusammenarbeit mit 
+[Apache Arrow](https://arrow.apache.org/ "zur Webseite") 
+wird zudem auf mögliche Probleme Im Umfeld von Java und Python angesprochen und auf die entsprechende 
+[Dokumentation](https://arrow.apache.org/docs/ "zur Dokumentation") 
+verwiesen.
+
+Mit Spark SQL besteht zudem die Möglichkeit, auf strukturierte Daten unter Verwendung von 
+[SQL](https://de.wikipedia.org/wiki/SQL "zur Wikipediaseite") 
+(Structured Query Language) zuzugreifen.
+
+Die Verwendung von Java und Scala als höhere objektorientierte Programmiersprachen ermöglicht die Verwendung der mit 
+SparkSQL zuletzt eingeführten streng typisierten Datasets im Code zu nutzen. Ein weitere Vorteil dieser Sprachen ist 
+die Möglichkeit, Apache Spark mit Hilfe von Maven direkt in Projekte einzubinden. 
+
+Für die Arbeit Python existiert mit 
+[PySpark](https://spark.apache.org/docs/latest/api/python/index.html "zur Webseite")
+ein Interface, dass eine starke Integration vmit Python ermöglicht. 
+Daneben existieren eine Vielzahl an Erweiterungen im Python, so dass keinerlei Einschränkungen bei der Arbeit 
+mit Python existieren. Die fehlende Möglichkeit, SparkSQL zu nutzen, wird durch das Vorhandensein entsprechender 
+Alternativen ausgeglichen. 
+
+Mit
+[SparkR (R on Spark)](https://spark.apache.org/docs/latest/sparkr.html "zur Webseite")
+existiert leichtgewichtiges Frontend zur Nutzung von Spark. Daneben unterstützt das Paket auch das verteilte Lernen 
+in Zusammenarbeit mit SparkML. Nach Meinung des Authors, scheint die Integration von Python jedoch bei weitem 
+tiefergehend und in sich intuitiver zu sein. 
+
+ 
+
+
+
+
 ## Spark Ecosystem 
 
 [_zurück_](01_Spark.md#1-Spark "Zurück")

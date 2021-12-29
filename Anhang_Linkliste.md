@@ -13,6 +13,35 @@ Databricks Homepage
 Databricks auf Wikipedia
 [Link](https://en.wikipedia.org/wiki/Databricks)
 
+### Sprachunterstützung in Spark
+
+Java Homepage
+[Link](https://openjdk.java.net)
+
+Scala Homepage
+[Link](https://www.scala-lang.org)
+
+Python Homepage 
+[Link](https://www.python.org)
+
+R Homepage
+[Link](https://www.r-project.org)
+
+Apache Arrow Homepage
+[Link](https://arrow.apache.org)
+
+Dokumentation von Apache Arrow
+[Link](https://arrow.apache.org/docs)
+
+Wikipediaseite zur Abfragesprache SQL (Structured Query Language) 
+[Link](https://de.wikipedia.org/wiki/SQL)
+
+PySpark Homepage
+[Link](https://spark.apache.org/docs/latest/api/python/index.html)
+
+SparkR Homepage (R on Spark) 
+[Link](https://spark.apache.org/docs/latest/sparkr.html)
+
 ### Hadoop
 
 Apache Hadoop Homepage
