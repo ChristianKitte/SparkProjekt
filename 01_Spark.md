@@ -56,7 +56,9 @@ arbeitet Databricks seit 2017 mit Microsoft zusammen, und ist hier unter den Nam
 Auch wenn Apache Spark ursprünglich in Scala programmiert wurde, unterstützt es eine Reihe weiterer Sprachen, 
 darunter die für das Umfeld von Big Data und Machine Learning wichtigen Sprachen Python und R.
 
-Auf der Übersichtsseite zur aktuellen Version 3.2.0 (Stand Dezember 2021) werden die unterstützten Sprachen und 
+Auf der 
+[Übersichtsseite](https://spark.apache.org/docs/latest "zur Übersichtsseite")
+zur aktuellen Version 3.2.0 (Stand Dezember 2021) werden die unterstützten Sprachen und 
 deren jeweilige Mindestversion näher angegeben. Hiernach wird 
 
 - [Java](https://openjdk.java.net/ "zur Webseite von OpenJDK")
