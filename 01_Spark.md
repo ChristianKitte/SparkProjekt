@@ -1,7 +1,24 @@
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
 
 # 1 Spark
-to Do: kurzes Intro...
+Ziel dieser arbeit ist es, dem Leser dieser Arbeit einen kurzen und grundlegenden Einblick in
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
+zu geben. 
+
+Am Ende soll der Leser einen Eindruck davon haben, was
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
+ist, wie es eingesetzt werden kann und wo seine Anfänge liegen. Wichtige Begriffe im Umfeld von 
+Spark können zugeordnet werden und ermöglichen, sich selbstständig weiter in die Materie einzuarbeiten.
+
+Auf Basis der Sprache Python und eines Jupyter Notebooks werden in Abschnitt 
+[vier](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
+und 
+[fünf](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und 
+Python")
+zwei einfache Beispiele vorgestellt, wie
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
+zur Lösung eines Problems genutzt werden kann. 
+Dieser Code ist frei verfügbar und kann als Startpunkt für eigene Programme dienen.
 
 * [Was ist Spark](01_Spark.md#sprachunterstützung)
 * [Bisherige Entwicklungsgeschichte](01_Spark.md#bisherige-entwicklungsgeschichte)
@@ -11,6 +28,23 @@ to Do: kurzes Intro...
 ## Was ist Spark
 
 [_zurück_](01_Spark.md#1-Spark "Zurück")
+
+Bei 
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
+handelt es sich um ein Framework, welches Daten aus einer Vielzahl an Quellen einlesen, 
+verarbeiten und ausgeben kann. Es ist somit in erster Linie für die Verarbeitung, nicht aber für deren 
+Haltung zuständig.
+
+Es verdankt seine Bedeutung der Tatsache, das es imstand ist, auch sehr große Datenbestände im Petabereich 
+in kurzer Zeit verarbeiten zu können. Hierbei verteilt
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
+die Verarbeitung und führt zu einem späteren Zeitpunkt die Ergebnisse wieder zusammen.
+
+Daneben können nicht nur strukturierte Daten, sondern auch unstrukturierte oder als Stream vorliegende
+Daten verarbeitet werden. Hierfür existieren mehrere Zusätze, auf die später eingegangen wird.
+
+Auch wenn Spark selbst in Scala geschrieben wurde, unterstützt es neben Java die im Bereich Big Data 
+wichtigen Sprachen Python und R.
 
 ## Bisherige Entwicklungsgeschichte
 
@@ -25,7 +59,7 @@ eine Reihe wissenschaftlicher Puplikationen, die sich mit den zugrunde liegenden
 eine rasch wachsende Community. Seit 2014 ist es als 
 [Top-Level-Projekt](https://blogs.apache.org/foundation/entry/the_apache_software_foundation_announces50 "Zum 
 Blogeintrag")
-Teil der  
+Teil der
 [Apache Software Foundation](https://www.apache.org/ "zur Webseite").
 Als Nutzer werden u.a. IBM, Intel und Yahoo aufgelistet.
 

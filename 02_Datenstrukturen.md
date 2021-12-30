@@ -15,7 +15,8 @@ am Ende dieses Repositories geben.
 Ergänzend zu dieser Einleitung, wurde in den Kapiteln
 
 * [Praxisbeispiel mit RDDS](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
-* [Praxisbeispiel mit DataFrames](06_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und Python")
+* [Praxisbeispiel mit DataFrames](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung 
+  mit Spark DataFrames und Python")
 
 Zwei konkrete Beispiele zur Nutzung von Spark mit Python umgesetzt. Beide Beispiele liegen auch in Form von Python
 Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werden.
@@ -124,7 +125,7 @@ Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance de
 * [Spark RDDs](02_Datenstrukturen.md#spark-rdds)
 * [Spark Dataframes](02_Datenstrukturen.md#spark-dataframes)
 * [Spark Datasets](02_Datenstrukturen.md#spark-datasets)
-* [Spark DataFrame vs Spark DataSet](02_Datenstrukturen.md#spark-dataframe-vs-spark-DataSet)
+* [Spark DataFrame vs Spark DataSet](02_Datenstrukturen.md#spark-dataframe-vs-spark-dataset)
 * [Optimierungen](02_Datenstrukturen.md#optimierungen)
 * [Transformationen und Aktionen](02_Datenstrukturen.md#transformationen-und-aktionen)
 
