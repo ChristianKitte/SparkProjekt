@@ -2,13 +2,13 @@
 
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite")
 
-* [1 Spark](01_Spark.md "Einführung in Spark und seinem Ökosystem") C A
+* [1 Spark](01_Spark.md "Einführung in Spark und seinem Ökosystem") C
     * Was ist Spark C V 1.0
     * Bisherige Entwicklungsgeschichte C V 1.0
     * Sprachunterstützung C V 1.0
     * Überblick über das Spark Ökosystem A
-        * SQL (SparkSQL) A
-        * Maschine Learning (Mllib) A
+        * SQL (SparkSQL) C V 1.0
+        * Maschine Learning (Mllib) C V 1.0
         * Graphdatenbanken (GraphX) A
         * Streaming (Spark Streaming) A
 
