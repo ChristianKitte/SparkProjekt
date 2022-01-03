@@ -36,11 +36,76 @@ Dokumentation von Apache Arrow
 Wikipediaseite zur Abfragesprache SQL (Structured Query Language) 
 [Link](https://de.wikipedia.org/wiki/SQL)
 
+#### PySpark
+
 PySpark Homepage
 [Link](https://spark.apache.org/docs/latest/api/python/index.html)
 
+#### SparkR
+
 SparkR Homepage (R on Spark) 
 [Link](https://spark.apache.org/docs/latest/sparkr.html)
+
+### Spark Ökosystem und Erweiterungen 
+
+Homepage von mongoDB
+[Link](https://www.mongodb.com)
+
+Homepage von Microsoft SQL Server
+[Link](https://www.microsoft.com/de-de/sql-server/sql-server-2022)
+
+Homepage von tableau (Salesforce.com)
+[Link](https://www.tableau.com/de-de)
+
+Homepage von Microsoft Power BI
+[Link](https://powerbi.microsoft.com/de-de)
+
+Homepage von PyTorch (facebook)
+[Link](https://pytorch.org)
+
+Homepage von TensorFlow (Google)
+[Link](https://www.tensorflow.org)
+
+#### SparkSQL
+
+Homepage von SparkSQL
+[Link](https://spark.apache.org/sql)
+
+Dokumentation von SparkSQL
+[Link](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+
+#### MLlib (Maschine Learning Library)
+
+Homepage der Maschine Learning Library
+[Link](https://spark.apache.org/mllib)
+
+Dokumentation der Machine Learning Library
+[Link](https://spark.apache.org/docs/latest/ml-guide.html)
+
+#### GraphX
+
+Homepage von GraphX
+[Link](https://spark.apache.org/graphx)
+
+Dokumentation von GraphX
+[Link](https://spark.apache.org/docs/latest/graphx-programming-guide.html)
+
+Webseite der Graphendatenbank neo4j
+[Link](https://neo4j.com "zur Webseite")
+
+Informationen zu Spark auf der Seite von neo4j
+[Link](https://neo4j.com/docs/spark/current)
+
+Leicht verständliche Einführung in die Theorie der Graphendatenbanken 
+[Link](https://kuczera.github.io/Graphentechnologien/05_Einfuehrung_und_Theorie.html)
+
+#### Spark Streaming
+
+Homepage von Spark Streaming
+[Link](https://spark.apache.org/streaming)
+
+Dokumentation von Spark Streaming
+[Link](https://spark.apache.org/docs/latest/streaming-programming-guide.html)
 
 ### Hadoop
 

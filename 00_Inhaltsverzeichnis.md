@@ -6,11 +6,13 @@
     * Was ist Spark C V 1.0
     * Bisherige Entwicklungsgeschichte C V 1.0
     * Sprachunterstützung C V 1.0
-    * Überblick über das Spark Ökosystem A
-        * SQL (SparkSQL) C V 1.0
-        * Maschine Learning (Mllib) C V 1.0
-        * Graphdatenbanken (GraphX) A
-        * Streaming (Spark Streaming) A
+      * PySpark C V 1.0
+      * SparkR C V 1.0
+    * Spark Ökosystem und Erweiterungen
+      * SparkSQL C V 1.0
+      * MLlib C V 1.0
+      * GraphX  C V 1.0
+      * Spark Streaming 
 
 * [2 Datenstrukturen C V 1.0](02_Datenstrukturen.md "Überblick über grundlegende Datenstrukturen in Spark")
     * Hadoop
@@ -20,7 +22,7 @@
       * Yet Another Resource Negotiator (YARN) evtl. erweitern
     * Spark
       * Spark RDDs
-      * Spark Dataframes
+      * Spark Dataframes 
       * Spark Datasets
       * Spark DataFrame vs Spark DataSets
       * Optimierungen
