@@ -4,23 +4,40 @@
 (Das Apache Spark Loge ist ein eingetragenes Logo
 der [Apache Software Foundation](https://www.apache.org/ "Hier geht es zur Webseite der Apache Spark Foundation")
 
-*(Übersichtliche und verständliche Einführung in Apache Spark: Was ist es und welche Fähigkeiten hat es, was sind die
-ersten Schritte bei der Nutzung (Code mit Python), wie arbeitet es mit anderen Datenbanken zusammen und weitere Themen)*
-
 ## Semesterarbeit im Modul Datenbank-Technologien
 
 ## Wintersemester 2021/22
 
-## Gruppenmitglieder:
+## Christian Kitte
 
-* Amon Wondra
-* Christian Kitte
+---
 
-Alle in dieser Arbeit genutzten Begrifflichkeiten und Bilder werden ohne Rücksicht auf etwaige Lizenzen oder 
-Patente genutzt. Die Verwendung der Begriffe oder Bilder impliziert somit nicht deren freie Verfügbarkeit. 
+Zu Anfang der Beschäftigung mit Apache Spark stößt man auf eine Vielzahl an Begriffen und Konzepten, welche gerade 
+für diejenigen, welche nicht aus dem Umfeld von Big Data stammen, neu und eher schwer zu erfassen sind. Hinzu kommt, 
+dass sich auch Spark schnell weiter entwickelt und gefundene Informationen zeitlich eingeordnet werden müssen.   
+Ziel dieser arbeit ist es daher, dem Leser dieser Arbeit einen kurzen, aber grundlegenden Einblick in
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
+zu geben. 
 
-Für die hier verwendeten Codebeispiele wurde aus Gründen der Übersichtlichkeit und Verbreitung im Bereich 
-von Big Data und Maschinellen Lernens Python genutzt. 
+Am Ende soll der Leser einen Eindruck davon haben, was
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
+ist, wie es eingesetzt werden kann und wo seine Anfänge liegen. Wichtige Begriffe im Umfeld von Spark können zugeordnet 
+werden und ermöglichen so, sich selbstständig weiter in die Materie einzuarbeiten. Daher wird auch nicht nur der 
+aktuelle Stand betrachtet, sondern auch der Weg dorthin.  
+
+Auf Basis der Sprache Python und eines Jupyter Notebooks werden in Abschnitt
+[vier](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
+und
+[fünf](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und
+Python")
+zwei einfache Beispiele vorgestellt, wie
+[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
+zur Lösung eines Problems genutzt werden kann.
+Dieser Code ist frei verfügbar und kann als Startpunkt für eigene Programme dienen.
+
+Alle in dieser Arbeit genutzten Begrifflichkeiten und Bilder werden hierbei ohne Rücksicht auf etwaige Lizenzen oder 
+Patente genutzt. Die Verwendung der Begriffe oder Bilder in dieser Arbeit impliziert somit nicht deren freie 
+Verfügbarkeit. 
 
 
 ## [Zum Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier geht es zum Inhaltsverzeichnis")

@@ -2,6 +2,10 @@
 
 # Anhang Linkliste
 
+Ziel dieser Linkliste, ist das Sammeln relevanter Webinhalte zum Thema dieser Arbeit. Daneben wurden 
+weitere bei der Erstellung dieser Arbeit als wichtig oder interessant betrachtete Inhalte ebenfalls 
+mit aufgenommen. Die Gliederung erfolgt lose in Anlehnung an die Kapitel dieser Arbeit. 
+
 ### Geschichte von Spark
 
 Kleine geschichtlicher Überblick auf Apache.org
@@ -131,6 +135,15 @@ Apache Sparke Homepage
 Dokumentation von Spark in der aktuellen Version
 [Link](https://spark.apache.org/docs/latest)
 
+Apache Spark Dokumentation zur Einführung von DataFrames (nicht mehr aktuell)
+[Link](https://spark.apache.org/docs/1.3.0 DataFrames)
+
+Apache Spark Dokumentation zur Einführung von DataSets (nicht mehr aktuell)
+[Link](https://spark.apache.org/docs/1.6.0 DataSet)
+
+Apache Spark Dokumentation zur Verbindung von DataSet und DataFrames (nicht mehr aktuell)
+[Link](https://spark.apache.org/docs/2.0.0 DataSet und DataFrame)
+
 Spark Python API Docs
 [Link](https://spark.apache.org/docs/2.2.0/api/python/index.html)
 
@@ -163,6 +176,7 @@ Eine sehr gute visuelle Präsentation zu Aktionen und Transformationen in Spark
 
 Guter Einstieg in Transformationen und Aktionen in Spark
 [Link](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action)
+
 ***
 
 ### Optimierung in Spark
@@ -182,9 +196,6 @@ Eine Seite zur Tungsten Execution Engine
 ***
 
 ### Umgebungen für Spark
-
-Nachfolgend sind einige Webseiten aufgelistet, die erste Informationen für den Einstieg auf Basis der in dieser 
-Arbeit genannten Vorgehensweisen geben.
 
 #### Microsoft Azure
 
@@ -303,13 +314,3 @@ GitHub Style Markdown
 
 Colaboratory
 [Link](https://colab.research.google.com/)
-
-### Stuff
-
-Unklar, obe es verwendet wird:
-
-https://spark.apache.org/sql/
-https://spark.apache.org/docs/1.3.0 DataFrames
-https://spark.apache.org/docs/1.6.0 DataSet
-https://spark.apache.org/docs/2.0.0 DataSet und DataFrame (untype DataSet Operations aka DataFrame Operations)
-https://data-flair.training

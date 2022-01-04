@@ -151,7 +151,7 @@ In und um Spark hat sich ein sehr umfangreiches Ökosystem entwickelt, welches S
 aber auf die Fähigkeiten von Spark basieren, diese nutzen ober aber nutzen können. Hierbei handelt es sich nicht
 nur um Software im Umfeld der 
 [Apache Foundation](https://www.apache.org "zur Webseite") 
-oder aber Open Source, sondern im starken MAße auch um kommerzielle 
+oder aber Open Source, sondern im starken Maße auch um kommerzielle 
 Software. Auf der 
 [Homepage von Spark](https://spark.apache.org "zur Webseite") 
 findet sich hierzu eine Übersicht. Bekannte Vertreter hieraus sind:
@@ -164,8 +164,12 @@ findet sich hierzu eine Übersicht. Bekannte Vertreter hieraus sind:
 * [TensorFlow (Google)](https://www.tensorflow.org "zur Webseite")
 
 Im Folgenden soll kurz auf die wichtigsten Erweiterungen im direkten Umfeld von Spark eingegangen werden, welche das 
-Framework erweitert und breiter aufgestellt haben. Eine erschöpfende Betrachtung würde hierbei den Rahmen und die 
-Zielsetzung dieser Arbeit bei weitem sprengen. Hier sei auf die jeweils angegebenen Projektseiten verwiesen:
+Framework selbst erweitert und breiter aufgestellt haben: 
+
+![spark_extension.png](assets/spark_extension.png)
+
+Eine erschöpfende Betrachtung würde hierbei den Rahmen und die Zielsetzung dieser Arbeit bei weitem sprengen. 
+Hier sei auf die jeweils angegebenen Projektseiten verwiesen:
 
 * [SparkSQL (Unterstützung für strukturierte Daten)](https://spark.apache.org/sql "zur Einstiegsseite")
 * [MLlib (Unterstützung für maschinelles Lernen)](https://spark.apache.org/mllib "zur 
@@ -204,16 +208,12 @@ verarbeitet werden. Daneben existieren Hilfsfunktionen zur Unterstützung von Ro
 von Statistiken.
 
 Weiterhin werden die Erstellung von Workflows für die Verarbeitung (Pipelines) und das Erstellen und Trainieren von 
-Modellen sowie deren Serialisierung und Einsatz unterstützt.
-
-Im Zentrum dieser Arbeit liegt Spark selbst. Daher wird in dieser Arbeit nicht tiefer auf diese Erweiterung 
-eingegangen. Hier sei auf die sehr umfangreiche 
-[Dokumentation](https://spark.apache.org/docs/latest/ml-guide.html "zur Dokumentation") 
-verwiesen.
+Modellen sowie deren Serialisierung und Einsatz unterstützt. Für einen vertiefenden Einblick bietet sich die 
+offizielle
+[Dokumentation](https://spark.apache.org/docs/latest/ml-guide.html "zur Dokumentation")  
+an.
 
 ### GraphX
-
-
 
 Bei 
 [GraphX](https://spark.apache.org/graphx "zur Einstiegsseite") 
@@ -221,7 +221,7 @@ handelt es sich um eine Erweiterung, welche die Möglichkeit eröffnet, im Konte
 arbeiten. Nach 
 [eigenen Angaben](https://spark.apache.org/docs/latest/graphx-programming-guide.html "zur Dokumentation") 
 erweitert es die grundlegende und auf Basis der 
-[RDD]([02 Datenstrukturen, Spark](02_Datenstrukturen.md#Spark "zum Abschnitt")) 
+[RDD](02_Datenstrukturen.md#Spark "zum Abschnitt") 
 aufgebaute Struktur um eine Graphenabstraktion. Hierzu wurden mehrere notwendige Erweiterungen für die Arbeit mit 
 Graphen hinzgefügt. Zudem stellt die Erweiterung eine Reihe von Algorithmen für die Arbeit mit und Analyse von 
 Graphen zur Verfügung, welche stetig wächst.
@@ -257,18 +257,52 @@ Dieser Seite wurde auch das folgende Bild entnommen, welches ein einfaches Beisp
 auf Basis von Graphen gibt:
 
 ![graph_prinzip.png](assets/graph_prinzip.png)
+
+Dargestellt werden zwei Knoten vom Typ Person sowie ein Knoten vom Typ Buch mit ihren Eigenschaften. Diese sind mit 
+gerichteten und annotierte Kanten verbunden. Ein wichtiger, hier zu erkennender Unterschied zu relationalen 
+Datenbanken ist, dass die Personen nicht Datensätze einer Tabelle, sondern zwei selbstständige Knoten sind (auch 
+wenn für die Serialisierung durchaus eine relationale Datenstruktur Anwendung finden kann).  
   
 Gleichzeitig gibt es auch einen Sachverhalt wieder, der nicht trivial in einer relationalen Datenbank gehalten 
-werden könnte.
+werden könnte: 
+* Karl der Große kennt Einhard
+* Einhard schrieb das Buch Vita Karoli Magni
+* Karl der Große kommt in dem Buch vor.
 
 ### Spark Streaming
 
-Homepage von Spark Streaming
-[Link](https://spark.apache.org/streaming)
-
-Dokumentation von Spark Streaming
-[Link](https://spark.apache.org/docs/latest/streaming-programming-guide.html)
+Als letzte Erweiterung soll hier ein Blick
+[Spark Streaming](https://spark.apache.org/streaming "zur Webseite")
+geworfen werden. Spark Streaming ermöglicht die Verarbeitung von Datenstreams aus einer Vielzahl an unterschiedlichen 
+Quellen. Ebenfalls besteht die Möglichkeit, eigene Quellen zu definieren und zu verwenden. Die folgende Abbildung 
+wurde der 
+[Dokumentation von Spark Streaming](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur 
+Dokumentation")
+entnommen und zeigt einige der verfügbaren Quellen und Ausgabeformate.
 
 ![stream_contect.png](assets/stream_contect.png)
 
+Wie aus der Abbildung ersichtlich ist, werden empfangene Streams verarbeitet und im Anschluss an deren Verarbeitung 
+die Ergebnisse abgelegt. Die Art der Verarbeitung richtet sich hierbei nach der konkreten Aufgabe.
+
+Laut 
+[aktueller Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur
+Dokumentation") 
+führt Spark Streaming hierfür einen Discretized Stream (DStream) ein, welcher einen kontinuierlichen Datenstream 
+darstellt. Er kann aus einer unterstützten Quelle oder aber einen anderen DStream stammen. Intern stellt ein DStream eine 
+Sequenz von RDDs dar. Hierbei werden die Sprachen Scale, Java und Python als Sprachen unterstützt.
+
+Die folgende Abbildung, welch ebenfalls der 
+[Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur
+Dokumentation") 
+entnommen wurde, visualisiert nochmals den Vorgang:
+
 ![stream_prinzip.png](assets/stream_prinzip.png)
+
+Ein kontinuierlicher Eingabestream wird von Spark Streaming in eine Sequenz von RDDs umgewandelt und im Anschluss 
+von Spark weiter verarbeitet.
+
+Mit Hilfe von Spark Streaming ist es somit möglich, jede Form von Datenströmen zu verarbeiten und hierzu die 
+Fähigkeiten von Spark direkt zu nutzen. Dies erweitert die möglichen Szenarien, in den Spark eingesetzt werden kann, 
+erheblich. Zu nennen sind hier beispielsweise Textmining unter Verwendung von Twitter um aktuelle Trends in Echtzeit zu 
+erfassen. 

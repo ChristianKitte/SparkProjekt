@@ -12,17 +12,24 @@ die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine
 [Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
 am Ende dieses Repositories geben.
 
-Ergänzend zu dieser Einleitung, wurde in den Kapiteln
+Insbesondere werden im Rahmen von Erweiterugnen hinzugefügten Datentrukturen, welche im Kapitel
+[Spark](01_Spark.md)
+diskutierten werden, hier nicht berücksichtigt. Dies betrifft in erster Linie die Erweiterungen im Kontext von 
+[GraphX](01_Spark.md#graphx)
+und
+[Spark Streaming](01_Spark.md#spark-streaming)
+
+Ergänzend zu dieser Einleitung, werden in den Kapiteln
 
 * [Praxisbeispiel mit RDDS](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
 * [Praxisbeispiel mit DataFrames](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung 
   mit Spark DataFrames und Python")
 
-Zwei konkrete Beispiele zur Nutzung von Spark mit Python umgesetzt. Beide Beispiele liegen auch in Form von Python
+zwei konkrete Beispiele zur Nutzung von Spark mit Python umgesetzt. Beide Beispiele liegen auch in Form von Python
 Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werden.
 
-* [Hadoop](02_Datenstrukturen.md#Hadoop )
-* [Spark](02_Datenstrukturen.md#Spark )
+* [Hadoop](02_Datenstrukturen.md#hadoop )
+* [Spark](02_Datenstrukturen.md#spark )
 
 ## Hadoop
 

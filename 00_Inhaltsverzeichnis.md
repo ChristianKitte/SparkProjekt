@@ -2,19 +2,19 @@
 
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite")
 
-* [1 Spark](01_Spark.md "Einführung in Spark und seinem Ökosystem") C
-    * Was ist Spark C V 1.0
-    * Bisherige Entwicklungsgeschichte C V 1.0
-    * Sprachunterstützung C V 1.0
-      * PySpark C V 1.0
-      * SparkR C V 1.0
+* [1 Spark V 1.0](01_Spark.md "Einführung in Spark und seinem Ökosystem")
+    * Was ist Spark
+    * Bisherige Entwicklungsgeschichte
+    * Sprachunterstützung
+      * PySpark
+      * SparkR
     * Spark Ökosystem und Erweiterungen
-      * SparkSQL C V 1.0
-      * MLlib C V 1.0
-      * GraphX  C V 1.0
+      * SparkSQL
+      * MLlib
+      * GraphX
       * Spark Streaming 
 
-* [2 Datenstrukturen C V 1.0](02_Datenstrukturen.md "Überblick über grundlegende Datenstrukturen in Spark")
+* [2 Datenstrukturen V 1.0](02_Datenstrukturen.md "Überblick über grundlegende Datenstrukturen in Spark")
     * Hadoop
       * Hadoop Common in Arbeit
       * Hadoop Distributed File System (HDFS) evtl. erweitern
@@ -28,7 +28,7 @@
       * Optimierungen
       * RDD bis DataSet in a nutshell
 
-* [3 Mögliche Umgebungen für Spark C V 1.0](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für 
+* [3 Mögliche Umgebungen für Spark V 1.0](03_Mögliche_Umgebungen_für_Spark.md "Überblick über mögliche Umgebungen für 
   Spark")
     * Spark in der Cloud (Azure, Amazon, Google)
     * Spark mit Google Colaboratory (Colab)
@@ -38,10 +38,10 @@
         * Zugriff auf das Jupyter Notebook
         * Vor- und Nachteile
   
-* [4 Wordcount mit Spark RDDs und Python C V 1.0](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen 
+* [4 Wordcount mit Spark RDDs und Python V 1.0](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen 
   Anwendung mit Spark RDDS und Python")
 
-* [5 Wordcount mit Spark DataFrames und Python C V 1.0](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer 
+* [5 Wordcount mit Spark DataFrames und Python V 1.0](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer 
   realen Anwendung mit Spark DataFrames und Python")
 
 ### Nachweise
@@ -51,5 +51,5 @@
 
 ### Anhänge
 
-* [Anhang Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md
+* [Anhang Linksliste](Anhang_Linkliste.md
   "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
