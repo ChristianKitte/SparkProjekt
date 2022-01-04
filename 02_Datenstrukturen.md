@@ -13,11 +13,11 @@ die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine
 am Ende dieses Repositories geben.
 
 Insbesondere werden im Rahmen von Erweiterugnen hinzugefügten Datentrukturen, welche im Kapitel
-[Spark](01_Spark.md)
+[Spark](01_Spark_Umfeld.md)
 diskutierten werden, hier nicht berücksichtigt. Dies betrifft in erster Linie die Erweiterungen im Kontext von 
-[GraphX](01_Spark.md#graphx)
+[GraphX](01_Spark_Umfeld.md#graphx)
 und
-[Spark Streaming](01_Spark.md#spark-streaming)
+[Spark Streaming](01_Spark_Umfeld.md#spark-streaming)
 
 Ergänzend zu dieser Einleitung, werden in den Kapiteln
 
