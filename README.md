@@ -4,11 +4,14 @@
 (Das Apache Spark Loge ist ein eingetragenes Logo
 der [Apache Software Foundation](https://www.apache.org/ "Hier geht es zur Webseite der Apache Spark Foundation")
 
-## Semesterarbeit im Modul Datenbank-Technologien
+Semesterarbeit im Modul Datenbank-Technologien
+-
 
-## Wintersemester 2021/22
+Wintersemester 2021/22
+-
 
-## Christian Kitte
+Christian Kitte
+-
 
 ---
 

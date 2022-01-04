@@ -1,24 +1,11 @@
 #### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
 
 # 1 Spark
-Ziel dieser arbeit ist es, dem Leser dieser Arbeit einen kurzen und grundlegenden Einblick in
+In diesen Abschnitt wird in Kürze darauf eingegangen, was
 [Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
-zu geben. 
-
-Am Ende soll der Leser einen Eindruck davon haben, was
-[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
-ist, wie es eingesetzt werden kann und wo seine Anfänge liegen. Wichtige Begriffe im Umfeld von 
-Spark können zugeordnet werden und ermöglichen, sich selbstständig weiter in die Materie einzuarbeiten.
-
-Auf Basis der Sprache Python und eines Jupyter Notebooks werden in Abschnitt 
-[vier](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
-und 
-[fünf](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung mit Spark DataFrames und 
-Python")
-zwei einfache Beispiele vorgestellt, wie
-[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
-zur Lösung eines Problems genutzt werden kann. 
-Dieser Code ist frei verfügbar und kann als Startpunkt für eigene Programme dienen.
+ist und wo es seine Anfänge genommen hat. Es folgt ein Überblick über die von Spark unterstützten 
+Programmiersprachen. Den Abschluss bildet eine nähere Betrachtung des Ökosystems von Spark 
+sowie seinen wichtigen Erweiterungen.
 
 * [Was ist Spark](01_Spark_Umfeld.md#sprachunterstützung)
 * [Bisherige Entwicklungsgeschichte](01_Spark_Umfeld.md#bisherige-entwicklungsgeschichte)
