@@ -12,7 +12,7 @@ die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine
 [Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
 am Ende dieses Repositories geben.
 
-Insbesondere werden im Rahmen von Erweiterugnen hinzugefügten Datentrukturen, welche im Kapitel
+Insbesondere werden im Rahmen von Erweiterungen hinzugefügte Datentrukturen, welche im Kapitel
 [Spark](01_Spark_Umfeld.md)
 diskutierten werden, hier nicht berücksichtigt. Dies betrifft in erster Linie die Erweiterungen im Kontext von 
 [GraphX](01_Spark_Umfeld.md#graphx)
