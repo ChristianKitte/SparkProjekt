@@ -1,30 +1,30 @@
-#### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
+#### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
 # 1 Spark
 In diesen Abschnitt wird in Kürze darauf eingegangen, was
-[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
+[Apache Spark](https://spark.apache.org "zur Webseite") 
 ist und wo es seine Anfänge genommen hat. Es folgt ein Überblick über die von Spark unterstützten 
 Programmiersprachen. Den Abschluss bildet eine nähere Betrachtung des Ökosystems von Spark 
 sowie seinen wichtigen Erweiterungen.
 
-* [Was ist Spark](01_Spark_Umfeld.md#sprachunterstützung)
-* [Bisherige Entwicklungsgeschichte](01_Spark_Umfeld.md#bisherige-entwicklungsgeschichte)
-* [Sprachunterstützung](01_Spark_Umfeld.md#sprachunterstützung)
-* [Spark Ökosystem und Erweiterungen](01_Spark_Umfeld.md#spark-ökosystem-und-erweiterungen)
+* [Was ist Spark](01_Spark_Umfeld.md#sprachunterstützung "zum Abschnitt")
+* [Bisherige Entwicklungsgeschichte](01_Spark_Umfeld.md#bisherige-entwicklungsgeschichte "zum Abschnitt")
+* [Sprachunterstützung](01_Spark_Umfeld.md#sprachunterstützung "zum Abschnitt")
+* [Spark Ökosystem und Erweiterungen](01_Spark_Umfeld.md#spark-ökosystem-und-erweiterungen "zum Abschnitt")
 
 ## Was ist Spark
 
 [_zurück_](01_Spark_Umfeld.md#1-Spark "Zurück")
 
 Bei 
-[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite")
+[Apache Spark](https://spark.apache.org "zur Webseite")
 handelt es sich um ein Framework, welches Daten aus einer Vielzahl an Quellen einlesen, 
 verarbeiten und ausgeben kann. Es ist somit in erster Linie für die Verarbeitung, nicht aber für deren 
 Haltung zuständig.
 
 Es verdankt seine Bedeutung der Tatsache, das es imstand ist, auch sehr große Datenbestände im Petabereich 
 in kurzer Zeit verarbeiten zu können. Hierbei verteilt
-[Apache Spark](https://spark.apache.org/ "zur Einstiegsseite") 
+[Apache Spark](https://spark.apache.org "zur Webseite") 
 die Verarbeitung und führt zu einem späteren Zeitpunkt die Ergebnisse wieder zusammen.
 
 Daneben können nicht nur strukturierte Daten, sondern auch unstrukturierte oder als Stream vorliegende
@@ -47,14 +47,14 @@ wichtigen Sprachen Python und R.
 Nach 
 [eigenen Angaben](https://spark.apache.org/history.html "zur Webseite")
 startete Apache Spark 2009 als ein Forschungsprojekt an der 
-[UC Berkley](https://www.berkeley.edu/ "zur Webseite")
+[UC Berkley](https://www.berkeley.edu "zur Webseite")
 in Californien und wurde 2010 als Open Source Projekt veröffentlicht. In den folgenden Jahren erschienen 
 eine Reihe wissenschaftlicher Puplikationen, die sich mit den zugrunde liegenden Ideen beschäftigten. Es bildete sich 
 eine rasch wachsende Community. Seit 2014 ist es als 
 [Top-Level-Projekt](https://blogs.apache.org/foundation/entry/the_apache_software_foundation_announces50 "Zum 
 Blogeintrag")
 Teil der
-[Apache Software Foundation](https://www.apache.org/ "zur Webseite").
+[Apache Software Foundation](https://www.apache.org "zur Webseite").
 Als Nutzer werden u.a. IBM, Intel und Yahoo aufgelistet.
 
 Laut angaben von
@@ -66,14 +66,14 @@ aktuelle
 veröffentlicht. 
 
 Ebenfalls in 2013 wurde von den ehemaligen Entwicklern die Firma  
-[Databricks](https://databricks.com "Zur Einstiegsseite von Databricks")
+[Databricks](https://databricks.com "zur Webseite")
 ins Leben gerufen. Databricks sieht sich selbst in der Verantwortung, das offene Entwicklungsmodell von Spark 
 aufrecht zu erhalten und Spark selbst weiter zu entwickeln. Gleichzeitig verdient es Geld im Umfeld von Spark unter 
 anderen durch Online Kurse und Eigenentwicklungen auf Basis von Spark wie **_lakehouse_**, einer eigenen Cloud Data 
 Plattform. 
 
 Laut 
-[Wikipedia](https://en.wikipedia.org/wiki/Databricks "Zum Wikipediaeintrag von Databricks") 
+[Wikipedia](https://en.wikipedia.org/wiki/Databricks "zur Webseite") 
 arbeitet Databricks seit 2017 mit Microsoft zusammen, und ist hier unter den Namen **_Azure Databricks_** verfügbar. 
 2021 Wurde eine Kooperation mit Google eingegangen, um Spark in dessen Cloud verfügbar zu machen. 
 
@@ -85,28 +85,28 @@ Auch wenn Apache Spark ursprünglich in Scala programmiert wurde, unterstützt e
 darunter die für das Umfeld von Big Data und Machine Learning wichtigen Sprachen Python und R.
 
 Auf der 
-[Übersichtsseite](https://spark.apache.org/docs/latest "zur Übersichtsseite")
+[Übersichtsseite](https://spark.apache.org/docs/latest "zur Webseite")
 zur aktuellen Version 3.2.0 (Stand Dezember 2021) werden die unterstützten Sprachen und 
 deren jeweilige Mindestversion näher angegeben. Hiernach wird 
 
-- [Java](https://openjdk.java.net/ "zur Webseite von OpenJDK")
+- [Java](https://openjdk.java.net "zur Webseite")
   8/11 (Versionen vor 8u201 sind deprecated ab Spark 3.2.0, Maven Support, kann DataSets nutzen)
-- [Scala](https://www.scala-lang.org/ "zur Webseite")
+- [Scala](https://www.scala-lang.org "zur Webseite")
   2.12 (Maven Support, kann DataSets nutzen)
-- [Python](https://www.python.org/ "zur Webseite")
+- [Python](https://www.python.org "zur Webseite")
   3.6+ (Version 3.6 und davor sind deprecated ab Spark 3.2.0, PySpark)  
-- [R](https://www.r-project.org/ "zur Webseite")
+- [R](https://www.r-project.org "zur Webseite")
   3.5+ (SparkR)
  
 
 unterstützt. Insbesondere bei der Zusammenarbeit mit 
-[Apache Arrow](https://arrow.apache.org/ "zur Webseite") 
+[Apache Arrow](https://arrow.apache.org "zur Webseite") 
 wird zudem auf mögliche Probleme Im Umfeld von Java und Python angesprochen und auf die entsprechende 
-[Dokumentation](https://arrow.apache.org/docs/ "zur Dokumentation") 
+[Dokumentation](https://arrow.apache.org/docs "zur Webseite") 
 verwiesen.
 
 Mit Spark SQL besteht zudem die Möglichkeit, auf strukturierte Daten unter Verwendung von 
-[SQL](https://de.wikipedia.org/wiki/SQL "zur Wikipediaseite") 
+[SQL](https://de.wikipedia.org/wiki/SQL "zur Webseite") 
 (Structured Query Language) zuzugreifen.
 
 Die Verwendung von Java und Scala als höhere objektorientierte Programmiersprachen ermöglicht die Verwendung der mit 
@@ -158,15 +158,14 @@ Framework selbst erweitert und breiter aufgestellt haben:
 Eine erschöpfende Betrachtung würde hierbei den Rahmen und die Zielsetzung dieser Arbeit bei weitem sprengen. 
 Hier sei auf die jeweils angegebenen Projektseiten verwiesen:
 
-* [SparkSQL (Unterstützung für strukturierte Daten)](https://spark.apache.org/sql "zur Einstiegsseite")
-* [MLlib (Unterstützung für maschinelles Lernen)](https://spark.apache.org/mllib "zur 
-  Einstiegsseite")
-* [GraphX (Unterstützung für Graphenbasierte Strukturen)](https://spark.apache.org/graphx "zur Einstiegsseite")
-* [Spark Streaming (Unterstützung für Streaming)](https://spark.apache.org/streaming "zur Einstiegsseite")
+* [SparkSQL (Unterstützung für strukturierte Daten)](https://spark.apache.org/sql "zur Webseite")
+* [MLlib (Unterstützung für maschinelles Lernen)](https://spark.apache.org/mllib "zur Webseite")
+* [GraphX (Unterstützung für Graphenbasierte Strukturen)](https://spark.apache.org/graphx "zur Webseite")
+* [Spark Streaming (Unterstützung für Streaming)](https://spark.apache.org/streaming "zur Webseite")
 
 ### SparkSQL
 
-[SparkSQL](https://spark.apache.org/sql "zur Einstiegsseite") 
+[SparkSQL](https://spark.apache.org/sql "zur Webseite") 
 erweitert und vereinfacht den Umgang mit strukturiert vorliegenden Daten und stellt eine der wichtigsten 
 Erweiterungen von Spark da. Ein wichtiger Kern stellt die Einführung von DataFrames und darauf folgend von DataSets 
 dar. Diese können direkt oder aber aus zugrunde liegenden RDDs erstellt werden. 
@@ -176,20 +175,20 @@ Typ Row angesehen und kann auch unstrukturierte Daten enthalten. Ein weiteres wi
 SQL zur Abfrage und Selektion strukturiert vorliegender Daten verwenden zu können.
 
 Im Abschnitt 
-[02 Datenstrukturen, Spark](02_Datenstrukturen.md#Spark "zum Abschnitt")
+[02 Datenstrukturen, Spark](02_Datenstrukturen.md#Spark "zur Webseite")
 wird hierauf näher eingegangen. Daneben existiert auf Seite von Spark eine umfassende 
-[Dokumentation von SparkSQL](https://spark.apache.org/docs/latest/sql-programming-guide.html "zur Dokumentation"). 
+[Dokumentation von SparkSQL](https://spark.apache.org/docs/latest/sql-programming-guide.html "zur Webseite"). 
 
 ### MLlib
 
 Die 
-[Maschine Learning Library (MLlib)](https://spark.apache.org/mllib "zur Einstiegsseite")
+[Maschine Learning Library (MLlib)](https://spark.apache.org/mllib "zur Webseite")
 von Apache Spark bietet Zugang zu einer umfangreichen Bibliothek für die Bearbeitung und dem Cleaning von Daten. 
 Hierzu gehören neben Funktionen zum Aggregieren von Daten auch Algorithmen für die Klassifizierung, der Regression 
 oder dem Clustering. 
 
 Gegenüber anderen Bibliotheken aus diesem Bereich, wie beispielsweise 
-[scikit-learn](https://scikit-learn.org "zur Einstiegsseite")
+[scikit-learn](https://scikit-learn.org "zur Webseite")
 , können mit ihr auf Basis von Spark auch sehr große Datenkontingente sehr performant, verteilt und skalierbar 
 verarbeitet werden. Daneben existieren Hilfsfunktionen zur Unterstützung von Routineaufgaben wie der Erzeugung 
 von Statistiken.
@@ -197,18 +196,18 @@ von Statistiken.
 Weiterhin werden die Erstellung von Workflows für die Verarbeitung (Pipelines) und das Erstellen und Trainieren von 
 Modellen sowie deren Serialisierung und Einsatz unterstützt. Für einen vertiefenden Einblick bietet sich die 
 offizielle
-[Dokumentation](https://spark.apache.org/docs/latest/ml-guide.html "zur Dokumentation")  
+[Dokumentation](https://spark.apache.org/docs/latest/ml-guide.html "zur Webseite")  
 an.
 
 ### GraphX
 
 Bei 
-[GraphX](https://spark.apache.org/graphx "zur Einstiegsseite") 
+[GraphX](https://spark.apache.org/graphx "zur Webseite") 
 handelt es sich um eine Erweiterung, welche die Möglichkeit eröffnet, im Kontext von Spark mit Graphen zu 
 arbeiten. Nach 
-[eigenen Angaben](https://spark.apache.org/docs/latest/graphx-programming-guide.html "zur Dokumentation") 
+[eigenen Angaben](https://spark.apache.org/docs/latest/graphx-programming-guide.html "zur Webseite") 
 erweitert es die grundlegende und auf Basis der 
-[RDD](02_Datenstrukturen.md#Spark "zum Abschnitt") 
+[RDD](02_Datenstrukturen.md#Spark "zur Webseite") 
 aufgebaute Struktur um eine Graphenabstraktion. Hierzu wurden mehrere notwendige Erweiterungen für die Arbeit mit 
 Graphen hinzgefügt. Zudem stellt die Erweiterung eine Reihe von Algorithmen für die Arbeit mit und Analyse von 
 Graphen zur Verfügung, welche stetig wächst.
@@ -263,8 +262,7 @@ Als letzte Erweiterung soll hier ein Blick
 geworfen werden. Spark Streaming ermöglicht die Verarbeitung von Datenstreams aus einer Vielzahl an unterschiedlichen 
 Quellen. Ebenfalls besteht die Möglichkeit, eigene Quellen zu definieren und zu verwenden. Die folgende Abbildung 
 wurde der 
-[Dokumentation von Spark Streaming](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur 
-Dokumentation")
+[Dokumentation von Spark Streaming](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Webseite")
 entnommen und zeigt einige der verfügbaren Quellen und Ausgabeformate.
 
 ![stream_contect.png](assets/stream_contect.png)
@@ -273,15 +271,13 @@ Wie aus der Abbildung ersichtlich ist, werden empfangene Streams verarbeitet und
 die Ergebnisse abgelegt. Die Art der Verarbeitung richtet sich hierbei nach der konkreten Aufgabe.
 
 Laut 
-[aktueller Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur
-Dokumentation") 
+[aktueller Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Webseite") 
 führt Spark Streaming hierfür einen Discretized Stream (DStream) ein, welcher einen kontinuierlichen Datenstream 
 darstellt. Er kann aus einer unterstützten Quelle oder aber einen anderen DStream stammen. Intern stellt ein DStream eine 
 Sequenz von RDDs dar. Hierbei werden die Sprachen Scale, Java und Python als Sprachen unterstützt.
 
 Die folgende Abbildung, welch ebenfalls der 
-[Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur
-Dokumentation") 
+[Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Webseite") 
 entnommen wurde, visualisiert nochmals den Vorgang:
 
 ![stream_prinzip.png](assets/stream_prinzip.png)

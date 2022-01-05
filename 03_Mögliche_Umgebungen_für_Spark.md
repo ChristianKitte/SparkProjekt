@@ -1,4 +1,4 @@
-#### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
+#### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
 # 3 Mögliche Umgebungen für Spark
 
@@ -14,9 +14,9 @@ Spark kann zudem auch auf einen lokalen Rechner eingerichtet werden. Dieser Weg 
 eine Reihe von Downloads, Installationen und Einstellungen bedarf. Für einen ersten Kontakt ist dies nicht optimal
 und wird daher hier nicht berücksichtigt. 
 
-* [_Spark in der Cloud_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud )
-* [_Spark mit Google Colaboratory (Colab)_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab )
-* [_Spark mit Docker_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker )
+* [_Spark in der Cloud_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud "zum Abschnitt")
+* [_Spark mit Google Colaboratory (Colab)_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
+* [_Spark mit Docker_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "zum Abschnitt")
 
 ## Spark in der Cloud
 
@@ -34,15 +34,15 @@ den Rahmen dieser Arbeit sprengen. Vielmehr sollen erste Anhaltspunkte für den 
 ### Microsoft Azure
 
 Hinter 
-[Microsoft Azure](https://azure.microsoft.com/de-de/ "zur Einstiegsseite") 
+[Microsoft Azure](https://azure.microsoft.com/de-de "zur Webseite") 
 verbirgt sich die Cloudsparte von Microsoft mit seine cloudbasierten Services und Anwendungen.
 Innerhalb von Azure wird Spark in den Bereich Machine Learning unter den Begriff 
-[Azure Databricks ein.](https://azure.microsoft.com/de-de/services/databricks/ "zur Einstiegsseite")
+[Azure Databricks ein.](https://azure.microsoft.com/de-de/services/databricks "zur Webseite")
 einsortiert.
 
 Azur ermöglicht eine einfache, angeleitete und sehr schnelle Einrichtung von autoskalierten Spark Clustern und 
 somit ein schnelles Ergebnis. Zusätzlich findet sich sehr umfangreiche 
-[Dokumentation](https://docs.microsoft.com/de-de/azure/databricks/ "zur Dokumentation") 
+[Dokumentation](https://docs.microsoft.com/de-de/azure/databricks "zur Webseite") 
 zur Arbeit mit Azure Databricks alias Spark.
 
 Daneben bietet Azur die Integration eines Zeppelin Notebooks und ermöglicht somit ein ähnlich komfortables Arbeiten 
@@ -56,7 +56,7 @@ genutzt und integriert werden. Hierzu gehören unter anderen:
 - **Azure Data Lake Storage** (Datenhaltung)
 
 Wie alle Cloudanbieter richten sich die 
-[Kosten](https://azure.microsoft.com/de-de/pricing/details/databricks/ "zur Preisübersicht") 
+[Kosten](https://azure.microsoft.com/de-de/pricing/details/databricks "zur Webseite") 
 in erster Linie nach den benötigten Platz, der Leistungsfähigkeit 
 sowie der Rechenzeit. Somit ist es notwendig, eine sehr genaue Erwartung zu haben, um einen angenäherten Preis zu 
 bestimmen. 
@@ -67,13 +67,13 @@ des 30 tägigen kostenlosen Testzeitraums aber auch für ein erstes Kennenlernen
 ### Amazon AWS
 
 Hinter dem Begriff 
-[Amazon Web Services oder kurz AWS](https://aws.amazon.com/ "zur Startseite")
+[Amazon Web Services oder kurz AWS](https://aws.amazon.com "zur Webseite")
 steht die Cloudsparte von Amazon. Wie bei Microsofts Azure werden auch hier verschiedenen Dienstleistungen angeboten, 
 darunter auch ein Hosting von Spark. Anders als bei Azure wird hier jedoch nicht mit Databricks zusammen gearbeitet, 
 sondern Spark nativ unterstützt.
 
 Bei Amazon ist für den Einsatz von Spark 
-[Amazon EMR](https://docs.aws.amazon.com/de_de/emr/latest/ManagementGuide/emr-what-is-emr.html "zum Handbuch") 
+[Amazon EMR](https://docs.aws.amazon.com/de_de/emr/latest/ManagementGuide/emr-what-is-emr.html "zur Webseite") 
 notwendig. Amazon EMR steht hierbei für Amazon Elastic MapReduce. Hierbei handelt es sich um eine Plattform, welche 
 speziell der Ausführung von Framework wie Spark mit sehr großen Datenkontingenten dienen. Technisch gesehen handelt 
 es sich um verwaltete Cluster, welche schnell erstellt werden und zusammenarbeiten können.   
@@ -83,7 +83,7 @@ hierfür auf allen ebenen Zugriff und Unterstützung durch die Amazon Cloud zu e
 sind Jupyter oder Zeppelin Notebooks verfügbar.
 
 Amazon fokussiert auf der 
-[Übersichtsseite für Spark](https://aws.amazon.com/de/elasticmapreduce/details/spark/ "zur Übersichtsseite") 
+[Übersichtsseite für Spark](https://aws.amazon.com/de/elasticmapreduce/details/spark "zur Webseite") 
 auf vier Funktionalitäten:
 - **S3_Sketch_Available**: Zielt auf ein Hohe Performance auf Basis gerichteter azyklischer Graphen und RDDs
 - **S3_Sketch_High_Performance**: Ermöglicht die Einbindung von Java, Scala und Python. Spark SQL ist verfügbar ebenso 
@@ -97,14 +97,14 @@ auf vier Funktionalitäten:
 
 Bei Amazon AWS handelt es sich grundsätzlich um einen kostenpflichtigen Dienst. Je nach Leistungsfähigkeit und 
 Funktionalität müssen für die Nutzung 
-[Entgelte](https://aws.amazon.com/de/emr/pricing/ "zur Preisliste") 
+[Entgelte](https://aws.amazon.com/de/emr/pricing "zur Webseite") 
 entrichtet werden. Wie zuvor ist es daher wichtig zu wissen, was genau in Anspruch genommen werden wird.
 
 Daneben bietet auch Amazon kostenlose Testzeitraume und begrenzte bzw. dauernd kostenlose Dienstleistungen an. Eine 
-[Übersicht](https://aws.amazon.com/de/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=tier%23always-free&awsf.Free%20Tier%20Categories=*all&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all&refid=7f46dc7a-cf36-47f2-8b7b-74dceeb857ff#Free_Tier_details) 
+[Übersicht](https://aws.amazon.com/de/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=tier%23always-free&awsf.Free%20Tier%20Categories=*all&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all&refid=7f46dc7a-cf36-47f2-8b7b-74dceeb857ff#Free_Tier_details "zur Webseite") 
 geht hierauf detaillierter ein. Zudem stehen umfangreiche Ressourcen in deutscher Sprache für die Einarbeitung in 
 Amazon AWS, jedoch eher weniger 
-[speziell für Spark](https://aws.amazon.com/de/big-data/what-is-spark/ "zur Sparkseite von Amazon") 
+[speziell für Spark](https://aws.amazon.com/de/big-data/what-is-spark "zur Webseite") 
 zur Verfügung. 
 
 Alles in allen ist auch Amazon für ein erstes Kennenlernen geeignet. Nach Meinung des Autors zeigt sich jedoch die 
@@ -113,33 +113,33 @@ Oberfläche von Microsofts Azure aufgeräumter. Daher wird der Einstieg hier ehe
 ### Google Cloud
 
 Unter dem Begriff 
-[Google Cloud](https://cloud.google.com/ "zur Startseite")
+[Google Cloud](https://cloud.google.com "zur Webseite")
 finden sich das Angebot von Google für den Cloudbereich. Ebenso wie die zuvor behandelten Anbieter, verfügt auch
 Google über eine beachtliche Zahl an Diensten auf Cloudbasis. Positiv ist auch hier, dass alle besuchten Seiten auf 
 Deutsch waren sowie das Vorhandensein einer bemerkenswert umfangreichen 
-[Dokumentation](https://cloud.google.com/docs/ "zur Dokumentation").
+[Dokumentation](https://cloud.google.com/docs "zur Webseite").
 
 Um auf Basis der Google Cloud mit Spark zu arbeiten bedient man sich des 
-[Dataproc Dienstes](https://cloud.google.com/dataproc "zur Startseite des Dienstes")
+[Dataproc Dienstes](https://cloud.google.com/dataproc "zur Webseite")
 Hierbei handelt es sich nach Google um einen verwalteten und hoch skalierten Dienst, welcher jedoch nicht nur für Spark 
 oder Hadoop reserviert ist, sondern auch weitere Open Source Projekte zugänglich macht. Google fokussiert somit nicht  
 auf die reine Nutzung von Spark, sondern bietet eher eine ganze 
-[Umgebung](https://cloud.google.com/dataproc#section-9 "zur Übersicht über alle Features") 
+[Umgebung](https://cloud.google.com/dataproc#section-9 "zur Webseite") 
 für den "Data Scientisten" unter Einbindung von Spark und anderen Apache Projekten und Open Source Anwendungen an, 
 zeigt aber auch die Möglichkeiten zur Anbindung an die eigenen Angebote auf.
 
 Ebenso wie bei den zuvor behandelten Cloudanbietern handelt es sich auch bei Google Cloud um einen grundsätzlich 
-[kostenpflichtige Dienste](https://cloud.google.com/dataproc/pricing "zur Preisliste"). 
+[kostenpflichtige Dienste](https://cloud.google.com/dataproc/pricing "zur Webseite"). 
 Auch hier erfolgt die Preisfindung auf Basis der Leistungsfähigkeit und des verwendeten Dienstes, so dass 
 eine genaue Planung der tatsächlich benötigten Ressourcen sinnvoll ist.
 
 Ebenfalls bietet Google einen 
-[kostenlosen Testzeitraum und Testguthaben](https://console.cloud.google.com/freetrial "zur Anmeldeseite")
+[kostenlosen Testzeitraum und Testguthaben](https://console.cloud.google.com/freetrial "zur Webseite")
 , welches 90 Tage nutzbar ist, sowie eine Vielzahl an 
-[freien monatlichen Kontingenten](https://cloud.google.com/free "zu den freien Kontingenten")
+[freien monatlichen Kontingenten](https://cloud.google.com/free "zur Webseite")
 für verschiedene Dienste an. Interessant ist die klare Versicherung, dass die anzugebene Kreditkarte nur
 dann belastet werde, wenn ein manuelles Upgrade auf ein kostenpflichtiges Konto erfolgt sei. Diese Versicherung findet
-man bei den vorherigen Anbietern nicht in dieser Klareheit.
+man bei den vorherigen Anbietern nicht in dieser Klarheit.
 
 Nach Meinung des Autor handelt es sich bei dem Angebot von Google um ein sehr aufgeräumtes Angebot ähnlich dem von
 Microsofts Azure, wobei dies direkter auf die Spark Nutzung abzielt und je nach Ziel sinnvoller sein 
@@ -150,7 +150,7 @@ kann.
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
 
 Ein einfache Möglichkeit, um mit Spark zu arbeiten, bietet
-[Google Colaboraty](https://colab.research.google.com/?utm_source=scs-index "Hier geht es zu Colaboraty")
+[Google Colaboraty](https://colab.research.google.com/?utm_source=scs-index "zur Webseite")
 oder einfach Google Colab. Bei Google Colab handelt es sich um eine von Google kostenlos zur Verfügung gestellte
 Umgebung für ein Jupyter Notebook.
 
@@ -167,24 +167,26 @@ Download von Daten wird nach einer Zeit der Inaktivität gelöscht. Daher empfie
 die Vorbereitung des Notebooks zu hinterlegen.
 
 Alle im folgenden beschriebenen Arbeitsschritte finden sich auh als lauffähiges Beispiel im
-[_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook")
+[_Jupyter Notebook mit RDD_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook")
+oder
+[_Jupyter Notebook mit DataFrame_](notebook/Wordcount_mit_Spark_DataFrame.ipynb "zum Notebook")
 im Abschnitt **Vorbereitung des Notebooks**.
 
 ### Vorbereiten des Notebooks
 
 Für den Einsatz von Spark sind in jedem Fall drei Voraussetzungen notwendig:
 
-+ [Java](https://openjdk.java.net/ "Zur Homepage von OpenJDK") muss instaliert sein, damit Spark ausgeführt werden kann.
-+ [Spark](https://spark.apache.org/ "Zur Homepage von Spark") muss installiert sein
-+ die Bibliothek [FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation") muss installiert sein
-+ die Bibliothek [PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
++ [Java](https://openjdk.java.net "zur Webseite") muss instaliert sein, damit Spark ausgeführt werden kann.
++ [Spark](https://spark.apache.org "zur Webseite") muss installiert sein
++ die Bibliothek [FindSpark](https://pypi.org/project/findspark "zur Webseite") muss installiert sein
++ die Bibliothek [PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
   muss installiert sein. Auf den Seiten von Apache.org findet man
-  [weiter gehende Informationen zu PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Apache Dokumentation")
+  [weiter gehende Informationen zu PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
 
 #### Installation von Java und Spark
 
-[Spark](https://spark.apache.org/ "Zur Homepage von Spark") wurde in der Programmiersprache
-[Java](https://openjdk.java.net/ "Zur Homepage von OpenJDK") geschrieben. Für seine Ausführung ist es daher notwendig,
+[Spark](https://spark.apache.org "zur Webseite") wurde in der Programmiersprache
+[Java](https://openjdk.java.net "zur Webseite") geschrieben. Für seine Ausführung ist es daher notwendig,
 eine Java Umgebung einzurichten. Hierfür muss eine Installationsdatei für Java heruntergeladen und installiert werden.
 Spark selbst hingegen benötigt als Java Programm keine Installation, sondern lediglich eine korrekt installierte Java
 Laufzeit.
@@ -219,7 +221,7 @@ print("Umgebungsvariablen sind gesetzt...")
 Nach Ausführung beider Schritte existiert eine Umgebung mit einer funktionierende Spark Installation. Um einfach mit
 Spark und Python arbeiten zu können, fehlen noch zwei Bibliotheken.
 
-[PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Apache Dokumentation") ist ein Interface für die Nutzung
+[PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite") ist ein Interface für die Nutzung
 von Spark mit Python. Es ermöglicht also die Programmierung von Sparkanwendungen mit Python. Hierbei werden die meißten
 der Features von Spark unterstützt.
 
@@ -234,19 +236,19 @@ print("PySpark wurde installiert...")
 ```
 
 Damit
-[PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
+[PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
 von Python genutzt und importiert werden kann, müssen beide voneinander wissen. Hier
-kommt [FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation") ins Spiel.
+kommt [FindSpark](https://pypi.org/project/findspark "zur Webseite") ins Spiel.
 
 #### Initialisierung der Programmierumgebung
 
-Laut Aussage des [Git Repository](https://github.com/minrk/findspark "Zum Repository")
+Laut Aussage des [Git Repository](https://github.com/minrk/findspark "zum Repository")
 von FindSpark bieten sich Grundsätzlich zwei Wege an. Mit dem ersten wird die PySpark so verlinkt, dass Python es finden
 kann. Dies ist im allgemeinen bei den verwendeten Packages. Bei Verwendung des zweiten Weges wird der Pfad zu
-[PySpark](https://spark.apache.org/docs/latest/api/python/ "Zur Dokumentation")
+[PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
 mit im Systempfad hinterlegt.
 
-[FindSpark](https://pypi.org/project/findspark/ "Zur Dokumentation")
+[FindSpark](https://pypi.org/project/findspark "zur Webseite")
 verwendet die zweite Option und fügt den Pfad zu PySpark zur Laufzeit dem Systempfad hinzu. Hierzu wird der Befehl
 init() genutzt.
 
@@ -294,24 +296,23 @@ werden kann.
 
 Bei Docker arbeitet man mit sogenannten Containern, welche einen Prozess visualisieren. Die Basis eines Containers
 bildet ein Image. Ein gute Einführung zu Docker findet sich auf den Seiten von
-[Docker](https://docs.docker.com/get-started/overview/ "Hier gelangen Sie zur Homepage von Docker").
+[Docker](https://docs.docker.com/get-started/overview "zur Webseite").
 
 Einer der Vorteile von Docker ist die sehr große Sammlung bereits fertiger Images
-im [Docker Hub](https://hub.docker.com/ "Hier gelangen Sie zum Portal von Docker Hub"). Hier finden sich für viele
+im [Docker Hub](https://hub.docker.com "zur Webseite"). Hier finden sich für viele
 Anwendungsfälle bereits vorgefertigte Lösungen.
 
 Unabhängig von Spark ist für die Ausführung eines Docker Containers die Installation einer Docker Runtime notwendig.
 Diese ist in Form eines _Docker Desktop_ für die Plattformen Mac, Windows und Linux verfügbar. Die Installation von
 Docker ist nicht Teil dieser Arbeit, jedoch findet sich eine gute Einführung
-auf [Docker](https://docs.docker.com/get-started/overview/ "Hier gelangen Sie zur Homepage von Docker").
+auf [Docker](https://docs.docker.com/get-started/overview "zur Webseite").
 
 ### Dockerimage
 
-Als Basis dient das [_Jupyter Notebook Python, Spark Stack_](https://hub.docker.com/r/jupyter/pyspark-notebook "Hier 
-gelangen Sie zum Image im Docker Hub")
+Als Basis dient das [_Jupyter Notebook Python, Spark Stack_](https://hub.docker.com/r/jupyter/pyspark-notebook  "zur Webseite")
 Notebook. Es beinhaltet ein fertig konfiguriertes Linux System mit installierten Java, Python und Spark. Es ist also
 nicht nötig, manuelle Einstallungen oder Installationen auszuführen, um Spark innerhalb eines 
-[_Jupyter Notebooks_](https://jupyter.org/index.html "Hier gelangen Sie zur Homepage von Jupyter") auszuführen.
+[_Jupyter Notebooks_](https://jupyter.org/index.html "zur Webseite") auszuführen.
 
 ### Download und erster Start
 
@@ -325,7 +326,7 @@ docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark
 Bei der ersten Ausführung wird das Image _jupyter/pyspark-notebook_ direkt vom _Docker Hub_ herunter geladen, sofern es
 noch nicht lokal vorhanden ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt. Dieser
 Container horcht auf dem _Port 8888_ und [_
-JupyterLab_](https://jupyterlab.readthedocs.io/en/stable/ "Hier gelangen Sie zur Dokumentation von JupyterLab") ist
+JupyterLab_](https://jupyterlab.readthedocs.io/en/stable "zur Webseite") ist
 aktiv. Der Name des erstellten Containers lautet _pyspark_.
 
 Nach dem ersten Zugriff auf den Container, kann dieser wie im folgenden gezeigt, einfach gestartet werden:
@@ -338,8 +339,8 @@ Möchte man bei der Arbeit mit Jupyter Notebook auf eigene Daten oder Verzeichni
 Start für den Container zugänglich gemacht werden. Hierfür gibt es eine Reihe von Möglichkeiten.
 
 Um innerhalb eines Containers mit eigenen Daten zu arbeiten, müssen diese aus dem Container zugreifbar sein. Hierfür
-gibt
-es [verschiedene Möglichkeiten](https://docs.docker.com/storage/ "Hier gelangen Sie zu einer Seite in docker docs, welche verschiedene Möglichkeiten zum Einbinden von Laufwerken zeigt")
+gibt es
+[verschiedene Möglichkeiten](https://docs.docker.com/storage "zur Webseite")
 . Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
 sein:
 

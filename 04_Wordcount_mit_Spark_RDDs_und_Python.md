@@ -1,4 +1,4 @@
-#### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
+#### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
 # 6 Wordcount mit Spark und Python
 
@@ -11,17 +11,18 @@ demonstriert:
 * PySpark als Bibliothek zur Arbeit mit Spark (Python Bibliothek)
 
 Für diese Aufgabe wird auf Grund der einfachen Verfügbarkeit
-[_Google
-Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Google Colaboratory")
-verwendet, die Programmierung erfolgt mit Python. Das hierbei entstehende [_Jupyter
-Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook")
+[_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
+verwendet, die Programmierung erfolgt mit Python. Das hierbei entstehende 
+[_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook")
 ist Teil dieser Arbeit und kann frei verwendet werden. Insbesondere der erste Teil, in dem die Arbeitsumgebung selbst
 aufgesetzt wird, bietet hierbei eine einfache Basis zur Wiederverwendung, um erste Erfahrungen mit Spark zu sammeln.
 
 Als Beispielaufgabe dient eine einzelne Textdatei mit allen
-[literarischen Werken von Shakespeare](https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt "Link zum Download der Datei")
+[literarischen Werken von Shakespeare](https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt "zum Download")
 . Diese Textdatei ist an mehreren Stellen im Internet frei verfügbar. Für dieses Beispiel wird auf das Angebot des
-Massachusetts [Institute of Technology (MIT)](https://ocw.mit.edu/ "Zur Webseite des MIT") zurück gegriffen.
+Massachusetts 
+[Institute of Technology (MIT)](https://ocw.mit.edu "zur Webseite")
+zurück gegriffen.
 
 Insgesamt enthält die Datei:
 
@@ -32,17 +33,18 @@ Insgesamt enthält die Datei:
 ## Vorbereiten des Notebooks
 
 Alle Arbeiten, die der Vorbereitung des Notebooks dienen, snd im Abschnitt _Vorbereitung des Notebooks_ hinterlegt. Für
-diesen Abschnitt kann auf das Kapitel [_Google
-Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Google Colaboratory")
+diesen Abschnitt kann auf das Kapitel 
+[_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
 dieser Arbeit zurück gegriffen werden.
 
-Im [_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook") finden sich die hierfür erforderlichen
+Im 
+[_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook") finden sich die hierfür erforderlichen
 Arbeitsschritte im Abschnitt **Vorbereitung des Notebooks**.
 
 ## Auszählen der Wörter
 
-Um die Aufgabe umzusetzen sind zwei Arbeitsschritte erforderlich. Entsprechend finden sich im [_Jupyter
-Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook")
+Um die Aufgabe umzusetzen sind zwei Arbeitsschritte erforderlich. Entsprechend finden sich im 
+[_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook")
 zwei Abschnitte.
 
 Im ersten Abschnitt **Einlesen und Vorbereiten der Textdatei** werden zunächst zwei Methoden definiert.
@@ -95,9 +97,9 @@ Im Abschnitt **Auszählen der Wörter** findet sich nun der eigentliche Code, we
 auszählt und die ersten 30 häufigsten Vorkommen ausgibt.
 
 Um mit Spark arbeiten zu können, muss als erstes eine Verbindung zu Spark in Form eines
-[SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "Zur Dokumentation")
+[SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "zur Dokumentation")
 aufgebaut werden. In dem hier verwendeten Code wird ein
-[SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "Zur Dokumentation")
+[SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "zur Dokumentation")
 erzeugt, welcher die Bezeichnung _WordCounter_ erhält. Er soll lokal laufen und hierbei parallel alle verfügbaren Kerne
 verwenden. Dieser Block kann in einer Anwendung nur ein Mal ausgeführt werden.
 
@@ -116,15 +118,15 @@ stattfinden und an dieser Stelle entfernte Rechner definiert werden.
 
 ---
 
-Der letzte Block des [_Jupyter Notebook_](notebook/Wordcount_mit_Spark.ipynb "Zum Notebook") nutzt nun tatsächlich Spark
-um die Wortvorkommen auszugeben.
+Der letzte Block des 
+[_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook") 
+nutzt nun tatsächlich Spark um die Wortvorkommen auszugeben.
 
 Die Methode
-[_
-textFile_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.textFile.html "Zur Dokumentation")
+[_textFile_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.textFile.html "zur Dokumentation")
 ermöglicht das Lesen von in UTF-8 codierten Textdateien und gibt ein RDD in Form einer Liste von String zurück. In
 diesen Fall entsprechen die Strings den Zeilen der Textdatei. Die Methode
-[_map_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "Zur Dokumentation")
+[_map_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "zur Dokumentation")
 führt auf jedes Element des zugrunde liegenden RDD - also den Zeilen der Textdatei - die angegebene Funktion aus.
 
 In dem hier vorliegenden Fall findet zunächst eine Reihe von Ersetzungen (replace), dann eine Konvertierung in
@@ -144,12 +146,12 @@ lines=sc.textFile(file_target)
 Nach dem Einlesen werden die ersten 30 Listeneinträge des zurück gegebenen RDD's ausgegeben. Jeder Eintrag entspricht
 hierbei einer zeile der Datei. Da es sich tatsächlich um eine Liste handelt, kann hierzu eine einfach _for Schleifen_
 verwendet werden. Besondere Aufmerksamkeit muss hierbei dem Aufruf von
-[_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation")
+[_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "zur Dokumentation")
 entgegengebracht werden.
 
 Das von Spark erzeugte RDD ist ein verteiltes Dataset. In diesen Beispiel ist es auf den Kernen der CPU verteilt, kann
 aber grundsätzlich auch auf weit verteilte Rechner liegen.
-[_Collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation")
+[_Collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "zur Dokumentation")
 sammelt nun alle Elemente des RDD ein und macht sie so verfügbar. Sofern das zugrundeliegende Objekt wie hier ein RDD
 ist, sollte man bedenken, dass alle Daten in den Hauptspeicher geladen werden.
 
@@ -171,12 +173,11 @@ Nach der Ausführung erhalten wir die folgende Ausgabe:
 ---
 
 In der folgenden Codesequenze wird jedes Listenelement des RDD durch
-[_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "Zur Dokumentation")
+[_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "zur Dokumentation")
 in seine einzelnen Wörter aufgeteilt. Für jedes Wort wird ein Tupel erzeugt und zurückgegeben. Da es sich um eine
-[_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "Zur Dokumentation")
+[_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "zur Dokumentation")
 handelt, verfügt das zurück gegebene RDD nur noch über eine sehr lange Liste von Tupel. Die Funktion
-[_
-reduceByKey_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.reduceByKey.html "Zur Dokumentation")
+[_reduceByKey_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.reduceByKey.html "zur Dokumentation")
 merged im Anschluss die einzelnen Tupel. Als Ergebnis erhält man eine Liste von Tupel mit eindeutigen Wörtern und deren
 Vorkommen.
 
@@ -187,10 +188,10 @@ words=lines.flatMap(lambda line: line.split(" ")) \
 ```
 
 Mit der Methode
-[_sortBy_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.sortBy.html "Zur Dokumentation")
+[_sortBy_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.sortBy.html "zur Dokumentation")
 wird auf die Anzahl der Wortvorkommen sortiert. Das zurück gegebene RDD sorted_counts kann im Anschluss ausgegeben
 werden, nachdem mit
-[_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "Zur Dokumentation")
+[_collect_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.collect.html "zur Dokumentation")
 alle Werte eingesammelt wurden.
 
 ```python

@@ -1,4 +1,4 @@
-#### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
+#### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
 # 2 Datenstrukturen
 
@@ -9,49 +9,48 @@ die wichtigsten Datenstrukturen von Spark.
 
 Eine vertiefende und vollständige Behandlung beider System kann und soll hierbei nicht geleistet werden. Hierzu sei auf
 die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine erste Orientierung kann hierbei die
-[Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "Hier befindet sich eine Liste mit weiteren Webressourcen zum Thema")
+[Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "zum Kapitel")
 am Ende dieses Repositories geben.
 
 Insbesondere werden im Rahmen von Erweiterungen hinzugefügte Datentrukturen, welche im Kapitel
-[Spark](01_Spark_Umfeld.md)
+[Spark](01_Spark_Umfeld.md "zum Kapitel")
 diskutierten werden, hier nicht berücksichtigt. Dies betrifft in erster Linie die Erweiterungen im Kontext von 
-[GraphX](01_Spark_Umfeld.md#graphx)
+[GraphX](01_Spark_Umfeld.md#graphx "zum Abschnitt")
 und
-[Spark Streaming](01_Spark_Umfeld.md#spark-streaming)
+[Spark Streaming](01_Spark_Umfeld.md#spark-streaming "zum Abschnitt")
 
 Ergänzend zu dieser Einleitung, werden in den Kapiteln
 
-* [Praxisbeispiel mit RDDS](04_Wordcount_mit_Spark_RDDs_und_Python.md "Beispiel einer realen Anwendung mit Spark RDDs und Python")
-* [Praxisbeispiel mit DataFrames](05_Wordcount_mit_Spark_DataFrames_und_Python.md "Beispiel einer realen Anwendung 
-  mit Spark DataFrames und Python")
+* [Praxisbeispiel mit RDDS](04_Wordcount_mit_Spark_RDDs_und_Python.md "zum Kapitel")
+* [Praxisbeispiel mit DataFrames](05_Wordcount_mit_Spark_DataFrames_und_Python.md "zum Kapitel")
 
 zwei konkrete Beispiele zur Nutzung von Spark mit Python umgesetzt. Beide Beispiele liegen auch in Form von Python
 Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werden.
 
-* [Hadoop](02_Datenstrukturen.md#hadoop )
-* [Spark](02_Datenstrukturen.md#spark )
+* [Hadoop](02_Datenstrukturen.md#hadoop "zum Abschnitt")
+* [Spark](02_Datenstrukturen.md#spark "zum Abschnitt")
 
 ## Hadoop
 
 [_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
 
-* [Hadoop Common](02_Datenstrukturen.md#hadoop-common)
-* [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs)
-* [Map Reduce](02_Datenstrukturen.md#map-reduce)
-* [Yet Another Resource Negotiator (YARN)](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn)
+* [Hadoop Common](02_Datenstrukturen.md#hadoop-common "zum Abschnitt")
+* [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
+* [Map Reduce](02_Datenstrukturen.md#map-reduce "zum Abschnitt")
+* [Yet Another Resource Negotiator (YARN)](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn "zum Abschnitt")
 
 ![Apache Hadoop Logo](./assets/hadoop-logo-no-back-1000.png)
 
 (Das Apache Hadoop Loge ist ein eingetragenes Logo
-der [Apache Software Foundation](https://www.apache.org/ "Hier geht es zur Webseite der Apache Spark Foundation")
+der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 
-[Hadoop](https://hadoop.apache.org "zur Projektseite")
+[Hadoop](https://hadoop.apache.org "zur Webseite")
 ist ein in Java geschriebenes Open Source Framework zur verteilten Verarbeitung sehr großer Datenmengen. Es
 wurde ein 2006 gegründet und ist seit 2008 eines der Top Level Projekte von Apache. Aktuell 2021 liegt es in der
 Version 3.3.1 vor.
 
 Für die Datenverarbeitung nutzt Hadoop das ursprünglich in seinen Grundzügen von Google stammende
-[Map Reduce](https://research.google/pubs/pub62 "zum Paper")
+[Map Reduce](https://research.google/pubs/pub62 "zur Webseite")
 . Daneben müssen als wichtigste Hadoop-Komponenten Hadoop Common, das Dateisystem HDFS sowie das Speichermanagement
 YARN genannt werden.
 
@@ -60,6 +59,9 @@ anschließend mit Map Reduce verarbeitet und serialisiert. Die Verarbeitung ist 
 durch YARN mit genügend Ressourcen versorgt wird.
 
 ### Hadoop Common
+
+https://datasolut.com/apache-hadoop-einfuehrung/
+https://www.quobyte.com/storage-explained/what-is-hdfs
 
 #### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
@@ -74,7 +76,9 @@ Javafiles und -skripte für den Start des Systems
 
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
 
-Hadoop nutzt zur Speicherung seiner Daten das Hadoop Distributed Filesystem (HDFS). Hierbei handelt es sich um ein
+Hadoop nutzt zur Speicherung seiner Daten das 
+[Hadoop Distributed Filesystem (HDFS)](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation")
+. Hierbei handelt es sich um ein
 Dateisystem, welches zum einen hochverfügbar und zum anderen auf viele entfernte Rechner verteilt sein kann. Hierbei
 kann die Anzahl der insgesamt verwalteten Dateien mehrere Millionen betragen, welche sich auf mehrere tausend
 Server verteilen können.
@@ -84,9 +88,9 @@ Speicherung redundant. Hierzu werden die Dateien in feste Blöcke aufgeteilt und
 Blöcke ist konfigurierbar und kann Einfluss auf die Performance haben.
 
 Trotz der vielen Vorteile wird HDFS zunehmend von Cloudbasierten intelligenten Dateisystemen wie
-[AWS S3](https://aws.amazon.com/de/s3/ "zur Website")
+[AWS S3](https://aws.amazon.com/de/s3 "zur Website")
 oder
-[Microsoft Blob Storage](https://azure.microsoft.com/de-de/services/storage/blobs/ "zur Website")
+[Microsoft Blob Storage](https://azure.microsoft.com/de-de/services/storage/blobs "zur Website")
 verdrängt.
 
 ### Map Reduce
@@ -129,12 +133,12 @@ Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance de
 
 [_zurück_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück")
 
-* [Spark RDDs](02_Datenstrukturen.md#spark-rdds)
-* [Spark Dataframes](02_Datenstrukturen.md#spark-dataframes)
-* [Spark Datasets](02_Datenstrukturen.md#spark-datasets)
-* [Spark DataFrame vs Spark DataSet](02_Datenstrukturen.md#spark-dataframe-vs-spark-dataset)
-* [Optimierungen](02_Datenstrukturen.md#optimierungen)
-* [Transformationen und Aktionen](02_Datenstrukturen.md#transformationen-und-aktionen)
+* [Spark RDDs](02_Datenstrukturen.md#spark-rdds "zum Abschnitt")
+* [Spark Dataframes](02_Datenstrukturen.md#spark-dataframes "zum Abschnitt")
+* [Spark Datasets](02_Datenstrukturen.md#spark-datasets "zum Abschnitt")
+* [Spark DataFrame vs Spark DataSet](02_Datenstrukturen.md#spark-dataframe-vs-spark-dataset "zum Abschnitt")
+* [Optimierungen](02_Datenstrukturen.md#optimierungen "zum Abschnitt")
+* [Transformationen und Aktionen](02_Datenstrukturen.md#transformationen-und-aktionen "zum Abschnitt")
 
 ### Spark RDDs
 
@@ -233,7 +237,8 @@ zur Ausführung der Datenoperationen ermittelt. DataFrames sind daher den RDDs b
 
 Als Nachteil ist jedoch ihre Nähe zu RDDs zu sehen, da sie letztlich eine Kollektion von Row Objekten eines RDD sind.
 Erst zur Ausführung greift die Typisierug. Siehe hierzu auch den Artikel von
-[Heise](https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all "zum Artikel")
+[Heise](https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all 
+"zur Webseite")
 .
 
 Dataframes sind somit kein Ersatz der RDDs, sondern können als eine Abstraktionsschicht auf die Daten und deren Handling
@@ -253,7 +258,8 @@ entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
 Mit der Version 1.6 wurden Anfang 2016
-[Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "Zur Dokumentation")
+[Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "zur 
+Webseite")
 eingeführt. DataSets stellen eine Erweiterung der DataFrames dar und bieten zur Kompiler Zeit Typsicherheit. Ebenso wie
 DataFrames sind DataSets Bestandteil von SparkSQL und bieten so die Möglichkeit zur Nutzung von SQL zur Abfrage
 strukturierter Daten. Hierbei handelt es sich bei DataSets ebenso wie bei DataFrames um immutable und verteilte
@@ -279,8 +285,7 @@ Richtung eines objektorientierten Aufbaus änderte. Es wurde die Entscheidung ge
 vereinen. In der aktuellen Version existiert somit ein DataSet Objekt, welches sowohl einen stark typisierten Zugriff (
 DataSet) und einen nicht typisierten (DataFrame) Zugriff anbietet. Ein DataFrame Objekt wird hierbei als ein
 DataSet[row] aufgefasst. Auf der Seite
-[Knoldus Inc.](https://medium.com/@knoldus/spark-type-safety-in-dataset-vs-dataframe-174137517821 "Zur 
-Dokumentation")
+[Knoldus Inc.](https://medium.com/@knoldus/spark-type-safety-in-dataset-vs-dataframe-174137517821 "zur Webseite")
 wird hierauf vertiefend eingegangen und der Sachverhalt schön visuelle verdeutlicht:
 
 ![spark_dataset_dataframe.png](./assets/spark_dataset_dataframe.png "Synthese von DataSet und DataFrame")
@@ -318,12 +323,12 @@ Konzeption des Optimierers wurde darauf geachtet, dass dieser durch eigene Metho
 Der Optimierer ist ein Bestandteil von Spark SQL. In einem aufwendigen Prozess werden anstehende Transaktionen zunächst
 analysiert und anschließend optimiert. Als Ergebnis steht am Ende generierter Java Bytecode, welcher auf jeder Maschine
 ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Features von Scala,
-[Quasiquotes](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Dokumentation")
+[Quasiquotes](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Webseite")
 genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des Scala Compilers zu Java
 Bytecode kompiliert wird.
 
 Auf der folgenden Abbildung von
-[data-flair](https://data-flair.training/blogs/spark-sql-optimization/ "zur Webseite")
+[data-flair](https://data-flair.training/blogs/spark-sql-optimization "zur Webseite")
 findet sich eine etwas vereinfachte Darstellung des Prozessen:
 
 ![image.png](./assets/spark_catalyst_optimizer.png "Spark SQL Ausführungsplan")
@@ -358,7 +363,7 @@ umfasst das Projekt um Moment Aktivitäten in Bereichen:
 
 Diese Abschnitt kann nur eine kurze Übersicht über das Projekt wiedergeben. Eine interessante und tiefergehende
 Einfühung in Tungsten ist auf der Website von Databrick
-[hier](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html)
+[hier](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html "zur Webseite")
 zu finden.
 
 ### Transformationen und Aktionen
@@ -378,7 +383,7 @@ Wiederverwendung der Ergebnisse.
 
 Eine gute Übersicht über die verfügbaren Transformationen und Aktionen findet sich neben der eigentlichen Dokumentation
 von Spark
-[hier](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action/ "zur Seite")
+[hier](https://blog.knoldus.com/deep-dive-into-apache-spark-transformations-and-action "zur Webseite")
 
 Ein Punkt für Verwirrung kann die Anwendbarkeit der Transformationen und Aktionen auf Spark DataFrames und DataSets 
 sein. Beide Datenstrukturen basieren auf RDDs und nutzen diese nach wie vor im Hintergrund. Der Vorteil dieser 
@@ -389,14 +394,15 @@ bei der Arbeit mit DataFrames und DataSet deren API.
 #### Übergabe von Funktionen
 
 Spark macht in sehr starken Umfang Gebrauch von der
-[Übergabe von Funktionen](https://spark.apache.org/docs/latest/rdd-programming-guide.html#passing-functions-to-spark "zur Dokumentation")
+[Übergabe von Funktionen](https://spark.apache.org/docs/latest/rdd-programming-guide.html#passing-functions-to-spark 
+"zur Webseite")
 . Dieses Konzept eröffnet zum einen einen sehr umfangreiche Möglichkeiten zur Bearbeitung der Daten, ist jedoch
 andererseits nicht jeden sehr vertraut und zudem Sprachabhängig.
 
 Im Context von Python gibt es drei Möglichkeiten, eine Funktion zu definieren und zu übergeben:
 
 1. Nutzen einer
-   [Lambda Expression](https://docs.python.org/2/tutorial/controlflow.html#lambda-expressions "zur Dokumentation")
+   [Lambda Expression](https://docs.python.org/2/tutorial/controlflow.html#lambda-expressions "zur Webseite")
 
 ```python
 # Die Methode flatMap iteriert durch jedes Element line und gibt das durch

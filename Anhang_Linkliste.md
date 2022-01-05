@@ -1,4 +1,4 @@
-#### [Zum Anfang](README.md "Hier gelangen Sie zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "Hier gelangen Sie zum Inhaltsverzeichnis")
+#### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
 # Anhang Linkliste
 
@@ -124,6 +124,9 @@ Eine ausführliche Seite zum Vergleich Spark vs. Hadoop
 
 Eine weitere Seite zum Vergleich beider Systeme auf Basis vo Kategorien
 [Link](https://logz.io/blog/hadoop-vs-spark/)
+
+Eine Seite zum Thema Hadoop Distributed File System (HDFS)
+[Link](https://www.quobyte.com/storage-explained/what-is-hdfs)
 
 https://www.bigdata-insider.de/was-ist-hadoop-a-587448/ ?
 
