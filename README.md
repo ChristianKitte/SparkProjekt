@@ -1,4 +1,4 @@
-# Einführung in Spark
+# Einführung in Spark V1.0
 
 ![Apache Spark Logo](https://www.apache.org/logos/res/spark/spark.png "Logo von Apache Spark")
 (Das Apache Spark Loge ist ein eingetragenes Logo
@@ -17,6 +17,7 @@ ToDo:
 * Links zu Dokus mit "zur Dokumentation" annotieren Prio 2
 * Bilder mit einem Text versehen Prio 3 
 * Mehr Fachwörter mit einem Querverweis versehen Prio 4
+* Codebeispiel zur GrapX und MLlib? Prio 5
 
 ---
 

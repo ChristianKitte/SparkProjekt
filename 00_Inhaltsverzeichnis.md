@@ -2,7 +2,7 @@
 
 #### [Zum Anfang](README.md "zur Startseite")
 
-* [1 Spark V 1.0](01_Spark_Umfeld.md "zum Abschnitt")
+* [1 Spark](01_Spark_Umfeld.md "zum Kapitel")
     * Was ist Spark
     * Bisherige Entwicklungsgeschichte
     * Sprachunterstützung
@@ -14,8 +14,8 @@
       * GraphX
       * Spark Streaming 
 
-* [2 Datenstrukturen V 1.0](02_Datenstrukturen.md "zum Kapitel")
-    * Hadoop (noch etwas verfeinern und erweitern)
+* [2 Datenstrukturen](02_Datenstrukturen.md "zum Kapitel")
+    * Hadoop
       * Hadoop Common
       * Hadoop Distributed File System (HDFS)
       * Map Reduce
@@ -28,7 +28,7 @@
       * Optimierungen
       * RDD bis DataSet in a nutshell
 
-* [3 Mögliche Umgebungen für Spark V 1.0](03_Mögliche_Umgebungen_für_Spark.md "zum Kapitel")
+* [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "zum Kapitel")
     * Spark in der Cloud (Azure, Amazon, Google)
     * Spark mit Google Colaboratory (Colab)
     * Spark mit Docker
@@ -37,9 +37,9 @@
         * Zugriff auf das Jupyter Notebook
         * Vor- und Nachteile
   
-* [4 Wordcount mit Spark RDDs und Python V 1.0](04_Wordcount_mit_Spark_RDDs_und_Python.md "zum Kapitel")
+* [4 Wordcount mit Spark RDDs und Python](04_Wordcount_mit_Spark_RDDs_und_Python.md "zum Kapitel")
 
-* [5 Wordcount mit Spark DataFrames und Python V 1.0](05_Wordcount_mit_Spark_DataFrames_und_Python.md "zum Kapitel")
+* [5 Wordcount mit Spark DataFrames und Python](05_Wordcount_mit_Spark_DataFrames_und_Python.md "zum Kapitel")
 
 ### Nachweise
 
