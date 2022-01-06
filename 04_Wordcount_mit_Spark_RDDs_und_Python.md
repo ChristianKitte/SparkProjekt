@@ -130,10 +130,9 @@ diesen Fall entsprechen die Strings den Zeilen der Textdatei. Die Methode
 führt auf jedes Element des zugrunde liegenden RDD - also den Zeilen der Textdatei - die angegebene Funktion aus.
 
 In dem hier vorliegenden Fall findet zunächst eine Reihe von Ersetzungen (replace), dann eine Konvertierung in
-Kleinbuchstaben
-(lower) und am Schluss eine Filterung (filter) auf leere Zeilen statt. Als Ergebnis wird ein neues RDD vom Typ String
-zurückgegeben. Das ursprüngliche RDD wird nicht verändert. Es ist immutable. Die Verwendung einer FluentApi bewirkt eine
-übersichtliche Strukturierung des Codes.
+Kleinbuchstaben (lower) und am Schluss eine Filterung (filter) auf leere Zeilen statt. Als Ergebnis wird ein neues 
+RDD vom Typ String zurückgegeben. Das ursprüngliche RDD wird nicht verändert. Es ist immutable. Die Verwendung 
+einer FluentApi bewirkt eine übersichtliche Strukturierung des Codes.
 
 ```python
 lines=sc.textFile(file_target)

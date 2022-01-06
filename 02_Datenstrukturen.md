@@ -44,31 +44,46 @@ Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werde
 (Das Apache Hadoop Loge ist ein eingetragenes Logo
 der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 
+Laut
+[Wikipedia](https://de.wikipedia.org/wiki/Apache_Hadoop "zu Wikipedia")
+ist
 [Hadoop](https://hadoop.apache.org "zur Webseite")
-ist ein in Java geschriebenes Open Source Framework zur verteilten Verarbeitung sehr großer Datenmengen. Es
-wurde ein 2006 gegründet und ist seit 2008 eines der Top Level Projekte von Apache. Aktuell 2021 liegt es in der
-Version 3.3.1 vor.
+ein in Java geschriebenes Open Source Framework zur verteilten Verarbeitung sehr großer Datenmengen. Es
+wurde in 2006 gegründet und gehört seit 2008 zu den Top Level Projekten von Apache. Aktuell (Dezember 2021) 
+liegt es in der Version 3.3.1 vor.
 
-Für die Datenverarbeitung nutzt Hadoop das ursprünglich in seinen Grundzügen von Google stammende
-[Map Reduce](https://research.google/pubs/pub62 "zur Webseite")
-. Daneben müssen als wichtigste Hadoop-Komponenten Hadoop Common, das Dateisystem HDFS sowie das Speichermanagement
-YARN genannt werden.
+Entgegen der weit verbreiteten Meinung ist
+[Hadoop](https://hadoop.apache.org "zur Webseite") 
+kein Datenbanksystem im engeren Sinne, sondern muss eher als ein Framework für die 
+[Batchverarbeitung](https://de.wikipedia.org/wiki/Stapelverarbeitung "zu Wikipedia") 
+sehr großer, verteilter Datenmengen mit Hilfe seines Dateisystems
+[HDFS](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
+angesehen werden. Dies macht es auch als Echtzeitsystem ungeeignet. Hierbei ist es hoch skalierbar und kann auch 
+sehr großen Datenmengen performant verarbeiten. Wie auf einer Grafik der Seite   
+[datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite")
+dargestllt wird, existieren insgesammt vier Kompoenten:
 
-Hadoop ist ein filebasiertes System. Die zu verarbeitenden Daten werden in Dateien im HDFS Filesystem abgelegt und
-anschließend mit Map Reduce verarbeitet und serialisiert. Die Verarbeitung ist somit eine Batchverarbeitung, welche
-durch YARN mit genügend Ressourcen versorgt wird.
+![hadoop_aufbau.png](assets/hadoop_aufbau.png "Aufbau von Apache Hadoop")
 
-### Hadoop Common
+Die zu verarbeitenden Daten werden im 
+[HDFS Filesystem](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt") 
+abgelegt und anschließend mit 
+[Map Reduce](02_Datenstrukturen.md#hadoop-map-reduce "zum Abschnitt") 
+verarbeitet und serialisiert.
 
-https://datasolut.com/apache-hadoop-einfuehrung/
-https://www.quobyte.com/storage-explained/what-is-hdfs
+[YARN (Yet Another Resource Negotiator)](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html "zur Dokumentation") 
+hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also CPU Zeit und Speicher, in ausreichenden 
+Maße bereitzustellen und einen Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance des Systems 
+relevante Aufgabe. Eine weitere 
+[tiefergehende Betrachtung](https://www.computerweekly.com/de/definition/Apache-Hadoop-YARN-Yet-Another-Resource-Negotiator "zur Webseite")
+aus dem Jahr 2018 ist auf 
+[ComputerWeekly.de](https://www.computerweekly.com/de "zur Webseite") 
+zu finden.
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
-
-Bei Hadoop Common handelt es sich um eine Sammlung von für den Betrieb notwendigen Tools und Routinen. Hierzu gehören
-Javafiles und -skripte für den Start des Systems
+Daneben existieren unter den Begriff 
+[Hadoop Common](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common "zum Maven Repository") 
+eine Sammlung von für den Betrieb notwendigen Tools und Routinen als Maven Repository. Hierzu gehören Javafiles 
+und -skripte für den Start des Systems.
 
 ### Hadoop Distributed File System (HDFS)
 
@@ -76,58 +91,74 @@ Javafiles und -skripte für den Start des Systems
 
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
 
-Hadoop nutzt zur Speicherung seiner Daten das 
+Hadoop nutzt zur Speicherung seiner Daten das
 [Hadoop Distributed Filesystem (HDFS)](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation")
-. Hierbei handelt es sich um ein
-Dateisystem, welches zum einen hochverfügbar und zum anderen auf viele entfernte Rechner verteilt sein kann. Hierbei
-kann die Anzahl der insgesamt verwalteten Dateien mehrere Millionen betragen, welche sich auf mehrere tausend
-Server verteilen können.
+. Hierbei handelt es sich um ein hochverfügbares, verteiltes Dateisystem, welches die Verwaltung mehrere Millionen 
+Dateien auf mehreren tausend Servern ermöglicht.
 
-Der einzelne Server wird als Cluster, einzelne Rechner des Servers als Node bezeichnet. Grundsätzlich erfolgt die
-Speicherung redundant. Hierzu werden die Dateien in feste Blöcke aufgeteilt und an die Nodes verteilt. Die Größe der
-Blöcke ist konfigurierbar und kann Einfluss auf die Performance haben.
+Die folgende Abbildung wurde der Seite 
+[Quobyte](https://www.quobyte.com/storage-explained/what-is-hdfs "zur Webseite") 
+entnommen und gibt eine Übersicht über den Aufbau des Dateisystems wieder:
 
-Trotz der vielen Vorteile wird HDFS zunehmend von Cloudbasierten intelligenten Dateisystemen wie
+![hadoop_hdfs.png](assets/hadoop_hdfs.png "Übersicht über den Aufbau des HDFS Dateisystems")
+
+Wie in der Abbildung zu sehen ist, besteht das Dateisystem aus drei primären Bestandteilen. Bei dem ersten 
+Bestandteil handelt es sich um einen als **_DataNode_** bezeichneten Service. Dieser ist für die Speicherung der Daten 
+in feste Blöcke zuständig und sichert deren Replizierbarkeit. Dieser Service läuft daher in der Regel auf jeden
+genutzten Server. Ein einziger **_NameNode_** enthält alle notwendigen Metadaten über existierenden DataNodes und
+kann somit als eine Art "_Gesamtverzeichnis_" angesehen werden. Der Zugriff auf die Daten erfolgt über einen **_HDFS 
+Client_**, der Teil der Hadoop Distribution ist.
+
+Trotz der vielen Vorteile wird
+[HDFS](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation")
+zunehmend von Cloudbasierten, intelligenten Dateisystemen wie beispeilsweise 
 [AWS S3](https://aws.amazon.com/de/s3 "zur Website")
 oder
 [Microsoft Blob Storage](https://azure.microsoft.com/de-de/services/storage/blobs "zur Website")
 verdrängt.
 
-### Map Reduce
+### Hadoop Map Reduce
 
 #### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
 
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
 
-Hinter Map Reduce verbirgt sich die Datenverarbeitung von Hadoop. Im Prinzip handelt es sich lediglich um zwei
-nacheinander stattfindende Prozesse.
+Für die Datenverarbeitung nutzt Hadoop das ursprünglich in seinen Grundzügen von Google stammende
+[Map Reduce](https://research.google/pubs/pub62 "zur Webseite").
+Bei 
+[Hadoop Map Reduce](https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html "zur Dokumentation") 
+handelt es sich im Prinzip um zwei nacheinander stattfindende Prozesse:
 
-Zunächst findet ein Map Prozess statt, in deren Verlauf werden die benötigten Daten aus den Datenbestand gefiltert und
-extrahiert werden. Mit der so selektierten Datenbasis werden die zu machenden Operationen, in der Regel
-Aggregationen ausgeführt und zusammengefasst. Diesen Schritt kann man als eine Reduktion der ursprünglichen
-Datenbasis auffassen, wovon die Bezeichnung Reduce abgeleitet werden kann.
+* einen Map Job
+* einen Reduce Job
 
-Map Reduce ist hierbei in der Lage, die anfallenden Aufgaben aufzuteilen und parallel auf mehrere, verteilte Rechner
-auszuführen. Die Ergebnisse werden anschließend in einem Gesamtergebnis zusammen geführt.
+Zunächst werden mit dem Map Job benötigten Daten aus den Datenbestand gefiltert und extrahiert. Auf der so  
+selektierten Datenbasis werden die definierten Operationen ausgeführt und zusammengefasst. Dieser Schritt 
+kann als eine Reduktion der ursprünglichen Datenbasis aufgefasst werden, wovon die Bezeichnung Reduce abgeleitet 
+werden kann.
+
+Auf der Webseite 
+[datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite")
+existieren hierzu zwei Grafiken, welche diesen Vorgang gut verdeutlichen:
+
+![hadoop_map_reduce.png](assets/hadoop_map_reduce.png "Grafische Übersicht über Hadoop Map Reduce Prozess")
+
+Die anfallenden Aufgaben können hierbei aufgeteilt und parallel auf mehrere, verteilte Rechner ausgeführt und 
+anschließend zu einem Gesamtergebnis zusammengeführt werden. Die zweite Grafik auf der genannten Seite 
+verdeutlicht dies an einem Wordcount Beispiel.
+
+![hadoop_word_count.png](assets/hadoop_word_count.png "Grafische Übersicht eines Word Counts mit Hadoop Map Reduce")
 
 Es ist wichtig, zwei Dinge zu verstehen:
 
 * Das Ergebnis eines Map Reduce ist immer ein reduzierter, dafür aber berechneter Datenbestand. Würde in einer
   Anwendung zwei Map Reduce Vorgänge hintereinander ausgeführt, ohne das Zwischenergebnis zu speichern, so kann kein
   Rückschluß auf das Zwischenergebnis oder den ausgeführten Aktionen gemacht werden.
-* Die Funktion von Map im Kontext von Hadoop unterscheidet sich stark von dem in Spark. Im Kontext von Hadoop dient
+* Der Map-Begriff im Kontext von Hadoop unterscheidet sich stark von dem in Spark. Im Kontext von Hadoop dient
   es der Filterung und Selektion von Daten aus dem gesamten Datenbestand. Im Kontext von Spark definiert es eine
-  Aktion, welche auf jedes Element eines RDD, Dataframe oder Datasets ausgeführt werden soll.
-
-### Yet Another Resource Negotiator (YARN)
-
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
-
-Der Yet Another Resource Negotiator (YARN) unterstützt Map Reduce und ist dafür zuständig, die zur Bearbeitung
-benötigten Ressourcen eines Clusters, also CPU Zeit und Speicher in ausreichenden Maße, bereitzustellen und einen
-Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance des System relevante Aufgabe.
+  Aktion, welche auf jedes Element eines RDD, Dataframe oder Datasets ausgeführt werden soll. Das in 
+  [Kapitel 4](04_Wordcount_mit_Spark_RDDs_und_Python.md "zum Kapitel") 
+  vorgestellte, praktische Beispiel verdeutlicht dies gut.
 
 ## Spark
 

@@ -16,10 +16,8 @@
 
 * [2 Datenstrukturen](02_Datenstrukturen.md "zum Kapitel")
     * Hadoop
-      * Hadoop Common
       * Hadoop Distributed File System (HDFS)
       * Map Reduce
-      * Yet Another Resource Negotiator (YARN)
     * Spark
       * Spark RDDs
       * Spark Dataframes 

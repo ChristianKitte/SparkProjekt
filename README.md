@@ -13,11 +13,11 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ---
 
 ToDo:
-* Kapitel zu Hadoop noch etwas erweitern Prio 1
-* Links zu Dokus mit "zur Dokumentation" annotieren Prio 2
+* Links zu Dokus mit "zur Dokumentation/ GitHub / Wikipedia" annotieren Prio 2
 * Bilder mit einem Text versehen Prio 3 
 * Mehr Fachwörter mit einem Querverweis versehen Prio 4
 * Codebeispiel zur GrapX und MLlib? Prio 5
+* Kapitel Hadoop - Warum keine DB Prinzip..., überall "Apache Hadoop" ? Prio 6
 
 ---
 
