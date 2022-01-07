@@ -16,8 +16,9 @@
 
 * [2 Datenstrukturen](02_Datenstrukturen.md "zum Kapitel")
     * Hadoop
+      * Yet Another Resource Negotiator (YARN) 
       * Hadoop Distributed File System (HDFS)
-      * Map Reduce
+      * Hadoop Map Reduce
     * Spark
       * Spark RDDs
       * Spark Dataframes 
@@ -38,11 +39,6 @@
 * [4 Wordcount mit Spark RDDs und Python](04_Wordcount_mit_Spark_RDDs_und_Python.md "zum Kapitel")
 
 * [5 Wordcount mit Spark DataFrames und Python](05_Wordcount_mit_Spark_DataFrames_und_Python.md "zum Kapitel")
-
-### Nachweise
-
-* [Literaturnachweise](90_Literaturnachweise.md "zum Kapitel")
-* [Bildnachweise](91_Bildnachweise.md "zum Kapitel")
 
 ### Anhänge
 

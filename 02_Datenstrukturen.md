@@ -34,10 +34,9 @@ Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werde
 
 [_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
 
-* [Hadoop Common](02_Datenstrukturen.md#hadoop-common "zum Abschnitt")
-* [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
-* [Map Reduce](02_Datenstrukturen.md#map-reduce "zum Abschnitt")
 * [Yet Another Resource Negotiator (YARN)](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn "zum Abschnitt")
+* [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
+* [Hadoop Map Reduce](02_Datenstrukturen.md#hadoop-map-reduce "zum Abschnitt")
 
 ![Apache Hadoop Logo](./assets/hadoop-logo-no-back-1000.png)
 
@@ -65,11 +64,20 @@ dargestllt wird, existieren insgesammt vier Kompoenten:
 
 ![hadoop_aufbau.png](assets/hadoop_aufbau.png "Aufbau von Apache Hadoop")
 
-Die zu verarbeitenden Daten werden im 
+Alle Ressourcen werden von einen zentralen Ressourcen Manager 
+[YARN](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn "zum Abschnitt")
+verwaltet. Die zu verarbeitenden Daten werden im 
 [HDFS Filesystem](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt") 
 abgelegt und anschließend mit 
 [Map Reduce](02_Datenstrukturen.md#hadoop-map-reduce "zum Abschnitt") 
 verarbeitet und serialisiert.
+
+Daneben existieren unter den Begriff
+[Hadoop Common](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common "zum Maven Repository")
+eine Sammlung von für den Betrieb notwendigen Tools und Routinen als Maven Repository. Hierzu gehören Javafiles
+und -skripte für den Start des Systems.
+
+### Yet Another Resource Negotiator (YARN)
 
 [YARN (Yet Another Resource Negotiator)](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html "zur Dokumentation") 
 hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also CPU Zeit und Speicher, in ausreichenden 
@@ -78,12 +86,13 @@ relevante Aufgabe. Eine weitere
 [tiefergehende Betrachtung](https://www.computerweekly.com/de/definition/Apache-Hadoop-YARN-Yet-Another-Resource-Negotiator "zur Webseite")
 aus dem Jahr 2018 ist auf 
 [ComputerWeekly.de](https://www.computerweekly.com/de "zur Webseite") 
-zu finden.
+zu finden. Dieser Seite wurde auch die folgende Übersicht entnommen, welche die Funktionsweise von YARN skizziert:
 
-Daneben existieren unter den Begriff 
-[Hadoop Common](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common "zum Maven Repository") 
-eine Sammlung von für den Betrieb notwendigen Tools und Routinen als Maven Repository. Hierzu gehören Javafiles 
-und -skripte für den Start des Systems.
+![hadoop_yarn.png](assets/hadoop_yarn.png "Übersicht über die Funktionsweise von YARN")
+
+Zentrales Element ist der Resourcenmanager selbst. NodeManager der beteiligten Cluster teilen ihren Status mit. Für 
+jede Anwendung wird ein Application Manager erstellt, welcher die benötigten Ressourcen beim Ressourcen Manager 
+anfragt. Container weisen dann die Ressourcen der Anwendung zu.
 
 ### Hadoop Distributed File System (HDFS)
 

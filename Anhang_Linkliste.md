@@ -2,9 +2,14 @@
 
 # Anhang Linkliste
 
-Ziel dieser Linkliste, ist das Sammeln relevanter Webinhalte zum Thema dieser Arbeit. Daneben wurden 
-weitere bei der Erstellung dieser Arbeit als wichtig oder interessant betrachtete Inhalte ebenfalls 
-mit aufgenommen. Die Gliederung erfolgt lose in Anlehnung an die Kapitel dieser Arbeit. 
+Diese Linkliste beinhaltet in loser, thematischer Reihenfolge viele der im Verlauf dieser Arbeit besuchten und 
+verwendeten Webseiten mit Stand vom Januar 2020. Hierunter befinden sich neben offiziellen Dokumentationen 
+auch Verweise zu Wikipedia und als interessant erachtete Webseiten. Diese können als erste Anlaufstelle für 
+eine Vertiefung genutzt werden.
+
+Explizit wurden auch "benachbarte" Themen wie Docker, Java oder Microsoft Azure mit aufgenommen. Ein Abschnitt zu 
+Markdown soll die Arbeit an diesen Dokument erleichtern und einfach die immer wieder benötigte Dokumentation schnell 
+verfügbar machen.
 
 ### Geschichte von Spark
 
@@ -116,19 +121,61 @@ Dokumentation von Spark Streaming
 Apache Hadoop Homepage
 [Link](https://hadoop.apache.org)
 
+Wikipediaseite zu Apache Hadoop
+[Link](https://de.wikipedia.org/wiki/Apache_Hadoop)
+
+Wikipediaseite zu Batchverarbeitung
+[Link](https://de.wikipedia.org/wiki/Stapelverarbeitung)
+
 Eine sehr detaillierte Einführung in Apache Hadoop
 [Link](https://datasolut.com/apache-hadoop-einfuehrung)
 
-Eine ausführliche Seite zum Vergleich Spark vs. Hadoop
+Eine Einführung in Hadoop von bigdata.de
+[Link](https://www.bigdata-insider.de/was-ist-hadoop-a-587448)
+
+Eine Einführung in Hadoop von datasolut.com
+[Link](https://datasolut.com/apache-hadoop-einfuehrung)
+
+Ein ausführlicher Vergleich von Spark und Hadoop
 [Link](https://www.integrate.io/blog/apache-spark-vs-hadoop-mapreduce)
 
-Eine weitere Seite zum Vergleich beider Systeme auf Basis vo Kategorien
-[Link](https://logz.io/blog/hadoop-vs-spark/)
+Ein Vergleich von Spark und Hadoop auf Basis von Kategorien
+[Link](https://logz.io/blog/hadoop-vs-spark)
 
-Eine Seite zum Thema Hadoop Distributed File System (HDFS)
+#### Hadoop Common
+
+Das Maven Repository von Apache Hadoop
+[Link](https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common)
+
+#### HDFS (Hadoop Distributed Filesystem)
+
+Dokumentation zu HDFS
+[Link](https://hadoop.apache.org/docs/r3.3.1)
+
+Weitere Information zum Dateisysem HDFS von Hadoop
 [Link](https://www.quobyte.com/storage-explained/what-is-hdfs)
 
-https://www.bigdata-insider.de/was-ist-hadoop-a-587448/ ?
+Beispiel für eine Alternative: AWS S3
+[Link](https://aws.amazon.com/de/s3)
+
+Beispiel für eine Alternative: Microsoft Blob Storage
+[Link](https://azure.microsoft.com/de-de/services/storage/blobs)
+
+#### Map Reduce
+
+Paper von Google zu MapReduce
+[Link](https://research.google/pubs/pub62)
+
+Dokumentation zu Hadoop Map Reduce
+[Link](https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html
+
+#### YARN (Yet Another Resource Negotiator)
+
+Dokumentation zu HDFS
+[Link](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html)
+
+Eine tiefergehende Betrachtung zu YARN
+[Link](https://www.computerweekly.com/de/definition/Apache-Hadoop-YARN-Yet-Another-Resource-Negotiator)
 
 ### Spark
 
@@ -312,8 +359,3 @@ GitHub Style Markdown
 [Link](https://github.github.com/gfm/)
 
 ***
-
-### Google Colaboratory
-
-Colaboratory
-[Link](https://colab.research.google.com/)

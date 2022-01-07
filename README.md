@@ -1,6 +1,7 @@
 # Einführung in Spark V1.0
 
 ![Apache Spark Logo](https://www.apache.org/logos/res/spark/spark.png "Logo von Apache Spark")
+
 (Das Apache Spark Loge ist ein eingetragenes Logo
 der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 
@@ -15,8 +16,8 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ToDo:
 * Links zu Dokus mit "zur Dokumentation/ GitHub / Wikipedia" annotieren Prio 2
 * Bilder mit einem Text versehen Prio 3 
-* Mehr Fachwörter mit einem Querverweis versehen Prio 4
-* Codebeispiel zur GrapX und MLlib? Prio 5
+* Mehr Fachwörter mit einem Querverweis versehen ? Prio 4
+* Codebeispiel zur GrapX und MLlib ? Prio 5
 * Kapitel Hadoop - Warum keine DB Prinzip..., überall "Apache Hadoop" ? Prio 6
 
 ---
