@@ -9,7 +9,7 @@ die wichtigsten Datenstrukturen von Spark.
 
 Eine vertiefende und vollständige Behandlung beider System kann und soll hierbei nicht geleistet werden. Hierzu sei auf
 die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine erste Orientierung kann hierbei die
-[Linksliste](https://github.com/ChristianKitte/SparkProjekt/blob/main/Anhang_Linkliste.md "zum Kapitel")
+[Linksliste](Anhang_Linkliste.md "zum Kapitel")
 am Ende dieses Repositories geben.
 
 Insbesondere werden im Rahmen von Erweiterungen hinzugefügte Datentrukturen, welche im Kapitel
@@ -38,29 +38,29 @@ Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werde
 * [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
 * [Hadoop Map Reduce](02_Datenstrukturen.md#hadoop-map-reduce "zum Abschnitt")
 
-![Apache Hadoop Logo](./assets/hadoop-logo-no-back-1000.png)
+![Apache Hadoop Logo](./assets/hadoop-logo-no-back-1000.png "Offizielle Logo von Apache Hadoop")
 
 (Das Apache Hadoop Loge ist ein eingetragenes Logo
 der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 
 Laut
-[Wikipedia](https://de.wikipedia.org/wiki/Apache_Hadoop "zu Wikipedia")
+[Wikipedia](https://de.wikipedia.org/wiki/Apache_Hadoop "zur Wikipediaseite")
 ist
-[Hadoop](https://hadoop.apache.org "zur Webseite")
+[Apache Hadoop](https://hadoop.apache.org "zur Webseite")
 ein in Java geschriebenes Open Source Framework zur verteilten Verarbeitung sehr großer Datenmengen. Es
 wurde in 2006 gegründet und gehört seit 2008 zu den Top Level Projekten von Apache. Aktuell (Dezember 2021) 
 liegt es in der Version 3.3.1 vor.
 
 Entgegen der weit verbreiteten Meinung ist
-[Hadoop](https://hadoop.apache.org "zur Webseite") 
-kein Datenbanksystem im engeren Sinne, sondern muss eher als ein Framework für die 
-[Batchverarbeitung](https://de.wikipedia.org/wiki/Stapelverarbeitung "zu Wikipedia") 
+[Apache Hadoop](https://hadoop.apache.org "zur Webseite") 
+kein Datenbanksystem im engeren Sinne, sondern muss eher als ein Framework für die dateibasierte
+[Batchverarbeitung](https://de.wikipedia.org/wiki/Stapelverarbeitung "zur Wikipediaseite") 
 sehr großer, verteilter Datenmengen mit Hilfe seines Dateisystems
 [HDFS](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
-angesehen werden. Dies macht es auch als Echtzeitsystem ungeeignet. Hierbei ist es hoch skalierbar und kann auch 
+angesehen werden, was es als Echtzeitsystem ungeeignet macht. Hierbei ist es hoch skalierbar und kann auch 
 sehr großen Datenmengen performant verarbeiten. Wie auf einer Grafik der Seite   
 [datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite")
-dargestllt wird, existieren insgesammt vier Kompoenten:
+dargestellt wird, existieren insgesammt vier Komponenten:
 
 ![hadoop_aufbau.png](assets/hadoop_aufbau.png "Aufbau von Apache Hadoop")
 
@@ -90,7 +90,7 @@ zu finden. Dieser Seite wurde auch die folgende Übersicht entnommen, welche die
 
 ![hadoop_yarn.png](assets/hadoop_yarn.png "Übersicht über die Funktionsweise von YARN")
 
-Zentrales Element ist der Resourcenmanager selbst. NodeManager der beteiligten Cluster teilen ihren Status mit. Für 
+Zentrales Element ist der Resourcenmanager selbst. Die NodeManager der beteiligten Cluster teilen ihren Status mit. Für 
 jede Anwendung wird ein Application Manager erstellt, welcher die benötigten Ressourcen beim Ressourcen Manager 
 anfragt. Container weisen dann die Ressourcen der Anwendung zu.
 
@@ -277,8 +277,7 @@ zur Ausführung der Datenoperationen ermittelt. DataFrames sind daher den RDDs b
 
 Als Nachteil ist jedoch ihre Nähe zu RDDs zu sehen, da sie letztlich eine Kollektion von Row Objekten eines RDD sind.
 Erst zur Ausführung greift die Typisierug. Siehe hierzu auch den Artikel von
-[Heise](https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all 
-"zur Webseite")
+[Heise](https://www.heise.de/ratgeber/Apache-Spark-2-0-Zweiter-Akt-einer-Erfolgsgeschichte-3292006.html?seite=all "zur Webseite")
 .
 
 Dataframes sind somit kein Ersatz der RDDs, sondern können als eine Abstraktionsschicht auf die Daten und deren Handling
@@ -298,8 +297,7 @@ entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 #### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
 
 Mit der Version 1.6 wurden Anfang 2016
-[Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "zur 
-Webseite")
+[Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "zur Dokumentation")
 eingeführt. DataSets stellen eine Erweiterung der DataFrames dar und bieten zur Kompiler Zeit Typsicherheit. Ebenso wie
 DataFrames sind DataSets Bestandteil von SparkSQL und bieten so die Möglichkeit zur Nutzung von SQL zur Abfrage
 strukturierter Daten. Hierbei handelt es sich bei DataSets ebenso wie bei DataFrames um immutable und verteilte
@@ -434,8 +432,7 @@ bei der Arbeit mit DataFrames und DataSet deren API.
 #### Übergabe von Funktionen
 
 Spark macht in sehr starken Umfang Gebrauch von der
-[Übergabe von Funktionen](https://spark.apache.org/docs/latest/rdd-programming-guide.html#passing-functions-to-spark 
-"zur Webseite")
+[Übergabe von Funktionen](https://spark.apache.org/docs/latest/rdd-programming-guide.html#passing-functions-to-spark "zur Dokumentation")
 . Dieses Konzept eröffnet zum einen einen sehr umfangreiche Möglichkeiten zur Bearbeitung der Daten, ist jedoch
 andererseits nicht jeden sehr vertraut und zudem Sprachabhängig.
 
@@ -518,7 +515,7 @@ Bei der Map Methode wird die übergebene Funktion auf alle Elemente des RDD ange
 Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier ein RDD mit den neuen Werten zurück
 gegeben.
 
-![spark_map.png](./assets/spark_map.png "Prinzip des Map Transformation")
+![spark_map.png](./assets/spark_map.png "Prinzip der Map Transformation bei einem RDD")
 
 Der folgende Code würde ein neues RDD mit Integer Werten zurückgeben. Für jedes (String)Item in lines würde in dem neuen
 RDD lengths ein (Int)Item für die Länge des entsprechenden Wertes aus lines stehen.
@@ -537,7 +534,7 @@ Zahlenwerte.
 
 Flat Map unterscheidet sich zu Map dadurch, dass die übergebene Funktion mehr als ein Element zurück geben kann.
 
-![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation")
+![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation bei einem RDD")
 
 Der folgende Code würde für jedes (String)Item des RDD lines den enthaltenen Text auf Basis der Leerstellen splitten und
 ein neues RDD mit einer Spalte und n Zeilen zurückgeben.

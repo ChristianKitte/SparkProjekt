@@ -85,7 +85,7 @@ gruppiert die in value2 enthaltenen Werte (Wörter) und
 [Count](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.count.html "zur Dokumentation")
 aggregiert die Anzahl der einzelnen
 Vorkommen. Abgeschlossen wir die Anweisung mit einem 
-[sort](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.sort.html)
+[sort](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.DataFrame.sort.html "zur Dokumentation")
 und der Ausgabe der sortierten Liste. Die Nutzung der Fluent
 API macht den Code hierbei gut lesbar. Ebenso fällt die Ähnlichkeit zu 
 [Panda DataFrames](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html "zur Dokumentation")
@@ -135,4 +135,4 @@ df=df.withColumn('value2',func.explode(func.split(func.col('value'), ' ')))\
 Das Ergebnis ist eine Liste aller Wörter mit deren Vorkommen in absteigender Reihenfolge. Hierbei steht an erster Stelle
 das Leerzeichen als häufigster Vertreter.
 
-![dataframe_wörter.png](./assets/dataframe_wörter.png "Ausgabe der Wortliste in absteigender Reihenfolge")
+![dataframe_wörter.png](./assets/dataframe_wörter.png "Ausgabe der Wortliste in absteigender Reihenfolge im Notebook")

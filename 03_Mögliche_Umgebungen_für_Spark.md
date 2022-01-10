@@ -181,7 +181,7 @@ Für den Einsatz von Spark sind in jedem Fall drei Voraussetzungen notwendig:
 + die Bibliothek [FindSpark](https://pypi.org/project/findspark "zur Webseite") muss installiert sein
 + die Bibliothek [PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
   muss installiert sein. Auf den Seiten von Apache.org findet man
-  [weiter gehende Informationen zu PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
+  [weiter gehende Informationen zu PySpark](https://spark.apache.org/docs/latest/api/python "zur Dokumentation")
 
 #### Installation von Java und Spark
 
@@ -221,7 +221,7 @@ print("Umgebungsvariablen sind gesetzt...")
 Nach Ausführung beider Schritte existiert eine Umgebung mit einer funktionierende Spark Installation. Um einfach mit
 Spark und Python arbeiten zu können, fehlen noch zwei Bibliotheken.
 
-[PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite") ist ein Interface für die Nutzung
+[PySpark](https://spark.apache.org/docs/latest/api/python "zur Dokumentation") ist ein Interface für die Nutzung
 von Spark mit Python. Es ermöglicht also die Programmierung von Sparkanwendungen mit Python. Hierbei werden die meißten
 der Features von Spark unterstützt.
 
@@ -236,16 +236,16 @@ print("PySpark wurde installiert...")
 ```
 
 Damit
-[PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
+[PySpark](https://spark.apache.org/docs/latest/api/python "zur Dokumentation")
 von Python genutzt und importiert werden kann, müssen beide voneinander wissen. Hier
 kommt [FindSpark](https://pypi.org/project/findspark "zur Webseite") ins Spiel.
 
 #### Initialisierung der Programmierumgebung
 
-Laut Aussage des [Git Repository](https://github.com/minrk/findspark "zum Repository")
+Laut Aussage des [Git Repository](https://github.com/minrk/findspark "zur GitHub Seite")
 von FindSpark bieten sich Grundsätzlich zwei Wege an. Mit dem ersten wird die PySpark so verlinkt, dass Python es finden
 kann. Dies ist im allgemeinen bei den verwendeten Packages. Bei Verwendung des zweiten Weges wird der Pfad zu
-[PySpark](https://spark.apache.org/docs/latest/api/python "zur Webseite")
+[PySpark](https://spark.apache.org/docs/latest/api/python "zur Dokumentation")
 mit im Systempfad hinterlegt.
 
 [FindSpark](https://pypi.org/project/findspark "zur Webseite")
@@ -296,7 +296,7 @@ werden kann.
 
 Bei Docker arbeitet man mit sogenannten Containern, welche einen Prozess visualisieren. Die Basis eines Containers
 bildet ein Image. Ein gute Einführung zu Docker findet sich auf den Seiten von
-[Docker](https://docs.docker.com/get-started/overview "zur Webseite").
+[Docker](https://docs.docker.com/get-started/overview "zur Dokumentation").
 
 Einer der Vorteile von Docker ist die sehr große Sammlung bereits fertiger Images
 im [Docker Hub](https://hub.docker.com "zur Webseite"). Hier finden sich für viele
@@ -305,7 +305,7 @@ Anwendungsfälle bereits vorgefertigte Lösungen.
 Unabhängig von Spark ist für die Ausführung eines Docker Containers die Installation einer Docker Runtime notwendig.
 Diese ist in Form eines _Docker Desktop_ für die Plattformen Mac, Windows und Linux verfügbar. Die Installation von
 Docker ist nicht Teil dieser Arbeit, jedoch findet sich eine gute Einführung
-auf [Docker](https://docs.docker.com/get-started/overview "zur Webseite").
+auf [Docker](https://docs.docker.com/get-started/overview "zur Dokumentation").
 
 ### Dockerimage
 
@@ -325,8 +325,8 @@ docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark
 
 Bei der ersten Ausführung wird das Image _jupyter/pyspark-notebook_ direkt vom _Docker Hub_ herunter geladen, sofern es
 noch nicht lokal vorhanden ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt. Dieser
-Container horcht auf dem _Port 8888_ und [_
-JupyterLab_](https://jupyterlab.readthedocs.io/en/stable "zur Webseite") ist
+Container horcht auf dem _Port 8888_ und 
+[_JupyterLab_](https://jupyterlab.readthedocs.io/en/stable "zur Webseite") ist
 aktiv. Der Name des erstellten Containers lautet _pyspark_.
 
 Nach dem ersten Zugriff auf den Container, kann dieser wie im folgenden gezeigt, einfach gestartet werden:
@@ -340,7 +340,7 @@ Start für den Container zugänglich gemacht werden. Hierfür gibt es eine Reihe
 
 Um innerhalb eines Containers mit eigenen Daten zu arbeiten, müssen diese aus dem Container zugreifbar sein. Hierfür
 gibt es
-[verschiedene Möglichkeiten](https://docs.docker.com/storage "zur Webseite")
+[verschiedene Möglichkeiten](https://docs.docker.com/storage "zur Dokumentation")
 . Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
 sein:
 
@@ -353,11 +353,11 @@ cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
 ausgegeben.
 
-![docker_ausgabe_konsole.png](assets/docker_ausgabe_konsole.png "Ausgabe der Konsole")
+![docker_ausgabe_konsole.png](assets/docker_ausgabe_konsole.png "Ausgabe von Docker nach Start des Containers")
 
 Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark benötigten
-Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter [_Google
-Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Hier geht es zum Abschnitt Spark mit Google Colaboratory (Colab)")
+Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter 
+[_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
 beschrieben gearbeitet werden.
 
 ![docker_ide_jupyter.png](assets/docker_ide_jupyter.png "Ausschnitt der Web IDE von Jupyter mit Docker")
