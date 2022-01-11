@@ -20,7 +20,7 @@ und wird daher hier nicht berücksichtigt.
 
 ## Spark in der Cloud
 
-[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mgliche-umgebungen-fr-spark "Zurück")
 
 Insbesondere für Unternehmen kann sich der Einsatz von Spark im Umfeld einer Cloud sinnvoll sein. In der Regel 
 können Lösungen zunächst kostengünstig implementiert und mit zunehmenden Nutzen hoch skaliert werden. Die einfache 
@@ -32,6 +32,8 @@ als größte Anbieter von Cloudlösungen eingegangen werden. Eine tiefergehende 
 den Rahmen dieser Arbeit sprengen. Vielmehr sollen erste Anhaltspunkte für den Einstieg gegeben werden.
 
 ### Microsoft Azure
+
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud "Zurück")
 
 Hinter 
 [Microsoft Azure](https://azure.microsoft.com/de-de "zur Webseite") 
@@ -65,6 +67,8 @@ Azure eignet sich auf Grund seines aufgeräumten Designs, der deutschen Sprache,
 des 30 tägigen kostenlosen Testzeitraums aber auch für ein erstes Kennenlernen von Spark im Enterprisebereich. 
 
 ### Amazon AWS
+
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud "Zurück")
 
 Hinter dem Begriff 
 [Amazon Web Services oder kurz AWS](https://aws.amazon.com "zur Webseite")
@@ -112,6 +116,8 @@ Oberfläche von Microsofts Azure aufgeräumter. Daher wird der Einstieg hier ehe
 
 ### Google Cloud
 
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud "Zurück")
+
 Unter dem Begriff 
 [Google Cloud](https://cloud.google.com "zur Webseite")
 finden sich das Angebot von Google für den Cloudbereich. Ebenso wie die zuvor behandelten Anbieter, verfügt auch
@@ -147,7 +153,7 @@ kann.
 
 ## Spark mit Google Colaboratory (Colab)
 
-[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mgliche-umgebungen-fr-spark "Zurück")
 
 Ein einfache Möglichkeit, um mit Spark zu arbeiten, bietet
 [Google Colaboraty](https://colab.research.google.com/?utm_source=scs-index "zur Webseite")
@@ -173,6 +179,8 @@ oder
 im Abschnitt **Vorbereitung des Notebooks**.
 
 ### Vorbereiten des Notebooks
+
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Zurück")
 
 Für den Einsatz von Spark sind in jedem Fall drei Voraussetzungen notwendig:
 
@@ -268,6 +276,8 @@ except ImportError:
 
 ### Vor- und Nachteile
 
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "Zurück")
+
 Als Vorteile dieser Vorgehensweise sind zu nennen:
 
 * kostenlos
@@ -285,7 +295,7 @@ Als Nachteile sind zu nennen:
 
 ## Spark mit Docker
 
-[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mögliche-umgebungen-für-spark "Zurück")
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#3-mgliche-umgebungen-fr-spark "Zurück")
 
 Die Verwendung von Google Colaboratory zeigte bereits eine einfache Möglichkeit, ein Spark Umgebung für die Verwendung
 mit Python zu erstellen. Verfügbar war diese Lösung jedoch nur innerhalb des Google Ökosystems.
@@ -309,12 +319,16 @@ auf [Docker](https://docs.docker.com/get-started/overview "zur Dokumentation").
 
 ### Dockerimage
 
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
+
 Als Basis dient das [_Jupyter Notebook Python, Spark Stack_](https://hub.docker.com/r/jupyter/pyspark-notebook  "zur Webseite")
 Notebook. Es beinhaltet ein fertig konfiguriertes Linux System mit installierten Java, Python und Spark. Es ist also
 nicht nötig, manuelle Einstallungen oder Installationen auszuführen, um Spark innerhalb eines 
 [_Jupyter Notebooks_](https://jupyter.org/index.html "zur Webseite") auszuführen.
 
 ### Download und erster Start
+
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
 
 Dieser Schritt setzt die Installation des _Docker Desktop_ wie oben beschrieben voraus. In einer Eingabekonsole wird der
 folgende Befehl eingegeben:
@@ -350,6 +364,8 @@ cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
 
 ### Zugriff auf das Jupyter Notebook
 
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
+
 Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
 ausgegeben.
 
@@ -363,6 +379,8 @@ beschrieben gearbeitet werden.
 ![docker_ide_jupyter.png](assets/docker_ide_jupyter.png "Ausschnitt der Web IDE von Jupyter mit Docker")
 
 ### Vor- und Nachteile
+
+[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
 
 Als Vorteile dieser Vorgehensweise sind zu nennen:
 

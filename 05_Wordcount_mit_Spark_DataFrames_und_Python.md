@@ -1,6 +1,6 @@
 #### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
-# 7 Wordcount mit Spark DataFrames und Python
+# 5 Wordcount mit Spark DataFrames und Python
 
 An dieser Stelle wird eine Variante der zuvor im Kapitel
 [Wordcount mit Spark und Python](04_Wordcount_mit_Spark_RDDs_und_Python.md "zum Kapitel")
@@ -21,6 +21,8 @@ Wie bereits zuvor ist auch der Code dieses Abschnitts als lauffähiges
 Teil dieser Arbeit und frei verwendbar.
 
 ## Session statt Context
+
+[_zurück_](05_Wordcount_mit_Spark_DataFrames_und_Python.md#5-wordcount-mit-spark-dataframes-und-python "Zurück")
 
 Ein wichtiger Unterschied im Gegensatz zur Nutzung eines 
 [Spark Context](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "zur Dokumentation") 
@@ -47,6 +49,8 @@ print("Die Spark Session wurde angelegt...")
 ```
 
 ## DataFrame Methoden statt Map
+
+[_zurück_](05_Wordcount_mit_Spark_DataFrames_und_Python.md#5-wordcount-mit-spark-dataframes-und-python "Zurück")
 
 Anschließend wird die Textdatei eingelesen. Die Funktion 
 [Session.read.text](https://spark.apache.org/docs/latest/sql-getting-started.html#creating-dataframes "zur Dokumentation")

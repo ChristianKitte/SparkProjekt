@@ -14,10 +14,9 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ---
 
 ToDo:
-* Option "Zurück" kontrollieren Prio 1
-* Inhaltsverzeichnis mit Kapitel abgleichen Prio 2
 * Mehr Fachwörter mit einem Querverweis versehen ? Prio 3
-* Finales Korrekturlesen Prio 4
+* Finales Korrekturlesen, Links testen Prio 4
+* Spark DataFrame/RDD nochmal rüber schauen DataSet ==> Einteilung in Coloums
 ---
 
 Zu Anfang der Beschäftigung mit Apache Spark stößt man auf eine Vielzahl an Begriffen und Konzepten, welche gerade 

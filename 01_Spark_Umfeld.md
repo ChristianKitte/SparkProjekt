@@ -1,6 +1,7 @@
 #### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
 # 1 Spark
+
 In diesen Abschnitt wird in Kürze darauf eingegangen, was
 [Apache Spark](https://spark.apache.org "zur Webseite") 
 ist und wo es seine Anfänge genommen hat. Es folgt ein Überblick über die von Spark unterstützten 
@@ -114,6 +115,8 @@ die Möglichkeit, Apache Spark mit Hilfe von Maven direkt in Projekte einzubinde
 
 ### PySpark
 
+[_zurück_](01_Spark_Umfeld.md#sprachuntersttzung "Zurück")
+
 Für die Arbeit Python existiert mit 
 [PySpark](https://spark.apache.org/docs/latest/api/python/index.html "zur Dokumentation")
 ein Interface, dass eine starke Integration vmit Python ermöglicht. 
@@ -122,6 +125,8 @@ mit Python existieren. Die fehlende Möglichkeit, SparkSQL zu nutzen, wird durch
 Alternativen ausgeglichen. 
 
 ### SparkR
+
+[_zurück_](01_Spark_Umfeld.md#sprachuntersttzung "Zurück")
 
 Mit
 [SparkR (R on Spark)](https://spark.apache.org/docs/latest/sparkr.html "zur Dokumentation")
@@ -164,6 +169,8 @@ Hier sei auf die jeweils angegebenen Projektseiten verwiesen:
 
 ### SparkSQL
 
+[_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
+
 [SparkSQL](https://spark.apache.org/sql "zur Webseite") 
 erweitert und vereinfacht den Umgang mit strukturiert vorliegenden Daten und stellt eine der wichtigsten 
 Erweiterungen von Spark da. Ein wichtiger Kern stellt die Einführung von DataFrames und darauf folgend von DataSets 
@@ -179,6 +186,8 @@ wird hierauf näher eingegangen. Daneben existiert auf Seite von Spark eine umfa
 [Dokumentation von SparkSQL](https://spark.apache.org/docs/latest/sql-programming-guide.html "zur Dokumentation"). 
 
 ### MLlib
+
+[_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
 Die 
 [Maschine Learning Library (MLlib)](https://spark.apache.org/mllib "zur Webseite")
@@ -200,6 +209,8 @@ an.
 
 ### GraphX
 
+[_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
+
 Bei 
 [GraphX](https://spark.apache.org/graphx "zur Webseite") 
 handelt es sich um eine Erweiterung, welche die Möglichkeit eröffnet, im Kontext von Spark mit Graphen zu 
@@ -220,6 +231,7 @@ genannt, welche einen eigenen
 anbietet.   
 
 #### Exkurs Graphendatenbanken
+
 Auch wenn diese Arbeit nicht das Konzept der Graphendatenbanken umfasst, sollen diese hier kurz vorgestellt werden, 
 da deren Verständnis nicht vorausgesetzt wird.
 
@@ -255,6 +267,8 @@ werden könnte:
 * Karl der Große kommt in dem Buch vor.
 
 ### Spark Streaming
+
+[_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
 Als letzte Erweiterung soll hier ein Blick
 [Spark Streaming](https://spark.apache.org/streaming "zur Webseite")

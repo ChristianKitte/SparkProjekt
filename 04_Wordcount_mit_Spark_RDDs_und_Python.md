@@ -1,6 +1,6 @@
 #### [Zum Anfang](README.md "zur Startseite") | [Inhaltsverzeichnis](00_Inhaltsverzeichnis.md "zum Inhaltsverzeichnis")
 
-# 6 Wordcount mit Spark und Python
+# 4 Wordcount mit Spark und Python
 
 In diesem Kapitel wird beispielhaft die Installation und Verwendung von _Spark_ auf Basis folgender Komponenten
 demonstriert:
@@ -32,6 +32,8 @@ Insgesamt enthält die Datei:
 
 ## Vorbereiten des Notebooks
 
+[_zurück_](04_Wordcount_mit_Spark_RDDs_und_Python.md#4-wordcount-mit-spark-und-python "Zurück")
+
 Alle Arbeiten, die der Vorbereitung des Notebooks dienen, snd im Abschnitt _Vorbereitung des Notebooks_ hinterlegt. Für
 diesen Abschnitt kann auf das Kapitel 
 [_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
@@ -42,6 +44,8 @@ Im
 Arbeitsschritte im Abschnitt **Vorbereitung des Notebooks**.
 
 ## Auszählen der Wörter
+
+[_zurück_](04_Wordcount_mit_Spark_RDDs_und_Python.md#4-wordcount-mit-spark-und-python "Zurück")
 
 Um die Aufgabe umzusetzen sind zwei Arbeitsschritte erforderlich. Entsprechend finden sich im 
 [_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook")

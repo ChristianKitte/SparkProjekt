@@ -32,7 +32,7 @@ Notebooks vor und können direkt in Google Colab geöffnet und ausgeführt werde
 
 ## Hadoop
 
-[_zurück_](02_Datenstrukturen#2-Datenstrukturen "Zurück")
+[_zurück_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück")
 
 * [Yet Another Resource Negotiator (YARN)](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn "zum Abschnitt")
 * [Hadoop Distributed File System (HDFS)](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt")
@@ -79,6 +79,8 @@ und -skripte für den Start des Systems.
 
 ### Yet Another Resource Negotiator (YARN)
 
+[_zurück_](02_Datenstrukturen.md#hadoop "Zurück")
+
 [YARN (Yet Another Resource Negotiator)](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html "zur Dokumentation") 
 hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also CPU Zeit und Speicher, in ausreichenden 
 Maße bereitzustellen und einen Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance des Systems 
@@ -96,9 +98,7 @@ anfragt. Container weisen dann die Ressourcen der Anwendung zu.
 
 ### Hadoop Distributed File System (HDFS)
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
+[_zurück_](02_Datenstrukturen.md#hadoop "Zurück")
 
 Hadoop nutzt zur Speicherung seiner Daten das
 [Hadoop Distributed Filesystem (HDFS)](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation")
@@ -128,9 +128,7 @@ verdrängt.
 
 ### Hadoop Map Reduce
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Hadoop "Zurück zum Kapitelanfang")
+[_zurück_](02_Datenstrukturen.md#hadoop "Zurück")
 
 Für die Datenverarbeitung nutzt Hadoop das ursprünglich in seinen Grundzügen von Google stammende
 [Map Reduce](https://research.google/pubs/pub62 "zur Webseite").
@@ -182,6 +180,8 @@ Es ist wichtig, zwei Dinge zu verstehen:
 
 ### Spark RDDs
 
+[_zurück_](02_Datenstrukturen.md#spark "Zurück")
+
 In den folgenden Kapiteln wird eine Übersicht über die wichtigsten Datenstrukturen in Spark gegeben, deren 
 Verständnis für die Funktionsweise und Bewertung von Spark als ganzes wichtig sind. Starkes Gewicht wird hierbei auf 
 den RDDs als Kernkomponente von Spark gelegt.
@@ -190,36 +190,32 @@ Auch bei Verfügbarkeit anwenderfreundlicher Strukturen wie den Spark DataFrames
 API ist für ein gutes Verständnis von Spark dies Wissen wichtig. Insbesondere, wenn stark auf Ebene der RDDs in die 
 Verarbeitung eingegriffen werden soll oder muss.
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
-
 RDD steht für Resilient Distributed Dataset (auf deutsch etwa “robuster verteilter Datensatz”) und stellt das zentrale
-Konzept und Objekt für die Abstraktion von Datasets innerhalb von Spark da. RDD nutzen lazy evaluation. Code wird somit
-erst dann ausgeführt, wenn eine Action angestoßen wird. So können Transformationen effektiv umgesetzt werden. Von
-Nachteil ist hierbei, das Daten nicht typisiert sind und ein RDD über keine Schemainformationen verfügt.
+Konzept und Objekt für die Abstraktion von Daten innerhalb von Spark dar. Auf einen RDD können Transformationen
+(Bearbeitungen) für dessen Daten festgelegt werden. Hierbei ist das RDD immutable. Jede Aktion auf ein RDD verändert 
+das zugrunde liegende RDD nicht, sondern gibt stets ein neues RDD zurück. Hierbei nutzt Spark in starken Maße die 
+Übergabe von Funktionen. RDDs nutzen lazy evaluation. Transformationen werden erst dann ausgeführt, wenn ein Ergebnis 
+abgefragt, sprich, eine Action angestoßen wird.
+
+Die folgende, der Seite 
+[TowardDataScience.com](https://towardsdatascience.com/your-first-apache-spark-ml-model-d2bb82b599dd "zur Webseite") 
+entnommene Grafik illustriert dies sehr schön:
+
+![rdd_workflow.png](assets/rdd_workflow.png "Das Bild zeigt den typischen Workflow bei Sparks RDDs")
+
+Im Ergebnis bleiben somit die Rohdaten erhalten und Transformationen können vor der finalen Ausführung optimiert und 
+effektiv umgesetzt werden. Von Nachteil ist hierbei, dass Daten nicht typisiert sind und ein RDD über keine 
+Schemainformationen verfügt.
 
 RDDs verfügen über die Fähigkeit, beschädigte Spark Knoten oder Partitionen zu ersetzen. Als Legacy Code ermöglicht RDD
 eine Low-Level Kontrolle über die Ausführung und Verarbeitung unstrukturierter Daten und ist für alle Arten von
 Anwendungen geeignet und über seiner API zugänglich.
 
-Die Arbeit von Spark kann letztlich auf das Anlegen neuer sowie der Transformation und das Ausführen Operationen auf
-vorhandenen RDDs betrachtet werden. Hierbei ist das RDD immutable. Jede Aktion auf ein RDD verändert das zugrunde
-liegende RDD nicht, sondern gibt stets ein neues RDD zurück. Hierbei nutzt Spark in starken Maße die Übergabe von
-Funktionen.
-
-Es gibt verschiedene Wege, um ein RDD zu erstellen. Gemein ist allen, dass Spark bei der Erstellung die Arbeitsdaten
-verteilt und später alle Operationen automatisch verteilt und parallelisiert ausführt. Der generelle Workflow ist
-hierbei:
-
-* Erstellen des RDD
-* Anwenden von Transformationen
-* Ausführen von Aktionen
-
 #### Erzeugen von RDDs
 
 Grundsätzlich existieren zwei Möglichkeiten, um ein RDD zu erzeugen. Zum einen ist dies die Verwendung einer
-existierenden Collection, zum anderen das Referenzieren eines extern vorliegenden Datasets.
+existierenden Collection, zum anderen das Referenzieren eines extern vorliegenden Datasets wie ein geteiltes 
+Dateisystem oder ein beliebiges Hadoop Eingabeformat.  
 
 Bei der Verwendung von Collections werden die Daten bereits im Vorfeld aus den jeweiligen Quellen gelesen und in Form
 einer geeigneten Collection gehalten. Mithilfe der Methode parallelize wird dann aus der Collection ein RDD erstellt.
@@ -231,8 +227,8 @@ integers = list(range(1,6)
 integers_rdd = sc.parallelize(integers)
 ```
 
-Für sehr große Daten ist die Verwendung der textFile Methode sinnvoller. Mit ihrer Hilfe können auch sehr große,
-entfernte Daten einem RDD zugeführt werden:
+Für sehr große Datenbestände kann jedoch beispielsweise die Verwendung der textFile Methode sinnvoller sein. Mit 
+ihrer Hilfe können auch sehr große, entfernte Daten einem RDD zugeführt werden:
 
 ```python
 sc = SparkContext("local", "SampleApp")
@@ -243,9 +239,7 @@ Diese Methode eignet sich auch für externe Datenspeicher wie Amazon S3, HDFS, C
 
 ### Spark Dataframes
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")v
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
+[_zurück_](02_Datenstrukturen.md#spark "Zurück")
 
 Die Arbeit auf Basis der zuvor behandelten RDDs ist gut geeignet, wenn man nahe an Spark arbeiten und den größtmöglichen
 Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
@@ -292,9 +286,7 @@ entsprechen. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 
 ### Spark Datasets
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
+[_zurück_](02_Datenstrukturen.md#spark "Zurück")
 
 Mit der Version 1.6 wurden Anfang 2016
 [Spark DataSet](https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html "zur Dokumentation")
@@ -310,9 +302,7 @@ umfangreiches Ökosystem wie Pandas aus.
 
 ### Spark DataFrame vs Spark DataSet
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
+[_zurück_](02_Datenstrukturen.md#spark "Zurück")
 
 Chronologisch existierten Spark DataFrames bereits vor der Einführung der DataSets. Als Erweiterung vereinfachen sie
 den Zugriff auf RDDs mit Funktionen wie agg (Aggregat), select (Auswahl), sum (Summe) und avg (Mittelwert). Für Ihre 
@@ -345,9 +335,7 @@ Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden T
 
 ### Optimierungen
 
-#### [_zurück zum Seitenanfang_](02_Datenstrukturen.md#2-Datenstrukturen "Zurück zum Seitenanfang")
-
-#### [_zurück zum Kapitelanfang_](02_Datenstrukturen.md#Spark "Zurück zum Kapitelanfang")
+[_zurück_](02_Datenstrukturen.md#spark "Zurück")
 
 Spark ist für die schnelle, verteilte und optimierte Verarbeitung sehr großer Datenbestände entwickelt worden. Um die
 Ziel zu erreichen, muss der verwendete Code hochgradig optimiert sein. Zwei in diesen Zusammenhang immer wieder genannte
@@ -405,6 +393,8 @@ Einfühung in Tungsten ist auf der Website von Databrick
 zu finden.
 
 ### Transformationen und Aktionen
+
+[_zurück_](02_Datenstrukturen.md#spark "Zurück")
 
 Auf der Ebene der RDDs kennt Spark zwei grundsätzliche Operationen. Die Transformation führt eine Aktion auf 
 Daten aus und liefert ein neues RDD zurück. Eine Aktion hingegen ermöglicht den Zugriff auf den vorhandene Daten und 
