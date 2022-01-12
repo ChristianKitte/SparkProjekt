@@ -91,6 +91,12 @@ Homepage der Maschine Learning Library
 Dokumentation der Machine Learning Library
 [Link](https://spark.apache.org/docs/latest/ml-guide.html)
 
+Dokumentation des Discretized Stream (DStream) 
+[Link](https://spark.apache.org/docs/latest/streaming-programming-guide.html#discretized-streams-dstreams)
+
+Ein Paper zu Discretized Streams (DStream)
+[Link](https://www.usenix.org/system/files/conference/hotcloud12/hotcloud12-final28.pdf)
+
 #### GraphX
 
 Homepage von GraphX

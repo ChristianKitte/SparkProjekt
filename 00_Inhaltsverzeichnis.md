@@ -25,7 +25,7 @@
       * Spark Datasets
       * Spark DataFrame vs Spark DataSets
       * Optimierungen
-      * Transformationen und Aktionen
+      * Transformationen und Aktionen (RDDs)
 
 * [3 Mögliche Umgebungen für Spark](03_Mögliche_Umgebungen_für_Spark.md "zum Kapitel")
     * Spark in der Cloud

@@ -26,20 +26,16 @@ Haltung zuständig.
 Es verdankt seine Bedeutung der Tatsache, das es imstand ist, auch sehr große Datenbestände im Petabereich 
 in kurzer Zeit verarbeiten zu können. Hierbei verteilt
 [Apache Spark](https://spark.apache.org "zur Webseite") 
-die Verarbeitung und führt zu einem späteren Zeitpunkt die Ergebnisse wieder zusammen.
-
-Daneben können nicht nur strukturierte Daten, sondern auch unstrukturierte oder als Stream vorliegende
-Daten verarbeitet werden. Hierfür existieren mehrere Zusätze, auf die später eingegangen wird.
+die Verarbeitung und führt zu einem späteren Zeitpunkt die Ergebnisse wieder zusammen. Daneben können nicht nur 
+strukturierte Daten, sondern auch unstrukturierte oder als Stream vorliegende
+Daten verarbeitet werden.
 
 Den Kern des Frameworks bilden grundlegende Funktionen wie die Ablaufsteuerung, die Aufgaben- und
 Zeitplanung sowie die Bereitstellung von Input- und Output-Operationen. Die zugrunde liegende Datenstruktur
-basiert auf Resilient Distributed Datasets (RDD), welche im Abschnitt 
+basiert auf Resilient Distributed Datasets (RDDs), welche im Abschnitt 
 [Datenstrukturen](02_Datenstrukturen.md "zum Kapitel") 
-ausführlich eingegangen wird. Sie ermöglichen die Performante, hoch skalierbare und verteilte Bearbeitung 
+ausführlich behandelt werden. Sie ermöglichen die Performante, hoch skalierbare und verteilte Bearbeitung 
 sehr großer Datenmengen.
-
-Auch wenn Spark selbst in Scala geschrieben wurde, unterstützt es neben Java die im Bereich Big Data 
-wichtigen Sprachen Python und R.
 
 ## Bisherige Entwicklungsgeschichte
 
@@ -57,7 +53,7 @@ Teil der
 [Apache Software Foundation](https://www.apache.org "zur Webseite").
 Als Nutzer werden u.a. IBM, Intel und Yahoo aufgelistet.
 
-Laut angaben von
+Laut Angaben von
 [Databricks](https://databricks.com/de/spark/about "zur Webseite") 
 arbeiten (Stand 2021) über 1000 aktive Entwickler aus mehr als 250 Unternehmen und Organisationen an dem Projekt mit, 
 welches sich zur größten Open Source Community im Bereich Big Data entwickelt habe. Am 13. Oktober 2021 wurde die 
@@ -86,7 +82,7 @@ darunter die für das Umfeld von Big Data und Machine Learning wichtigen Sprache
 
 Auf der 
 [Übersichtsseite](https://spark.apache.org/docs/latest "zur Dokumentation")
-zur aktuellen Version 3.2.0 (Stand Dezember 2021) werden die unterstützten Sprachen und 
+zur aktuellen Version 3.2.0 (Stand Dezember 2021) wird auf die unterstützten Sprachen und 
 deren jeweilige Mindestversion näher angegeben. Hiernach wird 
 
 - [Java](https://openjdk.java.net "zur Webseite")
@@ -99,18 +95,18 @@ deren jeweilige Mindestversion näher angegeben. Hiernach wird
   3.5+ (SparkR)
  
 
-unterstützt. Insbesondere bei der Zusammenarbeit mit 
+unterstützt. Insbesondere bei der Zusammenarbeit von Spark mit 
 [Apache Arrow](https://arrow.apache.org "zur Webseite") 
-wird zudem auf mögliche Probleme Im Umfeld von Java und Python angesprochen und auf die entsprechende 
+wird auf mögliche Probleme im Umfeld von Java und Python eingegangen und auf die entsprechende 
 [Dokumentation](https://arrow.apache.org/docs "zur Webseite") 
 verwiesen.
 
-Mit Spark SQL besteht zudem die Möglichkeit, auf strukturierte Daten unter Verwendung von 
+Mit Spark SQL besteht die Möglichkeit, auf strukturierte Daten unter Verwendung von 
 [SQL](https://de.wikipedia.org/wiki/SQL "zur Wikipediaseite") 
 (Structured Query Language) zuzugreifen.
 
 Die Verwendung von Java und Scala als höhere objektorientierte Programmiersprachen ermöglicht die Verwendung der mit 
-SparkSQL zuletzt eingeführten streng typisierten Datasets im Code zu nutzen. Ein weitere Vorteil dieser Sprachen ist 
+SparkSQL zuletzt eingeführten, streng typisierten Datasets im Code zu nutzen. Ein weiterer Vorteil dieser Sprachen ist 
 die Möglichkeit, Apache Spark mit Hilfe von Maven direkt in Projekte einzubinden. 
 
 ### PySpark
@@ -119,10 +115,9 @@ die Möglichkeit, Apache Spark mit Hilfe von Maven direkt in Projekte einzubinde
 
 Für die Arbeit Python existiert mit 
 [PySpark](https://spark.apache.org/docs/latest/api/python/index.html "zur Dokumentation")
-ein Interface, dass eine starke Integration vmit Python ermöglicht. 
-Daneben existieren eine Vielzahl an Erweiterungen im Python, so dass keinerlei Einschränkungen bei der Arbeit 
-mit Python existieren. Die fehlende Möglichkeit, SparkSQL zu nutzen, wird durch das Vorhandensein entsprechender 
-Alternativen ausgeglichen. 
+ein Interface, dass eine starke Integration mit Python ermöglicht. Auf Grund der existierenden Vielzahl an 
+Erweiterungen für Python, werden Einschränkungen durch die fehlende Nutzbarkeit von Datasets bei der Arbeit mit 
+SparkSQL kompensiert. 
 
 ### SparkR
 
@@ -130,7 +125,7 @@ Alternativen ausgeglichen.
 
 Mit
 [SparkR (R on Spark)](https://spark.apache.org/docs/latest/sparkr.html "zur Dokumentation")
-existiert leichtgewichtiges Frontend zur Nutzung von Spark. Daneben unterstützt das Paket auch das verteilte Lernen 
+existiert ein leichtgewichtiges Frontend zur Nutzung von Spark. Daneben unterstützt das Paket auch das verteilte Lernen 
 in Zusammenarbeit mit SparkML. Nach Meinung des Authors, scheint die Integration von Python jedoch bei weitem 
 tiefergehend und in sich intuitiver zu sein. 
 
@@ -139,11 +134,10 @@ tiefergehend und in sich intuitiver zu sein.
 [_zurück_](01_Spark_Umfeld.md#1-Spark "Zurück")
 
 In und um Spark hat sich ein sehr umfangreiches Ökosystem entwickelt, welches Spark als Framework erweitert oder
-aber auf die Fähigkeiten von Spark basieren, diese nutzen ober aber nutzen können. Hierbei handelt es sich nicht
+aber auf die Fähigkeiten von Spark basiert, dieses nutzt ober aber nutzen könnte. Hierbei handelt es sich nicht
 nur um Software im Umfeld der 
 [Apache Foundation](https://www.apache.org "zur Webseite") 
-oder aber Open Source, sondern im starken Maße auch um kommerzielle 
-Software. Auf der 
+oder aber Open Source, sondern im starken Maße auch um kommerzielle Software. Auf der 
 [Homepage von Spark](https://spark.apache.org "zur Webseite") 
 findet sich hierzu eine Übersicht. Bekannte Vertreter hieraus sind:
 
@@ -155,7 +149,7 @@ findet sich hierzu eine Übersicht. Bekannte Vertreter hieraus sind:
 * [TensorFlow (Google)](https://www.tensorflow.org "zur Webseite")
 
 Im Folgenden soll kurz auf die wichtigsten Erweiterungen im direkten Umfeld von Spark eingegangen werden, welche das 
-Framework selbst erweitert und breiter aufgestellt haben: 
+Framework selbst erweitern und breiter aufgestellt haben: 
 
 ![spark_extension.png](assets/spark_extension.png "Übersicht der Erweiterungen von Spark")
 
@@ -173,7 +167,7 @@ Hier sei auf die jeweils angegebenen Projektseiten verwiesen:
 
 [SparkSQL](https://spark.apache.org/sql "zur Webseite") 
 erweitert und vereinfacht den Umgang mit strukturiert vorliegenden Daten und stellt eine der wichtigsten 
-Erweiterungen von Spark da. Ein wichtiger Kern stellt die Einführung von DataFrames und darauf folgend von DataSets 
+Erweiterungen von Spark dar. Wichtige Punkte stellen die Einführung von DataFrames und darauf folgend von DataSets 
 dar. Diese können direkt oder aber aus zugrunde liegenden RDDs erstellt werden. 
 
 In der nachfolgenden Version wurden beide Konstrukte zusammengeführt. Ein DataFrame wird hier als ein DataSet vom 
@@ -219,7 +213,7 @@ arbeiten. Nach
 erweitert es die grundlegende und auf Basis der 
 [RDD](02_Datenstrukturen.md#Spark "zum Abschnitt") 
 aufgebaute Struktur um eine Graphenabstraktion. Hierzu wurden mehrere notwendige Erweiterungen für die Arbeit mit 
-Graphen hinzgefügt. Zudem stellt die Erweiterung eine Reihe von Algorithmen für die Arbeit mit und Analyse von 
+Graphen hinzugefügt. Zudem stellt die Erweiterung eine Reihe von Algorithmen für die Arbeit mit und Analyse von 
 Graphen zur Verfügung, welche stetig wächst.
 
 Mit Blick auf die immer größeren Akzeptanz und Einsatz von Graphendatenbanken ist diese Erweiterung aus Sicht 
@@ -242,23 +236,24 @@ Eine Graphendatenbank besteht aus einzelnen Knoten (Nodes), welche über Kanten 
 Knoten können einen Typ (Label) haben und über weitere Eigenschaften (Properties) verfügen. Die vorhandenen 
 Kanten (Edges) zeigen die Beziehungen der Knoten untereinander an und verleihen dem Graphen dadurch eine Semantik. 
 Kanten können eine Richtung haben (gerichteter Graph), oder aber richtungslos (ungerichteter Graph) sein. In einen 
-Graphen kann sich nur in Richtung der Kanten bewegt werden. Ist eine Kante richtugnslos, so kann sich in beiden 
+Graphen kann sich nur in Richtung der Kanten bewegt werden. Ist eine Kante richtungslos, so kann sich in beiden 
 Richtungen bewegt werden.
 
 Von 
 [Andreas Kuczera](https://github.com/kuczera "zur GitHub Seite") 
 findet sich eine gute und leicht verständliche Einführung in die theoretischen Grundlagen der 
-Graphen an sich 
+Graphen an sich auf
 [GitHub](https://kuczera.github.io/Graphentechnologien/05_Einfuehrung_und_Theorie.html "zur GitHub Seite").
 Dieser Seite wurde auch das folgende Bild entnommen, welches ein einfaches Beispiel für die Darstellung von Wissen 
 auf Basis von Graphen gibt:
 
 ![graph_prinzip.png](assets/graph_prinzip.png "Beispiel eines einfachen Graphen")
 
-Dargestellt werden zwei Knoten vom Typ Person sowie ein Knoten vom Typ Buch mit ihren Eigenschaften. Diese sind mit 
-gerichteten und annotierte Kanten verbunden. Ein wichtiger, hier zu erkennender Unterschied zu relationalen 
-Datenbanken ist, dass die Personen nicht Datensätze einer Tabelle, sondern zwei selbstständige Knoten sind (auch 
-wenn für die Serialisierung durchaus eine relationale Datenstruktur Anwendung finden kann).  
+Dargestellt werden zwei Knoten vom Typ **_Person_** sowie ein Knoten vom Typ **_Buch_** mit ihren Eigenschaften. 
+Diese sind mit **_gerichteten_** und **_annotierte Kanten_** verbunden. Ein wichtiger, hier zu erkennender 
+Unterschied zu relationalen Datenbanken ist, dass die Personen nicht Datensätze einer Tabelle, sondern zwei 
+selbstständige **_Knoten_** sind (auch wenn für die Serialisierung durchaus eine relationale Datenstruktur Anwendung 
+finden kann).  
   
 Gleichzeitig gibt es auch einen Sachverhalt wieder, der nicht trivial in einer relationalen Datenbank gehalten 
 werden könnte: 
@@ -270,7 +265,7 @@ werden könnte:
 
 [_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
-Als letzte Erweiterung soll hier ein Blick
+Als letzte Erweiterung soll hier ein Blick auf
 [Spark Streaming](https://spark.apache.org/streaming "zur Webseite")
 geworfen werden. Spark Streaming ermöglicht die Verarbeitung von Datenstreams aus einer Vielzahl an unterschiedlichen 
 Quellen. Ebenfalls besteht die Möglichkeit, eigene Quellen zu definieren und zu verwenden. Die folgende Abbildung 
@@ -285,9 +280,12 @@ die Ergebnisse abgelegt. Die Art der Verarbeitung richtet sich hierbei nach der 
 
 Laut 
 [aktueller Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Dokumentation") 
-führt Spark Streaming hierfür einen Discretized Stream (DStream) ein, welcher einen kontinuierlichen Datenstream 
-darstellt. Er kann aus einer unterstützten Quelle oder aber einen anderen DStream stammen. Intern stellt ein DStream eine 
-Sequenz von RDDs dar. Hierbei werden die Sprachen Scale, Java und Python als Sprachen unterstützt.
+führt Spark Streaming hierfür einen 
+[Discretized Stream (DStream)](https://spark.apache.org/docs/latest/streaming-programming-guide.html#discretized-streams-dstreams "zur Dokumentation")
+ein, welcher einen kontinuierlichen Datenstream darstellt. Hierzu findet sich auf Usenix.org ein wissenschaftliches
+[Paper](https://www.usenix.org/system/files/conference/hotcloud12/hotcloud12-final28.pdf "zum Paper") 
+. Der Stream kann auf einer unterstützten Quelle oder aber einen anderen DStream basieren. Intern stellt ein DStream 
+eine Sequenz von RDDs dar. Hierbei werden die Sprachen Scale, Java und Python unterstützt.
 
 Die folgende Abbildung, welch ebenfalls der 
 [Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Dokumentation") 
@@ -295,10 +293,10 @@ entnommen wurde, visualisiert nochmals den Vorgang:
 
 ![stream_prinzip.png](assets/stream_prinzip.png "Prinzip der Funktionsweise von Spark Streaming")
 
-Ein kontinuierlicher Eingabestream wird von Spark Streaming in eine Sequenz von RDDs umgewandelt und im Anschluss 
-von Spark weiter verarbeitet.
+Ein **_kontinuierlicher Eingabestream_** wird von Spark Streaming in eine **_Sequenz von RDDs_** umgewandelt und im 
+Anschluss von Spark weiter verarbeitet.
 
 Mit Hilfe von Spark Streaming ist es somit möglich, jede Form von Datenströmen zu verarbeiten und hierzu die 
-Fähigkeiten von Spark direkt zu nutzen. Dies erweitert die möglichen Szenarien, in den Spark eingesetzt werden kann, 
+Fähigkeiten von Spark direkt zu nutzen. Dies erweitert die möglichen Szenarien, in denen Spark eingesetzt werden kann, 
 erheblich. Zu nennen sind hier beispielsweise Textmining unter Verwendung von Twitter um aktuelle Trends in Echtzeit zu 
 erfassen. 
