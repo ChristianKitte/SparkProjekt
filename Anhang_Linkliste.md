@@ -267,6 +267,9 @@ Zur Dokumentationsseite von Databricks (Spark) in Microsoft Azure
 Eine Preisübersicht der von Databricks (Spark) angebotenen Dienste
 [Link](https://azure.microsoft.com/de-de/pricing/details/databricks)
 
+Einstiegsseite von Zeppelin Notebooks
+[Zeppelin Notebooks](https://zeppelin.apache.org "zur Webseite")
+
 #### Amanzon Web Services (AWS)
 
 Einstiegsseite von Amazon Web Services (AWS)

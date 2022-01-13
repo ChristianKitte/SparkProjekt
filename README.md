@@ -14,9 +14,13 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ---
 
 ToDo:
-* Mehr Fachwörter mit einem Querverweis versehen ? Prio 3
-* Finales Korrekturlesen, Links testen Prio 4
-* Spark DataFrame/RDD nochmal rüber schauen DataSet ==> Einteilung in Coloums
+* Korrektur lesen; weiter 03 Abschnitt Dockerimage P1
+* Ergänzung zu Coloums ? P2
+* Fett/nicht Fett P3 
+* Links testen P4
+* Finales Korrekturlesen P5
+* Links testen P6
+
 ---
 
 Zu Anfang der Beschäftigung mit Apache Spark stößt man auf eine Vielzahl an Begriffen und Konzepten, welche gerade 
