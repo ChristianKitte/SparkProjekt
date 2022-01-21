@@ -354,10 +354,12 @@ ist nicht Teil dieser Arbeit, jedoch findet sich auf dessen Webseite eine gute
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
 
-Als Basis dient das [_Jupyter Notebook Python, Spark Stack_](https://hub.docker.com/r/jupyter/pyspark-notebook  "zur Webseite")
-Notebook. Es beinhaltet ein fertig konfiguriertes Linux System mit installierten Java, Python und Spark. Es ist also
-nicht nötig, manuelle Einstallungen oder Installationen auszuführen, um Spark innerhalb eines 
-[_Jupyter Notebooks_](https://jupyter.org/index.html "zur Webseite") auszuführen.
+Als Basis dient ein Image mit einer fertig installierten und konfigurierten
+[_Spark Umgebung_](https://hub.docker.com/r/jupyter/pyspark-notebook "zur Webseite").
+unter einem Linux System mit Java und Python. Somit sind keine weiteren Einstellungen oder Installationen notwendig, 
+um Spark innerhalb des Containers auszuführen. Als Frontend kommt hierbei 
+[_Jupyter Notebooks_](https://jupyter.org/index.html "zur Webseite")
+zum Einsatz.
 
 ### Download und erster Start
 

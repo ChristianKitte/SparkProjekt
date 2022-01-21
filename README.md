@@ -14,7 +14,7 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ---
 
 ToDo:
-* Korrektur lesen; weiter 03 Abschnitt Dockerimage P1
+* Korrektur lesen; weiter 03 Abschnitt Download und erster Start P1
 * Ergänzung zu Coloums ? P2
 * Fett/nicht Fett P3 
 * Links testen P4
