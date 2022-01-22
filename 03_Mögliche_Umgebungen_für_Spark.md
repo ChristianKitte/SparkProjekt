@@ -5,14 +5,15 @@
 In den folgenden drei Unterkapiteln werden Wege aufgezeigt, wie eine produktiv einsetzbare Umgebung für Spark auf 
 einfachen Wege eingerichtet werden kann. 
 
-Hierbei wird zunächst die Möglichkeiten aufgezeigt, Spark im Umfeld eines Clouddienstleisters zu betreiben. Dies 
-ist vor allem für Unternehmen oftmals eine sinnvolle Lösung, kann aber auch für den ersten Kontakt 
-eine kostengünstige und einfach umzusetzende Lösung sein. Anschließend werden Lösungen auf Basis von Google und 
-Docker vorgestellt. Beide verbindet, dass sie kostenlos und einfach verfügbar sind.
+Hierbei werden zunächst die Möglichkeiten aufgezeigt, Spark im Umfeld eines Clouddienstleisters zu betreiben. Dies 
+ist vor allem für Unternehmen oftmals eine sinnvolle Lösung, kann aber auch für den ersten Kontakt eine kostengünstige 
+und einfach Lösung sein. Anschließend werden Lösungen auf Basis von Google und Docker vorgestellt. Beide verbindet, 
+dass sie kostenlos und einfach verfügbar sind.
 
-Spark kann zudem auch auf einen lokalen Rechner eingerichtet werden. Dieser Weg hat jedoch den Nachteil, dass er 
-eine Reihe von Downloads, Installationen und Einstellungen bedarf. Für einen ersten Kontakt ist dies nicht optimal
-und wird daher hier nicht berücksichtigt. 
+Grundsätzlich kann Spark auch auf einen lokalen Rechner durch die Instalaltion der benötigten Komponenten eingerichtet 
+werden. Dieser Weg hat jedoch den Nachteil, dass er eine Reihe von Installationen und Enstellungen erfordert, welche 
+das zugrunde liegende System letztlich ändern. Für einen ersten Kontakt ist dies nicht optimal und wird daher an 
+dieser Stelle nicht berücksichtigt. 
 
 * [_Spark in der Cloud_](03_Mögliche_Umgebungen_für_Spark.md#spark-in-der-cloud "zum Abschnitt")
 * [_Spark mit Google Colaboratory (Colab)_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
@@ -176,8 +177,10 @@ kann.
 
 Eine einfache Möglichkeit, um mit Spark zu arbeiten, bietet
 [Google Colaboraty](https://colab.research.google.com/?utm_source=scs-index "zur Webseite")
-oder einfach Google Colab. Bei Google Colab handelt es sich um eine von Google kostenlos zur Verfügung gestellte
-Umgebung für ein Jupyter Notebook.
+oder einfach Google Colab. Bei Google Colab handelt es sich um eine von Google kostenlos zur Verfügung gestelltes
+Jupyter Notebook:
+
+![docker_ide_jupyter.png](assets/google_colab.png "Ausschnitt der Jupyter Notebooks in Google Colaboratory")
 
 Das Notebook eignet sich zum kollaborativen Arbeiten und kann wie andere Dokumente innerhalb von Drive einfach
 freigegeben werden. Aus dem Notebook ist grundsätzlich ein Zugriff auf das eigene Drivelaufwerk möglich, jedoch nicht 
@@ -215,7 +218,11 @@ Für den Einsatz von Spark sind in jedem Fall drei Voraussetzungen notwendig:
   findet man
   [weitergehende Informationen zu PySpark](https://spark.apache.org/docs/latest/api/python "zur Dokumentation")
 
-#### Installation von Java und Spark
+Im folgenden wird der Nutzer in drei Schritten durch die Vorbereitung eines Jupyter Notebook geführt. Auch wenn sich 
+der wiedergegebene Code auf die Installation innerhalb von Google Colaboratory bezieht, gilt er grundsätzlich auch für 
+andere Umgebungen im Umfeld von Python und Linux.
+
+#### 1 Installation von Java und Spark
 
 [Spark](https://spark.apache.org "zur Webseite") wurde in der Programmiersprache
 [Java](https://openjdk.java.net "zur Webseite") geschrieben. Für seine Ausführung ist es daher notwendig,
@@ -248,7 +255,7 @@ os.environ["SPARK_HOME"] = "/content/spark-3.2.0-bin-hadoop3.2"
 print("Umgebungsvariablen sind gesetzt...")
 ```
 
-#### Installation der benötigten Python Bibliotheken
+#### 2 Installation der benötigten Python Bibliotheken
 
 Nach Ausführung beider Schritte existiert eine Umgebung mit einer funktionierenden Spark Installation. Um einfach mit
 Spark und Python arbeiten zu können, fehlen noch zwei Bibliotheken.
@@ -274,7 +281,7 @@ dennoch als reguläre Bibliothek genutzt werden kann, müssen beide voneinander 
 [FindSpark](https://pypi.org/project/findspark "zur Webseite") 
 ins Spiel.
 
-#### Initialisierung der Programmierumgebung
+#### 3 Initialisierung der Programmierumgebung
 
 Um die Zusammenarbeit von PySpark mit Python zu ermöglichen, bieten sich laut des 
 [Git Repositorys](https://github.com/minrk/findspark "zur GitHub Seite")
@@ -350,14 +357,11 @@ Installation von
 ist nicht Teil dieser Arbeit, jedoch findet sich auf dessen Webseite eine gute
 [Einführung](https://docs.docker.com/get-started/overview "zur Dokumentation").
 
-### Dockerimage
-
-[_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
-
-Als Basis dient ein Image mit einer fertig installierten und konfigurierten
-[_Spark Umgebung_](https://hub.docker.com/r/jupyter/pyspark-notebook "zur Webseite").
-unter einem Linux System mit Java und Python. Somit sind keine weiteren Einstellungen oder Installationen notwendig, 
-um Spark innerhalb des Containers auszuführen. Als Frontend kommt hierbei 
+Als Basis dient ein 
+[Docker Image](https://hub.docker.com/r/jupyter/pyspark-notebook "zur Webseite")
+mit einer fertig installierten und konfigurierten Spark Umgebung auf Basis eines Linux Systems. Somit sind keine 
+weiteren Einstellungen oder Installationen notwendig, um Spark innerhalb des Containers auszuführen. Als Frontend 
+kommt hierbei 
 [_Jupyter Notebooks_](https://jupyter.org/index.html "zur Webseite")
 zum Einsatz.
 
@@ -365,32 +369,28 @@ zum Einsatz.
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
 
-Dieser Schritt setzt die Installation des _Docker Desktop_ wie oben beschrieben voraus. In einer Eingabekonsole wird der
-folgende Befehl eingegeben:
+Nachdem alle zuvor beschriebenen Vorbereitungen abgeschlossen wurden, kann nun mit einer beliebigen Eingabekonsole der 
+Container mit Hilfe des unten gezeigten Befehls gestartet werden:
 
 ``` 
 docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes --name pyspark jupyter/pyspark-notebook
 ```
 
-Bei der ersten Ausführung wird das Image _jupyter/pyspark-notebook_ direkt vom _Docker Hub_ herunter geladen, sofern es
-noch nicht lokal vorhanden ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt. Dieser
-Container horcht auf dem _Port 8888_ und 
-[_JupyterLab_](https://jupyterlab.readthedocs.io/en/stable "zur Webseite") ist
-aktiv. Der Name des erstellten Containers lautet _pyspark_.
+Bei der ersten Ausführung wird das Image direkt vom Docker Hub herunter geladen, sofern es noch nicht lokal vorhanden 
+ist. Anschließend wird auf Basis des heruntergeladenen Image ein Container erstellt, welcher auf dem Port 8888 horcht. 
+Der Name des erstellten Containers lautet _pyspark_.
 
-Nach dem ersten Zugriff auf den Container, kann dieser wie im folgenden gezeigt, einfach gestartet werden:
+Nach dem ersten Zugriff kann der Container einfach durch Eingabe des Startbefehls gestartet werden:
 
 ```
 docker start -a pyspark
 ```
 
-Möchte man bei der Arbeit mit Jupyter Notebook auf eigene Daten oder Verzeichnisse zugreifen, so müssen sie vor dem
-Start für den Container zugänglich gemacht werden. Hierfür gibt es eine Reihe von Möglichkeiten.
+Möchte man bei der Arbeit auf eigene Daten oder Verzeichnisse zugreifen, so müssen sie vor dem Start für den Container 
+zugänglich gemacht werden. Hierfür gibt es eine 
+[Reihe von Möglichkeiten](https://docs.docker.com/storage "zur Dokumentation").
 
-Um innerhalb eines Containers mit eigenen Daten zu arbeiten, müssen diese aus dem Container zugreifbar sein. Hierfür
-gibt es
-[verschiedene Möglichkeiten](https://docs.docker.com/storage "zur Dokumentation")
-. Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
+Ein einfacher Weg ist das Kopieren der Dateien oder Verzeichnisse in den Container. Hierzu darf dieser nicht gestartet
 sein:
 
 ```
@@ -401,15 +401,15 @@ cp [DOWNLOAD VERZEICHNIS] pyspark:/home/jovyan/work
 
 [_zurück_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-docker "Zurück")
 
-Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Am Ende wird eine URL mit einem Token
-ausgegeben.
+Während des Startvorgangs erfolgen ene Reihe an Ausgaben auf der Konsole. Wichtig ist hierbei zunächst die am Ende 
+augegebene URL mit einem angehangene Token wie in der folgenden Abbildung zu sehen ist:
 
 ![docker_ausgabe_konsole.png](assets/docker_ausgabe_konsole.png "Ausgabe von Docker nach Start des Containers")
 
-Über einem Browser gelangt man hiermit zur Eingabekonsole des _Jupyter Notebooks_. Da bereits alle für Spark benötigten
-Installationen und Einstellungen gemacht wurden, kann dort direkt wie oben unter 
+Nach dem erfolgreichen Start ist das Jupyter Notebook über den angegebenen Port erreichbar. Da bereits alle für Spark 
+benötigten Installationen und Einstellungen vorhanden sind, kann dort direkt gearbeitet werden. Die im oberen Abschnitt 
 [_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
-beschrieben gearbeitet werden.
+beschrieben Arbeiten für die Installation müssen hier nicht duchgeführt werden:
 
 ![docker_ide_jupyter.png](assets/docker_ide_jupyter.png "Ausschnitt der Web IDE von Jupyter mit Docker")
 
@@ -421,15 +421,14 @@ Als Vorteile dieser Vorgehensweise sind zu nennen:
 
 * kostenlos
 * einfache Verfügbarkeit über _Docker Hub_
-* einfache Nutzung, da alle Installationen und Einstellungen vorhanden sind
-* eignet sich für Lehrnzwecke und lokales Arbeiten mit übersichtlichen Datenmengen
-* Daten und Ergebnisse können mit dem Container serialisiert werden kann auch produktiv zum Aufbau der eigenen
-  Infrastruktur eingesetzt werden
-* kann auch im Serverumfeld - dann mit größeren Datenbeständen und/oder verteilt - eingesetzt werden
+* keine weiteren Installationen notwendig
+* benötigt keine Internetverbindung im Betrieb
+* Daten und Ergebnisse können gespeichert und weiter verwendet werden.
+* kann für den Aufbau größerer Systeme verwendet werden.
 
 Als Nachteile sind zu nennen:
 
-* sofern Anpassungen notwendig sind, werden auch hier tiefere Kenntnisse benötigt
 * als Out-of-the-Box Lösung, ist man auf das Wissen und die Fähigkeiten der Anbieter angewiesen
+* Anpassungen erfordern auch hier tiefere Kenntnisse
 * Notwendigkeit zur Installation einer _Docker Laufzeit_ mit privilegierten Rechten
 * Sicherheitsrisiken im Umfeld von _Docker_ können das eigene System gefährden
