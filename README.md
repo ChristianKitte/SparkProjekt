@@ -14,13 +14,12 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ---
 
 ToDo:
-* Korrektur lesen; weiter 03 Abschnitt Download und erster Start P1
-* Ergänzung zu Coloums ? P2
-* Fett/nicht Fett P3 
-* Links testen P4
-* Finales Korrekturlesen P5
-* Links testen P6
-
+* Ergänzung zu Coloums ? P1
+* Fett/nicht Fett P2 
+* Links testen P3
+* Finales Korrekturlesen P4
+* Links testen P5
+ 
 ---
 
 Zu Anfang der Beschäftigung mit Apache Spark stößt man auf eine Vielzahl an Begriffen und Konzepten, welche gerade 
