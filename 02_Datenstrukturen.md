@@ -2,17 +2,17 @@
 
 # 2 Datenstrukturen
 
-In den folgenden Unterkapiteln wird ein Überblick über die wichtigsten Konzepte und Datentrukturen von Spark gegeben.
-Wegen der starken Verbindung von Hadoop und Spark wird zu Anfang zunächst kurz auf Hadoop als ganzes und detailierter
+In den folgenden Unterkapiteln wird ein Überblick über die wichtigsten Konzepte und Datenstrukturen von Spark gegeben.
+Wegen der starken Verbindung von Hadoop und Spark wird zu Anfang zunächst kurz auf Hadoop als Ganzes und detaillierter
 auf dessen auch für Spark wichtigen Filesystem HDFS eingegangen. Den Schwerpunkt bildet jedoch ein Überblick über
 die wichtigsten Datenstrukturen von Spark.
 
-Eine vertiefende und vollständige Behandlung beider System kann und soll hierbei nicht geleistet werden. Hierzu sei auf
+Eine vertiefende und vollständige Behandlung beider Systeme kann und soll hierbei nicht geleistet werden. Hierzu sei auf
 die offizielle Dokumentation sowie weitere Quellen im Internet hingewiesen. Eine erste Orientierung kann hierbei die
 [Linksliste](Anhang_Linkliste.md "zum Kapitel")
-am Ende dieses Repositories geben.
+im Anhang dieser Arbeit geben.
 
-Insbesondere werden im Rahmen von Erweiterungen hinzugefügte Datentrukturen, welche im Kapitel
+Insbesondere werden im Rahmen von Erweiterungen hinzugefügte Datenstrukturen, welche im Kapitel
 [Spark](01_Spark_Umfeld.md "zum Kapitel")
 diskutierten werden, hier nicht berücksichtigt. Dies betrifft in erster Linie die Erweiterungen im Kontext von 
 [GraphX](01_Spark_Umfeld.md#graphx "zum Abschnitt")
@@ -62,7 +62,7 @@ sehr großer, verteilter Datenmengen mit Hilfe seines Dateisystems
 angesehen werden, was es als Echtzeitsystem ungeeignet macht. Hierbei ist es hoch skalierbar und kann auch 
 sehr großen Datenmengen performant verarbeiten. Wie auf einer Grafik der Seite   
 [datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite")
-dargestellt wird, existieren insgesammt vier Komponenten:
+dargestellt wird, existieren insgesamt vier Komponenten:
 
 ![hadoop_aufbau.png](assets/hadoop_aufbau.png "Aufbau von Apache Hadoop")
 
@@ -84,7 +84,7 @@ und -skripte für den Start des Systems.
 [_zurück_](02_Datenstrukturen.md#hadoop "Zurück")
 
 [YARN (Yet Another Resource Negotiator)](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html "zur Dokumentation") 
-hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also CPU Zeit und Speicher, in ausreichenden 
+hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also CPU-Zeit und Speicher, in ausreichenden 
 Maße bereitzustellen und einem Job zuzuweisen. Er erfüllt somit eine sehr wichtige und für die Performance des Systems 
 relevante Aufgabe. Eine weitere 
 [tiefergehende Betrachtung](https://www.computerweekly.com/de/definition/Apache-Hadoop-YARN-Yet-Another-Resource-Negotiator "zur Webseite")
@@ -94,7 +94,7 @@ zu finden. Dieser Seite wurde auch die folgende Übersicht entnommen, welche die
 
 ![hadoop_yarn.png](assets/hadoop_yarn.png "Übersicht über die Funktionsweise von YARN")
 
-Zentrales Element ist der **_Resourcenmanager_** selbst. Die **_NodeManager_** der beteiligten **_Cluster_** teilen 
+Zentrales Element ist der **_Ressourcenmanager_** selbst. Die **_NodeManager_** der beteiligten **_Cluster_** teilen 
 ihren Status mit. Für jede Anwendung wird ein **_Application Manager_** erstellt, welcher die benötigten Ressourcen 
 beim **_Ressourcen Manager_** anfragt. **_Container_** weisen dann die Ressourcen der Anwendung zu.
 
@@ -122,7 +122,7 @@ Client_**, der Teil der Hadoop Distribution ist.
 
 Trotz der vielen Vorteile wird
 [HDFS](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation")
-zunehmend von Cloudbasierten, intelligenten Dateisystemen wie beispeilsweise 
+zunehmend von Cloudbasierten, intelligenten Dateisystemen wie beispielsweise 
 [AWS S3](https://aws.amazon.com/de/s3 "zur Website")
 oder
 [Microsoft Blob Storage](https://azure.microsoft.com/de-de/services/storage/blobs "zur Website")
@@ -141,7 +141,7 @@ handelt es sich im Prinzip um zwei nacheinander stattfindende Prozesse:
 * einen Map Job
 * einen Reduce Job
 
-Zunächst werden mit dem Map Job benötigten Daten aus den Datenbestand gefiltert und extrahiert. Auf der so  
+Zunächst werden mit dem Map Job benötigten Daten aus dem Datenbestand gefiltert und extrahiert. Auf der so 
 selektierten Datenbasis werden die definierten Operationen ausgeführt und zusammengefasst. Dieser Schritt 
 kann als eine Reduktion der ursprünglichen Datenbasis aufgefasst werden, wovon die Bezeichnung Reduce abgeleitet 
 werden kann.
@@ -162,7 +162,7 @@ Es ist wichtig, zwei Dinge zu verstehen:
 
 * Das Ergebnis eines Map Reduce bei Hadoop ist immer ein **_reduzierter, berechneter Datenbestand_**. Würde in einer
   Anwendung zwei Map Reduce Vorgänge hintereinander ausgeführt, ohne das Zwischenergebnis zu speichern, so kann kein
-  Rückschluß auf das Zwischenergebnis oder den ausgeführten Aktionen gemacht werden.
+  Rückschluss auf das Zwischenergebnis oder den ausgeführten Aktionen gemacht werden.
 * Der Map-Begriff im Kontext von Hadoop unterscheidet sich stark von dem in Spark. Im **_Kontext von Hadoop_** dient
   es der Filterung und Selektion von Daten aus dem gesamten Datenbestand. Im **_Kontext von Spark_** definiert es eine
   Aktion, welche auf jedes Element eines RDD, Dataframe oder Datasets ausgeführt werden soll. Das in 
@@ -192,7 +192,7 @@ Auch wenn aktuell anwenderfreundliche Strukturen wie DataFrames und DataSets mit
 ist für ein gutes Verständnis von Spark dies Wissen wichtig. Umso mehr, wenn stark auf Ebene der RDDs in die 
 Verarbeitung eingegriffen werden soll oder muss.
 
-RDD steht für **_Resilient Distributed Dataset_** (auf deutsch etwa “robuster verteilter Datensatz”) und stellt das 
+RDD steht für **_Resilient Distributed Dataset_** (auf Deutsch etwa “robuster verteilter Datensatz”) und stellt das 
 zentrale Konzept und Objekt für die Abstraktion von Daten innerhalb von Spark dar. Für einen RDD können 
 **_Transformationen_** (Bearbeitungen) für dessen Daten festgelegt werden. Hierbei ist das RDD **_immutable_**. Jede 
 Aktion auf ein RDD verändert das zugrunde liegende RDD nicht, sondern gibt stets ein neues RDD zurück. Hierbei nutzt 
@@ -247,26 +247,26 @@ Diese Methode eignet sich auch für externe Datenspeicher wie Amazon S3, HDFS, C
 [_zurück_](02_Datenstrukturen.md#spark "Zurück")
 
 Die Arbeit auf Basis der zuvor behandelten RDDs ist gut geeignet, wenn man nahe an Spark arbeiten und den größtmöglichen
-Einfluss haben möchte. Auf der anderen Seite erfordert die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
+Einfluss haben möchte. Auf der anderen Seite erfordern die Einarbeitung und der Umgang mit diesem Objekt eine gewisse
 Einarbeitung.
 
 Mit der Version 1.3 führte Spark DataFrames ein, welche die sogenannten SchemaRDDs ersetzten. Ab der Version 2.0 dient
 die
 [**_Spark Session_**](https://spark.apache.org/docs/latest/sql-getting-started.html "zur Dokumentation") 
-als allgemeiner Einstiegspunkt in eine Spark Anwendung. Sie löst den bis dahin genutzen 
+als allgemeiner Einstiegspunkt in eine Spark Anwendung und löst den bis dahin genutzten. 
 [**_HiveContext_**](https://spark.apache.org/docs/1.6.1/api/java/org/apache/spark/sql/hive/HiveContext.html "zur Dokumentation")
-(unstrukturierte Daten) und 
+(unstrukturierte Daten) sowie 
 [**_SQLContext_**](https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/SQLContext.html "zur Dokumentation") 
 (strukturierte Daten) ab. DataFrames sollen die Arbeit und den Umgang mit Spark
 vereinfachen und bieten eine Abstraktion der Datensicht in Spark, nutzen jedoch intern die API der RDDs. Daher können
 sie nicht nur auf Basis eines bereits vorhandenen RDDs, sondern auf Basis aller von Spark unterstützten Datenquelle wie
 beispielsweise einer Hive Tabelle erzeugt werden. APIs für DataFrames sind für Scala, Java, Python sowie R verfügbar.
 
-Wie zuvor dargestellt, geht man bei der Arbeit mit Spark Dataframes den Weg über eine Spark Session und deren
+Für die Erstellung eines Session Objekts kann deren
 [**_build Methode_**](https://spark.apache.org/docs/latest/sql-getting-started.html "zur Dokumentation")
-. Anschließend stehen unter anderen eine Reihe von Funktionen wie
+genutzt werden. Nach der Erstellung stehen Funktionen wie
 [**_Session.read.text_**](https://spark.apache.org/docs/latest/sql-getting-started.html#creating-dataframes "zur Dokumentation") 
-zur Verfügung, um Textdateien einzulesen.
+zur Verfügung, um Textdateien einzulesen:
 
 ```python
 from pyspark.sql import SparkSession
@@ -311,7 +311,7 @@ strukturierter Daten. Hierbei handelt es sich bei DataSets ebenso wie bei DataFr
 Datensammlungen. Für die Übertragung der DataSet Objekte ist eine Serialisierung notwendig. Hierfür nutzt Spark 
 einen eigenen leistungsstarken Decoder.
 
-DataSets orten sich eher in Richtung einer stark typisierten objektorientierten Kapselung von Daten ein. Als Konsequent
+DataSets orten sich eher in Richtung einer stark typisierten objektorientierten Kapselung von Daten ein. Als Folge
 existiert so nur eine API für Java und Scala. Dies Manko gleicht Python jedoch von Haus aus bereits durch ein
 umfangreiches Ökosystem wie Pandas aus.
 
@@ -325,8 +325,8 @@ Erzeugung nutzte man zunächst einen Spark- oder SQLContext. Später jedoch Spar
 
 Mit der Einführung der Spark DataSets entstand eine weitere Abstraktion, welche das DataFrame erweiterte, jedoch auch in
 Richtung eines objektorientierten Aufbaus änderte. Es wurde die Entscheidung getroffen, beide als Spark DataSet zu
-vereinen. In der aktuellen Version existiert somit ein DataSet Objekt, welches sowohl einen stark typisierten Zugriff (
-DataSet) als auch einen nicht typisierten (DataFrame) Zugriff anbietet. Ein **_DataFrame_** Objekt wird hierbei als ein
+vereinen. In der aktuellen Version existiert somit ein DataSet Objekt, welches sowohl einen stark typisierten Zugriff 
+(DataSet) als auch einen nicht typisierten (DataFrame) Zugriff anbietet. Ein **_DataFrame_** Objekt wird hierbei als ein
 **_DataSet[row]_** aufgefasst. Auf der Seite
 [Knoldus Inc.](https://medium.com/@knoldus/spark-type-safety-in-dataset-vs-dataframe-174137517821 "zur Webseite")
 wird hierauf vertiefend eingegangen und der Sachverhalt schön visuelle verdeutlicht:
@@ -341,7 +341,7 @@ Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden T
 | --------------------------------- | ------------------------------ | ------------------------- | --------------------------------- |
 | Funktionalität                 | Verteilte Sammlung von Daten | Organisation in Spalten | Erweiterung des DataFrame (OOP) |
 | Seit Version                    | 1.0                          | 1.3                     | 1.6                             |
-| Typesicherheit zur Kompilerzeit | Nein                         | Nein                    | Ja                              |
+| Typsicherheit zur Kompilierzeit | Nein                         | Nein                    | Ja                              |
 | APIs verfügbar                 | Nein                         | Ja                      | Ja                              |
 | Spark SQL                       | Nein                         | Ja                      | Ja                              |
 | Catalyst Optimizer              | Nein                         | Ja                      | Ja                              |
@@ -363,21 +363,21 @@ Konzeption des Optimierers wurde darauf geachtet, dass dieser durch eigene Metho
 
 Der Optimierer ist ein Bestandteil von SparkSQL. In einem aufwendigen Prozess werden anstehende Transaktionen zunächst
 analysiert und anschließend optimiert. Als Ergebnis steht am Ende generierter Java Bytecode, welcher auf jeder Maschine
-ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Features von Scala,
+ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Feature von Scala,
 [Quasiquotes](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Webseite")
 genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des Scala Compilers zu Java
 Bytecode kompiliert wird.
 
 Auf der folgenden Abbildung von
 [data-flair](https://data-flair.training/blogs/spark-sql-optimization "zur Webseite")
-findet sich eine etwas vereinfachte Darstellung des Prozessen:
+findet sich eine etwas vereinfachte Darstellung des Prozesses
 
 ![image.png](./assets/spark_catalyst_optimizer.png "Spark SQL Ausführungsplan")
 
 Der Ausführungsplan unterteilt sich in vier Phasen:
 
 In der **_ersten Phase_** werden die **_anstehenden Transformationen_** analysiert. Als Ergebnis steht ein **_logischer 
-Ausführungsplan_** am Ende der Verarbeitung. Auf diesen werde in der **_zweiten Phase_** die vorhandene **_Regeln zur 
+Ausführungsplan_** am Ende der Verarbeitung. Auf diesen werde in der **_zweiten Phase_** die vorhandenen **_Regeln zur 
 Optimierung_** ausgeführt. Es entsteht ein **_optimierte logische Ausführungsplan_**.
 
 Aus dem optimierten logischen Plan werden in der **_dritten Phase_** ein oder mehr **_physikalische Pläne_** erstellt, 
@@ -386,26 +386,25 @@ und in der **_vierten Phase Bytecode generiert_**, welcher auf jeder Maschine la
 
 #### Tungsten component
 
-Hinter dem Begriff Tungsteen verbirgt sich ein Sammelprojekt für verschieden Aktivitäten mit dem Ziel, die Performance
-von Spark zu verbessern. Grundgedanke ist hierbei, dass weniger Ein- und Ausgabe sowie Netwerke ein Problem darstellen,
+Hinter dem Begriff Tungsten verbirgt sich ein Sammelprojekt für verschieden Aktivitäten mit dem Ziel, die Performance
+von Spark zu verbessern. Grundgedanke ist hierbei, dass weniger Ein- und Ausgabe sowie Netzwerke ein Problem darstellen,
 sondern in starken Maße Speicher und die Rechenleistung.
 
 In Anlehnung an
 [Databricks](https://databricks.com/de/glossary/tungsten "zur Website")
 umfasst das Projekt um Moment Aktivitäten in den Bereichen:
 
-- Speichermanagement und binäre Verarbeitung um Overheads beim Objekt Modell und der Garbage Collection zu beseitigen
+- Speichermanagement und binäre Verarbeitung, um Overheads beim Objekt Modell und der Garbage Collection zu beseitigen
 - Bessere Ausnutzung des Speichers durch Verbesserung der eingesetzten Algorithmen
-- Nutzung von Codegenerierung um von modernen Compilern und CPUs zu profitieren
-- Verringerung der CPU Aufrufen durch die Vermeidung virtueller Funktionsdispatcher
-- Speichern von Zwischenwerten in CPU Registern statt im Speicher. Hierdurch verringert sich die Zahl der notwendigen
+- Nutzung von Codegenerierung, um von modernen Compilern und CPUs zu profitieren
+- Verringerung der CPU-Aufrufe durch die Vermeidung virtueller Funktionsdispatcher
+- Speichern von Zwischenwerten in CPU-Registern statt im Speicher. Hierdurch verringert sich die Zahl der notwendigen
   Zyklen
-- Ausnutzen moderner CPUs und Compilers um Schleifenausführungen zu optimieren
+- Ausnutzen moderner CPUs und Compiler, um Schleifenausführungen zu optimieren
 
 Dieser Abschnitt kann nur eine kurze Übersicht über das Projekt wiedergeben. Eine interessante und tiefergehende
-Einfühung in Tungsten ist auf der Website von Databrick
-[hier](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html "zur Webseite")
-zu finden.
+[Einführung in Tungsten](https://databricks.com/blog/2016/05/23/apache-spark-as-a-compiler-joining-a-billion-rows-per-second-on-a-laptop.html "zur Webseite") 
+findet sich auf der Website von Databrick.
 
 ### Transformationen und Aktionen (RDDs)
 
@@ -439,7 +438,7 @@ Spark macht in sehr starken Umfang Gebrauch von der
 . Dieses Konzept eröffnet zum einen eine sehr umfangreiche Möglichkeit zur Bearbeitung der Daten, ist jedoch
 andererseits nicht jeden sehr vertraut und zudem Sprachabhängig.
 
-Im Context von Python gibt es drei Möglichkeiten, eine Funktion zu definieren und zu übergeben:
+Im Kontext von Python gibt es drei Möglichkeiten, eine Funktion zu definieren und zu übergeben:
 
 1. Nutzen einer
    [Lambda Expression](https://docs.python.org/2/tutorial/controlflow.html#lambda-expressions "zur Webseite")
@@ -457,7 +456,7 @@ words=lines.flatMap(lambda line: line.split(" "))
 # Die Methode main_function ist die Hauptmethode. 
 #
 # Der darin enthaltene lokalen Methode do_split wird ein String übergeben. Die 
-# Methode ruft die Split Methode des String auf und gibt das Ergebnis zurück.
+# Methode ruft die Split Methode des Strings auf und gibt das Ergebnis zurück.
 #
 # Der Methode flatMap wird die Funktion do_split übergeben. Sie iteriert durch 
 # jedes Element, übergibt es an do_split und gibt das Ergebnis zurück.
@@ -473,7 +472,7 @@ def main_function():
 
 ```python
 # Der globalen Methode do_split innerhalb eines Moduls wird ein String übergeben. Die 
-# Methode ruft die Split Methode des String auf und gibt das Ergebnis zurück.
+# Methode ruft die Split Methode des Strings auf und gibt das Ergebnis zurück.
 #
 # Der Methode flatMap wird die globale Funktion do_split übergeben. Sie iteriert durch 
 # jedes Element, übergibt es an do_split und gibt das Ergebnis zurück.
@@ -524,8 +523,8 @@ lines2 = lines.filter(lambda linex: linex.strip() != "")
 Bei der 
 [Map Methode](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "zur Dokumentation")
 wird die übergebene Funktion auf alle Elemente des RDD angewendet. Hierbei erfolgt genau eine
-Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier ein RDD mit den neuen Werten zurück
-gegeben.
+Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier ein RDD mit den neuen Werten 
+zurückgegeben.
 
 ![spark_map.png](./assets/spark_map.png "Prinzip der Map Transformation bei einem RDD")
 
@@ -539,7 +538,7 @@ lengths = lines.map(lambda line: len(line))
 ```
 
 Der Typ der zurückgegebenen Elemente muss hierbei nicht dem Typ der ursprünglichen Elemente entsprechen. Wird
-beispielsweise für Textelemente die Länge ermittelt, so handelt es sich bei dem zurückgegebenen Elementen um
+beispielsweise für Textelemente die Länge ermittelt, so handelt es sich bei den zurückgegebenen Elementen um
 Zahlenwerte.
 
 ###### flatMap
@@ -549,12 +548,11 @@ unterscheidet sich zu Map dadurch, dass die übergebene Funktion mehr als ein El
 
 ![spark_flat_map.png](./assets/spark_flat_map.png "Prinzip der FlatMap Transformation bei einem RDD")
 
-Der folgende Code würde für jeden Texteintrag in lines den enthaltenen Text auf Basis der Leerstellen splitten und
-ein neues RDD mit einer Spalte und n Zeilen zurückgeben.
+Der folgende Code würde für jedes Element in lines den enthaltenen Text auf Basis der Leerstellen in n Wörter splitten 
+und ein neues RDD mit einer Spalte und n Zeilen zurückgeben. 
 
-N würde hierbei der Summe der Längen der jeweils durch splitt erstellten Arrays von Wörtern entsprechen. Als Ergebnis
-würde man ein neues RDD wörter mit Textelementen erhalten. Jedes seiner Einträge entspräche dabei einem Wort, seine 
-Länge der Anzahl der Wörter.
+Als Ergebnis würde man ein neues RDD wörter mit Textelementen erhalten. Jedes seiner Einträge entspräche dabei einem 
+Wort, seine Länge der Anzahl aller Wörter.
 
 ```python
 sc = SparkContext("local", "SampleApp")
@@ -569,7 +567,7 @@ Im Folgenden werden einige gebräuchliche Aktionen von RDDs vorgestellt.
 ##### collect
 
 Die Verarbeitung der Daten kann je nach Größe der Daten verteilt erfolgen. In solch einen Fall liegen die Ergebnisse
-der Transformationen ebenfalls verteilt vor und müssen zunächst zusammen gebracht werden. Dies "Einsammeln" geschieht
+der Transformationen ebenfalls verteilt vor und müssen zunächst zusammengebracht werden. Dies "Einsammeln" geschieht
 mit dem 
 [Collect](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.collect.html "zur Dokumentation") 
 Befehl.
@@ -624,4 +622,4 @@ for line in lines.collect()[0:top_out]:
 ```
 
 In diesem Beispiel werden die Aktionen collect und foreach verwendet, um durch alle Elemente zu iterieren. Hierbei
-erkennt man, das es sich um eine Flow API handelt, welche den Code übersichtlicher macht.
+erkennt man, dass es sich um eine Flow API handelt, welche den Code übersichtlicher macht.

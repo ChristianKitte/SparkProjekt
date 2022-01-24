@@ -26,7 +26,7 @@ statt eines
 [Datenstrukturen](02_Datenstrukturen.md) geht hierauf näher ein. Zugriff hierauf erhält man mit Hilfe der Bibliothek  
 [pyspark.sql](https://spark.apache.org/docs/2.4.0/api/python/pyspark.sql.html "zur Dokumentation").
 
-Die folgende Codesquenz erzeugt eine
+Die folgende Codesequenz erzeugt eine
 [Spark Session](https://spark.apache.org/docs/latest/sql-getting-started.html "zur Dokumentation") 
 mit der Bezeichnung Wordcount. Ist diese Session noch nicht vorhanden, so wird sie erstellt, ansonsten die vorhandene 
 zurückgegeben:
@@ -92,7 +92,7 @@ Abschließend wird mit Hilfe der Methode
 [Map Funktion](02_Datenstrukturen.md#transformationen-und-aktionen "zum Abschnitt")
 auf alle Datensätze angewendet. Jeder Datensatz entspricht einer Zeile der Textdatei.
 
-Diese Funktion splittet zunächst die einzelne Zeile durch ihre Leerzeichen. Im Anschluß sorgt die Funktion 
+Diese Funktion splittet zunächst die einzelne Zeile durch ihre Leerzeichen. Im Anschluss sorgt die Funktion 
 [explode](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.sql.functions.explode.html "zur Dokumentation") 
 dafür, dass ähnlich der zuvor behandelten 
 [FlatMap Funktion](02_Datenstrukturen.md#transformationen-und-aktionen "zum Abschnitt")

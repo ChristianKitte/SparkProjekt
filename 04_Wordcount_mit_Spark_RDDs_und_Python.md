@@ -23,7 +23,7 @@ Insgesamt enthält die Datei:
 * 929.396 Wörter in
 * 124.457 Zeilen.
 
-Für die Vorbereitung des Noteboos kann auf den Abschnitt
+Für die Vorbereitung des Notebooks kann auf den Abschnitt
 [_Google Colaboratory_](03_Mögliche_Umgebungen_für_Spark.md#spark-mit-google-colaboratory-colab "zum Abschnitt")
 dieser Arbeit zurück gegriffen werden. Im 
 [_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook") finden sich die hierfür erforderlichen
@@ -49,7 +49,7 @@ Im diesen Abschnitt werden zunächst zwei Methoden definiert.
 
 Beide Dateien dienen der Vorbereitung der zu bearbeitenden Datei und stehen in keinen direkten Zusammenhang mit der
 Nutzung von Spark. Daher wird hier nicht weiter darauf eingegangen. In dem folgenden Block wird zunächst die erste 
-Methode dazu verwendet, die Datei von der Seite des MIT herunter zu laden:
+Methode dazu verwendet, die Datei von der Seite des MIT herunterzuladen:
 
 ```python
 # Datei von der Quelle nach Colab laden
@@ -99,8 +99,7 @@ sc.setLogLevel("ERROR")
 print("Der Spark Kontext wurde angelegt...")
 ```
 
-Der Kontext erhält die Bezeichnung _WordCounter_. Er läuft lokal und nutzt alle verfügbaren Kerne. Dieser Block kann 
-nur ein Mal ausgeführt werden.
+Der Kontext erhält die Bezeichnung _WordCounter_. Er läuft lokal und nutzt alle verfügbaren Kerne.
 
 Statt _local[*]_ kann auch die Anzahl der zu nutzenden Kerne direkt angegeben werden. Die alleinige Angabe von local
 bewirkt, dass nur ein Kern genutzt wird. Gerade bei sehr großen Dateien und in einer produktiven Umgebung würde 
@@ -160,7 +159,7 @@ Nach der Ausführung erhalten wir die folgende Ausgabe:
 
 #### 4 Ausgabe der ersten 30 Wortvorkommen
 
-In der folgenden Codesequenze wird jedes Listenelement des RDD durch
+In der folgenden Codesequenz wird jedes Listenelement des RDD durch
 [_flatMap_](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "zur Dokumentation")
 in seine einzelnen Wörter aufgeteilt. Für jedes Wort wird mit 
 [_map_](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "zur Dokumentation")

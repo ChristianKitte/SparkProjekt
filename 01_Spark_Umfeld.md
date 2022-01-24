@@ -23,7 +23,7 @@ handelt es sich um ein Framework, welches Daten aus einer Vielzahl an Quellen ei
 verarbeiten und ausgeben kann. Es ist somit in erster Linie für die Verarbeitung, nicht aber für deren 
 Haltung zuständig.
 
-Es verdankt seine Bedeutung der Tatsache, das es imstand ist, auch sehr große Datenbestände im Petabereich 
+Es verdankt seine Bedeutung der Tatsache, dass es imstand ist, auch sehr große Datenbestände im Petabereich 
 in kurzer Zeit verarbeiten zu können. Hierbei verteilt
 [Apache Spark](https://spark.apache.org "zur Webseite") 
 die Verarbeitung und führt zu einem späteren Zeitpunkt die Ergebnisse wieder zusammen. Daneben können nicht nur 
@@ -45,8 +45,8 @@ Nach
 [eigenen Angaben](https://spark.apache.org/history.html "zur Webseite")
 startete Apache Spark 2009 als ein Forschungsprojekt an der 
 [UC Berkley](https://www.berkeley.edu "zur Webseite")
-in Californien und wurde 2010 als Open Source Projekt veröffentlicht. In den folgenden Jahren erschienen 
-eine Reihe wissenschaftlicher Puplikationen, die sich mit den zugrunde liegenden Ideen beschäftigten. Es bildete sich 
+in Kalifornien und wurde 2010 als Open Source Projekt veröffentlicht. In den folgenden Jahren erschienen 
+mehrere wissenschaftliche Publikationen, die sich mit den zugrunde liegenden Ideen beschäftigten. Es bildete sich 
 eine rasch wachsende Community. Seit 2014 ist es als 
 [Top-Level-Projekt](https://blogs.apache.org/foundation/entry/the_apache_software_foundation_announces50 "zur Webseite")
 Teil der
@@ -64,9 +64,8 @@ veröffentlicht.
 Ebenfalls in 2013 wurde von den ehemaligen Entwicklern die Firma  
 [Databricks](https://databricks.com "zur Webseite")
 ins Leben gerufen. Databricks sieht sich selbst in der Verantwortung, das offene Entwicklungsmodell von Spark 
-aufrecht zu erhalten und Spark selbst weiter zu entwickeln. Gleichzeitig verdient es Geld im Umfeld von Spark unter 
-anderen durch Online Kurse und Eigenentwicklungen auf Basis von Spark wie **_lakehouse_**, einer eigenen Cloud Data 
-Plattform. 
+aufrechtzuerhalten und Spark selbst weiterzuentwickeln. Gleichzeitig gehören Onlinekurs und Eigenentwicklungen im 
+Umfeld von Spark zu ihren Geschäftsmodell. Ein Beispiel hier ist die Cloud Data Plattform **_lakehouse_**.
 
 Laut 
 [Wikipedia](https://en.wikipedia.org/wiki/Databricks "zur Wikipediaseite") 
@@ -126,7 +125,7 @@ SparkSQL kompensiert.
 Mit
 [SparkR (R on Spark)](https://spark.apache.org/docs/latest/sparkr.html "zur Dokumentation")
 existiert ein leichtgewichtiges Frontend zur Nutzung von Spark. Daneben unterstützt das Paket auch das verteilte Lernen 
-in Zusammenarbeit mit SparkML. Nach Meinung des Authors, scheint die Integration von Python jedoch bei weitem 
+in Zusammenarbeit mit SparkML. Nach Meinung des Autors, scheint die Integration von Python jedoch bei weitem 
 tiefergehend und in sich intuitiver zu sein. 
 
 ## Spark Ökosystem und Erweiterungen
@@ -171,7 +170,7 @@ Erweiterungen von Spark dar. Wichtige Punkte stellen die Einführung von DataFra
 dar. Diese können direkt oder aber aus zugrunde liegenden RDDs erstellt werden. 
 
 In der nachfolgenden Version wurden beide Konstrukte zusammengeführt. Ein DataFrame wird hier als ein DataSet vom 
-Typ Row angesehen und kann auch unstrukturierte Daten enthalten. Ein weiteres wichtiges Features ist die Möglichkeit, 
+Typ Row angesehen und kann auch unstrukturierte Daten enthalten. Ein weiteres wichtiges Feature ist die Möglichkeit, 
 SQL zur Abfrage und Selektion strukturiert vorliegender Daten verwenden zu können.
 
 Im Abschnitt 
@@ -216,7 +215,7 @@ aufgebaute Struktur um eine Graphenabstraktion. Hierzu wurden mehrere notwendige
 Graphen hinzugefügt. Zudem stellt die Erweiterung eine Reihe von Algorithmen für die Arbeit mit und Analyse von 
 Graphen zur Verfügung, welche stetig wächst.
 
-Mit Blick auf die immer größeren Akzeptanz und Einsatz von Graphendatenbanken ist diese Erweiterung aus Sicht 
+Mit Blick auf die immer größere Akzeptanz und Einsatz von Graphendatenbanken ist diese Erweiterung aus Sicht 
 des Autor sehr wichtig. Um Spark im Kontext von Graphendatenbanken zu verwenden, ist diese Erweiterung jedoch 
 nicht zwingend notwendig. Als Beispiel sei hier die weit verbreitete Datenbank 
 [Neo4j](https://neo4j.com "zur Webseite") 
@@ -250,7 +249,7 @@ auf Basis von Graphen gibt:
 ![graph_prinzip.png](assets/graph_prinzip.png "Beispiel eines einfachen Graphen")
 
 Dargestellt werden zwei Knoten vom Typ **_Person_** sowie ein Knoten vom Typ **_Buch_** mit ihren Eigenschaften. 
-Diese sind mit **_gerichteten_** und **_annotierte Kanten_** verbunden. Ein wichtiger, hier zu erkennender 
+Diese sind mit **_gerichteten_** und **_annotierten Kanten_** verbunden. Ein wichtiger, hier zu erkennender 
 Unterschied zu relationalen Datenbanken ist, dass die Personen nicht Datensätze einer Tabelle, sondern zwei 
 selbstständige **_Knoten_** sind (auch wenn für die Serialisierung durchaus eine relationale Datenstruktur Anwendung 
 finden kann).  
@@ -267,7 +266,7 @@ werden könnte:
 
 Als letzte Erweiterung soll hier ein Blick auf
 [Spark Streaming](https://spark.apache.org/streaming "zur Webseite")
-geworfen werden. Spark Streaming ermöglicht die Verarbeitung von Datenstreams aus einer Vielzahl an unterschiedlichen 
+geworfen werden. Spark Streaming ermöglicht die Verarbeitung von Datenströmen aus einer Vielzahl an unterschiedlichen 
 Quellen. Ebenfalls besteht die Möglichkeit, eigene Quellen zu definieren und zu verwenden. Die folgende Abbildung 
 wurde der 
 [Dokumentation von Spark Streaming](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Dokumentation")
@@ -282,10 +281,10 @@ Laut
 [aktueller Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Dokumentation") 
 führt Spark Streaming hierfür einen 
 [Discretized Stream (DStream)](https://spark.apache.org/docs/latest/streaming-programming-guide.html#discretized-streams-dstreams "zur Dokumentation")
-ein, welcher einen kontinuierlichen Datenstream darstellt. Hierzu findet sich auf Usenix.org ein wissenschaftliches
+ein, welcher einen kontinuierlichen Datenstrom (datastream) darstellt. Hierzu findet sich auf Usenix.org ein wissenschaftliches
 [Paper](https://www.usenix.org/system/files/conference/hotcloud12/hotcloud12-final28.pdf "zum Paper") 
 . Der Stream kann auf einer unterstützten Quelle oder aber einen anderen DStream basieren. Intern stellt ein DStream 
-eine Sequenz von RDDs dar. Hierbei werden die Sprachen Scale, Java und Python unterstützt.
+eine Sequenz von RDDs dar. Hierbei werden die Sprachen Scala, Java und Python unterstützt.
 
 Die folgende Abbildung, welch ebenfalls der 
 [Dokumentation](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Dokumentation") 
@@ -293,8 +292,8 @@ entnommen wurde, visualisiert nochmals den Vorgang:
 
 ![stream_prinzip.png](assets/stream_prinzip.png "Prinzip der Funktionsweise von Spark Streaming")
 
-Ein **_kontinuierlicher Eingabestream_** wird von Spark Streaming in eine **_Sequenz von RDDs_** umgewandelt und im 
-Anschluss von Spark weiter verarbeitet.
+Ein **_kontinuierlicher Eingabestrom (datastream)_** wird von Spark Streaming in eine **_Sequenz von RDDs_** umgewandelt und im 
+Anschluss von Spark weiterverarbeitet.
 
 Mit Hilfe von Spark Streaming ist es somit möglich, jede Form von Datenströmen zu verarbeiten und hierzu die 
 Fähigkeiten von Spark direkt zu nutzen. Dies erweitert die möglichen Szenarien, in denen Spark eingesetzt werden kann, 

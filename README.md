@@ -14,9 +14,7 @@ der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 ---
 
 ToDo:
-* Ergänzung zu Coloums ? P1
 * Fett/nicht Fett P2 
-* Links testen P3
 * Finales Korrekturlesen P4
 * Links testen P5
  
@@ -24,8 +22,8 @@ ToDo:
 
 Zu Anfang der Beschäftigung mit Apache Spark stößt man auf eine Vielzahl an Begriffen und Konzepten, welche gerade 
 für diejenigen, welche nicht aus dem Umfeld von Big Data stammen, neu und eher schwer zu erfassen sind. Hinzu kommt, 
-dass sich auch Spark schnell weiter entwickelt und gefundene Informationen zeitlich eingeordnet werden müssen.   
-Ziel dieser arbeit ist es daher, dem Leser dieser Arbeit einen kurzen, aber grundlegenden Einblick in
+dass sich auch Spark schnell weiterentwickelt und gefundene Informationen zeitlich eingeordnet werden müssen. 
+Ziel dieser Arbeit ist es daher, dem Leser einen kurzen, aber grundlegenden Einblick in
 [Apache Spark](https://spark.apache.org "zur Webseite")
 zu geben. 
 
@@ -48,7 +46,7 @@ Bei allen verwendeten Bildern wird im Text auf die Herkunft verwiesen, sofern es
 handelt. Gleiches gilt, sofern sich bei Aussagen explizit auf eine fremde Quelle bezogen wird. Ansonsten 
 wurden alle in der Linkliste dokumentierten Informationsquellen für die Einarbeitung genutzt. 
 
-Grunsätzlich werden die in dieser Arbeit genutzten Begrifflichkeiten und Bilder hierbei ohne Rücksicht auf 
+Grundsätzlich werden die in dieser Arbeit genutzten Begrifflichkeiten und Bilder hierbei ohne Rücksicht auf 
 etwaige Lizenzen oder Patente genutzt. Die Verwendung der Begriffe oder Bilder in dieser Arbeit impliziert somit 
 nicht deren freie Verfügbarkeit. 
 
