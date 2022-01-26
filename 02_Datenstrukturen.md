@@ -32,9 +32,7 @@ Laut [Wikipedia](https://de.wikipedia.org/wiki/Apache_Hadoop "zur Wikipediaseite
 
 Entgegen der weit verbreiteten Meinung ist [Apache Hadoop](https://hadoop.apache.org "zur Webseite") kein Datenbanksystem im engeren Sinne, sondern muss eher als ein Framework für die ***dateibasierte*** [***Batchverarbeitung***](https://de.wikipedia.org/wiki/Stapelverarbeitung "zur Wikipediaseite") sehr großer, verteilter Datenmengen mit Hilfe seines Dateisystems [***HDFS***](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt") angesehen werden, was es als Echtzeitsystem ungeeignet macht. Hierbei ist es hoch skalierbar und kann auch sehr großen Datenmengen performant verarbeiten. Wie auf einer Grafik der Seite [datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite") dargestellt wird, existieren insgesamt vier Komponenten:
 
-
 <img title="Aufbau von Apache Hadoop" src="assets/hadoop_aufbau.png" alt="hadoop_aufbau.png" width="442">
-
 
 Alle Ressourcen werden von einen zentralen Ressourcen Manager [***YARN***](02_Datenstrukturen.md#yet-another-resource-negotiator-yarn "zum Abschnitt") verwaltet. Die zu verarbeitenden Daten werden im [***HDFS Filesystem***](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt") abgelegt und anschließend mit [***Map Reduce***](02_Datenstrukturen.md#hadoop-map-reduce "zum Abschnitt") 
 verarbeitet und serialisiert.
@@ -49,9 +47,7 @@ Daneben existieren unter den Begriff [Hadoop Common](https://mvnrepository.com/a
 
 Er erfüllt somit eine sehr wichtige und für die Performance des Systems relevante Aufgabe. Eine weitere [tiefergehende Betrachtung](https://www.computerweekly.com/de/definition/Apache-Hadoop-YARN-Yet-Another-Resource-Negotiator "zur Webseite") aus dem Jahr 2018 ist auf [ComputerWeekly.de](https://www.computerweekly.com/de "zur Webseite") zu finden. Dieser Seite wurde auch die folgende Übersicht entnommen, welche die Funktionsweise von YARN skizziert:
 
-
 <img title="Übersicht über die Funktionsweise von YARN" src="assets/hadoop_yarn.png" alt="hadoop_yarn.png" width="447">
-
 
 Zentrales Element ist der **_Ressourcenmanager_** selbst. Die **_NodeManager_** der beteiligten **_Cluster_** teilen 
 ihren Status mit. Für jede Anwendung wird ein **_Application Manager_** erstellt, welcher die benötigten Ressourcen beim **_Ressourcen Manager_** anfragt. **_Container_** weisen dann die Ressourcen der Anwendung zu.
@@ -84,15 +80,11 @@ Zunächst werden mit dem ***Map Job*** benötigten Daten aus dem Datenbestand ge
 
 Auf der Webseite [datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite") existieren hierzu zwei Grafiken, welche diesen Vorgang gut verdeutlichen:
 
-
 <img title="Grafische Übersicht über Hadoop Map Reduce Prozess" src="assets/hadoop_map_reduce.png" alt="hadoop_map_reduce.png" width="567">
-
 
 Die anfallenden Aufgaben können hierbei ***aufgeteilt*** und ***parallel*** auf ***mehrere, verteilte Rechner*** ausgeführt und anschließend zu einem ***Gesamtergebnis*** zusammengeführt werden. Die zweite Grafik auf der genannten Seite verdeutlicht dies an einem Wordcount Beispiel.
 
-
 <img title="Grafische Übersicht eines Word Counts mit Hadoop Map Reduce" src="assets/hadoop_word_count.png" alt="hadoop_word_count.png" width="569">
-
 
 Es ist wichtig, zwei Dinge zu verstehen:
 
@@ -121,7 +113,6 @@ Auch wenn aktuell anwenderfreundliche Strukturen wie DataFrames und DataSets mit
 RDD steht für **_Resilient Distributed Dataset_** (auf Deutsch etwa “robuster verteilter Datensatz”) und stellt das zentrale Konzept und Objekt für die Abstraktion von Daten innerhalb von Spark dar. Für einen RDD können **_Transformationen_** (Bearbeitungen) für dessen Daten festgelegt werden. Hierbei ist das RDD **_immutable_**. Jede Aktion auf ein RDD verändert das zugrunde liegende RDD nicht, sondern gibt stets ein neues RDD zurück. Hierbei nutzt Spark in starken Maße die Übergabe von Funktionen. RDDs nutzen **_lazy evaluation_**. Transformationen werden erst dann ausgeführt, wenn ein Ergebnis abgefragt, sprich, eine **_Action_** angestoßen wird.
 
 Die folgende, der Seite [TowardDataScience.com](https://towardsdatascience.com/your-first-apache-spark-ml-model-d2bb82b599dd "zur Webseite") entnommene Grafik illustriert dies sehr schön:
-
 
 <img title="Das Bild zeigt den typischen Workflow bei Sparks RDDs" src="assets/rdd_workflow.png" alt="rdd_workflow.png" width="482">
 
@@ -179,9 +170,7 @@ Als Nachteil ist jedoch ihre Nähe zu RDDs zu sehen, da sie letztlich eine Kolle
 
 Dataframes sind somit **_kein Ersatz der RDDs_**, sondern können als eine **_Abstraktionsschicht_** auf die Daten und deren Handling mit RDDs angesehen werden. Dies verdeutlicht auch die folgende Abbildung.
 
-
 ![spark_dataset.png](./assets/spark_dataframe.png "Einordnung des Spark DataSet")
-
 
 Insbesondere handelt es sich bei Spark Dataframes um eine **_verteilte Kollektion von Daten_**, welches konzeptuell einem ***zweidimensionalen Array mit Reihen und benannten Spalten*** eines Datenbestandes entspricht. Es wurde für die Verarbeitung sehr großer Datenstände optimiert.
 
@@ -206,9 +195,7 @@ In der aktuellen Version existiert somit ein DataSet Objekt, welches sowohl eine
 
 Auf der Seite [Knoldus Inc.](https://medium.com/@knoldus/spark-type-safety-in-dataset-vs-dataframe-174137517821 "zur Webseite") wird hierauf vertiefend eingegangen und der Sachverhalt schön visuelle verdeutlicht:
 
-
 <img title="Synthese von DataSet und DataFrame" src="./assets/spark_dataset_dataframe.png" alt="spark_dataset_dataframe.png" width="455">
-
 
 Eine Übersicht über RDD, DataFrames sowie DataSets lässt sich der folgenden Tabelle entnehmen:
 
@@ -237,9 +224,7 @@ Der Optimierer ist ein Bestandteil von SparkSQL. In einem aufwendigen Prozess we
 
 Auf der folgenden Abbildung von [data-flair](https://data-flair.training/blogs/spark-sql-optimization "zur Webseite") findet sich eine etwas vereinfachte Darstellung des Prozesses
 
-
 <img title="Spark SQL Ausführungsplan" src="./assets/spark_catalyst_optimizer.png" alt="image.png" width="682">
-
 
 Der Ausführungsplan unterteilt sich in vier Phasen:
 
@@ -340,9 +325,7 @@ Zu den wichtigsten, aber häufig zu Anfang irritierenden Transformationen zähle
 
 Bei der [Filtermethode](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.filter.html "zur Dokumentation") wird der Funktion eine Filtermethode übergeben, die auf alle Elemente des RDD angewendet wird. Als Ergebnis wird ein neues RDD auf Basis der ***selektierten Elemente*** zurückgegeben.
 
-
 <img title="Prinzip der Filterung eines RDD" src="./assets/spark_filter.png" alt="spark_filter.png" width="190">
-
 
 Der folgende Code gibt ein neues RDD zurück, in dem alle leeren (String)Items herausgefiltert sind:
 
@@ -356,9 +339,7 @@ lines2 = lines.filter(lambda linex: linex.strip() != "")
 
 Bei der [Map Methode](https://spark.apache.org/docs/latest/api/python/reference/api/pyspark.RDD.map.html "zur Dokumentation") wird die übergebene Funktion auf ***alle Elemente des RDD angewendet***. Hierbei erfolgt genau eine Transformation von einem Zustand in einen anderen. Als Ergebnis wird auch hier ein RDD mit den neuen Werten zurückgegeben.
 
-
 <img title="Prinzip der Map Transformation bei einem RDD" src="./assets/spark_map.png" alt="spark_map.png" width="212">
-
 
 Der folgende Code gibt ein neues RDD mit Integer Werten zurück. Für jeden Texteintrag in *lines* würde in dem neuen RDD *lengths* ein Zahlwert für die Länge des entsprechenden Wertes aus *lines* stehen.
 
@@ -375,7 +356,6 @@ Der Typ der zurückgegebenen Elemente muss hierbei ***nicht dem Typ der ursprün
 [Flat Map](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.RDD.flatMap.html "zur Dokumentation") unterscheidet sich zu Map dadurch, dass die übergebene Funktion ***mehr als ein Element*** zurückgeben kann.
 
 <img title="Prinzip der FlatMap Transformation bei einem RDD" src="./assets/spark_flat_map.png" alt="spark_flat_map.png" width="257">
-
 
 Der folgende Code würde ***für jedes Element*** in *lines* den enthaltenen Text auf Basis der Leerstellen in *n* Wörter splitten und ein neues RDD mit *einer* Spalte und *n* Zeilen zurückgeben. 
 

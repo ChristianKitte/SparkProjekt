@@ -88,9 +88,7 @@ Bekannte Vertreter sind:
 
 Die folgende Abbildung zeigt die wichtigsten Erweiterungen im direkten Umfeld von Spark, welche das Framework selbst erweitert und breiter aufgestellt haben: 
 
-
 ![spark_extension.png](assets/spark_extension.png "Übersicht der Erweiterungen von Spark")
-
 
 Eine erschöpfende Betrachtung würde hierbei den Rahmen und die Zielsetzung dieser Arbeit bei weitem sprengen. Hier sei auf die jeweils angegebenen Projektseiten verwiesen:
 
@@ -141,7 +139,6 @@ Von [Andreas Kuczera](https://github.com/kuczera "zur GitHub Seite") findet sich
 
 <img src="assets/graph_prinzip.png" title="Beispiel eines einfachen Graphen" alt="graph_prinzip.png" width="548">
 
-
 Dargestellt werden zwei Knoten vom Typ **_Person_** sowie ein Knoten vom Typ **_Buch_** mit ihren Eigenschaften. Diese sind mit **_gerichteten_** und **_annotierten Kanten_** verbunden. Ein wichtiger, hier zu erkennender Unterschied zu relationalen Datenbanken ist, dass die Personen nicht Datensätze einer Tabelle, sondern zwei selbstständige **_Knoten_** sind (auch wenn für die Serialisierung durchaus eine relationale Datenstruktur Anwendung finden kann).  
 
 Gleichzeitig gibt der Graph auch einen Sachverhalt wieder, der nicht trivial in einer relationalen Datenbank gehalten werden könnte: 
@@ -155,7 +152,6 @@ Gleichzeitig gibt der Graph auch einen Sachverhalt wieder, der nicht trivial in 
 [_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
 Als letzte Erweiterung soll hier ein Blick auf [Spark Streaming](https://spark.apache.org/streaming "zur Webseite") geworfen werden. Spark Streaming ermöglicht die Verarbeitung von Datenströmen aus einer Vielzahl an unterschiedlichen Quellen. Ebenfalls besteht die Möglichkeit, eigene Quellen zu definieren und zu verwenden. Die folgende Abbildung wurde der [Dokumentation von Spark Streaming](https://spark.apache.org/docs/latest/streaming-programming-guide.html "zur Dokumentation") entnommen und zeigt einige der verfügbaren Quellen und Ausgabeformate.
-
 
 ![stream_contect.png](assets/stream_contect.png "Übersicht des Ökosystems von Spark Streaming")
 
