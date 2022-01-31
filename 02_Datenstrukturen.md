@@ -28,9 +28,9 @@ zwei konkrete Beispiele zur Nutzung von Spark mit Python vorgestellt. Beide Beis
 
 (Das Apache Hadoop Loge ist ein eingetragenes Logo der [Apache Software Foundation](https://www.apache.org "zur Webseite")
 
-Laut [Wikipedia](https://de.wikipedia.org/wiki/Apache_Hadoop "zur Wikipediaseite") ist [Apache Hadoop](https://hadoop.apache.org "zur Webseite") ein in Java geschriebenes Open Source Framework zur verteilten Verarbeitung sehr großer Datenmengen. Es wurde in 2006 gegründet und gehört seit 2008 zu den Top Level Projekten von Apache. Aktuell (Dezember 2021) liegt es in der Version 3.3.1 vor.
+Laut [Wikipedia](https://de.wikipedia.org/wiki/Apache_Hadoop "zur Wikipediaseite") ist [Apache Hadoop](https://hadoop.apache.org "zur Webseite") ein in Java geschriebenes ***Open Source Framework*** zur verteilten ***Verarbeitung sehr großer Datenmengen***. Es wurde in 2006 gegründet und gehört seit 2008 zu den Top Level Projekten von Apache. Aktuell (Dezember 2021) liegt es in der Version 3.3.1 vor.
 
-Entgegen der weit verbreiteten Meinung ist [Apache Hadoop](https://hadoop.apache.org "zur Webseite") kein Datenbanksystem im engeren Sinne, sondern muss eher als ein Framework für die ***dateibasierte*** [***Batchverarbeitung***](https://de.wikipedia.org/wiki/Stapelverarbeitung "zur Wikipediaseite") sehr großer, verteilter Datenmengen mit Hilfe seines Dateisystems [***HDFS***](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt") angesehen werden, was es als Echtzeitsystem ungeeignet macht. Hierbei ist es hoch skalierbar und kann auch sehr große Datenmengen performant verarbeiten. Wie auf einer Grafik der Seite [datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite") dargestellt wird, existieren insgesamt vier Komponenten:
+Entgegen der weit verbreiteten Meinung ist [Apache Hadoop](https://hadoop.apache.org "zur Webseite") ***kein Datenbanksystem im engeren Sinne***, sondern muss eher als ein Framework für die ***dateibasierte*** [***Batchverarbeitung***](https://de.wikipedia.org/wiki/Stapelverarbeitung "zur Wikipediaseite") sehr großer, verteilter Datenmengen mit Hilfe seines Dateisystems [***HDFS***](02_Datenstrukturen.md#hadoop-distributed-file-system-hdfs "zum Abschnitt") angesehen werden, was es als ***Echtzeitsystem ungeeignet*** macht. Hierbei ist es hoch skalierbar und kann auch sehr große Datenmengen performant verarbeiten. Wie auf einer Grafik der Seite [datasolut.com](https://datasolut.com/apache-hadoop-einfuehrung "zur Webseite") dargestellt wird, existieren insgesamt vier Komponenten:
 
 <img title="Aufbau von Apache Hadoop" src="assets/hadoop_aufbau.png" alt="hadoop_aufbau.png" width="442">
 
@@ -43,7 +43,7 @@ Daneben existiert unter den Begriff [Hadoop Common](https://mvnrepository.com/ar
 
 [_zurück_](02_Datenstrukturen.md#hadoop "Zurück")
 
-[YARN (Yet Another Resource Negotiator)](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html "zur Dokumentation") hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also CPU-Zeit und Speicher, in ausreichendem Maße bereitzustellen und einem Job zuzuweisen. 
+[YARN (Yet Another Resource Negotiator)](https://hadoop.apache.org/docs/stable/hadoop-yarn/hadoop-yarn-site/YARN.html "zur Dokumentation") hat die Aufgabe, die zur Bearbeitung benötigten Ressourcen eines Clusters, also ***CPU-Zeit und Speicher, in ausreichendem Maße bereitzustellen*** und einem Job zuzuweisen. 
 
 Er erfüllt somit eine sehr wichtige und für die Performance des Systems relevante Aufgabe. Eine weitere [tiefergehende Betrachtung](https://www.computerweekly.com/de/definition/Apache-Hadoop-YARN-Yet-Another-Resource-Negotiator "zur Webseite") aus dem Jahr 2018 ist auf [ComputerWeekly.de](https://www.computerweekly.com/de "zur Webseite") zu finden. Dieser Seite wurde auch die folgende Übersicht entnommen, welche die Funktionsweise von YARN skizziert:
 
@@ -56,7 +56,7 @@ ihren Status mit. Für jede Anwendung wird ein **_Application Manager_** erstell
 
 [_zurück_](02_Datenstrukturen.md#hadoop "Zurück")
 
-Hadoop nutzt zur Speicherung seiner Daten das [***Hadoop Distributed Filesystem*** (HDFS)](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation"). Hierbei handelt es sich um ein hochverfügbares, verteiltes Dateisystem, welches die Verwaltung mehrere Millionen 
+Hadoop nutzt zur Speicherung seiner Daten das [***Hadoop Distributed Filesystem*** (HDFS)](https://hadoop.apache.org/docs/r3.3.1 "zur Dokumentation"). Hierbei handelt es sich um ein ***hochverfügbares, verteiltes Dateisystem***, welches die Verwaltung mehrere Millionen 
 Dateien auf mehreren tausend Servern ermöglicht.
 
 Die folgende Abbildung wurde der Seite [Quobyte](https://www.quobyte.com/storage-explained/what-is-hdfs "zur Webseite") entnommen und gibt eine Übersicht über den Aufbau des Dateisystems wieder:
@@ -161,7 +161,7 @@ session = SparkSession.builder.appName("Anwendungsname").getOrCreate()
 dataframe = session.read.text("Pfad zu einer Datei")
 ```
 
-Spark Dataframes können hierbei sowohl das Schema der vorhandenen Daten ableiten, als auch ein Schema explizit zugewiesen bekommen. Letzteres ist besonders bei sehr großen Datenbeständen sinnvoll. 
+Spark Dataframes können hierbei sowohl das Schema der vorhandenen Daten ableiten, als auch ein Schema ***explizit zugewiesen bekommen***. Letzteres ist besonders bei sehr großen Datenbeständen sinnvoll. 
 
 Zusätzlich kommen bei DataFrames [**_Query-Optimizer_**](02_Datenstrukturen.md#tungsten-component "zum Abschnitt") für relationale SQL Abfragen sowie ein
 [**_Catalyst-Optimierer_**](02_Datenstrukturen.md#catalyst-optimizer "zum Abschnitt") zum Einsatz, der den effizientesten Plan zur Ausführung der Datenoperationen ermittelt. DataFrames sind daher den RDDs bei der Ausführung überlegen.
@@ -220,7 +220,7 @@ Spark ist für die schnelle, verteilte und optimierte Verarbeitung sehr großer 
 
 Die Aufgabe des Catalyst Optimizers ist die ***Optimierung der Ausführung von Berechnungen*** innerhalb von Spark. Bei der Konzeption des Optimierers wurde darauf geachtet, dass dieser durch eigene Methoden erweitert und angepasst werden kann.
 
-Der Optimierer ist ein Bestandteil von SparkSQL. In einem aufwendigen Prozess werden anstehende Transaktionen zunächst analysiert und anschließend optimiert. Als Ergebnis steht am Ende ***generierter Java Bytecode***, welcher auf jeder Maschine ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Feature von Scala, [***Quasiquotes***](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Webseite") genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des ***Scala Compilers*** zu ***Java Bytecode*** kompiliert werden.
+Der Optimierer ist ein ***Bestandteil von SparkSQL***. In einem aufwendigen Prozess werden anstehende Transaktionen zunächst analysiert und anschließend optimiert. Als Ergebnis steht am Ende ***generierter Java Bytecode***, welcher auf jeder Maschine ausführbar ist. Zur Generierung des Bytecodes wird ein spezielles Feature von Scala, [***Quasiquotes***](https://docs.scala-lang.org/overviews/quasiquotes/intro.html "zur Webseite") genutzt. Dies ermöglicht die einfache Erstellung von Syntaxbäumen, welche dann mit Hilfe des ***Scala Compilers*** zu ***Java Bytecode*** kompiliert werden.
 
 Auf der folgenden Abbildung von [data-flair](https://data-flair.training/blogs/spark-sql-optimization "zur Webseite") findet sich eine etwas vereinfachte Darstellung des Prozesses
 

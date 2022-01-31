@@ -13,12 +13,12 @@ Dieser Abschnitt gibt einen kurzen Überblick über die Ursprünge von [Apache S
 
 [_zurück_](01_Spark_Umfeld.md#1-Spark "Zurück")
 
-Bei [Apache Spark](https://spark.apache.org "zur Webseite") handelt es sich um ein Framework, welches Daten aus einer Vielzahl an Quellen einlesen, verarbeiten und ausgeben kann. 
+Bei [Apache Spark](https://spark.apache.org "zur Webseite") handelt es sich um ein ***Framework***, welches Daten aus einer Vielzahl an Quellen einlesen, verarbeiten und ausgeben kann. 
 
-Es verdankt seine Bedeutung der Tatsache, dass es imstand ist, auch sehr große Datenbestände im Petabereich in kurzer Zeit verarbeiten zu können. Hierbei verteilt [Apache Spark](https://spark.apache.org "zur Webseite")  die Verarbeitung auf verschiedene Prozesse und führt die Ergebnisse zu einem späteren Zeitpunkt wieder zusammen. Daneben können nicht nur strukturierte Daten, sondern auch unstrukturierte oder als Stream vorliegende Daten verarbeitet werden.
+Es verdankt seine Bedeutung der Tatsache, dass es imstand ist, auch ***sehr große Datenbestände*** im Petabereich in kurzer Zeit verarbeiten zu können. Hierbei verteilt [Apache Spark](https://spark.apache.org "zur Webseite")  die Verarbeitung auf verschiedene Prozesse und führt die Ergebnisse zu einem späteren Zeitpunkt wieder zusammen. Daneben können nicht nur ***strukturierte Daten***, sondern auch ***unstrukturierte*** oder als ***Stream*** vorliegende Daten verarbeitet werden.
 
 Den Kern des Frameworks bilden grundlegende Funktionen wie die Ablaufsteuerung, die Aufgaben- und
-Zeitplanung sowie die Bereitstellung von Input- und Output-Operationen. Die zugrunde liegende Datenstruktur basiert auf *Resilient Distributed Datasets (RDDs)*, welche im Abschnitt [Datenstrukturen](02_Datenstrukturen.md "zum Kapitel") ausführlich behandelt werden. Sie ermöglichen die Performante und hoch skalierbare, verteilte Bearbeitung sehr großer Datenmengen.
+Zeitplanung sowie die Bereitstellung von Input- und Output-Operationen. Die zugrunde liegende Datenstruktur basiert auf ***Resilient Distributed Datasets (RDDs)***, welche im Abschnitt [Datenstrukturen](02_Datenstrukturen.md "zum Kapitel") ausführlich behandelt werden. Sie ermöglichen die Performante und hoch skalierbare, verteilte Bearbeitung sehr großer Datenmengen.
 
 ## Bisherige Entwicklungsgeschichte
 
@@ -55,21 +55,21 @@ Auf der [Übersichtsseite](https://spark.apache.org/docs/latest "zur Dokumentati
 
 unterstützt. Insbesondere bei der Zusammenarbeit von Spark mit [Apache Arrow](https://arrow.apache.org "zur Webseite")  wird auf mögliche Probleme im Umfeld von Java und Python eingegangen und auf die entsprechende [Dokumentation](https://arrow.apache.org/docs "zur Webseite")  verwiesen.
 
-Mit Spark SQL besteht die Möglichkeit, auf strukturierte Daten unter Verwendung von [SQL](https://de.wikipedia.org/wiki/SQL "zur Wikipediaseite") (*Structured Query Language*) zuzugreifen.
+Mit ***Spark SQL*** besteht die Möglichkeit, auf ***strukturierte Daten*** unter Verwendung von [***SQL***](https://de.wikipedia.org/wiki/SQL "zur Wikipediaseite") (*Structured Query Language*) zuzugreifen.
 
-Die Verwendung von Java und Scala als höhere objektorientierte Programmiersprachen ermöglicht die Verwendung der mit SparkSQL zuletzt eingeführten, streng typisierten Datasets im Code zu nutzen. Ein weiterer Vorteil dieser Sprachen ist die Möglichkeit, Apache Spark mit Hilfe von Maven direkt in Projekte einzubinden. 
+Die Verwendung von ***Java*** und ***Scala*** als höhere objektorientierte Programmiersprachen ermöglicht die Verwendung der mit SparkSQL zuletzt eingeführten, ***streng typisierten Datasets im Code*** zu nutzen. Ein weiterer Vorteil dieser Sprachen ist die Möglichkeit, Apache Spark mit Hilfe von Maven direkt in Projekte einzubinden. 
 
 ### PySpark
 
 [_zurück_](01_Spark_Umfeld.md#sprachuntersttzung "Zurück")
 
-Für die Arbeit mit Python existiert mit [PySpark](https://spark.apache.org/docs/latest/api/python/index.html "zur Dokumentation") ein Interface, dass eine starke Integration mit Python ermöglicht. Auf Grund der existierenden Vielzahl an Erweiterungen für Python, werden Einschränkungen, welche durch die fehlende Nutzbarkeit von stark typisierten Datasets entstehen,  kompensiert. 
+Für die Arbeit mit Python existiert mit [PySpark](https://spark.apache.org/docs/latest/api/python/index.html "zur Dokumentation") ein Interface, dass eine ***starke Integration mit Python*** ermöglicht. Auf Grund der existierenden Vielzahl an Erweiterungen für Python, werden Einschränkungen, welche durch die fehlende Nutzbarkeit von stark typisierten Datasets entstehen,  kompensiert. 
 
 ### SparkR
 
 [_zurück_](01_Spark_Umfeld.md#sprachuntersttzung "Zurück")
 
-Mit [SparkR (R on Spark)](https://spark.apache.org/docs/latest/sparkr.html "zur Dokumentation") existiert ein leichtgewichtiges Frontend zur Nutzung von Spark mit R. Daneben unterstützt das Paket auch das verteilte Lernen in Zusammenarbeit mit SparkML. Nach Meinung des Autors, scheint die Integration von Python jedoch bei weitem tiefergehender und in sich intuitiver zu sein. 
+Mit [SparkR (R on Spark)](https://spark.apache.org/docs/latest/sparkr.html "zur Dokumentation") existiert ein leichtgewichtiges ***Frontend zur Nutzung von Spark mit R***. Daneben unterstützt das Paket auch das verteilte Lernen in Zusammenarbeit mit SparkML. Nach Meinung des Autors, scheint die Integration von Python jedoch bei weitem tiefergehender und in sich intuitiver zu sein. 
 
 ## Spark Ökosystem und Erweiterungen
 
@@ -101,9 +101,9 @@ Eine erschöpfende Betrachtung würde hierbei den Rahmen und die Zielsetzung die
 
 [_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
-[SparkSQL](https://spark.apache.org/sql "zur Webseite") erweitert und vereinfacht den Umgang mit strukturiert vorliegenden Daten und stellt eine der wichtigsten Erweiterungen von Spark dar. Wichtige Punkte bei dessen Entwicklung stellen die Einführung von DataFrames und darauf folgend von DataSets dar. Diese können direkt oder aber auf Basis zugrunde liegender RDDs erstellt werden. 
+[SparkSQL](https://spark.apache.org/sql "zur Webseite") erweitert und vereinfacht den Umgang mit ***strukturiert vorliegenden Daten*** und stellt eine der wichtigsten Erweiterungen von Spark dar. Wichtige Punkte bei dessen Entwicklung stellen die Einführung von DataFrames und darauf folgend von DataSets dar. Diese können direkt oder aber auf Basis zugrunde liegender RDDs erstellt werden. 
 
-In den nachfolgenden Versionen wurden beide Konstrukte zusammengeführt. Ein *DataFrame* wird hier als ein *DataSet vom Typ Row* angesehen und kann auch unstrukturierte Daten enthalten. Ein weiteres wichtiges Feature ist die Möglichkeit, SQL zur Abfrage und Selektion strukturiert vorliegender Daten verwenden zu können.
+In den nachfolgenden Versionen wurden beide Konstrukte zusammengeführt. Ein ***DataFrame*** wird hier als ein ***DataSet vom Typ Row*** angesehen und kann auch unstrukturierte Daten enthalten. Ein weiteres wichtiges Feature ist die Möglichkeit, SQL zur Abfrage und Selektion strukturiert vorliegender Daten verwenden zu können.
 
 Im Abschnitt [02 Datenstrukturen](02_Datenstrukturen.md#Spark "zum Abschnitt") wird hierauf näher eingegangen. Daneben existiert auf der Seite von Spark eine umfassende [Dokumentation von SparkSQL](https://spark.apache.org/docs/latest/sql-programming-guide.html "zur Dokumentation"). 
 
@@ -111,19 +111,19 @@ Im Abschnitt [02 Datenstrukturen](02_Datenstrukturen.md#Spark "zum Abschnitt") w
 
 [_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
-Die [Maschine Learning Library (MLlib)](https://spark.apache.org/mllib "zur Webseite") von Apache Spark bietet Zugang zu einer umfangreichen Bibliothek für die Bearbeitung und Bereinigen von Daten. Hierzu gehören neben Funktionen zum Aggregieren von Daten auch Algorithmen für Klassifizierung, Regression oder Clustering. 
+Die [Maschine Learning Library (MLlib)](https://spark.apache.org/mllib "zur Webseite") von Apache Spark bietet Zugang zu einer umfangreichen Bibliothek für die Bearbeitung und Bereinigen von Daten. Hierzu gehören neben Funktionen zum Aggregieren von Daten auch ***Algorithmen für Klassifizierung, Regression oder Clustering***. 
 
 Gegenüber anderen Bibliotheken aus diesem Bereich, wie beispielsweise [scikit-learn](https://scikit-learn.org "zur Webseite"), können mit ihr auf Basis von Spark auch sehr große Datenkontingente sehr performant, verteilt und skalierbar verarbeitet werden. Daneben existieren Hilfsfunktionen zur Unterstützung von Routineaufgaben wie die Erzeugung 
 von Statistiken.
 
-Weiterhin werden die Erstellung von Workflows für die Verarbeitung (Pipelines), das Erstellen und Trainieren von Modellen sowie deren Serialisierung und Einsatz unterstützt. Für einen vertiefenden Einblick bietet sich die offizielle [Dokumentation](https://spark.apache.org/docs/latest/ml-guide.html "zur Dokumentation") an.
+Weiterhin werden die ***Erstellung von Workflows*** für die Verarbeitung (Pipelines), das ***Erstellen und Trainieren von Modellen*** sowie deren ***Serialisierung und Einsatz*** unterstützt. Für einen vertiefenden Einblick bietet sich die offizielle [Dokumentation](https://spark.apache.org/docs/latest/ml-guide.html "zur Dokumentation") an.
 
 ### GraphX
 
 [_zurück_](01_Spark_Umfeld.md#spark-kosystem-und-erweiterungen "Zurück")
 
 Bei [GraphX](https://spark.apache.org/graphx "zur Webseite") handelt es sich um eine Erweiterung, welche die Möglichkeit eröffnet, im Kontext von Spark mit Graphen zu arbeiten. Nach [eigenen Angaben](https://spark.apache.org/docs/latest/graphx-programming-guide.html "zur Dokumentation") erweitert es die grundlegende und auf Basis der 
-[RDD](02_Datenstrukturen.md#Spark "zum Abschnitt") aufgebaute Struktur um eine Graphenabstraktion. Hierzu wurden mehrere Erweiterungen für die Arbeit mit Graphen hinzugefügt. Zudem enthält es eine Reihe von Algorithmen für die Arbeit mit und Analyse von Graphen, welche stetig wächst.
+[RDD](02_Datenstrukturen.md#Spark "zum Abschnitt") aufgebaute Struktur um eine ***Graphenabstraktion***. Hierzu wurden mehrere Erweiterungen für die Arbeit mit Graphen hinzugefügt. Zudem enthält es eine Reihe von ***Algorithmen für die Arbeit mit und Analyse von Graphen***, welche stetig wächst.
 
 Mit Blick auf die immer größere Akzeptanz und den Einsatz von Graphendatenbanken ist diese Erweiterung aus Sicht des Autors sehr wichtig. Um Spark im Kontext von Graphendatenbanken grundsätzlich zu verwenden, ist diese Erweiterung jedoch nicht zwingend notwendig. Als Beispiel sei hier die weit verbreitete Datenbank [Neo4j](https://neo4j.com "zur Webseite") genannt, welche einen eigenen [Konnektor für Spark](https://neo4j.com/docs/spark/current "zur Dokumentation") anbietet.   
 
