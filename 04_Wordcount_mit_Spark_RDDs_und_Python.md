@@ -18,7 +18,7 @@ Für die Vorbereitung des Notebooks kann auf den Abschnitt [_Google Colaboratory
 
 ## Auszählen der Wörter
 
-[_zurück_](04_Wordcount_mit_Spark_RDDs_und_Python.md#4-wordcount-mit-spark-und-python "Zurück")
+[_zurück_](04_Wordcount_mit_Spark_RDDs_und_Python.md#4-wordcount-mit-spark-rdds-und-python "Zurück")
 
 Um die Aufgabe umzusetzen sind zwei Arbeitsschritte erforderlich. Entsprechend finden sich im 
 [_Jupyter Notebook_](notebook/Wordcount_mit_Spark_RDD.ipynb "zum Notebook") zwei Abschnitte.
@@ -66,7 +66,7 @@ In diesem Abschnitt befindet sich der eigentliche Code, der mit Hilfe von Spark 
 
 Um mit Spark arbeiten zu können, muss als erstes eine ***Verbindung zu Spark*** in Form eines
 [SparkContext](https://spark.apache.org/docs/3.1.1/api/python/reference/api/pyspark.SparkContext.html "zur Dokumentation") aufgebaut werden. Weitere Informationen hierzu findet man auch im Kapitel 
-[Datenstrukturen](02_Datenstrukturen.md): 
+[Datenstrukturen](02_Datenstrukturen.md "zum Kapitel"): 
 
 ```python
 # Erzeugen eines Spark Kontext
